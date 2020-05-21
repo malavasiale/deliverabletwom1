@@ -1,0 +1,1604 @@
+Version;Filename;LOC_Added;LOC_deleted;Set_size;Author
+5;tajo-client/src/main/java/org/apache/tajo/client/SessionConnection.java;14;0;3;Jihoon Son
+5;tajo-jdbc/src/main/java/org/apache/tajo/jdbc/JdbcConnection.java;3;1;3;Jihoon Son
+5;tajo-common/src/main/java/org/apache/tajo/SessionVars.java;1;1;4;DaeMyung Kang
+5;tajo-core/src/test/java/org/apache/tajo/cli/tsql/TestTajoCli.java;40;0;4;DaeMyung Kang
+4;tajo-core/src/main/java/org/apache/tajo/worker/ExecutionBlockContext.java;14;14;6;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/worker/Task.java;30;17;6;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/worker/TaskAttemptContext.java;1;1;6;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/worker/TaskRunnerManager.java;3;1;6;jhkim
+4;tajo-core/src/test/java/org/apache/tajo/querymaster/TestKillQuery.java;34;0;6;jhkim
+4;tajo-storage/tajo-storage-common/src/main/java/org/apache/tajo/storage/StorageManager.java;21;19;3;jhkim
+4;tajo-storage/tajo-storage-hdfs/src/test/java/org/apache/tajo/storage/TestFileStorageManager.java;46;14;3;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/master/QueryInProgress.java;1;1;6;Jihoon Son
+4;tajo-core/src/main/java/org/apache/tajo/master/QueryManager.java;0;4;6;Jihoon Son
+4;tajo-core/src/main/java/org/apache/tajo/master/TajoMasterClientService.java;2;6;6;Jihoon Son
+4;tajo-core/src/main/java/org/apache/tajo/querymaster/QueryMaster.java;0;1;6;Jihoon Son
+4;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;1;1;5;JaeHwa Jung
+4;tajo-core/src/test/java/org/apache/tajo/engine/query/TestHBaseTable.java;6;129;5;JaeHwa Jung
+4;tajo-storage/tajo-storage-hbase/src/main/java/org/apache/tajo/storage/hbase/HBaseStorageManager.java;5;8;5;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/worker/TajoWorker.java;7;0;4;jhkim
+4;tajo-core/src/test/java/org/apache/tajo/TajoTestingCluster.java;10;14;4;jhkim
+4;tajo-storage/tajo-storage-common/src/main/java/org/apache/tajo/storage/StorageManager.java;2;1;4;jhkim
+4;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/CatalogConstants.java;2;0;3;Jihun Kang
+4;tajo-client/src/main/java/org/apache/tajo/cli/tools/TajoDump.java;15;1;3;Jihun Kang
+4;tajo-core/src/main/java/org/apache/tajo/master/QueryInProgress.java;1;0;8;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/querymaster/Stage.java;2;0;8;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/querymaster/Task.java;4;1;8;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/worker/TajoWorkerClientService.java;2;2;8;jhkim
+4;tajo-core/src/test/java/org/apache/tajo/TajoTestingCluster.java;19;9;8;jhkim
+4;tajo-core/src/test/java/org/apache/tajo/master/scheduler/TestFifoScheduler.java;4;4;8;jhkim
+4;tajo-core/src/test/java/org/apache/tajo/querymaster/TestKillQuery.java;57;3;8;jhkim
+4;tajo-client/src/main/java/org/apache/tajo/client/QueryClientImpl.java;6;3;5;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/master/QueryInProgress.java;1;0;5;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/master/QueryManager.java;2;1;5;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/master/TajoMasterClientService.java;3;1;5;jhkim
+4;tajo-catalog/tajo-catalog-server/src/test/java/org/apache/tajo/catalog/TestCatalog.java;52;1;16;Jihun Kang
+4;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/CatalogUtil.java;1;11;16;jhkim
+4;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/store/AbstractDBStore.java;4;2;16;jhkim
+4;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/store/MemStore.java;1;1;16;jhkim
+4;tajo-client/src/main/java/org/apache/tajo/cli/tsql/commands/DescTableCommand.java;2;1;16;jhkim
+4;tajo-core/src/test/java/org/apache/tajo/engine/query/TestCTASQuery.java;15;2;16;jhkim
+4;tajo-storage/tajo-storage-common/src/main/java/org/apache/tajo/storage/StorageManager.java;6;10;16;jhkim
+4;tajo-storage/tajo-storage-hbase/src/main/java/org/apache/tajo/storage/hbase/HBaseFragment.java;2;1;16;jhkim
+4;tajo-storage/tajo-storage-hdfs/src/main/java/org/apache/tajo/storage/CSVFile.java;1;1;16;jhkim
+4;tajo-storage/tajo-storage-hdfs/src/main/java/org/apache/tajo/storage/fragment/FileFragment.java;2;1;16;jhkim
+4;tajo-storage/tajo-storage-hdfs/src/main/java/org/apache/tajo/storage/text/DelimitedTextFile.java;1;1;16;jhkim
+4;tajo-common/src/main/java/org/apache/tajo/rule/base/CheckHadoopRuntimeVersionRule.java;2;2;2;Jihun Kang
+4;tajo-common/src/main/java/org/apache/tajo/unit/StorageUnit.java;5;4;2;Jihun Kang
+4;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;2;0;12;jhkim
+4;tajo-common/src/main/java/org/apache/tajo/util/Bytes.java;3;3;12;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/master/QueryInProgress.java;5;1;12;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/master/QueryInfo.java;6;1;12;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/master/QueryManager.java;21;4;12;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/querymaster/QueryMaster.java;6;2;12;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/util/history/HistoryReader.java;19;14;12;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/util/history/HistoryWriter.java;262;99;12;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/worker/TaskRunnerManager.java;1;0;12;jhkim
+4;tajo-core/src/test/java/org/apache/tajo/client/TestTajoClient.java;3;13;12;jhkim
+4;tajo-core/src/test/java/org/apache/tajo/util/history/TestHistoryWriterReader.java;4;15;12;jhkim
+4;tajo-core/src/test/java/org/apache/tajo/engine/planner/TestLogicalPlanner.java;4;1;12;Keuntae Park
+4;tajo-core/src/test/java/org/apache/tajo/engine/query/TestJoinQuery.java;28;0;12;Keuntae Park
+4;tajo-plan/src/main/java/org/apache/tajo/plan/rewrite/rules/FilterPushDownRule.java;16;0;12;Keuntae Park
+4;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/CatalogService.java;2;2;31;Hyunsik Choi
+4;tajo-catalog/tajo-catalog-drivers/tajo-hcatalog/src/main/java/org/apache/tajo/catalog/store/HCatalogStore.java;1;1;31;Hyunsik Choi
+4;tajo-catalog/tajo-catalog-drivers/tajo-hcatalog/src/main/java/org/apache/tajo/catalog/store/HCatalogUtil.java;1;1;31;Hyunsik Choi
+4;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/store/AbstractDBStore.java;5;5;31;Hyunsik Choi
+4;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/store/XMLCatalogSchemaManager.java;9;9;31;Hyunsik Choi
+4;tajo-catalog/tajo-catalog-server/src/test/java/org/apache/tajo/catalog/store/TestXMLCatalogSchemaManager.java;7;7;31;Hyunsik Choi
+4;tajo-client/src/main/java/org/apache/tajo/cli/tsql/DefaultTajoCliOutputFormatter.java;1;1;31;Hyunsik Choi
+4;tajo-client/src/main/java/org/apache/tajo/cli/tsql/TajoCli.java;2;2;31;Hyunsik Choi
+4;tajo-client/src/main/java/org/apache/tajo/cli/tsql/TajoCliOutputFormatter.java;1;1;31;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/util/datetime/DateTimeFormat.java;1;1;31;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Repartitioner.java;8;8;31;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/LogicalPlanPreprocessor.java;1;1;31;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/rewrite/rules/FilterPushDownRule.java;3;3;31;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/verifier/ExprsVerifier.java;1;1;31;Hyunsik Choi
+4;tajo-storage/tajo-storage-common/src/main/java/org/apache/tajo/storage/DiskUtil.java;1;1;31;Hyunsik Choi
+4;tajo-storage/tajo-storage-hdfs/src/main/java/org/apache/tajo/storage/HashShuffleAppenderManager.java;4;4;31;Hyunsik Choi
+4;tajo-storage/tajo-storage-hdfs/src/main/java/org/apache/tajo/storage/avro/AvroAppender.java;1;1;31;Hyunsik Choi
+4;tajo-storage/tajo-storage-hdfs/src/main/java/org/apache/tajo/storage/parquet/ParquetAppender.java;1;1;31;Hyunsik Choi
+4;tajo-storage/tajo-storage-hdfs/src/main/java/org/apache/tajo/storage/rcfile/RCFile.java;1;1;31;Hyunsik Choi
+4;tajo-thirdparty/asm/src/main/java/org/apache/tajo/org/objectweb/asm/commons/GeneratorAdapter.java;1;1;31;Hyunsik Choi
+4;tajo-thirdparty/asm/src/main/java/org/apache/tajo/org/objectweb/asm/tree/InsnList.java;2;2;31;Hyunsik Choi
+4;tajo-thirdparty/asm/src/main/java/org/apache/tajo/org/objectweb/asm/tree/analysis/Analyzer.java;1;1;31;Hyunsik Choi
+4;tajo-thirdparty/asm/src/main/java/org/apache/tajo/org/objectweb/asm/tree/analysis/Interpreter.java;7;7;31;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/AvgDouble.java;19;6;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/AvgFloat.java;10;2;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/AvgInt.java;11;3;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/AvgLong.java;20;7;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/Max.java;76;0;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/MaxDouble.java;6;37;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/MaxFloat.java;7;36;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/MaxInt.java;7;37;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/MaxLong.java;1;31;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/MaxString.java;9;43;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/Min.java;76;0;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/MinDouble.java;6;35;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/MinFloat.java;6;36;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/MinInt.java;7;36;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/MinLong.java;1;31;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/MinString.java;6;40;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/SumDouble.java;27;7;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/SumFloat.java;7;26;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/SumInt.java;1;31;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/SumLong.java;27;7;37;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/engine/planner/physical/DistinctGroupbySortAggregationExec.java;26;15;37;Keuntae Park
+4;tajo-core/src/test/java/org/apache/tajo/engine/function/TestBuiltinFunctions.java;234;0;37;Keuntae Park
+4;tajo-core/src/test/java/org/apache/tajo/engine/query/TestGroupByQuery.java;2;2;37;Keuntae Park
+4;tajo-client/src/main/java/org/apache/tajo/cli/tsql/TajoCli.java;9;5;3;Hyunsik Choi
+4;tajo-client/src/main/java/org/apache/tajo/cli/tsql/TajoFileHistory.java;3;5;3;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/utils/TupleUtil.java;12;6;3;Keuntae Park
+4;tajo-core/src/test/java/org/apache/tajo/engine/query/TestSortQuery.java;28;0;3;Keuntae Park
+4;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Query.java;1;1;2;jhkim
+4;tajo-common/src/main/java/org/apache/tajo/validation/PathValidator.java;1;1;3;Jihoon Son
+4;tajo-common/src/test/java/org/apache/tajo/validation/TestValidators.java;12;0;3;Jihoon Son
+4;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;2;1;9;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/master/event/StageEventType.java;2;1;9;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/master/event/StageShuffleReportEvent.java;38;0;9;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/querymaster/Query.java;1;1;9;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/querymaster/QueryMasterManagerService.java;1;1;9;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/querymaster/Stage.java;145;61;9;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/querymaster/StageState.java;1;0;9;jhkim
+4;tajo-core/src/test/java/org/apache/tajo/engine/eval/TestPredicates.java;0;7;5;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/engine/planner/TestQueryValidation.java;6;0;5;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/verifier/PreLogicalPlanVerifier.java;14;4;5;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/HBaseTestClusterUtil.java;2;0;4;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;1;2;9;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/rule/SelfDiagnosisRuleDefinition.java;2;1;9;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/rule/SelfDiagnosisRuleEngine.java;15;7;9;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/validation/PathListValidator.java;63;0;9;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/validation/PathValidator.java;3;1;9;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/validation/Validators.java;4;0;9;Hyunsik Choi
+4;tajo-common/src/test/java/org/apache/tajo/validation/TestValidators.java;30;0;9;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/worker/rule/ConnectivityCheckerRuleForTajoWorker.java;2;1;9;Hyunsik Choi
+4;tajo-storage/tajo-storage-hdfs/src/main/java/org/apache/tajo/storage/json/JsonLineDeserializer.java;20;19;4;jhkim
+4;tajo-storage/tajo-storage-hdfs/src/test/java/org/apache/tajo/storage/TestDelimitedTextFile.java;17;0;4;jhkim
+4;tajo-core/src/test/java/org/apache/tajo/engine/query/TestSortQuery.java;39;0;4;Hyunsik Choi
+4;tajo-storage/tajo-storage-common/src/main/java/org/apache/tajo/storage/BaseTupleComparator.java;2;2;4;Hyunsik Choi
+4;tajo-storage/tajo-storage-common/src/test/java/org/apache/tajo/storage/TestTupleComparator.java;87;2;4;Hyunsik Choi
+4;tajo-storage/src/main/java/org/apache/tajo/storage/ByteBufInputChannel.java;0;4;5;jhkim
+4;tajo-storage/src/main/java/org/apache/tajo/storage/text/ByteBufLineReader.java;40;28;5;jhkim
+4;tajo-storage/src/main/java/org/apache/tajo/storage/text/DelimitedLineReader.java;3;4;5;jhkim
+4;tajo-storage/src/test/java/org/apache/tajo/storage/TestLineReader.java;35;8;5;jhkim
+4;tajo-client/src/main/java/org/apache/tajo/client/QueryClient.java;2;0;72;Hyunsik Choi
+4;tajo-client/src/main/java/org/apache/tajo/client/QueryClientImpl.java;7;1;72;Hyunsik Choi
+4;tajo-client/src/main/java/org/apache/tajo/client/SessionConnection.java;33;0;72;Hyunsik Choi
+4;tajo-client/src/main/java/org/apache/tajo/client/TajoClientUtil.java;2;1;72;Hyunsik Choi
+4;tajo-client/src/main/java/org/apache/tajo/jdbc/FetchResultSet.java;1;0;72;Hyunsik Choi
+4;tajo-client/src/main/java/org/apache/tajo/jdbc/TajoMemoryResultSet.java;4;1;72;Hyunsik Choi
+4;tajo-client/src/main/java/org/apache/tajo/jdbc/TajoResultSet.java;2;0;72;Hyunsik Choi
+4;tajo-client/src/main/java/org/apache/tajo/jdbc/TajoResultSetBase.java;29;9;72;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/OverridableConf.java;5;2;72;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/SessionVars.java;2;2;72;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/TajoConstants.java;2;0;72;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;7;18;72;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/datum/Datum.java;1;1;72;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/datum/DatumFactory.java;40;17;72;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/json/TimeZoneGsonSerdeAdapter.java;40;0;72;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/storage/StorageConstants.java;19;3;72;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/util/datetime/DateTimeUtil.java;11;12;72;Hyunsik Choi
+4;tajo-common/src/test/java/org/apache/tajo/datum/TestTimestampDatum.java;3;4;72;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/AvgDouble.java;0;3;72;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/datetime/CurrentDate.java;17;3;72;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/datetime/DatePartFromTime.java;17;3;72;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/datetime/DatePartFromTimestamp.java;16;2;72;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/datetime/ToCharTimestamp.java;14;4;72;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/datetime/ToTimestampText.java;14;1;72;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/string/BTrim.java;3;1;72;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/string/LTrim.java;3;1;72;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/string/Lpad.java;3;1;72;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/string/RTrim.java;3;1;72;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/string/RegexpReplace.java;3;1;72;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/function/string/Rpad.java;3;1;72;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/json/CoreGsonHelper.java;2;0;72;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/query/QueryContext.java;2;2;72;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/QueryTestCaseBase.java;8;0;72;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/TajoTestingCluster.java;3;0;72;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/engine/eval/ExprTestBase.java;37;22;72;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/engine/eval/TestIntervalType.java;23;23;72;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/engine/eval/TestSQLDateTimeTypes.java;6;12;72;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/engine/eval/TestSQLExpression.java;37;30;72;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/engine/function/TestConditionalExpressions.java;8;8;72;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/engine/function/TestDateTimeFunctions.java;115;71;72;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/engine/query/TestSelectQuery.java;46;4;72;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/engine/query/TestSortQuery.java;8;15;72;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/jdbc/TestResultSet.java;3;10;72;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/jdbc/TestTajoJdbc.java;0;6;72;Hyunsik Choi
+4;tajo-jdbc/src/main/java/org/apache/tajo/jdbc/TajoMetaDataResultSet.java;2;0;72;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/ExprAnnotator.java;62;34;72;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/LogicalPlanner.java;8;0;72;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/expr/CastEval.java;25;3;72;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/expr/GeneralFunctionEval.java;6;2;72;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/function/GeneralFunction.java;3;1;72;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/serder/EvalTreeProtoDeserializer.java;4;3;72;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/serder/EvalTreeProtoSerializer.java;3;0;72;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/serder/PlanGsonHelper.java;2;0;72;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/util/PlannerUtil.java;4;0;72;Hyunsik Choi
+4;tajo-storage/src/main/java/org/apache/tajo/storage/TextSerializerDeserializer.java;3;4;72;Hyunsik Choi
+4;tajo-storage/src/main/java/org/apache/tajo/storage/text/CSVLineDeserializer.java;1;1;72;Hyunsik Choi
+4;tajo-storage/src/main/java/org/apache/tajo/storage/text/CSVLineSerializer.java;1;1;72;Hyunsik Choi
+4;tajo-storage/src/main/java/org/apache/tajo/storage/text/TextFieldSerializerDeserializer.java;38;8;72;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/master/GlobalEngine.java;4;4;10;Jihoon Son
+4;tajo-core/src/test/java/org/apache/tajo/engine/query/TestGroupByQuery.java;21;0;10;Jihoon Son
+4;tajo-plan/src/main/java/org/apache/tajo/plan/LogicalPlanner.java;7;0;10;Jihoon Son
+4;tajo-core/src/test/java/org/apache/tajo/client/TestTajoClient.java;32;5;4;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/LogicalPlanner.java;16;4;4;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/util/PlannerUtil.java;17;0;4;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/TajoConstants.java;1;1;6;JaeHwa Jung
+4;tajo-core/src/test/java/org/apache/tajo/engine/query/TestCaseByCases.java;8;0;5;Hyunsik Choi
+4;tajo-storage/src/main/java/org/apache/tajo/storage/text/DelimitedTextFile.java;12;7;5;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/engine/query/TestInsertQuery.java;22;0;6;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/verifier/PreLogicalPlanVerifier.java;38;26;6;Hyunsik Choi
+4;tajo-jdbc/src/main/java/org/apache/tajo/jdbc/JdbcConnection.java;10;3;3;Hyunsik Choi
+4;tajo-jdbc/src/main/java/org/apache/tajo/jdbc/TajoStatement.java;4;3;3;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;10;2;9;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/master/GlobalEngine.java;2;5;9;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/master/TajoMaster.java;1;1;9;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Query.java;56;18;9;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/master/querymaster/QueryMasterTask.java;18;5;9;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/engine/query/TestCTASQuery.java;1;0;9;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/engine/query/TestInsertQuery.java;13;1;9;Hyunsik Choi
+4;tajo-storage/src/main/java/org/apache/tajo/storage/text/ByteBufLineReader.java;19;3;8;jhkim
+4;tajo-storage/src/test/java/org/apache/tajo/storage/TestLineReader.java;31;1;8;jhkim
+4;tajo-storage/src/test/java/org/apache/tajo/storage/TestStorages.java;1;1;8;jhkim
+4;tajo-storage/src/test/java/org/apache/tajo/storage/avro/TestAvroUtil.java;1;1;8;jhkim
+4;tajo-catalog/tajo-catalog-drivers/tajo-hcatalog/src/main/java/org/apache/tajo/catalog/store/HCatalogStore.java;2;1;2;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/worker/Task.java;3;1;2;jhkim
+4;tajo-client/src/main/java/org/apache/tajo/cli/tsql/TajoCli.java;5;0;11;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/master/TajoMaster.java;21;8;11;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/scheduler/SimpleFifoScheduler.java;1;1;11;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/util/history/HistoryWriter.java;2;0;11;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/worker/TajoWorker.java;3;9;11;jhkim
+4;tajo-core/src/main/java/org/apache/tajo/worker/TaskRunnerManager.java;4;3;11;jhkim
+4;tajo-core/src/test/java/org/apache/tajo/TajoTestingCluster.java;19;0;11;jhkim
+4;tajo-core/src/test/java/org/apache/tajo/cli/tsql/TestTajoCli.java;14;8;11;jhkim
+4;tajo-core/src/test/java/org/apache/tajo/master/ha/TestHAServiceHDFSImpl.java;23;18;11;jhkim
+4;tajo-yarn-pullserver/src/main/java/org/apache/tajo/pullserver/TajoPullServerService.java;1;1;11;jhkim
+4;tajo-core/src/test/java/org/apache/tajo/engine/query/TestTablePartitions.java;142;90;1;JaeHwa Jung
+4;tajo-common/src/main/java/org/apache/tajo/datum/DateDatum.java;1;10;5;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/datum/IntervalDatum.java;0;1;5;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/datum/TimeDatum.java;0;4;5;Hyunsik Choi
+4;tajo-common/src/test/java/org/apache/tajo/datum/TestIntervalDatum.java;4;4;5;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/planner/physical/PhysicalPlanUtil.java;51;14;8;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/planner/physical/SeqScanExec.java;6;1;8;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/worker/TajoWorkerClientService.java;9;7;8;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/engine/query/TestTablePartitions.java;56;0;8;Hyunsik Choi
+4;tajo-rpc/src/main/java/org/apache/tajo/rpc/RemoteCallException.java;5;1;8;Hyunsik Choi
+4;tajo-common/src/test/java/org/apache/tajo/datum/TestTimestampDatum.java;2;1;2;Hyunsik Choi
+4;tajo-client/src/main/java/org/apache/tajo/cli/tsql/TajoCli.java;7;6;2;Hyunsik Choi
+4;tajo-storage/src/main/java/org/apache/tajo/storage/avro/AvroUtil.java;30;5;6;jhkim
+4;tajo-storage/src/test/java/org/apache/tajo/HttpFileServer.java;84;0;6;jhkim
+4;tajo-storage/src/test/java/org/apache/tajo/HttpFileServerHandler.java;184;0;6;jhkim
+4;tajo-storage/src/test/java/org/apache/tajo/HttpFileServerPipelineFactory.java;54;0;6;jhkim
+4;tajo-storage/src/test/java/org/apache/tajo/storage/avro/TestAvroUtil.java;108;0;6;jhkim
+4;tajo-common/src/main/java/org/apache/tajo/datum/protobuf/TextUtils.java;3;1;3;Hyunsik Choi
+4;tajo-common/src/test/java/org/apache/tajo/datum/protobuf/TestTextUtils.java;52;0;3;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/TajoTestingCluster.java;1;0;2;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/master/ContainerProxy.java;5;5;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/DefaultTaskScheduler.java;10;8;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/LaunchTaskRunnersEvent.java;3;2;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/LazyTaskScheduler.java;5;4;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/TajoContainerProxy.java;11;11;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/TajoMasterService.java;3;2;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/TaskRunnerGroupEvent.java;4;4;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/container/TajoContainer.java;173;0;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/container/TajoContainerId.java;172;0;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/container/TajoConverterUtils.java;263;0;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/container/TajoRecordFactory.java;31;0;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/container/TajoRecordFactoryPBImpl.java;104;0;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/container/TajoRecordFactoryProvider.java;70;0;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/container/TajoRecords.java;39;0;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/container/impl/pb/TajoContainerIdPBImpl.java;100;0;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/event/LocalTaskEvent.java;5;4;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/event/QueryUnitAttemptScheduleEvent.java;5;5;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/event/SubQueryContainerAllocationEvent.java;4;4;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/event/TaskAttemptAssignedEvent.java;4;4;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/event/TaskRequestEvent.java;4;4;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/querymaster/QueryInProgress.java;2;1;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/querymaster/QueryMasterManagerService.java;2;2;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/querymaster/QueryUnitAttempt.java;3;3;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;6;11;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/rm/TajoRMContext.java;4;4;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/rm/TajoWorkerContainer.java;9;6;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/rm/TajoWorkerContainerId.java;27;26;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/rm/TajoWorkerResourceManager.java;32;31;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/master/rm/WorkerResourceManager.java;2;2;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/worker/AbstractResourceAllocator.java;7;7;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/worker/ResourceAllocator.java;3;3;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/worker/TajoResourceAllocator.java;50;51;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/worker/TaskRunner.java;8;8;48;JaeHwa Jung
+4;tajo-core/src/main/java/org/apache/tajo/worker/TaskRunnerHistory.java;7;7;48;JaeHwa Jung
+4;tajo-core/src/test/java/org/apache/tajo/master/rm/TestTajoResourceManager.java;10;6;48;JaeHwa Jung
+4;tajo-storage/src/main/java/org/apache/tajo/storage/StorageManager.java;1;0;48;JaeHwa Jung
+4;tajo-storage/src/test/java/org/apache/tajo/storage/TestFileSystems.java;138;129;48;JaeHwa Jung
+4;tajo-storage/src/test/java/org/apache/tajo/storage/s3/INode.java;0;124;48;JaeHwa Jung
+4;tajo-storage/src/test/java/org/apache/tajo/storage/s3/InMemoryFileSystemStore.java;0;175;48;JaeHwa Jung
+4;tajo-storage/src/test/java/org/apache/tajo/storage/s3/S3OutputStream.java;0;234;48;JaeHwa Jung
+4;tajo-storage/src/test/java/org/apache/tajo/storage/s3/SmallBlockS3FileSystem.java;0;314;48;JaeHwa Jung
+4;tajo-common/src/main/java/org/apache/tajo/util/datetime/DateTimeFormat.java;1;1;3;HyoungJun Kim
+4;tajo-core/src/test/java/org/apache/tajo/engine/function/TestDateTimeFunctions.java;6;0;3;HyoungJun Kim
+4;tajo-client/src/main/java/org/apache/tajo/cli/tsql/DefaultTajoCliOutputFormatter.java;3;3;8;Hyunsik Choi
+4;tajo-client/src/main/java/org/apache/tajo/cli/tsql/commands/DescTableCommand.java;2;2;8;Hyunsik Choi
+4;tajo-client/src/main/java/org/apache/tajo/client/QueryClient.java;0;2;8;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/TajoConstants.java;1;0;8;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/master/GlobalEngine.java;5;2;8;Hyunsik Choi
+4;tajo-core/src/test/java/org/apache/tajo/cli/tsql/TestTajoCli.java;36;0;8;Hyunsik Choi
+4;tajo-client/src/main/java/org/apache/tajo/client/QueryClientImpl.java;3;4;2;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/planner/physical/PhysicalExec.java;2;1;2;Hyunsik Choi
+4;tajo-common/src/main/java/org/apache/tajo/OverridableConf.java;1;1;9;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/query/QueryUnitRequest.java;2;1;9;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/engine/query/QueryUnitRequestImpl.java;2;2;9;Hyunsik Choi
+4;tajo-core/src/main/java/org/apache/tajo/worker/Task.java;1;1;9;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/expr/EvalTreeUtil.java;64;33;9;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/joinorder/JoinGraph.java;4;1;9;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/rewrite/rules/FilterPushDownRule.java;7;3;9;Hyunsik Choi
+4;tajo-plan/src/main/java/org/apache/tajo/plan/util/PlannerUtil.java;1;1;9;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;19;1;2;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Query.java;1;1;3;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/QueryUnit.java;8;4;3;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Repartitioner.java;30;7;9;HyoungJun Kim
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestJoinBroadcast.java;110;8;9;HyoungJun Kim
+3;tajo-client/src/main/java/org/apache/tajo/client/TajoClient.java;1;0;2;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalPlanPreprocessor.java;22;13;13;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalPlanVerifier.java;14;0;13;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/GlobalEngine.java;4;0;13;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/QueryTestCaseBase.java;76;15;13;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/planner/TestPreLogicalPlanVerifier.java;0;74;13;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/planner/TestQueryValidation.java;52;0;13;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/worker/FetchImpl.java;7;9;4;jhkim
+3;tajo-core/src/test/java/org/apache/tajo/master/TestRepartitioner.java;85;0;4;jhkim
+3;tajo-core/src/test/java/org/apache/tajo/worker/TestHistory.java;7;2;4;jhkim
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/logical/PartitionedTableScanNode.java;4;0;5;HyoungJun Kim
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/logical/ScanNode.java;17;13;5;HyoungJun Kim
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestJoinBroadcast.java;61;0;5;HyoungJun Kim
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestJoinBroadcast.java;32;0;5;HyoungJun Kim
+3;tajo-storage/src/main/java/org/apache/tajo/storage/MergeScanner.java;12;6;5;HyoungJun Kim
+3;tajo-core/src/main/java/org/apache/tajo/engine/eval/SimpleEvalNodeVisitor.java;3;0;6;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/optimizer/eval/EvalTreeOptimizer.java;2;0;6;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalPlanPreprocessor.java;20;14;6;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/TypeDeterminant.java;17;0;6;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/logical/EvalExprNode.java;2;0;6;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/RawFile.java;9;3;3;jhkim
+3;tajo-storage/src/test/java/org/apache/tajo/storage/TestStorages.java;88;8;3;jhkim
+3;tajo-client/src/main/java/org/apache/tajo/cli/DefaultTajoCliOutputFormatter.java;2;1;1;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/cli/TajoCli.java;1;1;5;jhkim
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Query.java;2;10;5;jhkim
+3;tajo-core/src/main/java/org/apache/tajo/util/JSPUtil.java;1;1;5;jhkim
+3;tajo-core/src/test/java/org/apache/tajo/master/querymaster/TestQueryProgress.java;73;0;5;jhkim
+3;tajo-client/src/main/java/org/apache/tajo/cli/TajoCli.java;65;42;2;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;1;1;4;Jaehwa Jung
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Query.java;122;13;4;Jaehwa Jung
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestTablePartitions.java;45;8;4;Jaehwa Jung
+3;tajo-client/src/main/java/org/apache/tajo/client/TajoAdmin.java;20;20;2;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/DefaultTaskScheduler.java;0;1;2;jhkim
+3;tajo-client/src/main/java/org/apache/tajo/cli/TajoCli.java;16;5;11;jhkim
+3;tajo-client/src/main/java/org/apache/tajo/client/TajoClient.java;15;5;11;jhkim
+3;tajo-core/src/main/java/org/apache/tajo/master/TajoMasterClientService.java;2;0;11;jhkim
+3;tajo-rpc/src/main/java/org/apache/tajo/rpc/AsyncRpcClient.java;3;8;11;jhkim
+3;tajo-rpc/src/main/java/org/apache/tajo/rpc/AsyncRpcServer.java;3;1;11;jhkim
+3;tajo-rpc/src/main/java/org/apache/tajo/rpc/BlockingRpcClient.java;4;9;11;jhkim
+3;tajo-rpc/src/main/java/org/apache/tajo/rpc/NettyClientBase.java;54;32;11;jhkim
+3;tajo-rpc/src/main/java/org/apache/tajo/rpc/RpcConnectionPool.java;12;4;11;jhkim
+3;tajo-rpc/src/test/java/org/apache/tajo/rpc/TestAsyncRpc.java;88;3;11;jhkim
+3;tajo-rpc/src/test/java/org/apache/tajo/rpc/TestBlockingRpc.java;61;12;11;jhkim
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;8;7;2;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/DefaultTaskScheduler.java;32;17;2;jhkim
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/QueryMaster.java;2;4;5;jhkim
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;13;10;5;jhkim
+3;tajo-core/src/test/java/org/apache/tajo/TajoTestingCluster.java;36;2;5;jhkim
+3;tajo-core/src/test/java/org/apache/tajo/master/querymaster/TestKillQuery.java;108;0;5;jhkim
+3;tajo-core/src/main/java/org/apache/tajo/worker/TajoWorker.java;1;1;7;jhkim
+3;tajo-core/src/test/java/org/apache/tajo/TajoTestingCluster.java;0;1;7;jhkim
+3;tajo-yarn-pullserver/src/main/java/org/apache/tajo/pullserver/TajoPullServer.java;1;1;7;jhkim
+3;tajo-yarn-pullserver/src/main/java/org/apache/tajo/pullserver/TajoPullServerService.java;25;26;7;jhkim
+3;tajo-core/src/main/java/org/apache/tajo/worker/ExecutionBlockContext.java;3;1;4;jhkim
+3;tajo-core/src/main/java/org/apache/tajo/worker/TaskRunner.java;25;1;4;jhkim
+3;tajo-rpc/src/main/java/org/apache/tajo/rpc/RemoteCallException.java;3;0;4;jhkim
+3;tajo-rpc/src/main/java/org/apache/tajo/rpc/RpcConnectionPool.java;6;2;2;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/cli/TajoCli.java;15;8;2;HyoungJun Kim
+3;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/AlterTableDesc.java;5;9;6;Hyunsik Choi
+3;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/IndexDesc.java;1;6;6;Hyunsik Choi
+3;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/TableDesc.java;1;6;6;Hyunsik Choi
+3;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/partition/PartitionMethodDesc.java;0;8;6;Hyunsik Choi
+3;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/statistics/ColumnStats.java;2;6;6;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/util/KeyValueSet.java;5;12;2;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;4;4;2;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/eval/EvalTreeUtil.java;72;28;12;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/ExprFinder.java;1;1;12;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalPlanPreprocessor.java;16;6;12;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/logical/join/JoinGraph.java;1;1;12;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/rewrite/FilterPushDownRule.java;10;9;12;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/eval/TestEvalTreeUtil.java;7;0;12;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestSelectQuery.java;14;0;12;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/eval/EvalTreeUtil.java;22;1;3;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/eval/TestEvalTreeUtil.java;7;0;3;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/unit/StorageUnit.java;1;1;2;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/datum/Datum.java;4;0;21;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/datum/TextDatum.java;8;0;21;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/util/StringUtils.java;34;0;21;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/RangePartitionAlgorithm.java;46;15;21;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/UniformRangePartition.java;247;62;21;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;2;3;21;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/planner/TestUniformRangePartition.java;603;32;21;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestSortQuery.java;57;16;21;Hyunsik Choi
+3;tajo-jdbc/src/main/java/org/apache/tajo/jdbc/MetaDataTuple.java;5;0;21;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/FrameTuple.java;5;0;21;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/LazyTuple.java;5;0;21;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/Tuple.java;2;0;21;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/TupleRange.java;22;7;21;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/VTuple.java;5;0;21;Hyunsik Choi
+4;tajo-common/src/main/java/tajo/conf/TajoConf.java;3;7;9;Hyunsik Choi
+4;tajo-core/tajo-core-backend/src/main/java/tajo/engine/query/QueryUnitRequestImpl.java;30;3;9;Hyunsik Choi
+4;tajo-core/tajo-core-backend/src/main/java/tajo/ipc/protocolrecords/QueryUnitRequest.java;2;0;9;Hyunsik Choi
+4;tajo-core/tajo-core-backend/src/main/java/tajo/master/Query.java;2;0;9;Hyunsik Choi
+4;tajo-core/tajo-core-backend/src/main/java/tajo/master/Repartitioner.java;4;4;9;Hyunsik Choi
+4;tajo-core/tajo-core-backend/src/main/java/tajo/master/SubQuery.java;13;8;9;Hyunsik Choi
+4;tajo-core/tajo-core-backend/src/main/java/tajo/master/TaskSchedulerImpl.java;30;2;9;Hyunsik Choi
+4;tajo-core/tajo-core-backend/src/main/java/tajo/worker/TaskRunner.java;39;29;9;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/datum/TextDatum.java;6;2;5;jhkim
+3;tajo-common/src/test/java/org/apache/tajo/datum/TestTextDatum.java;29;7;5;jhkim
+3;tajo-storage/src/main/java/org/apache/tajo/storage/sequencefile/SequenceFileAppender.java;11;9;5;Jaehwa Jung
+3;tajo-storage/src/main/java/org/apache/tajo/storage/sequencefile/SequenceFileScanner.java;14;6;5;Jaehwa Jung
+3;tajo-storage/src/test/java/org/apache/tajo/storage/TestCompressionStorages.java;12;0;5;Jaehwa Jung
+3;tajo-storage/src/test/java/org/apache/tajo/storage/TestStorages.java;13;0;5;Jaehwa Jung
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Repartitioner.java;1;0;4;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/worker/FetchImpl.java;23;0;4;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/master/TestRepartitioner.java;41;11;4;Hyunsik Choi
+3;tajo-catalog/tajo-catalog-drivers/tajo-hcatalog/src/main/java/org/apache/tajo/catalog/store/HCatalogStore.java;6;5;4;jinossy
+3;tajo-catalog/tajo-catalog-drivers/tajo-hcatalog/src/main/java/org/apache/tajo/catalog/store/HCatalogStoreClientPool.java;16;4;4;jinossy
+3;tajo-catalog/tajo-catalog-drivers/tajo-hcatalog/src/main/java/org/apache/tajo/catalog/store/HCatalogUtil.java;6;0;4;jinossy
+3;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/CountValueDistinct.java;2;2;7;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestGroupByQuery.java;32;14;7;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/cli/TajoCli.java;4;6;11;jhkim
+3;tajo-client/src/main/java/org/apache/tajo/client/TajoAdmin.java;1;1;11;jhkim
+3;tajo-client/src/main/java/org/apache/tajo/client/TajoClient.java;20;6;11;jhkim
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Query.java;17;8;11;jhkim
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/QueryMaster.java;14;0;11;jhkim
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/QueryMasterTask.java;2;2;11;jhkim
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;56;29;11;jhkim
+3;tajo-core/src/main/java/org/apache/tajo/worker/TajoResourceAllocator.java;1;1;11;jhkim
+3;tajo-core/src/main/java/org/apache/tajo/worker/TajoWorkerClientService.java;6;6;11;jhkim
+3;tajo-core/src/test/java/org/apache/tajo/client/TestTajoClient.java;1;1;11;jhkim
+3;tajo-client/src/main/java/org/apache/tajo/cli/HelpCommand.java;4;26;2;Jaehwa Jung
+3;tajo-core/src/main/java/org/apache/tajo/webapp/QueryExecutorServlet.java;132;68;2;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;4;1;11;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/datum/Datum.java;72;0;11;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/datum/Float4Datum.java;50;10;11;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/datum/Float8Datum.java;59;19;11;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/datum/Int2Datum.java;58;18;11;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/datum/Int4Datum.java;59;19;11;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/datum/Int8Datum.java;59;19;11;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/datum/IntervalDatum.java;11;5;11;Hyunsik Choi
+3;tajo-common/src/test/java/org/apache/tajo/datum/TestArithmeticOperator.java;377;0;11;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/function/TestMathFunctions.java;7;8;11;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/function/math/RoundFloat8.java;16;23;6;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/function/TestMathFunctions.java;17;10;6;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestSelectQuery.java;21;0;6;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/physical/ColPartitionStoreExec.java;2;1;3;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestInsertQuery.java;70;0;3;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/rewrite/ProjectionPushDownRule.java;10;0;5;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestSelectQuery.java;9;0;5;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/global/GlobalPlanner.java;2;2;4;blrunner
+3;tajo-core/src/test/java/org/apache/tajo/engine/planner/global/TestBroadcastJoinPlan.java;56;38;4;blrunner
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestJoinBroadcast.java;43;4;4;blrunner
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/QueryUnit.java;9;1;3;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Repartitioner.java;8;2;3;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/worker/FetchImpl.java;23;1;3;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/worker/TaskAttemptContext.java;24;2;3;blrunner
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestJoinBroadcast.java;37;5;3;blrunner
+3;tajo-common/src/main/java/org/apache/tajo/util/Bytes.java;536;648;19;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/util/BytesUtils.java;182;0;19;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/util/NumberUtil.java;339;9;19;Hyunsik Choi
+3;tajo-common/src/test/java/org/apache/tajo/util/TestBytes.java;0;111;19;Hyunsik Choi
+3;tajo-common/src/test/java/org/apache/tajo/util/TestNumberUtil.java;46;1;19;Hyunsik Choi
+3;tajo-common/src/test/java/org/apache/tajo/util/TestStringUtil.java;38;2;19;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/eval/ExprTestBase.java;3;3;19;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/CSVFile.java;3;3;19;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/RowFile.java;1;2;19;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/StorageUtil.java;41;0;19;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/TextSerializerDeserializer.java;4;3;19;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/index/bst/BSTIndex.java;8;8;19;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/rcfile/RCFile.java;2;3;19;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/sequencefile/SequenceFileAppender.java;4;4;19;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/sequencefile/SequenceFileScanner.java;2;2;19;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/v2/CSVFileScanner.java;4;4;19;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/v2/RCFile.java;3;3;19;Hyunsik Choi
+3;tajo-storage/src/test/java/org/apache/tajo/storage/TestLazyTuple.java;3;3;19;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/PreLogicalPlanVerifier.java;14;0;4;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/GlobalEngine.java;21;0;4;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/planner/TestPreLogicalPlanVerifier.java;74;0;4;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/cli/TajoCli.java;24;17;2;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/cli/TajoCli.java;2;2;2;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/function/math/Round.java;5;2;3;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/function/TestMathFunctions.java;12;0;3;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;1;2;3;Jihoon Son
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Repartitioner.java;2;2;3;Jihoon Son
+3;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;3;3;8;jinossy
+3;tajo-core/src/main/java/org/apache/tajo/engine/function/math/Round.java;1;1;8;jinossy
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/QueryMasterManagerService.java;4;1;8;jinossy
+3;tajo-core/src/main/java/org/apache/tajo/worker/Fetcher.java;22;9;8;jinossy
+3;tajo-core/src/main/java/org/apache/tajo/worker/Task.java;1;1;8;jinossy
+3;tajo-core/src/test/java/org/apache/tajo/worker/TestFetcher.java;27;2;8;jinossy
+3;tajo-yarn-pullserver/src/main/java/org/apache/tajo/pullserver/TajoPullServerService.java;26;28;8;jinossy
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/PreLogicalPlanVerifier.java;4;0;2;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/util/StringUtils.java;96;0;10;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/physical/HashBasedColPartitionStoreExec.java;2;1;10;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/physical/SortBasedColPartitionStoreExec.java;4;3;10;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/utils/TupleUtil.java;2;1;10;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestTablePartitions.java;43;0;10;Hyunsik Choi
+3;tajo-jdbc/src/main/java/org/apache/tajo/jdbc/TajoConnection.java;1;1;2;Jihoon Son
+3;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/Schema.java;15;4;25;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/ExprAnnotator.java;22;4;25;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/ExprNormalizer.java;10;3;25;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalPlan.java;21;235;25;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalPlanPreprocessor.java;31;1;25;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;32;17;25;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/logical/TableSubQueryNode.java;0;1;25;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/nameresolver/NameResolver.java;291;0;25;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/nameresolver/NameResolvingMode.java;80;0;25;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/nameresolver/ResolverByLegacy.java;126;0;25;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/nameresolver/ResolverByRels.java;38;0;25;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/nameresolver/ResolverByRelsAndSubExprs.java;42;0;25;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/nameresolver/ResolverBySubExprsAndRels.java;42;0;25;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/eval/TestEvalTreeUtil.java;3;1;25;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestCaseByCases.java;7;0;25;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestSelectQuery.java;27;0;25;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/rcfile/RCFile.java;1;0;3;jinossy
+3;tajo-storage/src/test/java/org/apache/tajo/storage/TestStorages.java;57;1;3;jinossy
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;2;1;5;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/physical/DistinctGroupbyHashAggregationExec.java;22;8;5;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestGroupByQuery.java;66;2;5;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/v2/RCFile.java;0;5;5;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Repartitioner.java;8;3;3;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestJoinBroadcast.java;26;0;3;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/global/GlobalPlanner.java;8;5;3;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/planner/global/TestBroadcastJoinPlan.java;84;0;3;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/physical/HashLeftOuterJoinExec.java;38;3;6;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/rewrite/ProjectionPushDownRule.java;3;1;6;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestJoinQuery.java;8;0;6;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/global/ExecutionBlockCursor.java;124;7;6;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/global/MasterPlan.java;11;0;6;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Query.java;14;1;6;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;12;10;6;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestJoinQuery.java;48;0;6;Hyunsik Choi
+3;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/statistics/TableStats.java;1;8;3;Hyunsik Choi
+3;tajo-catalog/tajo-catalog-common/src/test/java/org/apache/tajo/catalog/statistics/TestTableStat.java;55;0;3;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/utils/SchemaUtil.java;18;2;11;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestCaseByCases.java;35;3;11;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestGroupByQuery.java;17;0;5;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/cli/HelpCommand.java;48;10;3;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/TajoConstants.java;1;1;3;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/physical/ColPartitionStoreExec.java;8;1;5;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/QueryTestCaseBase.java;21;14;5;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestTablePartitions.java;9;1;5;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/master/querymaster/TestQueryUnitStatusUpdate.java;2;2;5;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/util/datetime/DateTimeFormat.java;5;0;3;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/function/TestDateTimeFunctions.java;2;0;3;Hyunsik Choi
+3;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/statistics/ColumnStats.java;7;3;10;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/RangePartitionAlgorithm.java;1;1;10;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/utils/TupleUtil.java;60;10;10;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Repartitioner.java;16;3;10;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/worker/Task.java;2;2;10;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestSortQuery.java;49;0;10;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/RowStoreUtil.java;1;0;10;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/TableStatistics.java;2;3;10;Hyunsik Choi
+3;tajo-yarn-pullserver/src/main/java/org/apache/tajo/pullserver/TajoPullServerService.java;1;1;10;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/eval/AlgebraicUtil.java;1;0;2;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestSelectQuery.java;56;0;2;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Repartitioner.java;9;2;3;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestUnionQuery.java;25;0;3;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/rewrite/PartitionedTableRewriter.java;3;16;3;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestJoinOnPartitionedTables.java;28;0;3;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Repartitioner.java;13;0;2;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestJoinQuery.java;20;0;2;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/global/GlobalPlanner.java;34;5;4;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/rm/TajoWorkerResourceManager.java;2;1;4;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestJoinBroadcast.java;40;0;4;Hyunsik Choi
+3;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/Schema.java;1;1;11;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/PlannerUtil.java;1;1;11;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/rewrite/ProjectionPushDownRule.java;5;7;11;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestJoinQuery.java;21;0;11;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/eval/EvalTreeUtil.java;6;3;24;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/ExprAnnotator.java;1;1;24;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/ExprNormalizer.java;38;6;24;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalPlan.java;20;16;24;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;2;5;24;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/logical/join/JoinGraph.java;23;2;24;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/rewrite/ProjectionPushDownRule.java;87;21;24;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestCreateTable.java;1;1;24;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestJoinQuery.java;48;0;24;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalOptimizer.java;15;4;7;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/utils/test/ErrorInjectionRewriter.java;40;0;7;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/QueryMasterTask.java;4;0;7;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/worker/TajoWorkerClientService.java;9;0;7;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/TajoTestingCluster.java;4;0;7;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestSelectQuery.java;44;2;7;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/enforce/Enforcer.java;2;0;10;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/global/ExecutionBlock.java;10;0;10;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/global/GlobalPlanner.java;144;13;10;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/global/MasterPlan.java;6;1;10;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/rewrite/ProjectionPushDownRule.java;8;3;10;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/DefaultTaskScheduler.java;3;4;10;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/QueryUnit.java;11;1;10;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Repartitioner.java;51;40;10;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestUnionQuery.java;220;0;10;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/datum/NullDatum.java;7;0;5;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/eval/CaseWhenEval.java;13;1;5;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/ExprAnnotator.java;11;3;5;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestCaseByCases.java;66;0;5;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/physical/SeqScanExec.java;2;2;5;blrunner
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;1;0;5;blrunner
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestJoinBroadcast.java;28;8;5;blrunner
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/QueryMaster.java;2;2;5;jhkim
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/QueryMasterTask.java;17;9;5;jhkim
+3;tajo-core/src/test/java/org/apache/tajo/TajoTestingCluster.java;31;0;5;jhkim
+3;tajo-core/src/test/java/org/apache/tajo/scheduler/TestFifoScheduler.java;23;24;5;jhkim
+3;tajo-core/src/main/java/org/apache/tajo/worker/Task.java;3;5;3;jinossy
+3;tajo-core/src/main/java/org/apache/tajo/worker/TaskRunnerHistory.java;3;2;3;jinossy
+3;tajo-core/src/test/java/org/apache/tajo/engine/function/TestDateTimeFunctions.java;2;2;2;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/AvgDouble.java;6;1;7;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/AvgLong.java;6;5;7;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestGroupByQuery.java;35;0;7;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestJoinQuery.java;7;0;7;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalPlan.java;3;1;6;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/planner/global/TestBroadcastJoinPlan.java;2;2;6;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestJoinQuery.java;7;0;6;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/cli/SimpleParser.java;1;0;3;Jihoon Son
+3;tajo-client/src/main/java/org/apache/tajo/client/TajoDump.java;2;2;3;Jihoon Son
+3;tajo-core/src/test/java/org/apache/tajo/engine/eval/TestSQLExpression.java;27;17;2;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/eval/EvalTreeUtil.java;28;0;13;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;18;15;13;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/rewrite/FilterPushDownRule.java;40;52;13;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestJoinQuery.java;21;0;13;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/PreLogicalPlanVerifier.java;24;3;7;blrunner
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestTablePartitions.java;82;1;7;blrunner
+3;tajo-core/src/main/java/org/apache/tajo/engine/eval/FieldEval.java;6;1;11;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/global/builder/DistinctGroupbyBuilder.java;17;5;11;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/physical/AggregationExec.java;5;1;11;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/physical/DistinctGroupbyHashAggregationExec.java;51;11;11;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/physical/DistinctGroupbySortAggregationExec.java;0;7;11;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/physical/SortAggregateExec.java;0;1;11;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestGroupByQuery.java;4;0;11;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/TupleComparator.java;19;1;11;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/worker/Task.java;5;1;2;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/jdbc/TajoResultSet.java;3;0;26;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;4;1;26;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/BasicLogicalPlanVisitor.java;1;1;26;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalOptimizer.java;4;1;26;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalPlan.java;6;0;26;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalPlanPreprocessor.java;5;1;26;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;2;2;26;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/logical/GroupbyNode.java;14;0;26;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/rewrite/FilterPushDownRule.java;550;58;26;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestUnionQuery.java;53;0;26;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/rewrite/ProjectionPushDownRule.java;12;6;4;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestGroupByQuery.java;3;2;4;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/function/builtin/SumInt.java;5;5;7;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestSelectQuery.java;22;0;7;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/datum/DatumFactory.java;2;0;2;Jihoon Son
+3;tajo-rpc/src/main/java/org/apache/tajo/rpc/NettyClientBase.java;0;1;2;jinossy
+3;tajo-client/src/main/java/org/apache/tajo/client/TajoAdmin.java;6;3;14;blrunner
+3;tajo-client/src/main/java/org/apache/tajo/client/TajoClient.java;6;4;14;blrunner
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Query.java;5;1;14;blrunner
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/QueryUnit.java;10;1;14;blrunner
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/QueryUnitAttempt.java;10;3;14;blrunner
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;11;3;14;blrunner
+3;tajo-core/src/main/java/org/apache/tajo/master/rm/TajoRMContext.java;7;0;14;blrunner
+3;tajo-core/src/main/java/org/apache/tajo/master/rm/TajoWorkerResourceManager.java;57;46;14;blrunner
+3;tajo-core/src/main/java/org/apache/tajo/master/rm/Worker.java;5;1;14;blrunner
+3;tajo-core/src/main/java/org/apache/tajo/webapp/QueryExecutorServlet.java;18;0;14;blrunner
+3;tajo-core/src/main/java/org/apache/tajo/worker/Task.java;1;1;14;blrunner
+3;tajo-core/src/test/java/org/apache/tajo/master/rm/TestTajoResourceManager.java;77;2;14;blrunner
+3;tajo-catalog/tajo-catalog-drivers/tajo-hcatalog/src/main/java/org/apache/tajo/catalog/store/HCatalogStore.java;12;8;3;blrunner
+3;tajo-catalog/tajo-catalog-drivers/tajo-hcatalog/src/test/java/org/apache/tajo/catalog/store/TestHCatalogStore.java;10;4;3;blrunner
+3;tajo-client/src/main/java/org/apache/tajo/cli/ParsedResult.java;8;2;8;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/cli/SimpleParser.java;151;28;8;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/cli/TajoCli.java;3;3;8;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/jdbc/TajoResultSetBase.java;1;1;8;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/QueryTestCaseBase.java;4;4;8;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/cli/TestSimpleParser.java;106;14;8;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/eval/ExprTestBase.java;2;2;8;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/client/TajoClient.java;4;0;8;Hyunsik Choi
+3;tajo-jdbc/src/main/java/org/apache/tajo/jdbc/TajoDatabaseMetaData.java;72;66;8;Hyunsik Choi
+3;tajo-jdbc/src/main/java/org/apache/tajo/jdbc/TajoMetaDataResultSet.java;14;2;8;Hyunsik Choi
+3;tajo-jdbc/src/main/java/org/apache/tajo/jdbc/TajoPreparedStatement.java;1;1;8;Hyunsik Choi
+3;tajo-rpc/src/main/java/org/apache/tajo/rpc/NettyClientBase.java;19;0;8;Hyunsik Choi
+3;tajo-rpc/src/main/java/org/apache/tajo/rpc/NettyServerBase.java;0;2;8;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/cli/ConnectDatabaseCommand.java;1;1;21;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;5;2;21;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/QueryTestCaseBase.java;1;1;21;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestInsertQuery.java;105;92;21;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/parquet/ParquetScanner.java;1;2;21;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/parquet/TajoReadSupport.java;1;15;21;Hyunsik Choi
+3;tajo-storage/src/main/java/org/apache/tajo/storage/parquet/TajoWriteSupport.java;0;4;21;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/NamedExprsManager.java;1;1;5;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestSelectQuery.java;9;0;5;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/cli/TajoCli.java;10;2;11;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/client/TajoClient.java;8;3;11;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;22;17;11;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/physical/EvalExprExec.java;15;7;11;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/physical/StoreTableExec.java;3;4;11;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/GlobalEngine.java;130;17;11;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/Query.java;5;5;11;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/querymaster/QueryMasterTask.java;51;40;11;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/worker/TaskAttemptContext.java;10;8;11;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestInsertQuery.java;94;0;11;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/cli/ConnectDatabaseCommand.java;6;5;6;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/cli/DescTableCommand.java;4;2;6;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/cli/TajoCli.java;2;0;6;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/cli/TestTajoCli.java;79;4;6;Hyunsik Choi
+3;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/TableDesc.java;1;1;8;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/cli/ConnectDatabaseCommand.java;1;1;8;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/cli/DefaultTajoCliOutputFormatter.java;11;5;8;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/cli/TajoCli.java;8;2;8;Hyunsik Choi
+3;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;1;1;8;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/cli/TestTajoCli.java;75;3;8;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/PlannerUtil.java;3;2;4;blrunner
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/global/GlobalPlanner.java;2;1;4;blrunner
+3;tajo-core/src/test/java/org/apache/tajo/master/TestGlobalPlanner.java;88;0;4;blrunner
+3;tajo-core/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;13;4;5;Hyunsik Choi
+3;tajo-core/src/main/java/org/apache/tajo/master/GlobalEngine.java;1;1;5;Hyunsik Choi
+3;tajo-core/src/test/java/org/apache/tajo/engine/query/TestInsertQuery.java;19;2;5;Hyunsik Choi
+3;tajo-client/src/main/java/org/apache/tajo/cli/ExecExternalShellCommand.java;6;6;5;Jihoon Son
+3;tajo-client/src/main/java/org/apache/tajo/cli/TajoCli.java;2;0;5;Jihoon Son
+3;tajo-core/src/test/java/org/apache/tajo/cli/TestExecExternalShellCommand.java;1;3;5;Jihoon Son
+3;tajo-rpc/src/test/java/org/apache/tajo/rpc/TestBlockingRpc.java;0;1;5;Jihoon Son
+2;engine/src/main/java/nta/engine/AbstractQuery.java;45;0;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/LeafServer.java;10;10;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/NtaEngineMaster.java;33;12;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/Query.java;20;4;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/QueryIdFactory.java;9;53;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/QueryStepId.java;0;64;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/QueryUnitId.java;17;9;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/QueryUnitScheduler.java;31;48;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/ScheduleUnitId.java;24;20;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/SubQuery.java;17;7;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/cluster/QueryManager.java;71;212;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/cluster/WorkerListener.java;9;3;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/ipc/PingRequest.java;2;2;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/planner/global/GlobalOptimizer.java;9;10;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/planner/global/MockupQueryUnitScheduler.java;18;19;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/planner/global/QueryUnit.java;56;20;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/planner/global/ScheduleUnit.java;27;16;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/query/GlobalEngine.java;11;34;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/query/GlobalPlanner.java;261;92;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/query/InProgressStatus.java;47;0;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/query/PingRequestImpl.java;5;5;36;Hyunsik Choi
+2;engine/src/main/java/nta/engine/query/TQueryUtil.java;92;0;36;Hyunsik Choi
+2;engine/src/test/java/nta/engine/TestLeafServer.java;25;15;36;Hyunsik Choi
+2;engine/src/test/java/nta/engine/TestNtaTestingUtility.java;4;1;36;Hyunsik Choi
+2;engine/src/test/java/nta/engine/TestQueryIdFactory.java;10;6;36;Hyunsik Choi
+2;engine/src/test/java/nta/engine/TestQueryUnitId.java;12;28;36;Hyunsik Choi
+2;engine/src/test/java/nta/engine/cluster/TestQueryManager.java;19;48;36;Hyunsik Choi
+2;engine/src/test/java/nta/engine/plan/global/TestGlobalQueryPlanner.java;32;31;36;Hyunsik Choi
+2;engine/src/test/java/nta/engine/planner/TestPhysicalPlanner.java;48;12;36;Hyunsik Choi
+2;engine/src/test/java/nta/engine/planner/global/TestGlobalQueryOptimizer.java;10;10;36;Hyunsik Choi
+2;engine/src/test/java/nta/engine/planner/physical/TestNLJoinExec.java;8;2;36;Hyunsik Choi
+2;engine/src/test/java/nta/engine/planner/physical/TestSortExec.java;4;1;36;Hyunsik Choi
+2;engine/src/test/java/nta/engine/query/TestPingRequestImpl.java;13;7;36;Hyunsik Choi
+2;engine/src/test/java/tajo/worker/dataserver/TestHttpDataServer.java;11;4;36;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/RangePartitionAlgorithm.java;1;1;18;Jihoon Son
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/utils/TupleUtil.java;8;5;18;Jihoon Son
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/Repartitioner.java;3;1;18;Jihoon Son
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/RangeRetrieverHandler.java;5;3;18;Jihoon Son
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestBSTIndexExec.java;0;5;18;Jihoon Son
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestPhysicalPlanner.java;4;2;18;Jihoon Son
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestNetTypes.java;11;0;18;Jihoon Son
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/util/TestTupleUtil.java;11;4;18;Jihoon Son
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/worker/TestRangeRetrieverHandler.java;4;2;18;Jihoon Son
+2;tajo-core/tajo-core-pullserver/src/main/java/org/apache/tajo/pullserver/PullServerAuxService.java;4;3;18;Jihoon Son
+2;tajo-core/tajo-core-pullserver/src/main/java/org/apache/tajo/pullserver/TajoPullServerService.java;4;3;18;Jihoon Son
+2;tajo-storage/src/main/java/org/apache/tajo/storage/RowStoreUtil.java;72;50;18;Jihoon Son
+2;tajo-storage/src/main/java/org/apache/tajo/storage/index/bst/BSTIndex.java;17;13;18;Jihoon Son
+2;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/LocalCatalogWrapper.java;5;1;3;Jihoon Son
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TajoMaster.java;1;1;3;Jihoon Son
+2;tajo-common/src/main/java/org/apache/tajo/datum/DateDatum.java;5;2;7;Jihoon Son
+2;tajo-common/src/main/java/org/apache/tajo/datum/TimeDatum.java;5;2;7;Jihoon Son
+2;tajo-common/src/main/java/org/apache/tajo/datum/TimestampDatum.java;5;2;7;Jihoon Son
+2;tajo-common/src/test/java/org/apache/tajo/datum/TestDateDatum.java;8;0;7;Jihoon Son
+2;tajo-common/src/test/java/org/apache/tajo/datum/TestTimeDatum.java;8;0;7;Jihoon Son
+2;tajo-common/src/test/java/org/apache/tajo/datum/TestTimestampDatum.java;9;1;7;Jihoon Son
+3;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TajoWorker.java;15;20;2;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/CatalogUtil.java;57;4;97;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/Column.java;65;81;97;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/DDLBuilder.java;1;1;97;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/Schema.java;43;22;97;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-common/src/test/java/org/apache/tajo/catalog/TestColumn.java;2;3;97;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-common/src/test/java/org/apache/tajo/catalog/TestSchema.java;20;20;97;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-drivers/tajo-hcatalog/src/main/java/org/apache/tajo/catalog/store/HCatalogStore.java;1;1;97;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-drivers/tajo-hcatalog/src/test/java/org/apache/tajo/catalog/store/TestHCatalogStore.java;13;13;97;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/store/AbstractDBStore.java;5;23;97;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/store/MemStore.java;1;1;97;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-server/src/test/java/org/apache/tajo/catalog/TestCatalog.java;5;5;97;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-server/src/test/java/org/apache/tajo/catalog/TestDBStore.java;5;5;97;Hyunsik Choi
+2;tajo-client/src/main/java/org/apache/tajo/cli/DescTableCommand.java;2;2;97;Hyunsik Choi
+2;tajo-client/src/main/java/org/apache/tajo/jdbc/TajoResultSetMetaData.java;2;2;97;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/TajoConstants.java;2;0;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/EvalTreeUtil.java;2;2;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/FieldEval.java;2;2;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlan.java;9;8;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanPreprocessor.java;3;7;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanVerifier.java;8;8;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;8;8;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PlannerUtil.java;5;84;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/enforce/Enforcer.java;1;1;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/global/GlobalPlanner.java;1;1;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/GroupbyNode.java;1;1;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/ScanNode.java;2;1;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/SortNode.java;1;1;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/TableSubQueryNode.java;2;1;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/join/JoinGraph.java;4;4;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/BNLJoinExec.java;1;1;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/BSTIndexScanExec.java;1;1;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/ColPartitionStoreExec.java;2;2;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/HashAggregateExec.java;1;1;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/HashFullOuterJoinExec.java;3;3;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/HashJoinExec.java;1;1;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/HashLeftOuterJoinExec.java;2;2;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/MergeFullOuterJoinExec.java;3;3;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/MergeJoinExec.java;1;1;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/NLJoinExec.java;1;1;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/NLLeftOuterJoinExec.java;2;2;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/PhysicalExec.java;1;1;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/ProjectionExec.java;1;1;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/RangeShuffleFileWriteExec.java;1;1;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/RightOuterMergeJoinExec.java;2;2;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/SortAggregateExec.java;2;2;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/rewrite/PartitionedTableRewriter.java;5;5;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/query/QueryContext.java;2;2;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/utils/SchemaUtil.java;2;2;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/utils/TupleUtil.java;7;7;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/util/IndexUtil.java;2;2;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/ExprTestBase.java;3;3;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestEvalTreeUtil.java;2;2;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/TestLogicalOptimizer.java;2;2;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/TestLogicalPlanner.java;23;24;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/TestPlannerUtil.java;6;6;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestBNLJoinExec.java;4;4;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestBSTIndexExec.java;6;6;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestExternalSortExec.java;1;1;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestFullOuterHashJoinExec.java;5;5;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestFullOuterMergeJoinExec.java;7;9;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestHashAntiJoinExec.java;4;4;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestHashJoinExec.java;2;2;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestHashSemiJoinExec.java;4;4;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestLeftOuterHashJoinExec.java;6;6;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestLeftOuterNLJoinExec.java;3;3;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestMergeJoinExec.java;4;4;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestNLJoinExec.java;4;4;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestPhysicalPlanner.java;2;2;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestRightOuterHashJoinExec.java;7;7;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestRightOuterMergeJoinExec.java;7;9;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestSortExec.java;1;1;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestCTASQuery.java;2;2;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestTablePartitions.java;4;5;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/jdbc/TestResultSet.java;6;3;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/jdbc/TestTajoJdbc.java;1;1;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/worker/TestRangeRetrieverHandler.java;8;4;97;Hyunsik Choi
+2;tajo-jdbc/src/main/java/org/apache/tajo/jdbc/TajoDatabaseMetaData.java;2;2;97;Hyunsik Choi
+2;tajo-storage/src/main/java/org/apache/tajo/storage/CSVFile.java;1;1;97;Hyunsik Choi
+2;tajo-storage/src/main/java/org/apache/tajo/storage/FileScanner.java;1;1;97;Hyunsik Choi
+2;tajo-storage/src/main/java/org/apache/tajo/storage/LazyTuple.java;1;1;97;Hyunsik Choi
+2;tajo-storage/src/main/java/org/apache/tajo/storage/RawFile.java;7;7;97;Hyunsik Choi
+2;tajo-storage/src/main/java/org/apache/tajo/storage/RowFile.java;6;6;97;Hyunsik Choi
+2;tajo-storage/src/main/java/org/apache/tajo/storage/RowStoreUtil.java;4;4;97;Hyunsik Choi
+2;tajo-storage/src/main/java/org/apache/tajo/storage/TableStatistics.java;6;6;97;Hyunsik Choi
+2;tajo-storage/src/main/java/org/apache/tajo/storage/rcfile/RCFile.java;4;4;97;Hyunsik Choi
+2;tajo-storage/src/main/java/org/apache/tajo/storage/trevni/TrevniAppender.java;3;3;97;Hyunsik Choi
+2;tajo-storage/src/main/java/org/apache/tajo/storage/trevni/TrevniScanner.java;3;3;97;Hyunsik Choi
+2;tajo-storage/src/main/java/org/apache/tajo/storage/v2/CSVFileScanner.java;1;1;97;Hyunsik Choi
+2;tajo-storage/src/main/java/org/apache/tajo/storage/v2/FileScannerV2.java;2;2;97;Hyunsik Choi
+2;tajo-storage/src/main/java/org/apache/tajo/storage/v2/RCFileScanner.java;7;4;97;Hyunsik Choi
+2;tajo-storage/src/test/java/org/apache/tajo/storage/TestLazyTuple.java;7;7;97;Hyunsik Choi
+2;tajo-storage/src/test/java/org/apache/tajo/storage/TestTupleComparator.java;5;5;97;Hyunsik Choi
+2;tajo-storage/src/test/java/org/apache/tajo/storage/index/TestBSTIndex.java;25;27;97;Hyunsik Choi
+2;tajo-storage/src/test/java/org/apache/tajo/storage/index/TestSingleCSVFileBSTIndex.java;5;5;97;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PhysicalPlannerImpl.java;71;27;5;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PlannerUtil.java;20;12;5;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/LocalTajoTestingUtility.java;7;2;5;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestHashJoinExec.java;98;4;5;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/LiteralValue.java;6;0;58;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/Schema.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/EvalNode.java;4;0;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/ExprNormalizer.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/ExprsVerifier.java;60;36;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/InsertNode.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlan.java;38;8;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanPreprocessor.java;3;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanVerifier.java;51;19;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;69;65;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/NamedExprsManager.java;194;105;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PlanString.java;6;0;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PlannerUtil.java;3;10;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PreLogicalPlanVerifier.java;17;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/global/GlobalPlanner.java;3;2;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/CreateTableNode.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/DropTableNode.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/ExceptNode.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/GroupbyNode.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/HavingNode.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/IntersectNode.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/JoinNode.java;1;2;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/LimitNode.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/LogicalRootNode.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/PartitionedTableScanNode.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/PersistentStoreNode.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/Projectable.java;39;0;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/ProjectionNode.java;1;3;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/ScanNode.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/SelectionNode.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/SortNode.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/StoreTableNode.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/TableSubQueryNode.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/UnionNode.java;1;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/rewrite/ProjectionPushDownRule.java;245;116;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/GlobalEngine.java;6;3;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/Repartitioner.java;5;2;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestGroupByQuery.java;16;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestJoinQuery.java;16;1;58;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestSelectQuery.java;24;0;58;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/store/AbstractDBStore.java;9;2;4;blrunner
+2;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/store/DerbyStore.java;46;1;4;blrunner
+2;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/store/MySQLStore.java;51;2;4;blrunner
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PlannerUtil.java;20;0;3;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;1;1;3;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;1;1;4;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/DefaultTaskScheduler.java;24;9;4;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;20;11;4;jinossy
+2;tajo-catalog/tajo-catalog-client/src/main/java/org/apache/tajo/catalog/AbstractCatalogClient.java;7;2;6;jinossy
+2;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/CatalogServer.java;14;16;6;jinossy
+2;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/store/AbstractDBStore.java;1;1;6;jinossy
+2;tajo-catalog/tajo-catalog-server/src/test/java/org/apache/tajo/catalog/TestCatalog.java;32;19;6;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/ExprAnnotator.java;1;3;6;jinossy
+2;tajo-common/src/main/java/org/apache/tajo/util/TUtil.java;1;1;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PhysicalPlannerImpl.java;30;1;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PlanString.java;14;0;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PlannerUtil.java;66;21;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/global/ExecutionBlock.java;1;4;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/global/GlobalPlanner.java;44;6;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/global/MasterPlan.java;8;1;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/HashLeftOuterJoinExec.java;0;2;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/PartitionMergeScanExec.java;107;0;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/rewrite/FilterPushDownRule.java;17;3;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/rewrite/ProjectionPushDownRule.java;1;0;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/Repartitioner.java;43;25;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;6;22;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/LocalTajoTestingUtility.java;11;5;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/QueryTestCaseBase.java;19;9;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/TajoTestingCluster.java;3;1;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/TpchTestBase.java;2;1;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestSortExec.java;7;12;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestCTASQuery.java;6;6;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestJoinOnPartitionedTables.java;50;0;46;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestTablePartitions.java;28;24;46;Hyunsik Choi
+2;tajo-storage/src/main/java/org/apache/tajo/storage/CSVFile.java;1;1;46;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;1;2;5;jinossy
+2;tajo-storage/src/main/java/org/apache/tajo/storage/AbstractStorageManager.java;12;30;5;jinossy
+2;tajo-storage/src/test/java/org/apache/tajo/storage/TestFileSystems.java;12;10;5;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/BasicLogicalPlanVisitor.java;6;3;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalOptimizer.java;1;1;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlan.java;11;1;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;41;22;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PlannerUtil.java;1;1;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/global/GlobalPlanner.java;8;4;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/GroupbyNode.java;12;8;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/TableSubQueryNode.java;13;2;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/join/GreedyHeuristicJoinOrderAlgorithm.java;5;0;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/rewrite/PartitionedTableRewriter.java;7;1;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/rewrite/ProjectionPushDownRule.java;53;44;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/QueryTestCaseBase.java;16;7;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/ExprTestBase.java;1;1;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestEvalTreeUtil.java;2;2;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestCTASQuery.java;3;3;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestJoinQuery.java;1;1;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestSelectQuery.java;2;2;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestTablePartitions.java;86;68;23;Hyunsik Choi
+2;tajo-storage/src/test/java/org/apache/tajo/storage/TestFileSystems.java;18;0;2;Jihoon Son
+2;tajo-storage/src/test/java/org/apache/tajo/storage/s3/SmallBlockS3FileSystem.java;18;0;2;Jihoon Son
+2;tajo-common/src/main/java/org/apache/tajo/datum/DatumFactory.java;32;0;9;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/CastEval.java;1;29;9;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/ExprAnnotator.java;7;1;9;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;27;33;9;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/rewrite/ProjectionPushDownRule.java;1;1;9;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestJoinQuery.java;12;0;9;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/function/builtin/MaxString.java;81;0;7;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/function/TestBuiltinFunctions.java;14;0;7;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanPreprocessor.java;1;1;6;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/TestLogicalPlan.java;2;2;6;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestUnionQuery.java;7;0;6;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/Aggregation.java;3;3;23;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/CreateTable.java;6;4;23;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/FunctionExpr.java;1;1;23;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/Insert.java;5;1;23;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/Join.java;1;1;23;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/Projection.java;1;1;23;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/TablePrimarySubQuery.java;1;1;23;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/FunctionDesc.java;1;1;23;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/CatalogServer.java;2;1;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/NamedExprsManager.java;12;3;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/rewrite/ProjectionPushDownRule.java;1;0;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestGroupByQuery.java;25;0;23;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestJoinQuery.java;22;0;23;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/DDLBuilder.java;3;1;4;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/client/TestDDLBuilder.java;2;1;4;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;1;1;5;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PlannerUtil.java;1;1;5;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/rewrite/FilterPushDownRule.java;3;6;5;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/rewrite/PartitionedTableRewriter.java;1;3;5;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/global/GlobalPlanner.java;138;56;26;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestCTASQuery.java;63;44;26;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestSelectQuery.java;18;1;26;Hyunsik Choi
+2;engine/src/main/java/nta/engine/Context.java;7;1;18;Hyunsik Choi
+2;engine/src/main/java/nta/engine/LeafServer.java;3;2;18;Hyunsik Choi
+2;engine/src/main/java/nta/engine/NtaClient.java;0;2;18;Hyunsik Choi
+2;engine/src/main/java/nta/engine/parser/QueryBlock.java;3;3;18;Hyunsik Choi
+2;engine/src/main/java/nta/engine/parser/StatementType.java;1;0;18;Hyunsik Choi
+2;engine/src/main/java/nta/engine/planner/LogicalOptimizer.java;13;5;18;Hyunsik Choi
+2;engine/src/main/java/nta/engine/planner/LogicalPlanner.java;17;4;18;Hyunsik Choi
+2;engine/src/main/java/nta/engine/planner/logical/CreateIndexNode.java;79;0;18;Hyunsik Choi
+2;engine/src/main/java/nta/engine/planner/logical/EvalExprNode.java;2;3;18;Hyunsik Choi
+2;engine/src/main/java/nta/engine/planner/logical/ExprType.java;2;1;18;Hyunsik Choi
+2;engine/src/main/java/nta/engine/planner/logical/LogicalRootNode.java;0;5;18;Hyunsik Choi
+2;engine/src/test/java/nta/engine/planner/TestLogicalPlanner.java;29;3;18;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-drivers/tajo-hcatalog/src/test/java/org/apache/tajo/catalog/store/TestHCatalogStore.java;1;3;1;blrunner
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;15;8;5;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/NamedExprsManager.java;4;0;5;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestGroupByQuery.java;8;0;5;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryInProgress.java;7;6;5;Hyunsik Choi
+2;tajo-rpc/src/main/java/org/apache/tajo/rpc/AsyncRpcClient.java;6;2;5;Hyunsik Choi
+2;tajo-rpc/src/main/java/org/apache/tajo/rpc/BlockingRpcClient.java;5;1;5;Hyunsik Choi
+2;tajo-rpc/src/main/java/org/apache/tajo/rpc/NettyClientBase.java;17;17;5;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;1;0;5;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TajoContainerProxy.java;5;22;5;Hyunsik Choi
+2;tajo-rpc/src/main/java/org/apache/tajo/rpc/NettyClientBase.java;17;2;5;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/Aggregation.java;7;21;14;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/BinaryOperator.java;1;0;14;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/CaseWhenPredicate.java;3;1;14;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/CreateTable.java;8;8;14;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/DropTable.java;1;1;14;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/Expr.java;8;2;14;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/BaseAlgebraVisitor.java;1;3;14;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/ExprNormalizer.java;1;1;14;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlan.java;12;10;14;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;106;117;14;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/rewrite/ProjectionPushDownRule.java;2;4;14;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/ExprTestBase.java;1;1;14;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestEvalTreeUtil.java;3;3;14;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/DefaultTaskScheduler.java;7;1;4;Jihoon Son
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryUnit.java;9;1;4;Jihoon Son
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;15;10;4;Jihoon Son
+2;tajo-common/src/main/java/org/apache/tajo/datum/TimestampDatum.java;5;0;13;jinossy
+2;tajo-common/src/test/java/org/apache/tajo/datum/TestTimestampDatum.java;3;2;13;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/RangePartitionAlgorithm.java;7;0;13;jinossy
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestSortQuery.java;10;0;13;jinossy
+2;tajo-storage/src/main/java/org/apache/tajo/storage/RawFile.java;26;10;13;jinossy
+2;tajo-storage/src/main/java/org/apache/tajo/storage/RowStoreUtil.java;4;2;13;jinossy
+2;tajo-storage/src/main/java/org/apache/tajo/storage/StorageUtil.java;33;14;13;jinossy
+2;tajo-storage/src/test/java/org/apache/tajo/storage/TestStorages.java;43;0;13;jinossy
+2;tajo-catalog/tajo-catalog-drivers/tajo-hcatalog/src/main/java/org/apache/tajo/catalog/store/HCatalogStore.java;1;1;3;blrunner
+2;tajo-catalog/tajo-catalog-drivers/tajo-hcatalog/src/test/java/org/apache/tajo/catalog/store/TestHCatalogStore.java;2;2;3;blrunner
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/Fetcher.java;37;15;3;jinossy
+2;tajo-core/tajo-core-pullserver/src/main/java/org/apache/tajo/pullserver/TajoPullServerService.java;12;0;3;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/SeqScanExec.java;1;0;4;jinossy
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestCTASQuery.java;8;2;4;jinossy
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestTablePartitions.java;34;17;4;jinossy
+2;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/statistics/StatisticsUtil.java;3;3;15;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/statistics/TableStats.java;14;14;15;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-common/src/test/java/org/apache/tajo/catalog/TestTableDesc.java;1;1;15;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-common/src/test/java/org/apache/tajo/catalog/statistics/TestTableStat.java;3;3;15;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/DefaultTaskScheduler.java;4;4;15;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryUnit.java;16;58;15;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryUnitAttempt.java;1;1;15;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/Repartitioner.java;27;31;15;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;8;8;15;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/Fetcher.java;1;2;15;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/Task.java;1;1;15;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/jdbc/TestResultSet.java;1;2;15;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/Fetcher.java;11;4;5;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/Task.java;1;0;5;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TaskHistory.java;9;0;5;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;16;7;5;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/global/GlobalPlanner.java;1;2;5;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestCTASQuery.java;44;2;5;Hyunsik Choi
+2;tajo-rpc/src/main/java/org/apache/tajo/rpc/NettyClientBase.java;36;25;2;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;6;6;2;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/TimeValue.java;2;1;6;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/TimestampDatum.java;7;1;6;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/json/DatumAdapter.java;3;2;6;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/parser/SQLAnalyzer.java;1;1;6;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestSQLDateTimeTypes.java;8;0;6;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/TajoConstants.java;1;1;4;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;1;1;4;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/Inet4Datum.java;19;28;4;jinossy
+2;tajo-common/src/test/java/org/apache/tajo/datum/TestBoolDatum.java;2;2;4;jinossy
+2;tajo-common/src/test/java/org/apache/tajo/datum/TestInet4Datum.java;16;0;4;jinossy
+2;tajo-common/src/main/java/org/apache/tajo/datum/DatumFactory.java;8;5;11;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/TimestampDatum.java;13;26;11;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/json/DatumAdapter.java;4;2;11;Hyunsik Choi
+2;tajo-common/src/test/java/org/apache/tajo/datum/TestTimestampDatum.java;5;5;11;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/function/datetime/ToCharTimestamp.java;6;4;11;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/function/datetime/ToTimestamp.java;3;3;11;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestSQLExpression.java;9;8;11;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/function/TestDateTimeFunctions.java;14;4;11;Hyunsik Choi
+2;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/RawFile.java;3;2;11;Hyunsik Choi
+2;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/RowStoreUtil.java;2;1;11;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/CastEval.java;2;2;4;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestSQLExpression.java;6;0;4;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/function/TestStringOperatorsAndFunctions.java;5;0;4;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-drivers/tajo-hcatalog/src/main/java/org/apache/tajo/catalog/store/HCatalogStore.java;1;1;4;blrunner
+2;tajo-catalog/tajo-catalog-drivers/tajo-hcatalog/src/test/java/org/apache/tajo/catalog/store/TestHCatalogStore.java;12;0;4;blrunner
+2;tajo-catalog/tajo-catalog-drivers/tajo-hcatalog/src/main/java/org/apache/tajo/catalog/store/HCatalogStore.java;10;10;3;blrunner
+2;tajo-catalog/tajo-catalog-drivers/tajo-hcatalog/src/test/java/org/apache/tajo/catalog/store/TestHCatalogStore.java;3;2;3;blrunner
+2;common/src/main/java/nta/conf/NtaConf.java;15;7;45;Hyunsik Choi
+2;engine/src/main/java/nta/catalog/CatalogClient.java;6;1;45;Hyunsik Choi
+2;engine/src/main/java/nta/catalog/CatalogServer.java;23;32;45;Hyunsik Choi
+2;engine/src/main/java/nta/catalog/LocalCatalog.java;2;1;45;Hyunsik Choi
+2;engine/src/main/java/nta/engine/LeafServer.java;44;45;45;Hyunsik Choi
+2;engine/src/main/java/nta/engine/MiniNtaEngineCluster.java;1;1;45;Hyunsik Choi
+2;engine/src/main/java/nta/engine/NConstants.java;7;15;45;Hyunsik Choi
+2;engine/src/main/java/nta/engine/NtaEngine.java;12;14;45;Hyunsik Choi
+2;engine/src/main/java/nta/engine/NtaEngineMaster.java;64;97;45;Hyunsik Choi
+2;engine/src/main/java/nta/engine/cluster/ClusterUtil.java;41;0;45;Hyunsik Choi
+2;engine/src/main/java/nta/engine/parser/NQL.java;0;1;45;Hyunsik Choi
+2;engine/src/main/java/nta/zookeeper/ZkClient.java;3;4;45;Hyunsik Choi
+2;engine/src/main/java/nta/zookeeper/ZkServer.java;17;14;45;Hyunsik Choi
+2;engine/src/main/java/nta/zookeeper/ZkUtil.java;30;0;45;Hyunsik Choi
+2;engine/src/test/java/nta/catalog/TestCatalog.java;24;13;45;Hyunsik Choi
+2;engine/src/test/java/nta/engine/NtaTestingUtility.java;31;64;45;Hyunsik Choi
+2;engine/src/test/java/nta/engine/TestLeafServer.java;2;5;45;Hyunsik Choi
+2;engine/src/test/java/nta/engine/TestNtaEngine.java;0;171;45;Hyunsik Choi
+2;engine/src/test/java/nta/engine/TestNtaEngineMaster.java;14;17;45;Hyunsik Choi
+2;engine/src/test/java/nta/engine/TestQueryEngine.java;1;1;45;Hyunsik Choi
+2;engine/src/test/java/nta/engine/ipc/TestLeafServerInterface.java;7;5;45;Hyunsik Choi
+2;engine/src/test/java/nta/zookeeper/TestZkNodeTracker.java;1;1;45;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/global/GlobalPlanner.java;6;1;4;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestCaseByCases.java;16;0;4;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestSQLExpression.java;3;2;2;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/FunctionDesc.java;4;2;10;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/FieldEval.java;1;1;10;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/join/GreedyHeuristicJoinOrderAlgorithm.java;12;1;10;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/rewrite/FilterPushDownRule.java;13;13;10;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/rewrite/ProjectionPushDownRule.java;19;11;10;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryUnit.java;3;1;10;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;7;2;10;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestCaseByCases.java;66;0;10;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/global/GlobalPlanner.java;10;0;3;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestGroupByQuery.java;28;0;3;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/DatumFactory.java;16;2;8;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/CastEval.java;2;0;8;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/parser/SQLAnalyzer.java;21;13;8;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestSQLExpression.java;9;0;8;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/function/TestDateTimeFunctions.java;1;2;8;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/parser/TestHiveConverter.java;7;5;8;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/BooleanLiteral.java;32;0;12;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/LiteralValue.java;2;2;12;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/BasicEvalNodeVisitor.java;25;0;12;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/CastEval.java;4;0;12;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/EvalNodeVisitor2.java;4;0;12;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/parser/SQLAnalyzer.java;12;4;12;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;1;2;12;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/GlobalEngine.java;2;0;12;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestSQLExpression.java;11;0;12;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestInsertQuery.java;0;1;12;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/parser/HiveQLAnalyzer.java;0;8;1;blrunner
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/BackendTestingUtil.java;0;3;3;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/client/TestTajoClient.java;2;3;3;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryMaster.java;1;1;2;Hyunsik Choi
+2;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/LazyTuple.java;1;2;3;jinossy
+2;tajo-core/tajo-core-storage/src/test/java/org/apache/tajo/storage/TestLazyTuple.java;18;0;3;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PlannerUtil.java;4;2;6;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/global/ExecutionBlock.java;0;5;6;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/global/GlobalPlanner.java;27;27;6;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/LogicalNode.java;4;0;6;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestSelectQuery.java;13;6;6;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/cli/TajoCli.java;13;2;10;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/client/TajoClient.java;5;3;10;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/jdbc/TajoResultSet.java;3;1;10;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TajoMasterClientService.java;8;3;10;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/webapp/QueryExecutorServlet.java;9;8;10;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TajoWorkerClientService.java;7;0;10;Hyunsik Choi
+2;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/CSVFile.java;4;1;10;Hyunsik Choi
+2;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/FileScanner.java;24;0;10;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-client/src/main/java/org/apache/tajo/catalog/AbstractCatalogClient.java;2;2;10;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/CatalogUtil.java;1;1;10;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/exception/NoSuchFunctionException.java;10;3;10;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-common/src/test/java/org/apache/tajo/catalog/TestCatalogUtil.java;2;3;10;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/CatalogServer.java;4;4;10;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/ExprAnnotator.java;5;7;10;Hyunsik Choi
+2;tajo-rpc/src/main/java/org/apache/tajo/rpc/AsyncRpcServer.java;1;1;10;Hyunsik Choi
+2;tajo-rpc/src/main/java/org/apache/tajo/rpc/ServerCallable.java;6;4;10;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-client/src/main/java/org/apache/tajo/catalog/AbstractCatalogClient.java;14;5;9;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/CatalogServer.java;10;6;9;Hyunsik Choi
+2;tajo-catalog/tajo-catalog-server/src/test/java/org/apache/tajo/catalog/TestCatalog.java;8;2;9;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/exception/UndefinedFunctionException.java;0;34;9;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/ExprAnnotator.java;6;6;9;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestSQLExpression.java;6;0;9;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/function/TestStringOperatorsAndFunctions.java;2;0;9;Hyunsik Choi
+2;tajo-rpc/src/main/java/org/apache/tajo/rpc/ServerCallable.java;2;3;9;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TajoMaster.java;1;3;3;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/function/TestMathFunctions.java;1;1;3;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TajoMaster.java;3;3;2;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/FunctionExpr.java;2;2;3;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/function/TestStringOperatorsAndFunctions.java;8;0;3;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/SeqScanExec.java;1;1;4;Jihoon Son
+2;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/MergeScanner.java;34;15;4;Jihoon Son
+2;tajo-core/tajo-core-storage/src/test/java/org/apache/tajo/storage/TestMergeScanner.java;29;4;4;Jihoon Son
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/LiteralValue.java;5;5;20;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/OpType.java;1;0;20;Hyunsik Choi
+2;tajo-algebra/src/main/java/org/apache/tajo/algebra/SignedExpr.java;38;0;20;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/Float4Datum.java;1;1;20;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/Float8Datum.java;1;3;20;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/Int2Datum.java;1;5;20;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/Int4Datum.java;1;1;20;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/Int8Datum.java;1;1;20;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/NumericDatum.java;12;6;20;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/EvalNode.java;1;1;20;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/EvalType.java;1;0;20;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/SignedEval.java;114;0;20;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/function/math/Round.java;11;1;20;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/function/string/Substr.java;21;16;20;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/parser/SQLAnalyzer.java;11;3;20;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;9;0;20;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/function/TestMathFunctions.java;17;32;20;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/function/TestStringOperatorsAndFunctions.java;18;22;20;Hyunsik Choi
+2;engine/src/main/java/nta/engine/parser/EvalTreeBin.java;20;0;4;Hyunsik Choi
+2;engine/src/main/java/nta/engine/parser/NQLCompiler.java;453;0;4;Hyunsik Choi
+2;engine/src/main/java/nta/engine/parser/QueryBlock.java;107;0;4;Hyunsik Choi
+2;engine/src/test/java/nta/engine/parser/TestNQLCompiler.java;155;0;4;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/util/Bytes.java;27;19;7;jinossy
+2;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/CSVFile.java;127;251;7;jinossy
+2;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/LazyTuple.java;7;69;7;jinossy
+2;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/LineReader.java;555;0;7;jinossy
+2;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/TextSerializeDeserialize.java;2;2;7;jinossy
+2;tajo-core/tajo-core-storage/src/test/java/org/apache/tajo/storage/TestCompressionStorages.java;1;1;7;jinossy
+2;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/AbstractStorageManager.java;1;1;5;jinossy
+2;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/CSVFile.java;3;3;5;jinossy
+2;tajo-core/tajo-core-storage/src/test/java/org/apache/tajo/storage/TestCompressionStorages.java;15;3;5;jinossy
+2;tajo-core/tajo-core-storage/src/test/java/org/apache/tajo/storage/TestStorages.java;2;0;5;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/Query.java;1;1;6;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryUnit.java;1;1;6;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryUnitAttempt.java;1;1;6;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;3;2;6;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/webapp/HttpServer.java;6;5;2;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TaskSchedulerImpl.java;11;10;2;jinossy
+2;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;2;0;7;Jihoon Son
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/rm/TajoWorkerResourceManager.java;67;0;7;Jihoon Son
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/rm/WorkerResource.java;9;2;7;Jihoon Son
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/util/JSPUtil.java;3;0;7;Jihoon Son
+2;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;1;0;11;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TajoMasterService.java;28;0;11;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryMaster.java;59;0;11;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;39;9;11;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/DeletionService.java;115;0;11;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TajoWorker.java;54;2;11;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TajoWorkerManagerService.java;8;0;11;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/Task.java;4;2;11;jinossy
+2;tajo-common/src/main/java/org/apache/tajo/datum/CharDatum.java;2;2;22;jinossy
+2;tajo-common/src/main/java/org/apache/tajo/datum/DatumFactory.java;1;1;22;jinossy
+2;tajo-common/src/main/java/org/apache/tajo/datum/Float4Datum.java;7;7;22;jinossy
+2;tajo-common/src/main/java/org/apache/tajo/datum/Float8Datum.java;7;7;22;jinossy
+2;tajo-common/src/main/java/org/apache/tajo/datum/Int2Datum.java;9;11;22;jinossy
+2;tajo-common/src/main/java/org/apache/tajo/datum/Int4Datum.java;7;7;22;jinossy
+2;tajo-common/src/main/java/org/apache/tajo/datum/Int8Datum.java;7;7;22;jinossy
+2;tajo-common/src/main/java/org/apache/tajo/datum/NullDatum.java;1;1;22;jinossy
+2;tajo-common/src/main/java/org/apache/tajo/datum/TextDatum.java;2;2;22;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/FunctionEval.java;1;1;22;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/IsNullEval.java;1;3;22;jinossy
+2;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/BinarySerializeDeserialize.java;1;1;22;jinossy
+2;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/RawFile.java;2;2;22;jinossy
+2;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/RowFile.java;1;1;22;jinossy
+2;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/TextSerializeDeserialize.java;1;1;22;jinossy
+2;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/trevni/TrevniAppender.java;2;2;22;jinossy
+2;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/trevni/TrevniScanner.java;1;1;22;jinossy
+2;tajo-core/tajo-core-storage/src/test/java/org/apache/tajo/storage/TestLazyTuple.java;1;1;22;jinossy
+2;tajo-core/tajo-core-storage/src/test/java/org/apache/tajo/storage/TestStorages.java;3;3;22;jinossy
+2;tajo-core/tajo-core-storage/src/test/java/org/apache/tajo/storage/v2/TestStorages.java;1;1;22;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/rm/TajoWorkerResourceManager.java;1;0;2;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/BasicEvalNodeVisitor.java;1;6;7;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/NotEval.java;13;25;7;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestPredicates.java;12;0;7;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/parser/SQLAnalyzer.java;18;1;3;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestPredicates.java;24;0;3;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;1;0;11;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TajoMasterService.java;28;0;11;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryMaster.java;59;0;11;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;39;9;11;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/DeletionService.java;115;0;11;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TajoWorker.java;54;2;11;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TajoWorkerManagerService.java;8;0;11;jinossy
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/Task.java;4;2;11;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TajoWorker.java;0;1;2;jinossy
+1;tajo-catalog/tajo-catalog-common/src/test/java/org/apache/tajo/catalog/TestTableDesc.java;18;10;22;jinossy
+1;tajo-catalog/tajo-catalog-server/src/test/java/org/apache/tajo/catalog/TestCatalog.java;3;2;22;jinossy
+1;tajo-catalog/tajo-catalog-server/src/test/java/org/apache/tajo/catalog/TestDBStore.java;7;6;22;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/TajoTestingCluster.java;15;1;22;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/client/TestDDLBuilder.java;0;1;22;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/ExprTestBase.java;6;4;22;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestEvalTree.java;2;2;22;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestEvalTreeUtil.java;2;2;22;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestPredicates.java;6;4;22;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestSQLExpression.java;4;2;22;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/function/TestPatternMatchingPredicates.java;8;6;22;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/function/TestStringOperatorsAndFunctions.java;11;9;22;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/TestLogicalOptimizer.java;4;4;22;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/TestLogicalPlan.java;3;5;22;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/TestLogicalPlanner.java;5;5;22;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/TestPlannerUtil.java;4;4;22;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestResultSetImpl.java;3;3;22;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/master/TestExecutionBlockCursor.java;7;3;22;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/master/TestGlobalPlanner.java;2;2;22;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/storage/TestFragment.java;9;6;22;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/storage/TestRowFile.java;2;3;22;jinossy
+1;tajo-catalog/tajo-catalog-client/src/main/java/org/apache/tajo/catalog/CatalogClient.java;3;3;35;Hyunsik Choi
+1;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/CatalogServer.java;3;3;35;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/client/TajoClient.java;7;7;35;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/json/FragmentDeserializer.java;0;54;35;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TajoContainerProxy.java;5;5;35;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TajoMasterClientService.java;3;3;35;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TajoMasterService.java;3;3;35;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryInProgress.java;3;3;35;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryMaster.java;6;3;35;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryMasterTask.java;3;5;35;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TajoResourceAllocator.java;3;3;35;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TajoWorker.java;6;6;35;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TajoWorkerClientService.java;3;3;35;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TajoWorkerManagerService.java;3;3;35;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TaskRunner.java;8;9;35;Hyunsik Choi
+1;tajo-rpc/src/main/java/org/apache/tajo/rpc/AsyncRpcClient.java;3;3;35;Hyunsik Choi
+1;tajo-rpc/src/main/java/org/apache/tajo/rpc/AsyncRpcServer.java;5;5;35;Hyunsik Choi
+1;tajo-rpc/src/main/java/org/apache/tajo/rpc/BlockingRpcClient.java;3;3;35;Hyunsik Choi
+1;tajo-rpc/src/main/java/org/apache/tajo/rpc/BlockingRpcServer.java;5;5;35;Hyunsik Choi
+1;tajo-rpc/src/main/java/org/apache/tajo/rpc/CallFuture.java;32;33;35;Hyunsik Choi
+1;tajo-rpc/src/main/java/org/apache/tajo/rpc/CallFuture2.java;0;74;35;Hyunsik Choi
+1;tajo-rpc/src/main/java/org/apache/tajo/rpc/Callback.java;0;112;35;Hyunsik Choi
+1;tajo-rpc/src/main/java/org/apache/tajo/rpc/NettyAsyncRpcProxy.java;0;177;35;Hyunsik Choi
+1;tajo-rpc/src/main/java/org/apache/tajo/rpc/NettyBlockingRpcProxy.java;0;157;35;Hyunsik Choi
+1;tajo-rpc/src/main/java/org/apache/tajo/rpc/NettyRpc.java;0;42;35;Hyunsik Choi
+1;tajo-rpc/src/main/java/org/apache/tajo/rpc/NettyRpcServer.java;0;161;35;Hyunsik Choi
+1;tajo-rpc/src/main/java/org/apache/tajo/rpc/benchmark/BenchmarkAsyncRPC.java;0;92;35;Hyunsik Choi
+1;tajo-rpc/src/main/java/org/apache/tajo/rpc/benchmark/BenchmarkBlockingRPC.java;0;94;35;Hyunsik Choi
+1;tajo-rpc/src/main/java/org/apache/tajo/rpc/benchmark/BenchmarkHadoopRPC.java;0;107;35;Hyunsik Choi
+1;tajo-rpc/src/test/java/org/apache/tajo/rpc/TestAsyncRpc.java;9;9;35;Hyunsik Choi
+1;tajo-rpc/src/test/java/org/apache/tajo/rpc/TestBlockingRpc.java;6;6;35;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryMaster.java;7;6;1;Hyunsik Choi
+1;tajo-algebra/src/main/java/org/apache/tajo/algebra/IsNullPredicate.java;6;6;6;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/IsNullEval.java;11;19;6;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/parser/SQLAnalyzer.java;1;1;6;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;1;1;6;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestPredicates.java;50;0;6;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/AbstractResourceAllocator.java;2;2;2;Hyunsik Choi
+1;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/TableMetaImpl.java;7;7;6;jinossy
+1;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/store/AbstractDBStore.java;17;24;6;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/parser/SQLAnalyzer.java;1;3;6;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestNullValues.java;1;1;6;jinossy
+1;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/CSVFile.java;2;2;6;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/GlobalPlanner.java;34;0;5;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/Repartitioner.java;4;3;5;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/master/TestExecutionBlockCursor.java;4;2;5;Hyunsik Choi
+1;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/store/AbstractDBStore.java;37;23;4;jinossy
+1;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/store/DerbyStore.java;15;15;4;jinossy
+1;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/store/MySQLStore.java;2;2;4;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlan.java;19;4;10;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;13;11;10;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/Target.java;2;2;10;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/TargetListManager.java;61;2;10;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/GroupbyNode.java;2;3;10;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/rewrite/ProjectionPushDownRule.java;1;1;10;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestGroupByQuery.java;38;0;10;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestSelectQuery.java;40;0;10;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestSortQuery.java;23;0;10;Hyunsik Choi
+1;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;6;5;15;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/InsertNode.java;1;1;15;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PhysicalPlannerImpl.java;4;4;15;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PlannerUtil.java;21;6;15;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/global/MasterPlan.java;4;0;15;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/BNLJoinExec.java;1;2;15;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/ExternalSortExec.java;4;4;15;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/GlobalPlanner.java;218;169;15;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/Repartitioner.java;10;12;15;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;9;6;15;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestTableSubQuery.java;16;5;15;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/cli/TajoCli.java;6;0;5;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/parser/SQLAnalyzer.java;19;2;5;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/TajoTestingCluster.java;4;1;5;jinossy
+1;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/CSVFile.java;6;6;5;jinossy
+1;tajo-common/src/main/java/org/apache/tajo/datum/NullDatum.java;9;1;8;jinossy
+1;tajo-common/src/main/java/org/apache/tajo/util/Bytes.java;2;2;8;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/function/string/SplitPart.java;5;2;8;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/function/TestBuiltinFunctions.java;26;8;8;jinossy
+1;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/LazyTuple.java;13;11;8;jinossy
+1;tajo-core/tajo-core-storage/src/test/java/org/apache/tajo/storage/TestLazyTuple.java;2;10;8;jinossy
+1;tajo-core/tajo-core-storage/src/test/java/org/apache/tajo/storage/TestStorages.java;1;2;8;jinossy
+1;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/Options.java;3;4;7;jinossy
+1;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/TableMeta.java;3;4;7;jinossy
+1;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/TableMetaImpl.java;4;5;7;jinossy
+1;tajo-catalog/tajo-catalog-server/src/main/java/org/apache/tajo/catalog/store/DBStore.java;1;1;7;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/GlobalEngine.java;4;1;7;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestInsertQuery.java;41;0;7;jinossy
+1;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/Column.java;6;3;20;Hyunsik Choi
+1;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/Schema.java;24;26;20;Hyunsik Choi
+1;tajo-catalog/tajo-catalog-common/src/test/java/org/apache/tajo/catalog/TestSchema.java;3;3;20;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/DataChannel.java;1;1;20;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/InsertNode.java;2;0;20;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlan.java;4;4;20;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/JoinNode.java;3;0;20;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/ScanNode.java;3;2;20;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/TableSubQueryNode.java;3;3;20;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/rewrite/ProjectionPushDownRule.java;2;4;20;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/ExecutionBlock.java;0;35;20;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/GlobalEngine.java;1;1;20;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/GlobalPlanner.java;1;1;20;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestTableSubQuery.java;10;0;20;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/storage/TestFragment.java;4;4;20;Hyunsik Choi
+1;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/TableStatistics.java;0;4;20;Hyunsik Choi
+1;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/v2/CSVFileScanner.java;0;5;20;Hyunsik Choi
+1;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/v2/FileScannerV2.java;0;4;20;Hyunsik Choi
+1;tajo-algebra/src/main/java/org/apache/tajo/algebra/ColumnReferenceExpr.java;12;12;37;Hyunsik Choi
+1;tajo-algebra/src/main/java/org/apache/tajo/algebra/OpType.java;1;1;37;Hyunsik Choi
+1;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/Schema.java;21;0;37;Hyunsik Choi
+1;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/TableDesc.java;2;0;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/json/FromTableDeserializer.java;0;50;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/parser/HiveConverter.java;3;3;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/parser/SQLAnalyzer.java;1;1;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/BaseAlgebraVisitor.java;33;33;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/FromTable.java;0;106;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/JoinClause.java;0;126;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlan.java;285;311;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;64;69;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PhysicalPlannerImpl.java;5;5;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PlannerUtil.java;28;108;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/TargetListManager.java;38;36;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/global/MasterPlan.java;1;2;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/IndexScanNode.java;1;2;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/ScanNode.java;31;26;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/TableSubQueryNode.java;2;1;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/rewrite/ProjectionPushDownRule.java;12;11;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/utils/SchemaUtil.java;0;10;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/GlobalPlanner.java;1;1;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/GlobalPlannerUtils.java;1;2;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryMasterTask.java;1;1;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/Repartitioner.java;13;13;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;3;3;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestEvalTree.java;1;1;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestEvalTreeUtil.java;3;3;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/TestLogicalPlan.java;18;13;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/TestLogicalPlanner.java;7;7;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestBNLJoinExec.java;8;6;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestHashAntiJoinExec.java;2;2;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestHashJoinExec.java;2;2;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestHashSemiJoinExec.java;3;2;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestMergeJoinExec.java;4;2;37;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestNLJoinExec.java;6;7;37;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/BitDatum.java;5;1;34;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/BlobDatum.java;5;1;34;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/BooleanDatum.java;102;93;34;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/CharDatum.java;5;3;34;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/DateDatum.java;18;0;34;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/Datum.java;104;73;34;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/DatumFactory.java;28;5;34;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/Float4Datum.java;2;2;34;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/Float8Datum.java;10;13;34;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/Inet4Datum.java;7;1;34;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/Int2Datum.java;6;6;34;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/Int4Datum.java;7;7;34;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/Int8Datum.java;3;2;34;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/NullDatum.java;73;6;34;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/TextDatum.java;8;6;34;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/TimeDatum.java;18;0;34;Hyunsik Choi
+2;tajo-common/src/main/java/org/apache/tajo/datum/TimestampDatum.java;13;0;34;Hyunsik Choi
+2;tajo-common/src/test/java/org/apache/tajo/datum/TestBoolDatum.java;60;46;34;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/BinaryEval.java;116;119;34;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/CastEval.java;19;10;34;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/InEval.java;3;13;34;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/PatternMatchPredicateEval.java;11;5;34;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/function/InCountry.java;2;1;34;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/function/string/SplitPart.java;10;5;34;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/parser/SQLAnalyzer.java;22;5;34;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/HashFullOuterJoinExec.java;1;1;34;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/HashLeftOuterJoinExec.java;1;1;34;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/NLLeftOuterJoinExec.java;1;1;34;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/SeqScanExec.java;1;1;34;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/eval/TestSQLExpression.java;87;0;34;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/function/TestStringOperatorsAndFunctions.java;28;14;34;Hyunsik Choi
+2;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestJoinQuery.java;9;5;34;Hyunsik Choi
+1;tajo-common/src/main/java/org/apache/tajo/storage/Tuple.java;3;1;6;Jihoon Son
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/MergeJoinExec.java;25;21;6;Jihoon Son
+1;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/FrameTuple.java;5;0;6;Jihoon Son
+1;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/Tuple.java;3;1;6;Jihoon Son
+1;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/VTuple.java;5;0;6;Jihoon Son
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/query/exception/SQLParseError.java;4;2;2;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TajoWorker.java;2;4;2;jinossy
+1;tajo-common/src/main/java/org/apache/tajo/util/BitArray.java;8;2;5;jinossy
+1;tajo-common/src/test/java/org/apache/tajo/util/TestBitArrayTest.java;40;3;5;jinossy
+1;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/RawFile.java;5;8;5;jinossy
+1;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/RowFile.java;1;1;5;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TaskSchedulerImpl.java;3;0;6;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;1;2;6;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/rm/TajoWorkerResourceManager.java;4;2;6;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/rm/WorkerResource.java;49;12;6;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/rm/YarnTajoResourceManager.java;1;1;6;jinossy
+1;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;1;1;4;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/event/ContainerAllocationEvent.java;4;0;5;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/rm/TajoWorkerResourceManager.java;0;51;5;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TajoResourceAllocator.java;19;10;5;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TaskRunner.java;2;2;5;Hyunsik Choi
+1;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;1;0;7;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PhysicalPlannerImpl.java;2;2;7;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/YarnTaskRunnerLauncherImpl.java;3;4;7;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TajoResourceAllocator.java;3;10;7;jinossy
+1;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/CSVFile.java;5;2;7;jinossy
+1;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/StorageManager.java;1;1;7;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/planner/physical/TestExternalSortExec.java;1;1;3;jinossy
+1;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/RawFile.java;18;1;3;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/MiniTajoYarnCluster.java;3;0;4;Jihoon Son
+1;tajo-core/tajo-core-pullserver/src/main/java/org/apache/tajo/pullserver/PullServerAuxService.java;6;1;4;Jihoon Son
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TajoAsyncDispatcher.java;2;2;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TajoContainerProxy.java;6;1;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TajoMasterService.java;5;13;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TaskSchedulerImpl.java;2;1;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryInProgress.java;3;29;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryInfo.java;2;2;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryJobManager.java;5;3;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;5;3;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/rm/TajoWorkerResourceManager.java;86;34;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/rm/WorkerResource.java;53;30;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/rm/WorkerResourceManager.java;5;0;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/rm/YarnRMContainerAllocator.java;1;3;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/rm/YarnTajoResourceManager.java;8;0;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/AbstractResourceAllocator.java;0;25;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/ResourceAllocator.java;1;0;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TajoResourceAllocator.java;11;5;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TajoWorker.java;68;15;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TaskRunner.java;8;4;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/TaskRunnerManager.java;6;6;25;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/worker/YarnResourceAllocator.java;6;1;25;Hyunsik Choi
+1;tajo-common/src/main/java/org/apache/tajo/conf/TajoConf.java;1;1;12;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/QueryConf.java;1;0;12;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/ContainerProxy.java;18;5;12;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TaskRunnerLauncherImpl.java;1;9;12;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TaskSchedulerImpl.java;7;5;12;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryMasterManager.java;3;3;12;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/QueryMasterRunner.java;1;1;12;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;3;1;12;jinossy
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/rm/RMContainerAllocator.java;16;12;12;jinossy
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/TajoTestingCluster.java;2;0;12;jinossy
+1;tajo-catalog/tajo-catalog-common/src/main/java/org/apache/tajo/catalog/Schema.java;1;0;2;Jihoon Son
+1;tajo-catalog/tajo-catalog-common/src/test/java/org/apache/tajo/catalog/TestTableDesc.java;5;5;12;Jihoon Son
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/query/ResultSetImpl.java;1;1;12;Jihoon Son
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/TajoMasterClientService.java;4;18;12;Jihoon Son
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/Repartitioner.java;1;2;12;Jihoon Son
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/querymaster/SubQuery.java;0;5;12;Jihoon Son
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/LocalTajoTestingUtility.java;1;3;12;Jihoon Son
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/TajoTestingCluster.java;2;6;12;Jihoon Son
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/storage/TestRowFile.java;1;3;12;Jihoon Son
+1;tajo-core/tajo-core-storage/src/main/java/org/apache/tajo/storage/StorageManager.java;4;11;12;Jihoon Son
+1;tajo-core/tajo-core-storage/src/test/java/org/apache/tajo/storage/index/TestBSTIndex.java;1;1;12;Jihoon Son
+1;tajo-core/tajo-core-storage/src/test/java/org/apache/tajo/storage/index/TestSingleCSVFileBSTIndex.java;1;1;12;Jihoon Son
+1;tajo-core/tajo-core-backend/src/main/java/tajo/engine/query/ResultSetImpl.java;22;0;2;Henry Saputra
+1;tajo-core/tajo-core-backend/src/main/java/tajo/master/QueryMaster.java;6;1;4;hyunsik
+1;tajo-core/tajo-core-backend/src/main/java/tajo/master/SubQuery.java;4;7;4;hyunsik
+1;tajo-core/tajo-core-backend/src/main/java/tajo/master/rm/RMContainerAllocator.java;18;1;4;hyunsik
+1;tajo-core/tajo-core-storage/src/main/java/tajo/storage/RowFile.java;3;0;2;Jihoon Son
+1;tajo-core/tajo-core-backend/src/test/java/tajo/storage/TestRowFile.java;2;0;3;Jihoon Son
+1;tajo-core/tajo-core-storage/src/main/java/tajo/storage/RowFile.java;14;10;3;Jihoon Son
+1;tajo-algebra/src/main/java/org/apache/tajo/algebra/LiteralValue.java;1;0;31;Hyunsik Choi
+1;tajo-algebra/src/main/java/org/apache/tajo/algebra/Target.java;6;1;31;Hyunsik Choi
+1;tajo-common/src/main/java/org/apache/tajo/util/TUtil.java;22;0;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/BasicEvalNodeVisitor.java;280;0;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/CaseWhenEval.java;24;12;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/EvalNodeVisitor.java;1;0;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/EvalNodeVisitor2.java;61;0;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/EvalTreeUtil.java;33;4;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/EvalType.java;2;2;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/InEval.java;2;2;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/NotEval.java;5;2;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/eval/RowConstantEval.java;4;4;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/parser/HiveConverter.java;11;5;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/parser/SQLAnalyzer.java;3;1;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/AlgebraVisitor.java;16;15;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/BaseAlgebraVisitor.java;12;1;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/BasicLogicalPlanVisitor.java;31;31;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/ExplainLogicalPlanVisitor.java;6;2;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlan.java;68;20;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanVisitor.java;15;15;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/LogicalPlanner.java;19;13;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/PhysicalPlannerImpl.java;26;26;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/Target.java;1;1;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/logical/GroupbyNode.java;24;10;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/AggregationExec.java;18;5;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/physical/HashAggregateExec.java;24;6;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/engine/planner/rewrite/ProjectionPushDownRule.java;4;6;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/org/apache/tajo/master/GlobalPlanner.java;75;65;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/engine/query/TestGroupByQuery.java;38;3;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/org/apache/tajo/master/TestGlobalPlanner.java;3;3;31;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/tajo/storage/TestRowFile.java;2;2;4;Henry Saputra
+1;tajo-core/tajo-core-backend/src/main/java/tajo/master/GlobalEngine.java;6;0;2;blrunner
+1;tajo-core/tajo-core-backend/src/main/java/tajo/worker/TaskRunner.java;24;74;3;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/tajo/worker/TaskRunnerTest.java;1;2;3;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/tajo/engine/parser/QueryAnalyzer.java;21;17;2;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/test/java/tajo/engine/query/TestSortQuery.java;20;0;2;Hyunsik Choi
+1;tajo-core/tajo-core-backend/src/main/java/tajo/engine/query/ResultSetImpl.java;1;1;3;jinossy
+1;tajo-core/tajo-core-pullserver/src/main/java/tajo/pullserver/PullServerAuxService.java;5;5;3;jinossy
+1;tajo-core/tajo-core-storage/src/main/java/tajo/storage/rcfile/RCFileWrapper.java;5;4;3;Hyunsik Choi
+1;tajo-core/tajo-core-storage/src/test/java/tajo/storage/TestStorages.java;4;0;3;Hyunsik Choi
