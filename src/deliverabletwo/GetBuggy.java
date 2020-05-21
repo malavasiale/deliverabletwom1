@@ -31,6 +31,9 @@ public class GetBuggy {
 
 	private static final String PROJ_FILES = "fileInProject.csv";
 	private static final String FINAL_DATA = "finalData.csv";
+	private static final String OAUTH_PATH = "C:\\Users\\malav\\Desktop\\isw2\\oauth.txt";
+	private static final String OAUTH_TOKEN = "";
+	
 	
 private static String readAll(Reader rd) throws IOException {
 	      StringBuilder sb = new StringBuilder();
@@ -41,12 +44,20 @@ private static String readAll(Reader rd) throws IOException {
 	      return sb.toString();
 }
 
+public static String getOAUTHToken() throws FileNotFoundException, IOException {
+	String token;
+	try(BufferedReader oauthReader = new BufferedReader(new FileReader(OAUTH_PATH));){
+	 	   token = oauthReader.readLine();
+	    }
+	return token;
+}
+
 public static JSONArray readJsonArrayAuth(String url) throws IOException, JSONException {
     URL url_1 = new URL(url);
     URLConnection uc = url_1.openConnection();
     uc.setRequestProperty("X-Requested-With", "Curl");
     String username =  "malavasiale";
-    String token =  "58fce61bdb38de01eed317fddc07ff0ea248edb4";
+    String token =  getOAUTHToken();
     String userpass = username + ":" + token;
     byte[] encodedBytes = Base64.getEncoder().encode(userpass.getBytes());
     String basicAuth = "Basic " + new String(encodedBytes);
@@ -66,7 +77,7 @@ public static JSONObject readJsonObjectAuth(String url) throws IOException, JSON
     URLConnection uc = url_1.openConnection();
     uc.setRequestProperty("X-Requested-With", "Curl");
     String username =  "malavasiale";
-    String token =  "98f67b78a7d650640d60953c1eb57b169a56c627";
+    String token =  getOAUTHToken();
     String userpass = username + ":" + token;
     byte[] encodedBytes = Base64.getEncoder().encode(userpass.getBytes());
     String basicAuth = "Basic " + new String(encodedBytes);
@@ -394,105 +405,107 @@ public static void commitsBuggyClasses() throws IOException {
 }
 
 public static void buggyMetric() throws IOException {
-	BufferedReader csvReaderVersions = new BufferedReader(new FileReader("TAJOVersionInfo.csv"));
-	BufferedReader csvReaderFiles = new BufferedReader(new FileReader("fileInProject.csv"));
-	RandomAccessFile csvReaderBuggyFiles = new RandomAccessFile("buggyfiles.csv","r");
-	FileWriter csvMetrics = new FileWriter("buggyMetrics.csv");
 	String rowVersions , rowFile,rowBuggyFile;
 	Integer versions = 0;
 	Integer maxVersion,AV,FV;
 	Boolean buggy = false;
 	
-	csvMetrics.write("Version;File;Buggy\n");
-	
-	while((rowVersions = csvReaderVersions.readLine()) != null) {
-		versions++;
-	}
-	maxVersion = (versions-1)/2;
-	
-	while((rowFile = csvReaderFiles.readLine()) != null) {
-		System.out.println("Cecking file : " +rowFile);
-		if(StringUtils.countMatches(rowFile, ".java") >= 1) {
-			for(Integer v = 1; v <= maxVersion;v++) {
-				while((rowBuggyFile = csvReaderBuggyFiles.readLine()) != null) {
-					String[] listOfFiles = rowBuggyFile.split(";");
-					if(listOfFiles.length > 4) {
-						for(int i = 4; i < listOfFiles.length; i++) {
-							if(listOfFiles[i].equals(rowFile)) {
-								if(!listOfFiles[1].equals("none") && !listOfFiles[2].equals("none") ) {
-									AV = Integer.parseInt(listOfFiles[1]);
-									FV = Integer.parseInt(listOfFiles[2]);
-									if(v >= AV && v < FV) {
-										buggy = true;
-										break;
+	try(FileWriter csvMetrics = new FileWriter("buggyMetrics.csv");
+		BufferedReader csvReaderVersions = new BufferedReader(new FileReader("TAJOVersionInfo.csv"));
+		BufferedReader csvReaderFiles = new BufferedReader(new FileReader("fileInProject.csv"));
+		RandomAccessFile csvReaderBuggyFiles = new RandomAccessFile("buggyfiles.csv","r");){
+		
+		csvMetrics.write("Version;File;Buggy\n");
+		
+		while((rowVersions = csvReaderVersions.readLine()) != null) {
+			versions++;
+		}
+		maxVersion = (versions-1)/2;
+		
+		while((rowFile = csvReaderFiles.readLine()) != null) {
+			System.out.println("Cecking file : " +rowFile);
+			if(StringUtils.countMatches(rowFile, ".java") >= 1) {
+				for(Integer v = 1; v <= maxVersion;v++) {
+					while((rowBuggyFile = csvReaderBuggyFiles.readLine()) != null) {
+						String[] listOfFiles = rowBuggyFile.split(";");
+						if(listOfFiles.length > 4) {
+							for(int i = 4; i < listOfFiles.length; i++) {
+								if(listOfFiles[i].equals(rowFile)) {
+									if(!listOfFiles[1].equals("none") && !listOfFiles[2].equals("none") ) {
+										AV = Integer.parseInt(listOfFiles[1]);
+										FV = Integer.parseInt(listOfFiles[2]);
+										if(v >= AV && v < FV) {
+											buggy = true;
+											break;
+										}
+										else {
+											buggy = false;
+										}
 									}
 									else {
 										buggy = false;
 									}
 								}
-								else {
-									buggy = false;
-								}
 							}
+						}
+						if(buggy) {
+							break;
 						}
 					}
 					if(buggy) {
-						break;
+						csvMetrics.write(v.toString()+";"+rowFile+";"+"yes\n");
 					}
+					else {
+						csvMetrics.write(v.toString()+";"+rowFile+";"+"no\n");
+					}
+					buggy = false;
+					csvReaderBuggyFiles.seek(0);
 				}
-				if(buggy) {
-					csvMetrics.write(v.toString()+";"+rowFile+";"+"yes\n");
-				}
-				else {
-					csvMetrics.write(v.toString()+";"+rowFile+";"+"no\n");
-				}
-				buggy = false;
-				csvReaderBuggyFiles.seek(0);
 			}
 		}
+		csvReaderVersions.close();
+		csvReaderFiles.close();
+		csvReaderBuggyFiles.close();
+		csvMetrics.close();
 	}
-	csvReaderVersions.close();
-	csvReaderFiles.close();
-	csvReaderBuggyFiles.close();
-	csvMetrics.close();
 }
 
 public static void filesInfo() throws IOException {
-	RandomAccessFile csvReaderBuggyFiles = new RandomAccessFile("buggyfiles.csv","r");
-	FileWriter csvFilesInfo = new FileWriter("filesInfo.csv");
 	String row;
 	String author;
 	Integer added,deleted;
 	
-	csvFilesInfo.write("Version;Filename;LOC_Added;LOC_deleted;Set_size;Author\n");
-	
-	while((row = csvReaderBuggyFiles.readLine()) != null) {
-		String[] rowSplit = row.split(";");
-		if(!rowSplit[2].equals("none") && Integer.parseInt(rowSplit[2]) <= 5) {
-			//TODO: METTERE VERSIONE NON STATICA
-			String url = "https://api.github.com/repos/apache/tajo/commits/" + rowSplit[3];
-			JSONObject commit = readJsonObjectAuth(url);
-			author = commit.getJSONObject("commit").getJSONObject("author").getString("name");
-			JSONArray files = commit.getJSONArray("files");
-			for(int i = 0; i < files.length();i++) {
-				JSONObject file = files.getJSONObject(i);
-				String filename = file.getString("filename");
-				if(StringUtils.countMatches(filename, ".java") >= 1) {
-					added = file.getInt("additions");
-					deleted = file.getInt("deletions");
-					csvFilesInfo.write(rowSplit[2] + ";" + filename + ";" + added + ";" + deleted + ";" + files.length() + ";" + author + "\n");
+	try(RandomAccessFile csvReaderBuggyFiles = new RandomAccessFile("buggyfiles.csv","r");
+		FileWriter csvFilesInfo = new FileWriter("filesInfo.csv");){
+		
+		csvFilesInfo.write("Version;Filename;LOC_Added;LOC_deleted;Set_size;Author\n");
+		
+		while((row = csvReaderBuggyFiles.readLine()) != null) {
+			String[] rowSplit = row.split(";");
+			if(!rowSplit[2].equals("none") && Integer.parseInt(rowSplit[2]) <= 5) {
+				//TODO: METTERE VERSIONE NON STATICA
+				String url = "https://api.github.com/repos/apache/tajo/commits/" + rowSplit[3];
+				JSONObject commit = readJsonObjectAuth(url);
+				author = commit.getJSONObject("commit").getJSONObject("author").getString("name");
+				JSONArray files = commit.getJSONArray("files");
+				for(int i = 0; i < files.length();i++) {
+					JSONObject file = files.getJSONObject(i);
+					String filename = file.getString("filename");
+					if(StringUtils.countMatches(filename, ".java") >= 1) {
+						added = file.getInt("additions");
+						deleted = file.getInt("deletions");
+						csvFilesInfo.write(rowSplit[2] + ";" + filename + ";" + added + ";" + deleted + ";" + files.length() + ";" + author + "\n");
+					}
 				}
 			}
 		}
+		csvReaderBuggyFiles.close();
+		csvFilesInfo.close();
 	}
-	csvReaderBuggyFiles.close();
-	csvFilesInfo.close();
 }
 
 public static void makeMetricsFile() throws IOException {
-	RandomAccessFile csvReaderFilesInfo = new RandomAccessFile("filesInfo.csv","r");
-	RandomAccessFile csvReaderMetrics = new RandomAccessFile("buggyMetrics.csv","r");
-	FileWriter csvMetrics = new FileWriter("finalMetrics.csv");
+	
 	Integer LOC_touched = 0;
 	Integer LOC_added = 0;
 	Integer MAXLOC_added = 0;
@@ -506,56 +519,61 @@ public static void makeMetricsFile() throws IOException {
 	Integer count = 0;
 	String rowBuggy,rowInfo,filename,version,buggy;
 	
-	csvReaderMetrics.readLine();
-	
-	csvMetrics.write("Version;Filename;LOC_touched;LOC_added;MAXLOC_added;AVGLOC_added;churn;MAX_churn;AVG_churn;Change_setsize;MAXChange_setsize;AVGChange_setsize;Buggy\n");
-	
-	while((rowBuggy = csvReaderMetrics.readLine()) != null) {
-		String[] a = rowBuggy.split(";");
-		version = a[0];
-		filename = a[1];
-		buggy = a[2];
-		while((rowInfo = csvReaderFilesInfo.readLine()) != null) {
-			String[] b = rowInfo.split(";");
-			if(b[0].equals(version) && b[1].equals(filename)) {
-				LOC_touched = LOC_touched + Integer.parseInt(b[2]) + Integer.parseInt(b[3]);
-				LOC_added = LOC_added + Integer.parseInt(b[2]);
-				if(MAXLOC_added < Integer.parseInt(b[2])) {
-					MAXLOC_added = Integer.parseInt(b[2]);
-				}
-				count++;
-				churn = churn + Integer.parseInt(b[2]) - Integer.parseInt(b[3]);
-				if(MAX_churn < Integer.parseInt(b[2]) - Integer.parseInt(b[3])) {
-					MAX_churn = Integer.parseInt(b[2]) - Integer.parseInt(b[3]);
-				}
-				setsize = setsize + Integer.parseInt(b[4]);
-				if(MAX_setsize < Integer.parseInt(b[4])) {
-					MAX_setsize = Integer.parseInt(b[4]);
+	try(RandomAccessFile csvReaderFilesInfo = new RandomAccessFile("filesInfo.csv","r");
+		RandomAccessFile csvReaderMetrics = new RandomAccessFile("buggyMetrics.csv","r");
+		FileWriter csvMetrics = new FileWriter("finalMetrics.csv");){
+		
+		csvReaderMetrics.readLine();
+		
+		csvMetrics.write("Version;Filename;LOC_touched;LOC_added;MAXLOC_added;AVGLOC_added;churn;MAX_churn;AVG_churn;Change_setsize;MAXChange_setsize;AVGChange_setsize;Buggy\n");
+		
+		while((rowBuggy = csvReaderMetrics.readLine()) != null) {
+			String[] a = rowBuggy.split(";");
+			version = a[0];
+			filename = a[1];
+			buggy = a[2];
+			while((rowInfo = csvReaderFilesInfo.readLine()) != null) {
+				String[] b = rowInfo.split(";");
+				if(b[0].equals(version) && b[1].equals(filename)) {
+					LOC_touched = LOC_touched + Integer.parseInt(b[2]) + Integer.parseInt(b[3]);
+					LOC_added = LOC_added + Integer.parseInt(b[2]);
+					if(MAXLOC_added < Integer.parseInt(b[2])) {
+						MAXLOC_added = Integer.parseInt(b[2]);
+					}
+					count++;
+					churn = churn + Integer.parseInt(b[2]) - Integer.parseInt(b[3]);
+					if(MAX_churn < Integer.parseInt(b[2]) - Integer.parseInt(b[3])) {
+						MAX_churn = Integer.parseInt(b[2]) - Integer.parseInt(b[3]);
+					}
+					setsize = setsize + Integer.parseInt(b[4]);
+					if(MAX_setsize < Integer.parseInt(b[4])) {
+						MAX_setsize = Integer.parseInt(b[4]);
+					}
 				}
 			}
+			if(count != 0) {
+				AVGLOC_added = LOC_added/count;
+				AVG_churn = churn/count;
+				AVG_setsize = setsize/count;
+			}
+			csvMetrics.write(version + ";" + filename + ";" + LOC_touched.toString() + ";" + LOC_added.toString() + ";" + MAXLOC_added.toString() + ";" + AVGLOC_added.toString() + ";" + churn.toString() + ";" + MAX_churn.toString() + ";" + AVG_churn.toString() + ";" + setsize.toString() + ";" + MAX_setsize.toString() + ";" + AVG_setsize.toString() + ";" + buggy + "\n");
+			LOC_touched = 0;
+			LOC_added = 0;
+			MAXLOC_added = 0;
+			AVGLOC_added = 0;
+			churn = 0;
+			MAX_churn = 0;
+			AVG_churn = 0;
+			setsize = 0;
+			MAX_setsize = 0;
+			AVG_setsize = 0;
+			count = 0;
+			csvReaderFilesInfo.seek(0);
 		}
-		if(count != 0) {
-			AVGLOC_added = LOC_added/count;
-			AVG_churn = churn/count;
-			AVG_setsize = setsize/count;
-		}
-		csvMetrics.write(version + ";" + filename + ";" + LOC_touched.toString() + ";" + LOC_added.toString() + ";" + MAXLOC_added.toString() + ";" + AVGLOC_added.toString() + ";" + churn.toString() + ";" + MAX_churn.toString() + ";" + AVG_churn.toString() + ";" + setsize.toString() + ";" + MAX_setsize.toString() + ";" + AVG_setsize.toString() + ";" + buggy + "\n");
-		LOC_touched = 0;
-		LOC_added = 0;
-		MAXLOC_added = 0;
-		AVGLOC_added = 0;
-		churn = 0;
-		MAX_churn = 0;
-		AVG_churn = 0;
-		setsize = 0;
-		MAX_setsize = 0;
-		AVG_setsize = 0;
-		count = 0;
-		csvReaderFilesInfo.seek(0);
+		csvReaderFilesInfo .close();
+		csvReaderMetrics.close();
+		csvMetrics.close();
 	}
-	csvReaderFilesInfo .close();
-	csvReaderMetrics.close();
-	csvMetrics.close();
 }
 
 	public static void main(String[] args) throws IOException, InterruptedException {
@@ -578,13 +596,14 @@ public static void makeMetricsFile() throws IOException {
 		if(!bugAndVer.isFile()) {
 			System.out.println("Downloading list of bug and versions");
 			tickets = retrieveTick();
-			FileWriter bugAndVers = new FileWriter("bugs&versions.csv");
-			bugAndVers.append("TicketID;AV;FV;OV\n");
-			for(String s : tickets) {
-				bugAndVers.append(s+"\n");
+			try(FileWriter bugAndVers = new FileWriter("bugs&versions.csv");){
+				bugAndVers.append("TicketID;AV;FV;OV\n");
+				for(String s : tickets) {
+					bugAndVers.append(s+"\n");
+				}
+				bugAndVers.flush();
+				bugAndVers.close();
 			}
-			bugAndVers.flush();
-			bugAndVers.close();
 		}
 		
 		File gitCommits = new File("gitCommits.csv");
@@ -618,7 +637,6 @@ public static void makeMetricsFile() throws IOException {
 			System.out.println("Calculating final metrics");
 			makeMetricsFile();
 		}
-
 		
 	}
 }
