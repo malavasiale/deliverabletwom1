@@ -66,7 +66,7 @@ public static JSONObject readJsonObjectAuth(String url) throws IOException, JSON
     URLConnection uc = url_1.openConnection();
     uc.setRequestProperty("X-Requested-With", "Curl");
     String username =  "malavasiale";
-    String token =  "58fce61bdb38de01eed317fddc07ff0ea248edb4";
+    String token =  "98f67b78a7d650640d60953c1eb57b169a56c627";
     String userpass = username + ":" + token;
     byte[] encodedBytes = Base64.getEncoder().encode(userpass.getBytes());
     String basicAuth = "Basic " + new String(encodedBytes);
@@ -163,74 +163,73 @@ public static List<String> retrieveTick() throws JSONException, IOException {
 	   Integer total = 1;
 	   String OV;
 	   List<String> ids = new ArrayList<>();
-	   //BufferedReader br = new BufferedReader(new FileReader("TAJOVersionInfo.csv"));
-	   RandomAccessFile ra = new RandomAccessFile("TAJOVersionInfo.csv","rw");
-	   do {
-		   j = i + 1000;
-		   String url = "https://issues.apache.org/jira/rest/api/2/search?jql=project=%22"
-				   + projName + "%22AND%22issueType%22=%22Bug%22AND%22resolution%22=%22fixed%22&fields=key,fixVersions,versions,created&startAt="
-				   + i.toString() + "&maxResults=" + j.toString();
-		   JSONObject json = readJsonFromUrl(url);
-		   JSONArray issues = json.getJSONArray("issues");
-		   total = json.getInt("total");
-		   for (; i < total && i < j; i++) {
-			   //Iterate through each bug
-			   String key = issues.getJSONObject(i%1000).get("key").toString();
-			   String created = issues.getJSONObject(i%1000).getJSONObject("fields").getString("created");
-			   JSONArray affectedVersions = issues.getJSONObject(i%1000).getJSONObject("fields").getJSONArray("versions");
-			   String av =";";
-			   for(int k = 0; k<affectedVersions.length();k++) {
-					String line = "";
-					String versID = "";
-					String name = affectedVersions.getJSONObject(k).get("name").toString();				
-			        while ((line = ra.readLine()) != null) {
+	   try(RandomAccessFile ra = new RandomAccessFile("TAJOVersionInfo.csv","rw");){
+		   do {
+			   j = i + 1000;
+			   String url = "https://issues.apache.org/jira/rest/api/2/search?jql=project=%22"
+					   + projName + "%22AND%22issueType%22=%22Bug%22AND%22resolution%22=%22fixed%22&fields=key,fixVersions,versions,created&startAt="
+					   + i.toString() + "&maxResults=" + j.toString();
+			   JSONObject json = readJsonFromUrl(url);
+			   JSONArray issues = json.getJSONArray("issues");
+			   total = json.getInt("total");
+			   for (; i < total && i < j; i++) {
+				   //Iterate through each bug
+				   String key = issues.getJSONObject(i%1000).get("key").toString();
+				   String created = issues.getJSONObject(i%1000).getJSONObject("fields").getString("created");
+				   JSONArray affectedVersions = issues.getJSONObject(i%1000).getJSONObject("fields").getJSONArray("versions");
+				   String av =";";
+				   for(int k = 0; k<affectedVersions.length();k++) {
+						String line = "";
+						String versID = "";
+						String name = affectedVersions.getJSONObject(k).get("name").toString();				
+				        while ((line = ra.readLine()) != null) {
+				                String[] row = line.split(",");
+				                if(row[2].equals(name)) {
+				                	versID = row[0];    	
+				                	break;
+				                }
+				       }
+				       ra.seek(0);
+					   if(k == 0 && !versID.equals("")) {
+						   av = av + versID;
+					   }
+					   else if(!versID.equals("")) {
+						   av = av +"*"+ versID;
+					   }
+				   }
+				   if(affectedVersions.length() == 0 || av.equals(";")) {
+					   av = av + "none";
+				   }
+				   JSONArray fixedVersions = issues.getJSONObject(i%1000).getJSONObject("fields").getJSONArray("fixVersions");
+				   String fv = ";";
+				   for(int k = 0; k<fixedVersions.length();k++) {
+					   String line = "";
+					   String versID = "";
+					   String name = fixedVersions.getJSONObject(k).get("name").toString();
+					   while ((line = ra.readLine()) != null) {
+
 			                String[] row = line.split(",");
 			                if(row[2].equals(name)) {
-			                	versID = row[0];    	
+			                	versID = row[0];
 			                	break;
 			                }
-			       }
-			       ra.seek(0);
-				   if(k == 0 && !versID.equals("")) {
-					   av = av + versID;
+			           }
+					   ra.seek(0);
+					   if(k == 0 && !versID.equals("")) {
+						   fv = fv + versID;
+					   }
+					   else if (!versID.equals("") ) {
+						   fv = fv +"*"+ versID;
+					   }
 				   }
-				   else if(!versID.equals("")) {
-					   av = av +"*"+ versID;
+				   if(fixedVersions.length() == 0) {
+					   fv = fv + "none";
 				   }
-			   }
-			   if(affectedVersions.length() == 0 || av.equals(";")) {
-				   av = av + "none";
-			   }
-			   JSONArray fixedVersions = issues.getJSONObject(i%1000).getJSONObject("fields").getJSONArray("fixVersions");
-			   String fv = ";";
-			   for(int k = 0; k<fixedVersions.length();k++) {
-				   String line = "";
-				   String versID = "";
-				   String name = fixedVersions.getJSONObject(k).get("name").toString();
-				   while ((line = ra.readLine()) != null) {
-
-		                String[] row = line.split(",");
-		                if(row[2].equals(name)) {
-		                	versID = row[0];
-		                	break;
-		                }
-		           }
-				   ra.seek(0);
-				   if(k == 0 && !versID.equals("")) {
-					   fv = fv + versID;
-				   }
-				   else if (!versID.equals("") ) {
-					   fv = fv +"*"+ versID;
-				   }
-			   }
-			   if(fixedVersions.length() == 0) {
-				   fv = fv + "none";
-			   }
-			   OV = getOV(created);
-			   ids.add(key+av+fv + ";" + OV);
-		   } 
-	   } while (i < total);
-	   ra.close();
+				   OV = getOV(created);
+				   ids.add(key+av+fv + ";" + OV);
+			   } 
+		   } while (i < total);
+	   }
 	   return ids;
 }
 
@@ -241,44 +240,46 @@ public static void retrieveFiles() throws IOException, InterruptedException {
 	int total = 0;
 	List<String> checked = new ArrayList<>();
 	List<String> directory = new ArrayList<>();
-	FileWriter csvWriter = new FileWriter(PROJ_FILES);
 	
-	do {
-		JSONArray files = readJsonArrayAuth(baseurl+path);
-		for(int i = 0 ; i<files.length() ; i++) {
-			JSONObject file = files.getJSONObject(i);
-			String filepath = file.getString("path");
-			String type = file.getString("type");
-			if(type.equals("file")) {
-				checked.add(filepath);
+	try(FileWriter csvWriter = new FileWriter(PROJ_FILES);){
+		do {
+			JSONArray files = readJsonArrayAuth(baseurl+path);
+			for(int i = 0 ; i<files.length() ; i++) {
+				JSONObject file = files.getJSONObject(i);
+				String filepath = file.getString("path");
+				String type = file.getString("type");
+				if(type.equals("file")) {
+					checked.add(filepath);
+				}
+				else {
+					directory.add(filepath);
+				}
 			}
-			else {
-				directory.add(filepath);
+			if(directory.size() != 0) {
+				path = directory.get(0);
+				directory.remove(0);
 			}
-		}
-		if(directory.size() != 0) {
-			path = directory.get(0);
-			directory.remove(0);
-		}
-		else{
-			path = "";
-		}
-		count++;
-		total++;
-		System.out.println("File :"+checked.toString());
-		System.out.println("Dir : "+directory.toString());
-		System.out.println(count +" and "+total);
-		Thread.sleep(1100);
-	}while(!path.equals(""));
-	
-	csvWriter.append("filepath");
-	csvWriter.append("\n");
-	for(String s : checked) {
-		csvWriter.append(s);
+			else{
+				path = "";
+			}
+			count++;
+			total++;
+			System.out.println("File :"+checked.toString());
+			System.out.println("Dir : "+directory.toString());
+			System.out.println(count +" and "+total);
+			Thread.sleep(1100);
+		}while(!path.equals(""));
+		
+		csvWriter.append("filepath");
 		csvWriter.append("\n");
+		for(String s : checked) {
+			csvWriter.append(s);
+			csvWriter.append("\n");
+		}
+		csvWriter.flush();
+		csvWriter.close();
 	}
-	csvWriter.flush();
-	csvWriter.close();
+	
 }
 
 public static List<String> retrieveBuggyFiles(String sha) throws JSONException, IOException{
@@ -298,7 +299,7 @@ public static List<String> retrieveBuggyFiles(String sha) throws JSONException, 
 
 public static void commitsBuggyClasses() throws IOException {
 	String rowBugs,rowCommits, AVmin, FVmin;
-	FileWriter csvBuggyFilesWriter = new FileWriter("buggyfiles.csv");
+	
 	Integer match1,match2,match3;
 	Integer P = 0;
 	Integer meanP = 0;
@@ -306,89 +307,90 @@ public static void commitsBuggyClasses() throws IOException {
 	List<String> bugs = new ArrayList<>();
 	List<String> AVlist = new ArrayList<>();
 	List<String> FVlist = new ArrayList<>();
-	BufferedReader csvReaderBugs = new BufferedReader(new FileReader("bugs&versions.csv"));
-	RandomAccessFile csvReaderCommits = new RandomAccessFile("gitCommits.csv","r");
 	
-	while ((rowBugs = csvReaderBugs.readLine()) != null) {
-	    String[] dataBugs = rowBugs.split(";");
-	    //System.out.println(dataBugs[0]);
-	   while((rowCommits = csvReaderCommits.readLine()) != null) {
-	    	String[] dataCommits = rowCommits.split(";");
-	    	match1 = StringUtils.countMatches(dataCommits[0], "[" + dataBugs[0] + "]");
-	    	match2 = StringUtils.countMatches(dataCommits[0], dataBugs[0] + ":");
-	    	match3 = StringUtils.countMatches(dataCommits[0], dataBugs[0] + " ");
-	    	//System.out.println(dataBugs[0] +" "+ match1.toString() +" " + match2.toString() + " " + match3.toString());
-	    	if(match1 >= 1 || match2 >= 1 || match3 >= 1) {
-	    		if(!dataBugs[1].contentEquals("none") && StringUtils.countMatches(dataBugs[1], "*") >= 1) {
-	    			String[] AVarray = dataBugs[1].split("\\*");
-	    			for(String s : AVarray) {
-	    				AVlist.add(s);
-	    			}
-	    			AVmin = Collections.min(AVlist);
-	    		}
-	    		else if(!dataBugs[1].contentEquals("none")) {
-	    			AVmin = dataBugs[1];
-	    		}
-	    		else {
-	    			AVmin = "none";
-	    		}
-	    		if(!dataBugs[2].contentEquals("none") && StringUtils.countMatches(dataBugs[2], "*") >= 1) {
-	    			String[] FVarray = dataBugs[2].split("\\*");
-	    			for(String s : FVarray) {
-	    				FVlist.add(s);
-	    			}
-	    			FVmin = Collections.min(FVlist);
-	    		}
-	    		else if(!dataBugs[2].contentEquals("none")){
-	    			FVmin = dataBugs[2];
-	    		}
-	    		else {
-	    			FVmin = "none";
-	    		}
-	    		List<String> buggyfiles = retrieveBuggyFiles(dataCommits[1]);
-	    		if(!AVmin.equals("none") && !FVmin.equals("none")) {
-	    			if(Integer.parseInt(FVmin) == Integer.parseInt(dataBugs[3])) {
-	    				P = 0;
-		    			countP++;
-	    			}
-	    			else {
-	    				P = (Integer.parseInt(FVmin) - Integer.parseInt(AVmin))/(Integer.parseInt(FVmin) - Integer.parseInt(dataBugs[3]));
-		    			countP++;
-	    			}
-	    			if(P < 0) {
-	    				P = 0;
-	    				countP--;
-	    				System.out.println("Jumping " + FVmin + " " + AVmin);
-	    				continue; //jump who have FV < AV
-	    			}
-	    			meanP = (meanP + P)/(countP);
-	    			System.out.println(dataBugs[0] + " " + P.toString() + " " + meanP.toString() );
-	    		}
-	    		else {
-	    			if(!FVmin.equals("none")) {
-	    				Integer predicted = (Integer.parseInt(FVmin) - meanP *(Integer.parseInt(FVmin) - Integer.parseInt(dataBugs[3])));
-	    				AVmin = predicted.toString();
-	    				System.out.println(dataBugs[0] + " " + AVmin );
-	    			}
-	    		}
-	    		String bugss = dataBugs[0] + ";" + AVmin+ ";" + FVmin + ";" + dataCommits[1];
-	    		for(String elem : buggyfiles) {
-	    			bugss = bugss + ";" + elem;
-	    		}
-	    		csvBuggyFilesWriter.write(bugss);
-	    		csvBuggyFilesWriter.write("\n");
-	    		//bugs.add(dataBugs[0] + ";" + AVmin+ ";" + FVmin + ";" + dataCommits[1]);
-	    		csvReaderCommits.seek(0);
-	    		break;
-	    	}
-	    }
-    	csvReaderCommits.seek(0);
-    	//System.out.println("done");
+	
+	
+	try(FileWriter csvBuggyFilesWriter = new FileWriter("buggyfiles.csv");
+		BufferedReader csvReaderBugs = new BufferedReader(new FileReader("bugs&versions.csv"));
+		RandomAccessFile csvReaderCommits = new RandomAccessFile("gitCommits.csv","r");){
+		
+		while ((rowBugs = csvReaderBugs.readLine()) != null) {
+		    String[] dataBugs = rowBugs.split(";");
+		   while((rowCommits = csvReaderCommits.readLine()) != null) {
+		    	String[] dataCommits = rowCommits.split(";");
+		    	match1 = StringUtils.countMatches(dataCommits[0], "[" + dataBugs[0] + "]");
+		    	match2 = StringUtils.countMatches(dataCommits[0], dataBugs[0] + ":");
+		    	match3 = StringUtils.countMatches(dataCommits[0], dataBugs[0] + " ");
+		    	if(match1 >= 1 || match2 >= 1 || match3 >= 1) {
+		    		if(!dataBugs[1].contentEquals("none") && StringUtils.countMatches(dataBugs[1], "*") >= 1) {
+		    			String[] AVarray = dataBugs[1].split("\\*");
+		    			for(String s : AVarray) {
+		    				AVlist.add(s);
+		    			}
+		    			AVmin = Collections.min(AVlist);
+		    		}
+		    		else if(!dataBugs[1].contentEquals("none")) {
+		    			AVmin = dataBugs[1];
+		    		}
+		    		else {
+		    			AVmin = "none";
+		    		}
+		    		if(!dataBugs[2].contentEquals("none") && StringUtils.countMatches(dataBugs[2], "*") >= 1) {
+		    			String[] FVarray = dataBugs[2].split("\\*");
+		    			for(String s : FVarray) {
+		    				FVlist.add(s);
+		    			}
+		    			FVmin = Collections.min(FVlist);
+		    		}
+		    		else if(!dataBugs[2].contentEquals("none")){
+		    			FVmin = dataBugs[2];
+		    		}
+		    		else {
+		    			FVmin = "none";
+		    		}
+		    		List<String> buggyfiles = retrieveBuggyFiles(dataCommits[1]);
+		    		if(!AVmin.equals("none") && !FVmin.equals("none")) {
+		    			if(Integer.parseInt(FVmin) == Integer.parseInt(dataBugs[3])) {
+		    				P = 0;
+			    			countP++;
+		    			}
+		    			else {
+		    				P = (Integer.parseInt(FVmin) - Integer.parseInt(AVmin))/(Integer.parseInt(FVmin) - Integer.parseInt(dataBugs[3]));
+			    			countP++;
+		    			}
+		    			if(P < 0) {
+		    				P = 0;
+		    				countP--;
+		    				System.out.println("Jumping " + FVmin + " " + AVmin);
+		    				continue; //jump who have FV < AV
+		    			}
+		    			meanP = (meanP + P)/(countP);
+		    			System.out.println(dataBugs[0] + " " + P.toString() + " " + meanP.toString() );
+		    		}
+		    		else {
+		    			if(!FVmin.equals("none")) {
+		    				Integer predicted = (Integer.parseInt(FVmin) - meanP *(Integer.parseInt(FVmin) - Integer.parseInt(dataBugs[3])));
+		    				AVmin = predicted.toString();
+		    				System.out.println(dataBugs[0] + " " + AVmin );
+		    			}
+		    		}
+		    		String bugss = dataBugs[0] + ";" + AVmin+ ";" + FVmin + ";" + dataCommits[1];
+		    		for(String elem : buggyfiles) {
+		    			bugss = bugss + ";" + elem;
+		    		}
+		    		csvBuggyFilesWriter.write(bugss);
+		    		csvBuggyFilesWriter.write("\n");
+		    		csvReaderCommits.seek(0);
+		    		break;
+		    	}
+		    }
+	    	csvReaderCommits.seek(0);
+		}
+		csvReaderCommits.close();
+		csvReaderBugs.close();
+		csvBuggyFilesWriter.close();
 	}
-	csvReaderCommits.close();
-	csvReaderBugs.close();
-	csvBuggyFilesWriter.close();
-	//System.out.println(bugs.toString());
+
 }
 
 public static void buggyMetric() throws IOException {
