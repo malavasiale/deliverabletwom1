@@ -2,7 +2,6 @@ package deliverabletwo;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -246,8 +245,6 @@ public static List<String> retrieveTick() throws JSONException, IOException {
 public static void retrieveFiles() throws IOException, InterruptedException {
 	String baseurl = "https://api.github.com/repos/apache/tajo/contents";
 	String path = "";
-	int count = 0;
-	int total = 0;
 	List<String> checked = new ArrayList<>();
 	List<String> directory = new ArrayList<>();
 	
@@ -272,8 +269,6 @@ public static void retrieveFiles() throws IOException, InterruptedException {
 			else{
 				path = "";
 			}
-			count++;
-			total++;
 			Thread.sleep(1000);
 		}while(!path.equals(""));
 		
@@ -304,13 +299,17 @@ public static List<String> retrieveBuggyFiles(String sha) throws JSONException, 
 }
 
 public static void commitsBuggyClasses() throws IOException {
-	String rowBugs,rowCommits, AVmin, FVmin;
+	String rowBugs;
+	String rowCommits;
+	String AVmin;
+	String FVmin;
 	
-	Integer match1,match2,match3;
+	Integer match1;
+	Integer match2;
+	Integer match3;
 	Integer P = 0;
 	Integer meanP = 0;
 	Integer countP = 0;
-	List<String> bugs = new ArrayList<>();
 	List<String> AVlist = new ArrayList<>();
 	List<String> FVlist = new ArrayList<>();
 	
@@ -400,9 +399,12 @@ public static void commitsBuggyClasses() throws IOException {
 }
 
 public static void buggyMetric() throws IOException {
-	String rowVersions , rowFile,rowBuggyFile;
+	String rowFile;
+	String rowBuggyFile;
 	Integer versions = 0;
-	Integer maxVersion,AV,FV;
+	Integer maxVersion;
+	Integer AV;
+	Integer FV;
 	Boolean buggy = false;
 	
 	try(FileWriter csvMetrics = new FileWriter("buggyMetrics.csv");
@@ -412,7 +414,7 @@ public static void buggyMetric() throws IOException {
 		
 		csvMetrics.write("Version;File;Buggy\n");
 		
-		while((rowVersions = csvReaderVersions.readLine()) != null) {
+		while((csvReaderVersions.readLine()) != null) {
 			versions++;
 		}
 		maxVersion = (versions-1)/2;
@@ -468,7 +470,8 @@ public static void buggyMetric() throws IOException {
 public static void filesInfo() throws IOException {
 	String row;
 	String author;
-	Integer added,deleted;
+	Integer added;
+	Integer deleted;
 	
 	try(RandomAccessFile csvReaderBuggyFiles = new RandomAccessFile("buggyfiles.csv","r");
 		FileWriter csvFilesInfo = new FileWriter("filesInfo.csv");){
@@ -512,7 +515,11 @@ public static void makeMetricsFile() throws IOException {
 	Integer MAX_setsize = 0;
 	Integer AVG_setsize = 0;
 	Integer count = 0;
-	String rowBuggy,rowInfo,filename,version,buggy;
+	String rowBuggy;
+	String rowInfo;
+	String filename;
+	String version;
+	String buggy;
 	
 	try(RandomAccessFile csvReaderFilesInfo = new RandomAccessFile("filesInfo.csv","r");
 		RandomAccessFile csvReaderMetrics = new RandomAccessFile("buggyMetrics.csv","r");
