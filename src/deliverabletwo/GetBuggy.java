@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Level;
+
 
 import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
@@ -28,11 +28,13 @@ import org.json.JSONObject;
 
 public class GetBuggy {
 	
+	// Variabili usato solo per evitare di duplicare piu volte la stessa stringa nel codice(considerato smell)
+	private static final String JAVA_FILES = ".java";
 
 	private static final String PROJ_FILES = "fileInProject.csv";
-	private static final String FINAL_DATA = "finalData.csv";
+	private static final String GIT_COMMITS = "gitCommits.csv";
+	private static final String TAJO_VERSIONS_INFO = "TAJOVersionInfo.csv";
 	private static final String OAUTH_PATH = "C:\\Users\\malav\\Desktop\\isw2\\oauth.txt";
-	private static final String OAUTH_TOKEN = "";
 	
 	
 private static String readAll(Reader rd) throws IOException {
@@ -44,7 +46,7 @@ private static String readAll(Reader rd) throws IOException {
 	      return sb.toString();
 }
 
-public static String getOAUTHToken() throws FileNotFoundException, IOException {
+public static String getOAUTHToken() throws IOException {
 	String token;
 	try(BufferedReader oauthReader = new BufferedReader(new FileReader(OAUTH_PATH));){
 	 	   token = oauthReader.readLine();
@@ -53,8 +55,8 @@ public static String getOAUTHToken() throws FileNotFoundException, IOException {
 }
 
 public static JSONArray readJsonArrayAuth(String url) throws IOException, JSONException {
-    URL url_1 = new URL(url);
-    URLConnection uc = url_1.openConnection();
+    URL url1 = new URL(url);
+    URLConnection uc = url1.openConnection();
     uc.setRequestProperty("X-Requested-With", "Curl");
     String username =  "malavasiale";
     String token =  getOAUTHToken();
@@ -65,16 +67,15 @@ public static JSONArray readJsonArrayAuth(String url) throws IOException, JSONEx
 
     InputStreamReader inputStreamReader = new InputStreamReader(uc.getInputStream());
     try(BufferedReader rd = new BufferedReader(inputStreamReader);){
- 	   JSONArray  jsonArray = new JSONArray(readAll(rd));
- 	   return jsonArray;
+ 	   return new JSONArray(readAll(rd));
     } finally {
        inputStreamReader.close();
     }
  }
 
 public static JSONObject readJsonObjectAuth(String url) throws IOException, JSONException {
-    URL url_1 = new URL(url);
-    URLConnection uc = url_1.openConnection();
+    URL url1 = new URL(url);
+    URLConnection uc = url1.openConnection();
     uc.setRequestProperty("X-Requested-With", "Curl");
     String username =  "malavasiale";
     String token =  getOAUTHToken();
@@ -85,8 +86,7 @@ public static JSONObject readJsonObjectAuth(String url) throws IOException, JSON
 
     InputStreamReader inputStreamReader = new InputStreamReader(uc.getInputStream());
     try(BufferedReader rd = new BufferedReader(inputStreamReader);){
- 	   JSONObject  jsonObject = new JSONObject(readAll(rd));
- 	   return jsonObject;
+ 	   return new JSONObject(readAll(rd));
     } finally {
        inputStreamReader.close();
     }
@@ -117,12 +117,11 @@ public static void retrieveGitCommits() throws IOException, InterruptedException
 	Integer k;
 	String msg;
 	String sha;
-	try(FileWriter csvWriter = new FileWriter("gitCommits.csv");) {
+	try(FileWriter csvWriter = new FileWriter(GIT_COMMITS);) {
 		csvWriter.append("message;sha\n");
 		for(;;i++) {
 			String url = "https://api.github.com/repos/apache/tajo/commits?page="+i.toString()+"&per_page=50";
-			Thread.sleep(1100);
-			System.out.println("Pagina numero :"+i);
+			Thread.sleep(1000);
 			JSONArray json = readJsonArrayAuth(url);
 			Integer l = json.length();
 			if(l == 0) {
@@ -144,27 +143,25 @@ public static void retrieveGitCommits() throws IOException, InterruptedException
 
 public static String getOV(String created) throws IOException {
 	String rowDate;
-	Integer OV = 0;
+	Integer ov = 0;
 	Integer count = 1; 
 	String[] a = created.split("T");
 
-	try(RandomAccessFile ra = new RandomAccessFile("TAJOVersionInfo.csv","rw");){
+	try(RandomAccessFile ra = new RandomAccessFile(TAJO_VERSIONS_INFO,"rw");){
 		ra.readLine();
 		while((rowDate = ra.readLine()) != null ) {
 			String[] z = rowDate.split(",");
-		    System.out.println(a[0] + " " + z[3] );
-		    System.out.println(a[0].compareTo(z[3]));
 		    if(a[0].compareTo(z[3]) < 0) {
-		    	OV = count-1;
+		    	ov = count-1;
 		    	break;
 		    }
 		    count++;
 		}
 	}
-	if(OV == 0) {
-		OV = 1;
+	if(ov == 0) {
+		ov = 1;
 	}
-	return OV.toString();
+	return ov.toString();
 }
 
 public static List<String> retrieveTick() throws JSONException, IOException {
@@ -172,9 +169,11 @@ public static List<String> retrieveTick() throws JSONException, IOException {
 	   Integer j = 0; 
 	   Integer i = 0;
 	   Integer total = 1;
-	   String OV;
+	   String ov;
+	   String fields = "fields";
+	   
 	   List<String> ids = new ArrayList<>();
-	   try(RandomAccessFile ra = new RandomAccessFile("TAJOVersionInfo.csv","rw");){
+	   try(RandomAccessFile ra = new RandomAccessFile(TAJO_VERSIONS_INFO,"rw");){
 		   do {
 			   j = i + 1000;
 			   String url = "https://issues.apache.org/jira/rest/api/2/search?jql=project=%22"
@@ -186,8 +185,8 @@ public static List<String> retrieveTick() throws JSONException, IOException {
 			   for (; i < total && i < j; i++) {
 				   //Iterate through each bug
 				   String key = issues.getJSONObject(i%1000).get("key").toString();
-				   String created = issues.getJSONObject(i%1000).getJSONObject("fields").getString("created");
-				   JSONArray affectedVersions = issues.getJSONObject(i%1000).getJSONObject("fields").getJSONArray("versions");
+				   String created = issues.getJSONObject(i%1000).getJSONObject(fields).getString("created");
+				   JSONArray affectedVersions = issues.getJSONObject(i%1000).getJSONObject(fields).getJSONArray("versions");
 				   String av =";";
 				   for(int k = 0; k<affectedVersions.length();k++) {
 						String line = "";
@@ -211,7 +210,7 @@ public static List<String> retrieveTick() throws JSONException, IOException {
 				   if(affectedVersions.length() == 0 || av.equals(";")) {
 					   av = av + "none";
 				   }
-				   JSONArray fixedVersions = issues.getJSONObject(i%1000).getJSONObject("fields").getJSONArray("fixVersions");
+				   JSONArray fixedVersions = issues.getJSONObject(i%1000).getJSONObject(fields).getJSONArray("fixVersions");
 				   String fv = ";";
 				   for(int k = 0; k<fixedVersions.length();k++) {
 					   String line = "";
@@ -236,8 +235,8 @@ public static List<String> retrieveTick() throws JSONException, IOException {
 				   if(fixedVersions.length() == 0) {
 					   fv = fv + "none";
 				   }
-				   OV = getOV(created);
-				   ids.add(key+av+fv + ";" + OV);
+				   ov = getOV(created);
+				   ids.add(key+av+fv + ";" + ov);
 			   } 
 		   } while (i < total);
 	   }
@@ -266,7 +265,7 @@ public static void retrieveFiles() throws IOException, InterruptedException {
 					directory.add(filepath);
 				}
 			}
-			if(directory.size() != 0) {
+			if(!directory.isEmpty()) {
 				path = directory.get(0);
 				directory.remove(0);
 			}
@@ -275,10 +274,7 @@ public static void retrieveFiles() throws IOException, InterruptedException {
 			}
 			count++;
 			total++;
-			System.out.println("File :"+checked.toString());
-			System.out.println("Dir : "+directory.toString());
-			System.out.println(count +" and "+total);
-			Thread.sleep(1100);
+			Thread.sleep(1000);
 		}while(!path.equals(""));
 		
 		csvWriter.append("filepath");
@@ -288,7 +284,6 @@ public static void retrieveFiles() throws IOException, InterruptedException {
 			csvWriter.append("\n");
 		}
 		csvWriter.flush();
-		csvWriter.close();
 	}
 	
 }
@@ -301,7 +296,7 @@ public static List<String> retrieveBuggyFiles(String sha) throws JSONException, 
 	for(int i = 0; i < filesarray.length(); i++) {
 		JSONObject file = filesarray.getJSONObject(i);
 		String filename = file.getString("filename");
-		if(StringUtils.countMatches(filename, ".java") >= 1) {
+		if(StringUtils.countMatches(filename, JAVA_FILES) >= 1) {
 			buggyfiles.add(filename);
 		}
 	}
@@ -323,7 +318,7 @@ public static void commitsBuggyClasses() throws IOException {
 	
 	try(FileWriter csvBuggyFilesWriter = new FileWriter("buggyfiles.csv");
 		BufferedReader csvReaderBugs = new BufferedReader(new FileReader("bugs&versions.csv"));
-		RandomAccessFile csvReaderCommits = new RandomAccessFile("gitCommits.csv","r");){
+		RandomAccessFile csvReaderCommits = new RandomAccessFile(GIT_COMMITS,"r");){
 		
 		while ((rowBugs = csvReaderBugs.readLine()) != null) {
 		    String[] dataBugs = rowBugs.split(";");
@@ -411,7 +406,7 @@ public static void buggyMetric() throws IOException {
 	Boolean buggy = false;
 	
 	try(FileWriter csvMetrics = new FileWriter("buggyMetrics.csv");
-		BufferedReader csvReaderVersions = new BufferedReader(new FileReader("TAJOVersionInfo.csv"));
+		BufferedReader csvReaderVersions = new BufferedReader(new FileReader(TAJO_VERSIONS_INFO));
 		BufferedReader csvReaderFiles = new BufferedReader(new FileReader("fileInProject.csv"));
 		RandomAccessFile csvReaderBuggyFiles = new RandomAccessFile("buggyfiles.csv","r");){
 		
@@ -424,7 +419,7 @@ public static void buggyMetric() throws IOException {
 		
 		while((rowFile = csvReaderFiles.readLine()) != null) {
 			System.out.println("Cecking file : " +rowFile);
-			if(StringUtils.countMatches(rowFile, ".java") >= 1) {
+			if(StringUtils.countMatches(rowFile, JAVA_FILES) >= 1) {
 				for(Integer v = 1; v <= maxVersion;v++) {
 					while((rowBuggyFile = csvReaderBuggyFiles.readLine()) != null) {
 						String[] listOfFiles = rowBuggyFile.split(";");
@@ -491,7 +486,7 @@ public static void filesInfo() throws IOException {
 				for(int i = 0; i < files.length();i++) {
 					JSONObject file = files.getJSONObject(i);
 					String filename = file.getString("filename");
-					if(StringUtils.countMatches(filename, ".java") >= 1) {
+					if(StringUtils.countMatches(filename, JAVA_FILES) >= 1) {
 						added = file.getInt("additions");
 						deleted = file.getInt("deletions");
 						csvFilesInfo.write(rowSplit[2] + ";" + filename + ";" + added + ";" + deleted + ";" + files.length() + ";" + author + "\n");
@@ -586,7 +581,7 @@ public static void makeMetricsFile() throws IOException {
 		}
 		
 		
-		File versionsInfo = new File("TAJOVersionInfo.csv");
+		File versionsInfo = new File(TAJO_VERSIONS_INFO);
 		if(!versionsInfo.isFile()) {
 			System.out.println("Downloading versions info of the project");
 			GetReleaseInfo.getInfo();
@@ -606,7 +601,7 @@ public static void makeMetricsFile() throws IOException {
 			}
 		}
 		
-		File gitCommits = new File("gitCommits.csv");
+		File gitCommits = new File(GIT_COMMITS);
 		if(!gitCommits.isFile()) {
 			System.out.println("Downloading list of commits from git");
 			retrieveGitCommits();
