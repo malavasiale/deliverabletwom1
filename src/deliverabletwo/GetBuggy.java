@@ -136,17 +136,19 @@ public static String getOV(String created) throws IOException {
 	Integer OV = 0;
 	Integer count = 1; 
 	String[] a = created.split("T");
-	RandomAccessFile ra = new RandomAccessFile("TAJOVersionInfo.csv","rw");
-	ra.readLine();
-	while((rowDate = ra.readLine()) != null ) {
-		String[] z = rowDate.split(",");
-	    System.out.println(a[0] + " " + z[3] );
-	    System.out.println(a[0].compareTo(z[3]));
-	    if(a[0].compareTo(z[3]) < 0) {
-	    	OV = count-1;
-	    	break;
-	    }
-	    count++;
+
+	try(RandomAccessFile ra = new RandomAccessFile("TAJOVersionInfo.csv","rw");){
+		ra.readLine();
+		while((rowDate = ra.readLine()) != null ) {
+			String[] z = rowDate.split(",");
+		    System.out.println(a[0] + " " + z[3] );
+		    System.out.println(a[0].compareTo(z[3]));
+		    if(a[0].compareTo(z[3]) < 0) {
+		    	OV = count-1;
+		    	break;
+		    }
+		    count++;
+		}
 	}
 	if(OV == 0) {
 		OV = 1;
