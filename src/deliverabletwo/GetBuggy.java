@@ -330,10 +330,8 @@ public static void commitsBuggyClasses() throws IOException {
 		    	match3 = StringUtils.countMatches(dataCommits[0], dataBugs[0] + " ");
 		    	if(match1 >= 1 || match2 >= 1 || match3 >= 1) {
 		    		if(!dataBugs[1].contentEquals("none") && StringUtils.countMatches(dataBugs[1], "*") >= 1) {
-		    			String[] AVarray = dataBugs[1].split("\\*");
-		    			for(String s : AVarray) {
-		    				avlist.add(s);
-		    			}
+		    			String[] avarray = dataBugs[1].split("\\*");
+		    			Collections.addAll(avlist, avarray);
 		    			avmin = Collections.min(avlist);
 		    		}
 		    		else if(!dataBugs[1].contentEquals("none")) {
@@ -343,10 +341,8 @@ public static void commitsBuggyClasses() throws IOException {
 		    			avmin = "none";
 		    		}
 		    		if(!dataBugs[2].contentEquals("none") && StringUtils.countMatches(dataBugs[2], "*") >= 1) {
-		    			String[] FVarray = dataBugs[2].split("\\*");
-		    			for(String s : FVarray) {
-		    				fvlist.add(s);
-		    			}
+		    			String[] fvarray = dataBugs[2].split("\\*");
+		    			Collections.addAll(fvlist, fvarray);
 		    			fvmin = Collections.min(fvlist);
 		    		}
 		    		else if(!dataBugs[2].contentEquals("none")){
