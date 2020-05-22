@@ -33,6 +33,8 @@ public class GetBuggy {
 	private static final String PROJ_FILES = "fileInProject.csv";
 	private static final String GIT_COMMITS = "gitCommits.csv";
 	private static final String TAJO_VERSIONS_INFO = "TAJOVersionInfo.csv";
+	private static final String BUGGY_FILES = "buggyfiles.csv";
+	private static final String BUG_AND_VERSIONS = "bugs&versions.csv";
 	private static final String OAUTH = "C:\\Users\\" + "malav\\Desktop\\isw2\\oauth.txt";
 	
 	
@@ -301,22 +303,22 @@ public static List<String> retrieveBuggyFiles(String sha) throws JSONException, 
 public static void commitsBuggyClasses() throws IOException {
 	String rowBugs;
 	String rowCommits;
-	String AVmin;
-	String FVmin;
+	String avmin;
+	String fvmin;
 	
 	Integer match1;
 	Integer match2;
 	Integer match3;
-	Integer P = 0;
+	Integer p = 0;
 	Integer meanP = 0;
 	Integer countP = 0;
-	List<String> AVlist = new ArrayList<>();
-	List<String> FVlist = new ArrayList<>();
+	List<String> avlist = new ArrayList<>();
+	List<String> fvlist = new ArrayList<>();
 	
 	
 	
-	try(FileWriter csvBuggyFilesWriter = new FileWriter("buggyfiles.csv");
-		BufferedReader csvReaderBugs = new BufferedReader(new FileReader("bugs&versions.csv"));
+	try(FileWriter csvBuggyFilesWriter = new FileWriter(BUGGY_FILES);
+		BufferedReader csvReaderBugs = new BufferedReader(new FileReader(BUG_AND_VERSIONS ));
 		RandomAccessFile csvReaderCommits = new RandomAccessFile(GIT_COMMITS,"r");){
 		
 		while ((rowBugs = csvReaderBugs.readLine()) != null) {
@@ -330,64 +332,63 @@ public static void commitsBuggyClasses() throws IOException {
 		    		if(!dataBugs[1].contentEquals("none") && StringUtils.countMatches(dataBugs[1], "*") >= 1) {
 		    			String[] AVarray = dataBugs[1].split("\\*");
 		    			for(String s : AVarray) {
-		    				AVlist.add(s);
+		    				avlist.add(s);
 		    			}
-		    			AVmin = Collections.min(AVlist);
+		    			avmin = Collections.min(avlist);
 		    		}
 		    		else if(!dataBugs[1].contentEquals("none")) {
-		    			AVmin = dataBugs[1];
+		    			avmin = dataBugs[1];
 		    		}
 		    		else {
-		    			AVmin = "none";
+		    			avmin = "none";
 		    		}
 		    		if(!dataBugs[2].contentEquals("none") && StringUtils.countMatches(dataBugs[2], "*") >= 1) {
 		    			String[] FVarray = dataBugs[2].split("\\*");
 		    			for(String s : FVarray) {
-		    				FVlist.add(s);
+		    				fvlist.add(s);
 		    			}
-		    			FVmin = Collections.min(FVlist);
+		    			fvmin = Collections.min(fvlist);
 		    		}
 		    		else if(!dataBugs[2].contentEquals("none")){
-		    			FVmin = dataBugs[2];
+		    			fvmin = dataBugs[2];
 		    		}
 		    		else {
-		    			FVmin = "none";
+		    			fvmin = "none";
 		    		}
 		    		List<String> buggyfiles = retrieveBuggyFiles(dataCommits[1]);
-		    		if(!AVmin.equals("none") && !FVmin.equals("none")) {
-		    			if(Integer.parseInt(FVmin) == Integer.parseInt(dataBugs[3])) {
-		    				P = 0;
+		    		if(!avmin.equals("none") && !fvmin.equals("none")) {
+		    			if(Integer.parseInt(fvmin) == Integer.parseInt(dataBugs[3])) {
+		    				p = 0;
 			    			countP++;
 		    			}
 		    			else {
-		    				P = (Integer.parseInt(FVmin) - Integer.parseInt(AVmin))/(Integer.parseInt(FVmin) - Integer.parseInt(dataBugs[3]));
+		    				p = (Integer.parseInt(fvmin) - Integer.parseInt(avmin))/(Integer.parseInt(fvmin) - Integer.parseInt(dataBugs[3]));
 			    			countP++;
 		    			}
-		    			if(P < 0) {
-		    				P = 0;
+		    			if(p < 0) {
+		    				p = 0;
 		    				countP--;
-		    				System.out.println("Jumping " + FVmin + " " + AVmin);
+		    				System.out.println("Jumping " + fvmin + " " + avmin);
 		    				continue; //jump who have FV < AV
 		    			}
-		    			meanP = (meanP + P)/(countP);
-		    			System.out.println(dataBugs[0] + " " + P.toString() + " " + meanP.toString() );
+		    			meanP = (meanP + p)/(countP);
+		    			System.out.println(dataBugs[0] + " " + p.toString() + " " + meanP.toString() );
 		    		}
 		    		else {
-		    			if(!FVmin.equals("none")) {
-		    				Integer predicted = (Integer.parseInt(FVmin) - meanP *(Integer.parseInt(FVmin) - Integer.parseInt(dataBugs[3])));
-		    				AVmin = predicted.toString();
-		    				System.out.println(dataBugs[0] + " " + AVmin );
+		    			if(!fvmin.equals("none")) {
+		    				Integer predicted = (Integer.parseInt(fvmin) - meanP *(Integer.parseInt(fvmin) - Integer.parseInt(dataBugs[3])));
+		    				avmin = predicted.toString();
+		    				System.out.println(dataBugs[0] + " " + avmin );
 		    			}
 		    		}
-		    		String bugss = dataBugs[0] + ";" + AVmin+ ";" + FVmin + ";" + dataCommits[1];
+		    		String bugss = dataBugs[0] + ";" + avmin+ ";" + fvmin + ";" + dataCommits[1];
 		    		for(String elem : buggyfiles) {
 		    			bugss = bugss + ";" + elem;
 		    		}
 		    		csvBuggyFilesWriter.write(bugss);
 		    		csvBuggyFilesWriter.write("\n");
-		    		csvReaderCommits.seek(0);
-		    		break;
-		    	}
+		    		csvReaderCommits.seek(csvReaderCommits.length());
+		    	}	
 		    }
 	    	csvReaderCommits.seek(0);
 		}
@@ -410,7 +411,7 @@ public static void buggyMetric() throws IOException {
 	try(FileWriter csvMetrics = new FileWriter("buggyMetrics.csv");
 		BufferedReader csvReaderVersions = new BufferedReader(new FileReader(TAJO_VERSIONS_INFO));
 		BufferedReader csvReaderFiles = new BufferedReader(new FileReader("fileInProject.csv"));
-		RandomAccessFile csvReaderBuggyFiles = new RandomAccessFile("buggyfiles.csv","r");){
+		RandomAccessFile csvReaderBuggyFiles = new RandomAccessFile(BUGGY_FILES,"r");){
 		
 		csvMetrics.write("Version;File;Buggy\n");
 		
@@ -473,7 +474,7 @@ public static void filesInfo() throws IOException {
 	Integer added;
 	Integer deleted;
 	
-	try(RandomAccessFile csvReaderBuggyFiles = new RandomAccessFile("buggyfiles.csv","r");
+	try(RandomAccessFile csvReaderBuggyFiles = new RandomAccessFile(BUGGY_FILES,"r");
 		FileWriter csvFilesInfo = new FileWriter("filesInfo.csv");){
 		
 		csvFilesInfo.write("Version;Filename;LOC_Added;LOC_deleted;Set_size;Author\n");
@@ -594,11 +595,11 @@ public static void makeMetricsFile() throws IOException {
 			GetReleaseInfo.getInfo();
 		}
 		
-		File bugAndVer = new File("bugs&versions.csv");
+		File bugAndVer = new File(BUG_AND_VERSIONS);
 		if(!bugAndVer.isFile()) {
 			System.out.println("Downloading list of bug and versions");
 			tickets = retrieveTick();
-			try(FileWriter bugAndVers = new FileWriter("bugs&versions.csv");){
+			try(FileWriter bugAndVers = new FileWriter(BUG_AND_VERSIONS);){
 				bugAndVers.append("TicketID;AV;FV;OV\n");
 				for(String s : tickets) {
 					bugAndVers.append(s+"\n");
@@ -615,7 +616,7 @@ public static void makeMetricsFile() throws IOException {
 		}
 		
 		// retrieve buggy file for every commit
-		File buggyFiles = new File("buggyfiles.csv");
+		File buggyFiles = new File(BUGGY_FILES);
 		if(!buggyFiles.isFile()) {
 			System.out.println("Finding buggy files for every ticket");
 			commitsBuggyClasses();
