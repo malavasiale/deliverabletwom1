@@ -33,7 +33,7 @@ public class GetBuggy {
 	private static final String PROJ_FILES = "fileInProject.csv";
 	private static final String GIT_COMMITS = "gitCommits.csv";
 	private static final String TAJO_VERSIONS_INFO = "TAJOVersionInfo.csv";
-	private static final String OAUTH_PATH = "C:\\Users\\malav\\Desktop\\isw2\\oauth.txt";
+	private static final String OAUTH = "C:\\Users\\" + "malav\\Desktop\\isw2\\oauth.txt";
 	
 	
 private static String readAll(Reader rd) throws IOException {
@@ -47,7 +47,7 @@ private static String readAll(Reader rd) throws IOException {
 
 public static String getOAUTHToken() throws IOException {
 	String token;
-	try(BufferedReader oauthReader = new BufferedReader(new FileReader(OAUTH_PATH));){
+	try(BufferedReader oauthReader = new BufferedReader(new FileReader(OAUTH));){
 	 	   token = oauthReader.readLine();
 	    }
 	return token;
