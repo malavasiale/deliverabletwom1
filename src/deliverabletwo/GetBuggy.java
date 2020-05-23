@@ -16,12 +16,14 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Collections;
 import java.util.List;
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 
 
 
@@ -35,6 +37,9 @@ public class GetBuggy {
 	private static final String TAJO_VERSIONS_INFO = "TAJOVersionInfo.csv";
 	private static final String BUGGY_FILES = "buggyfiles.csv";
 	private static final String BUG_AND_VERSIONS = "bugs&versions.csv";
+	private static final String BUGGY_METRIC = "buggyMetrics.csv";
+	private static final String FILES_INFO = "filesInfo.csv";
+	private static final String FINAL_METRICS = "finalMetrics.csv";
 	private static final String OAUTH = "C:\\Users\\" + "malav\\Desktop\\isw2\\oauth.txt";
 	
 	
@@ -314,6 +319,7 @@ public static void commitsBuggyClasses() throws IOException {
 	Integer countP = 0;
 	List<String> avlist = new ArrayList<>();
 	List<String> fvlist = new ArrayList<>();
+	Logger l = Logger.getLogger(GetBuggy.class.getName());
 	
 	
 	
@@ -364,17 +370,17 @@ public static void commitsBuggyClasses() throws IOException {
 		    			if(p < 0) {
 		    				p = 0;
 		    				countP--;
-		    				System.out.println("Jumping " + fvmin + " " + avmin);
+		    				l.log(Level.INFO, "Jumping " + fvmin + " " + avmin );
 		    				continue; //jump who have FV < AV
 		    			}
 		    			meanP = (meanP + p)/(countP);
-		    			System.out.println(dataBugs[0] + " " + p.toString() + " " + meanP.toString() );
+		    			l.log(Level.INFO, dataBugs[0] + " " + p.toString() + " " + meanP.toString() );
 		    		}
 		    		else {
 		    			if(!fvmin.equals("none")) {
 		    				Integer predicted = (Integer.parseInt(fvmin) - meanP *(Integer.parseInt(fvmin) - Integer.parseInt(dataBugs[3])));
 		    				avmin = predicted.toString();
-		    				System.out.println(dataBugs[0] + " " + avmin );
+		    				l.log(Level.INFO, dataBugs[0] + " " + avmin );
 		    			}
 		    		}
 		    		String bugss = dataBugs[0] + ";" + avmin+ ";" + fvmin + ";" + dataCommits[1];
@@ -388,9 +394,6 @@ public static void commitsBuggyClasses() throws IOException {
 		    }
 	    	csvReaderCommits.seek(0);
 		}
-		csvReaderCommits.close();
-		csvReaderBugs.close();
-		csvBuggyFilesWriter.close();
 	}
 
 }
@@ -400,13 +403,14 @@ public static void buggyMetric() throws IOException {
 	String rowBuggyFile;
 	Integer versions = 0;
 	Integer maxVersion;
-	Integer AV;
-	Integer FV;
+	Integer av;
+	Integer fv;
 	Boolean buggy = false;
+	Logger l = Logger.getLogger(GetBuggy.class.getName());
 	
-	try(FileWriter csvMetrics = new FileWriter("buggyMetrics.csv");
+	try(FileWriter csvMetrics = new FileWriter(BUGGY_METRIC);
 		BufferedReader csvReaderVersions = new BufferedReader(new FileReader(TAJO_VERSIONS_INFO));
-		BufferedReader csvReaderFiles = new BufferedReader(new FileReader("fileInProject.csv"));
+		BufferedReader csvReaderFiles = new BufferedReader(new FileReader(PROJ_FILES));
 		RandomAccessFile csvReaderBuggyFiles = new RandomAccessFile(BUGGY_FILES,"r");){
 		
 		csvMetrics.write("Version;File;Buggy\n");
@@ -417,7 +421,7 @@ public static void buggyMetric() throws IOException {
 		maxVersion = (versions-1)/2;
 		
 		while((rowFile = csvReaderFiles.readLine()) != null) {
-			System.out.println("Cecking file : " +rowFile);
+			l.log(Level.INFO, "Cecking file : " +rowFile);
 			if(StringUtils.countMatches(rowFile, JAVA_FILES) >= 1) {
 				for(Integer v = 1; v <= maxVersion;v++) {
 					while((rowBuggyFile = csvReaderBuggyFiles.readLine()) != null) {
@@ -426,9 +430,9 @@ public static void buggyMetric() throws IOException {
 							for(int i = 4; i < listOfFiles.length; i++) {
 								if(listOfFiles[i].equals(rowFile)) {
 									if(!listOfFiles[1].equals("none") && !listOfFiles[2].equals("none") ) {
-										AV = Integer.parseInt(listOfFiles[1]);
-										FV = Integer.parseInt(listOfFiles[2]);
-										if(v >= AV && v < FV) {
+										av = Integer.parseInt(listOfFiles[1]);
+										fv = Integer.parseInt(listOfFiles[2]);
+										if(v >= av && v < fv) {
 											buggy = true;
 											break;
 										}
@@ -442,11 +446,11 @@ public static void buggyMetric() throws IOException {
 								}
 							}
 						}
-						if(buggy) {
+						if(Boolean.TRUE.equals(buggy)) {
 							break;
 						}
 					}
-					if(buggy) {
+					if(Boolean.TRUE.equals(buggy)) {
 						csvMetrics.write(v.toString()+";"+rowFile+";"+"yes\n");
 					}
 					else {
@@ -457,10 +461,6 @@ public static void buggyMetric() throws IOException {
 				}
 			}
 		}
-		csvReaderVersions.close();
-		csvReaderFiles.close();
-		csvReaderBuggyFiles.close();
-		csvMetrics.close();
 	}
 }
 
@@ -471,7 +471,7 @@ public static void filesInfo() throws IOException {
 	Integer deleted;
 	
 	try(RandomAccessFile csvReaderBuggyFiles = new RandomAccessFile(BUGGY_FILES,"r");
-		FileWriter csvFilesInfo = new FileWriter("filesInfo.csv");){
+		FileWriter csvFilesInfo = new FileWriter(FILES_INFO);){
 		
 		csvFilesInfo.write("Version;Filename;LOC_Added;LOC_deleted;Set_size;Author\n");
 		
@@ -494,23 +494,21 @@ public static void filesInfo() throws IOException {
 				}
 			}
 		}
-		csvReaderBuggyFiles.close();
-		csvFilesInfo.close();
 	}
 }
 
 public static void makeMetricsFile() throws IOException {
 	
-	Integer LOC_touched = 0;
-	Integer LOC_added = 0;
-	Integer MAXLOC_added = 0;
-	Integer AVGLOC_added = 0;
+	Integer loc_touched = 0;
+	Integer loc_added = 0;
+	Integer maxloc_added = 0;
+	Integer avgloc_added = 0;
 	Integer churn = 0;
-	Integer MAX_churn = 0;
-	Integer AVG_churn = 0;
+	Integer mac_churn = 0;
+	Integer avg_churn = 0;
 	Integer setsize = 0;
-	Integer MAX_setsize = 0;
-	Integer AVG_setsize = 0;
+	Integer max_setsize = 0;
+	Integer avg_setsize = 0;
 	Integer count = 0;
 	String rowBuggy;
 	String rowInfo;
@@ -518,9 +516,9 @@ public static void makeMetricsFile() throws IOException {
 	String version;
 	String buggy;
 	
-	try(RandomAccessFile csvReaderFilesInfo = new RandomAccessFile("filesInfo.csv","r");
-		RandomAccessFile csvReaderMetrics = new RandomAccessFile("buggyMetrics.csv","r");
-		FileWriter csvMetrics = new FileWriter("finalMetrics.csv");){
+	try(RandomAccessFile csvReaderFilesInfo = new RandomAccessFile(FILES_INFO,"r");
+		RandomAccessFile csvReaderMetrics = new RandomAccessFile(BUGGY_METRIC,"r");
+		FileWriter csvMetrics = new FileWriter(FINAL_METRICS);){
 		
 		csvReaderMetrics.readLine();
 		
@@ -534,38 +532,38 @@ public static void makeMetricsFile() throws IOException {
 			while((rowInfo = csvReaderFilesInfo.readLine()) != null) {
 				String[] b = rowInfo.split(";");
 				if(b[0].equals(version) && b[1].equals(filename)) {
-					LOC_touched = LOC_touched + Integer.parseInt(b[2]) + Integer.parseInt(b[3]);
-					LOC_added = LOC_added + Integer.parseInt(b[2]);
-					if(MAXLOC_added < Integer.parseInt(b[2])) {
-						MAXLOC_added = Integer.parseInt(b[2]);
+					loc_touched = loc_touched + Integer.parseInt(b[2]) + Integer.parseInt(b[3]);
+					loc_added = loc_added + Integer.parseInt(b[2]);
+					if(maxloc_added < Integer.parseInt(b[2])) {
+						maxloc_added = Integer.parseInt(b[2]);
 					}
 					count++;
 					churn = churn + Integer.parseInt(b[2]) - Integer.parseInt(b[3]);
-					if(MAX_churn < Integer.parseInt(b[2]) - Integer.parseInt(b[3])) {
-						MAX_churn = Integer.parseInt(b[2]) - Integer.parseInt(b[3]);
+					if(mac_churn < Integer.parseInt(b[2]) - Integer.parseInt(b[3])) {
+						mac_churn = Integer.parseInt(b[2]) - Integer.parseInt(b[3]);
 					}
 					setsize = setsize + Integer.parseInt(b[4]);
-					if(MAX_setsize < Integer.parseInt(b[4])) {
-						MAX_setsize = Integer.parseInt(b[4]);
+					if(max_setsize < Integer.parseInt(b[4])) {
+						max_setsize = Integer.parseInt(b[4]);
 					}
 				}
 			}
 			if(count != 0) {
-				AVGLOC_added = LOC_added/count;
-				AVG_churn = churn/count;
-				AVG_setsize = setsize/count;
+				avgloc_added = loc_added/count;
+				avg_churn = churn/count;
+				avg_setsize = setsize/count;
 			}
-			csvMetrics.write(version + ";" + filename + ";" + LOC_touched.toString() + ";" + LOC_added.toString() + ";" + MAXLOC_added.toString() + ";" + AVGLOC_added.toString() + ";" + churn.toString() + ";" + MAX_churn.toString() + ";" + AVG_churn.toString() + ";" + setsize.toString() + ";" + MAX_setsize.toString() + ";" + AVG_setsize.toString() + ";" + buggy + "\n");
-			LOC_touched = 0;
-			LOC_added = 0;
-			MAXLOC_added = 0;
-			AVGLOC_added = 0;
+			csvMetrics.write(version + ";" + filename + ";" + loc_touched.toString() + ";" + loc_added.toString() + ";" + maxloc_added.toString() + ";" + avgloc_added.toString() + ";" + churn.toString() + ";" + mac_churn.toString() + ";" + avg_churn.toString() + ";" + setsize.toString() + ";" + max_setsize.toString() + ";" + avg_setsize.toString() + ";" + buggy + "\n");
+			loc_touched = 0;
+			loc_added = 0;
+			maxloc_added = 0;
+			avgloc_added = 0;
 			churn = 0;
-			MAX_churn = 0;
-			AVG_churn = 0;
+			mac_churn = 0;
+			avg_churn = 0;
 			setsize = 0;
-			MAX_setsize = 0;
-			AVG_setsize = 0;
+			max_setsize = 0;
+			avg_setsize = 0;
 			count = 0;
 			csvReaderFilesInfo.seek(0);
 		}
@@ -618,20 +616,20 @@ public static void makeMetricsFile() throws IOException {
 			commitsBuggyClasses();
 		}
 		
-		File buggyMetricsFile = new File("buggyMetrics.csv");
+		File buggyMetricsFile = new File(BUGGY_METRIC);
 		if(!buggyMetricsFile.isFile()) {
 			System.out.println("Calculating buggy metrics");
 			buggyMetric();
 		}
 		
-		File filesInfo = new File("filesInfo.csv");
+		File filesInfo = new File(FILES_INFO);
 		if(!filesInfo.isFile()) {
 			System.out.println("retrieving files info");
 			filesInfo();
 		}
 		
 		
-		File finalMetrics = new File("finalMetrics.csv");
+		File finalMetrics = new File(FINAL_METRICS);
 		if(!finalMetrics.isFile()) {
 			System.out.println("Calculating final metrics");
 			makeMetricsFile();
