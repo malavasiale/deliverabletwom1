@@ -600,8 +600,6 @@ public static void makeMetricsFile() throws IOException {
 				for(String s : tickets) {
 					bugAndVers.append(s+"\n");
 				}
-				bugAndVers.flush();
-				bugAndVers.close();
 			}
 		}
 		
