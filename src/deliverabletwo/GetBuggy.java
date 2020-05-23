@@ -421,7 +421,7 @@ public static void buggyMetric() throws IOException {
 		maxVersion = (versions-1)/2;
 		
 		while((rowFile = csvReaderFiles.readLine()) != null) {
-			l.log(Level.INFO, "Cecking file : " +rowFile);
+			l.log(Level.INFO, "Cecking file : {0} ",rowFile);
 			if(StringUtils.countMatches(rowFile, JAVA_FILES) >= 1) {
 				for(Integer v = 1; v <= maxVersion;v++) {
 					while((rowBuggyFile = csvReaderBuggyFiles.readLine()) != null) {
