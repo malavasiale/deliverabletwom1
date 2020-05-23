@@ -310,6 +310,7 @@ public static void commitsBuggyClasses() throws IOException {
 	String rowCommits;
 	String avmin;
 	String fvmin;
+	String logStr;
 	
 	Integer match1;
 	Integer match2;
@@ -370,17 +371,20 @@ public static void commitsBuggyClasses() throws IOException {
 		    			if(p < 0) {
 		    				p = 0;
 		    				countP--;
-		    				l.log(Level.INFO, "Jumping " + fvmin + " " + avmin );
+		    				logStr ="Jumping : " +  fvmin + " " + avmin;
+		    				l.log(Level.INFO, logStr );
 		    				continue; //jump who have FV < AV
 		    			}
 		    			meanP = (meanP + p)/(countP);
-		    			l.log(Level.INFO, dataBugs[0] + " " + p.toString() + " " + meanP.toString() );
+		    			logStr = dataBugs[0]+ ", P : " + p.toString()+ ", MeanP : " + meanP.toString();
+		    			l.log(Level.INFO,logStr);
 		    		}
 		    		else {
 		    			if(!fvmin.equals("none")) {
 		    				Integer predicted = (Integer.parseInt(fvmin) - meanP *(Integer.parseInt(fvmin) - Integer.parseInt(dataBugs[3])));
 		    				avmin = predicted.toString();
-		    				l.log(Level.INFO, dataBugs[0] + " " + avmin );
+		    				logStr = dataBugs[0]+ ", Predicted IV :  " + avmin; 
+		    				l.log(Level.INFO,logStr);
 		    			}
 		    		}
 		    		String bugss = dataBugs[0] + ";" + avmin+ ";" + fvmin + ";" + dataCommits[1];
