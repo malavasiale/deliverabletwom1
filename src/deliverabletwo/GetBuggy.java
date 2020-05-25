@@ -21,6 +21,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Stream;
 
 import org.apache.commons.lang3.StringUtils;
 import org.json.JSONArray;
@@ -123,11 +124,9 @@ public static JSONObject readJsonFromUrl(String url) throws IOException, JSONExc
 
 public static Long firstHalfVersions() throws IOException {	
 	
-	try {
-		Long versions = Files.lines(Paths.get("TAJOVersionInfo.csv"), Charset.defaultCharset()).count();
+	try(Stream<String> a = Files.lines(Paths.get("TAJOVersionInfo.csv"), Charset.defaultCharset());) {
+		Long versions = a.count();
 		return (versions-1)/2;
-	} finally {
-		Files.lines(Paths.get("TAJOVersionInfo.csv"), Charset.defaultCharset()).close();
 	}
 }
 
