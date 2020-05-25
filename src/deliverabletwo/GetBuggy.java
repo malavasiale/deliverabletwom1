@@ -11,7 +11,10 @@ import java.io.RandomAccessFile;
 import java.io.Reader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Collections;
@@ -116,6 +119,11 @@ public static JSONObject readJsonFromUrl(String url) throws IOException, JSONExc
    } finally {
      is.close();
    }
+}
+
+public static Long firstHalfVersions() throws IOException {	
+	Long versions = Files.lines(Paths.get("TAJOVersionInfo.csv"), Charset.defaultCharset()).count();
+	return (versions-1)/2;
 }
 
 public static void retrieveGitCommits() throws IOException, InterruptedException {
@@ -405,24 +413,19 @@ public static void commitsBuggyClasses() throws IOException {
 public static void buggyMetric() throws IOException {
 	String rowFile;
 	String rowBuggyFile;
-	Integer versions = 0;
-	Integer maxVersion;
+	Long maxVersion;
 	Integer av;
 	Integer fv;
 	Boolean buggy = false;
 	Logger l = Logger.getLogger(GetBuggy.class.getName());
 	
+	maxVersion = firstHalfVersions();
+	
 	try(FileWriter csvMetrics = new FileWriter(BUGGY_METRIC);
-		BufferedReader csvReaderVersions = new BufferedReader(new FileReader(TAJO_VERSIONS_INFO));
 		BufferedReader csvReaderFiles = new BufferedReader(new FileReader(PROJ_FILES));
 		RandomAccessFile csvReaderBuggyFiles = new RandomAccessFile(BUGGY_FILES,"r");){
 		
 		csvMetrics.write("Version;File;Buggy\n");
-		
-		while((csvReaderVersions.readLine()) != null) {
-			versions++;
-		}
-		maxVersion = (versions-1)/2;
 		
 		while((rowFile = csvReaderFiles.readLine()) != null) {
 			l.log(Level.INFO, "Cecking file : {0} ",rowFile);
@@ -474,6 +477,8 @@ public static void filesInfo() throws IOException {
 	Integer added;
 	Integer deleted;
 	
+	Long maxVersion = firstHalfVersions();
+	
 	try(RandomAccessFile csvReaderBuggyFiles = new RandomAccessFile(BUGGY_FILES,"r");
 		FileWriter csvFilesInfo = new FileWriter(FILES_INFO);){
 		
@@ -481,8 +486,7 @@ public static void filesInfo() throws IOException {
 		
 		while((row = csvReaderBuggyFiles.readLine()) != null) {
 			String[] rowSplit = row.split(";");
-			if(!rowSplit[2].equals("none") && Integer.parseInt(rowSplit[2]) <= 5) {
-				//TODO: METTERE VERSIONE NON STATICA
+			if(!rowSplit[2].equals("none") && Integer.parseInt(rowSplit[2]) <= maxVersion) {
 				String url = "https://api.github.com/repos/apache/tajo/commits/" + rowSplit[3];
 				JSONObject commit = readJsonObjectAuth(url);
 				author = commit.getJSONObject("commit").getJSONObject("author").getString("name");

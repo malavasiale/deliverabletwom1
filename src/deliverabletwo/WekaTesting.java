@@ -18,7 +18,7 @@ import weka.core.converters.CSVLoader;
 import weka.core.converters.ConverterUtils.DataSource;
 
 public class WekaTesting {
-	private static final Integer maxvers = 5;//TODO mettere versione massima dinamica
+	
 	private static List<String> finalData = new ArrayList<String>();
 	
 	public static void makeSets(Integer version) throws IOException {
@@ -104,22 +104,6 @@ public class WekaTesting {
 		evalNB.evaluateModel(classifierNB, testing); 
 		evalRF.evaluateModel(classifierRF, testing); 
 		
-		/*System.out.println("---------Training on "+ numbOfTraining +" Versions ----------\n\n");
-		System.out.println("AUC IBk = "+evalIBk.areaUnderROC(1));
-		System.out.println("kappa IBk = "+evalIBk.kappa());
-		System.out.println("Precision IBk = "+evalIBk.precision(1));
-		System.out.println("Recall IBk = " + evalIBk.recall(1));
-		System.out.println("\n------\n");
-		System.out.println("AUC NB = "+evalNB.areaUnderROC(1));
-		System.out.println("kappa NB = "+evalNB.kappa());
-		System.out.println("Precision NB = "+evalNB.precision(1));
-		System.out.println("Recall NB = " + evalNB.recall(1));
-		System.out.println("\n------\n");
-		System.out.println("AUC RF = "+evalRF.areaUnderROC(1));
-		System.out.println("kappa RF = "+evalRF.kappa());
-		System.out.println("Precision RF = "+evalRF.precision(1));
-		System.out.println("Recall RF = " + evalRF.recall(1));
-		System.out.println("\n------\n");*/
 		finalData.add("Tajo;" + numbOfTraining + ";" + "IBk;" + evalIBk.precision(1) +";" + evalIBk.recall(1) +  ";" + evalIBk.areaUnderROC(1) + ";" + evalIBk.kappa() + "\n");
 		finalData.add("Tajo;" + numbOfTraining + ";" + "NaiveBayes;" + evalNB.precision(1) +";" + evalNB.recall(1) +  ";" + evalNB.areaUnderROC(1) + ";" + evalNB.kappa() + "\n");
 		finalData.add("Tajo;" + numbOfTraining + ";" + "RandomForest;" + evalRF.precision(1) +";" + evalRF.recall(1) +  ";" + evalRF.areaUnderROC(1) + ";" + evalRF.kappa() + "\n");
@@ -127,6 +111,7 @@ public class WekaTesting {
 	
 	public static void main(String args[]) throws Exception{
 		FileWriter csvEvaluate = new FileWriter("wekaOutput.csv");
+		Long maxvers = GetBuggy.firstHalfVersions();
 		csvEvaluate.write("Dataset;#TrainingRelease;Classifier;Precision;Recall;AUC;Kappa\n");
 		for(int i = 1 ; i < maxvers ; i++) {
 			makeSets(i);
