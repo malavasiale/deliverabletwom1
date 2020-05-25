@@ -22,36 +22,35 @@ public class WekaTesting {
 	private static List<String> finalData = new ArrayList<String>();
 	
 	public static void makeSets(Integer version) throws IOException {
-		BufferedReader csvReader = new BufferedReader(new FileReader("finalMetrics.csv"));
-		FileWriter csvTraining = new FileWriter("TAJOtrainingSet.csv");
-		FileWriter csvTesting = new FileWriter("TAJOtestingSet.csv");
 		String row;
-		List<Integer> trainingVersions = new ArrayList<Integer>();
+		List<Integer> trainingVersions = new ArrayList<>();
 		
-		for(int i = 1; i <= version;i++) {
-			trainingVersions.add(i);
-		}
-		
-		row = csvReader.readLine();
-		String a = row.replace(";", ",");
-		csvTraining.write(a+"\n");
-		csvTesting.write(a+"\n");
+		try(BufferedReader csvReader = new BufferedReader(new FileReader("finalMetrics.csv"));
+			FileWriter csvTraining = new FileWriter("TAJOtrainingSet.csv");
+			FileWriter csvTesting = new FileWriter("TAJOtestingSet.csv");){
+			
+			for(int i = 1; i <= version;i++) {
+				trainingVersions.add(i);
+			}
+			
+			row = csvReader.readLine();
+			String a = row.replace(";", ",");
+			csvTraining.write(a+"\n");
+			csvTesting.write(a+"\n");
 
-		
-		while((row = csvReader.readLine()) != null) {
-			String[] array = row.split(";");
-			String replaced = row.replace(";", ",");
-			if(trainingVersions.contains(Integer.parseInt(array[0]))) {
-				csvTraining.write(replaced+"\n");
+			
+			while((row = csvReader.readLine()) != null) {
+				String[] array = row.split(";");
+				String replaced = row.replace(";", ",");
+				if(trainingVersions.contains(Integer.parseInt(array[0]))) {
+					csvTraining.write(replaced+"\n");
+				}
+				else if (Integer.parseInt(array[0]) == (version+1)) {
+					csvTesting.write(replaced+"\n");
+				}
 			}
-			else if (Integer.parseInt(array[0]) == (version+1)) {
-				csvTesting.write(replaced+"\n");
-			}
+			
 		}
-		
-		csvReader.close();
-		csvTraining.close();
-		csvTesting.close();
 		
 		// load CSV
 	    CSVLoader loader = new CSVLoader();
