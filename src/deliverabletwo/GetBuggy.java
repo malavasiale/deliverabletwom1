@@ -122,8 +122,13 @@ public static JSONObject readJsonFromUrl(String url) throws IOException, JSONExc
 }
 
 public static Long firstHalfVersions() throws IOException {	
-	Long versions = Files.lines(Paths.get("TAJOVersionInfo.csv"), Charset.defaultCharset()).count();
-	return (versions-1)/2;
+	
+	try {
+		Long versions = Files.lines(Paths.get("TAJOVersionInfo.csv"), Charset.defaultCharset()).count();
+		return (versions-1)/2;
+	} finally {
+		Files.lines(Paths.get("TAJOVersionInfo.csv"), Charset.defaultCharset()).close();
+	}
 }
 
 public static void retrieveGitCommits() throws IOException, InterruptedException {
