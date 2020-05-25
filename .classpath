@@ -8,5 +8,28 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/json-20190722.jar"/>
 	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/common-lang3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/arpack_combined_all-0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/bounce-0.18.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/core-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/java-cup-11b-2015.03.26.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/java-cup-11b-runtime-2015.03.26.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/jniloader-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/mtj-1.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/native_ref-java-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/native_system-java-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/netlib-java-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/netlib-native_ref-linux-armhf-1.1-natives.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/netlib-native_ref-linux-i686-1.1-natives.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/netlib-native_ref-linux-x86_64-1.1-natives.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/netlib-native_ref-osx-x86_64-1.1-natives.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/netlib-native_ref-win-i686-1.1-natives.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/netlib-native_ref-win-x86_64-1.1-natives.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/netlib-native_system-linux-armhf-1.1-natives.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/netlib-native_system-linux-i686-1.1-natives.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/netlib-native_system-linux-x86_64-1.1-natives.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/netlib-native_system-osx-x86_64-1.1-natives.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/netlib-native_system-win-i686-1.1-natives.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/netlib-native_system-win-x86_64-1.1-natives.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/weka-stable-3.8.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
