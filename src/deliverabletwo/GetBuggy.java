@@ -36,14 +36,15 @@ public class GetBuggy {
 	// Variabili usato solo per evitare di duplicare piu volte la stessa stringa nel codice(considerato smell)
 	private static final String JAVA_FILES = ".java";
 
-	private static final String PROJ_FILES = "fileInProject.csv";
-	private static final String GIT_COMMITS = "gitCommits.csv";
-	private static final String TAJO_VERSIONS_INFO = "TAJOVersionInfo.csv";
-	private static final String BUGGY_FILES = "buggyfiles.csv";
-	private static final String BUG_AND_VERSIONS = "bugs&versions.csv";
-	private static final String BUGGY_METRIC = "buggyMetrics.csv";
-	private static final String FILES_INFO = "filesInfo.csv";
-	private static final String FINAL_METRICS = "finalMetrics.csv";
+	private static final String PROJ = "tajo";
+	private static final String PROJ_FILES = PROJ+"fileInProject.csv";
+	private static final String GIT_COMMITS = PROJ+"gitCommits.csv";
+	private static final String VERSIONS_INFO = "VersionInfo.csv";
+	private static final String BUGGY_FILES = PROJ+"buggyfiles.csv";
+	private static final String BUG_AND_VERSIONS = PROJ+"bugs&versions.csv";
+	private static final String BUGGY_METRIC = PROJ+"buggyMetrics.csv";
+	private static final String FILES_INFO = PROJ+"filesInfo.csv";
+	private static final String FINAL_METRICS = PROJ+"finalMetrics.csv";
 	private static final String OAUTH = "C:\\Users\\" + "malav\\Desktop\\isw2\\oauth.txt";
 	
 	
@@ -124,7 +125,8 @@ public static JSONObject readJsonFromUrl(String url) throws IOException, JSONExc
 
 public static Long firstHalfVersions() throws IOException {	
 	
-	try(Stream<String> a = Files.lines(Paths.get("TAJOVersionInfo.csv"), Charset.defaultCharset());) {
+	String project = PROJ.toUpperCase();
+	try(Stream<String> a = Files.lines(Paths.get(project+"VersionInfo.csv"), Charset.defaultCharset());) {
 		Long versions = a.count();
 		return (versions-1)/2;
 	}
@@ -138,7 +140,7 @@ public static void retrieveGitCommits() throws IOException, InterruptedException
 	try(FileWriter csvWriter = new FileWriter(GIT_COMMITS);) {
 		csvWriter.append("message;sha\n");
 		for(;;i++) {
-			String url = "https://api.github.com/repos/apache/tajo/commits?page="+i.toString()+"&per_page=50";
+			String url = "https://api.github.com/repos/apache/"+PROJ+"/commits?page="+i.toString()+"&per_page=50";
 			Thread.sleep(1000);
 			JSONArray json = readJsonArrayAuth(url);
 			Integer l = json.length();
@@ -165,7 +167,7 @@ public static String getOV(String created) throws IOException {
 	Integer count = 1; 
 	String[] a = created.split("T");
 
-	try(RandomAccessFile ra = new RandomAccessFile(TAJO_VERSIONS_INFO,"rw");){
+	try(RandomAccessFile ra = new RandomAccessFile(PROJ.toUpperCase()+VERSIONS_INFO,"rw");){
 		ra.readLine();
 		while((rowDate = ra.readLine()) != null ) {
 			String[] z = rowDate.split(",");
@@ -183,7 +185,6 @@ public static String getOV(String created) throws IOException {
 }
 
 public static List<String> retrieveTick() throws JSONException, IOException {
-	   String projName ="TAJO";
 	   Integer j = 0; 
 	   Integer i = 0;
 	   Integer total = 1;
@@ -191,11 +192,11 @@ public static List<String> retrieveTick() throws JSONException, IOException {
 	   String fields = "fields";
 	   
 	   List<String> ids = new ArrayList<>();
-	   try(RandomAccessFile ra = new RandomAccessFile(TAJO_VERSIONS_INFO,"rw");){
+	   try(RandomAccessFile ra = new RandomAccessFile(PROJ.toUpperCase()+VERSIONS_INFO,"rw");){
 		   do {
 			   j = i + 1000;
 			   String url = "https://issues.apache.org/jira/rest/api/2/search?jql=project=%22"
-					   + projName + "%22AND%22issueType%22=%22Bug%22AND%22resolution%22=%22fixed%22&fields=key,fixVersions,versions,created&startAt="
+					   + PROJ.toUpperCase() + "%22AND%22issueType%22=%22Bug%22AND%22resolution%22=%22fixed%22&fields=key,fixVersions,versions,created&startAt="
 					   + i.toString() + "&maxResults=" + j.toString();
 			   JSONObject json = readJsonFromUrl(url);
 			   JSONArray issues = json.getJSONArray("issues");
@@ -262,7 +263,7 @@ public static List<String> retrieveTick() throws JSONException, IOException {
 }
 
 public static void retrieveFiles() throws IOException, InterruptedException {
-	String baseurl = "https://api.github.com/repos/apache/tajo/contents";
+	String baseurl = "https://api.github.com/repos/apache/"+PROJ+"/contents";
 	String path = "";
 	List<String> checked = new ArrayList<>();
 	List<String> directory = new ArrayList<>();
@@ -304,7 +305,7 @@ public static void retrieveFiles() throws IOException, InterruptedException {
 
 public static List<String> retrieveBuggyFiles(String sha) throws JSONException, IOException{
 	List<String> buggyfiles = new ArrayList<>();
-	String url = "https://api.github.com/repos/apache/tajo/commits/" + sha;
+	String url = "https://api.github.com/repos/apache/"+PROJ+"/commits/" + sha;
 	JSONObject commit = readJsonObjectAuth(url);
 	JSONArray filesarray = commit.getJSONArray("files");
 	for(int i = 0; i < filesarray.length(); i++) {
@@ -491,7 +492,7 @@ public static void filesInfo() throws IOException {
 		while((row = csvReaderBuggyFiles.readLine()) != null) {
 			String[] rowSplit = row.split(";");
 			if(!rowSplit[2].equals("none") && Integer.parseInt(rowSplit[2]) <= maxVersion) {
-				String url = "https://api.github.com/repos/apache/tajo/commits/" + rowSplit[3];
+				String url = "https://api.github.com/repos/apache/"+PROJ+"/commits/" + rowSplit[3];
 				JSONObject commit = readJsonObjectAuth(url);
 				author = commit.getJSONObject("commit").getJSONObject("author").getString("name");
 				JSONArray files = commit.getJSONArray("files");
@@ -593,7 +594,7 @@ public static void makeMetricsFile() throws IOException {
 		}
 		
 		
-		File versionsInfo = new File(TAJO_VERSIONS_INFO);
+		File versionsInfo = new File(PROJ.toUpperCase()+VERSIONS_INFO);
 		if(!versionsInfo.isFile()) {
 			l.log(Level.INFO, "Downloading versions info of the project");
 			GetReleaseInfo.getInfo();

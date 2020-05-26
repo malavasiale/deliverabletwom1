@@ -21,13 +21,21 @@ public class WekaTesting {
 	
 	private static List<String> finalData = new ArrayList<String>();
 	
+	private static final String PROJ = "tajo";
+	private static final String METRICS = PROJ+"finalMetrics.csv";
+	private static final String TRAINING_CSV = PROJ+"trainingSet.csv";
+	private static final String TESTING_CSV = PROJ+"testingSet.csv";
+	private static final String TRAINING_ARFF = PROJ+"trainingSet.arff";
+	private static final String TESTING_ARFF = PROJ+"testingSet.arff";
+	private static final String WEKA_OUTPUT = PROJ + "wekaOutput.csv";
+	
 	public static void makeSets(Integer version) throws IOException {
 		String row;
 		List<Integer> trainingVersions = new ArrayList<>();
 		
-		try(BufferedReader csvReader = new BufferedReader(new FileReader("finalMetrics.csv"));
-			FileWriter csvTraining = new FileWriter("TAJOtrainingSet.csv");
-			FileWriter csvTesting = new FileWriter("TAJOtestingSet.csv");){
+		try(BufferedReader csvReader = new BufferedReader(new FileReader(METRICS));
+			FileWriter csvTraining = new FileWriter(TRAINING_CSV);
+			FileWriter csvTesting = new FileWriter(TESTING_CSV);){
 			
 			for(int i = 1; i <= version;i++) {
 				trainingVersions.add(i);
@@ -54,33 +62,31 @@ public class WekaTesting {
 		
 		// load CSV
 	    CSVLoader loader = new CSVLoader();
-	    loader.setSource(new File("TAJOtrainingSet.csv"));
+	    loader.setSource(new File(TRAINING_CSV));
 	    Instances data = loader.getDataSet();
 
 	    // save ARFF
 	    ArffSaver saver = new ArffSaver();
 	    saver.setInstances(data);
-	    saver.setFile(new File("TAJOtrainingSet.arff"));
-	    //saver.setDestination(new File("TAJOtrainingSet.arff"));
+	    saver.setFile(new File(TRAINING_ARFF));
 	    saver.writeBatch();
 	    
 	 // load CSV
 	    CSVLoader loader2 = new CSVLoader();
-	    loader2.setSource(new File("TAJOtestingSet.csv"));
+	    loader2.setSource(new File(TESTING_CSV));
 	    Instances data2 = loader2.getDataSet();
 
 	    // save ARFF
 	    ArffSaver saver2 = new ArffSaver();
 	    saver2.setInstances(data2);
-	    saver2.setFile(new File("TAJOtestingSet.arff"));
-	    //saver2.setDestination(new File("TAJOtestingSet.arff"));
+	    saver2.setFile(new File(TESTING_ARFF));
 	    saver2.writeBatch();
 		}
 	
 	public static void evaluate(Integer numbOfTraining) throws Exception {
-		DataSource source1 = new DataSource("TAJOtrainingSet.arff");
+		DataSource source1 = new DataSource(TRAINING_ARFF);
 		Instances training = source1.getDataSet();
-		DataSource source2 = new DataSource("TAJOtestingSet.arff");
+		DataSource source2 = new DataSource(TESTING_ARFF);
 		Instances testing = source2.getDataSet();
 
 		int numAttr = training.numAttributes();
@@ -109,7 +115,7 @@ public class WekaTesting {
 	}
 	
 	public static void main(String args[]) throws Exception{
-		FileWriter csvEvaluate = new FileWriter("wekaOutput.csv");
+		FileWriter csvEvaluate = new FileWriter(WEKA_OUTPUT);
 		Long maxvers = GetBuggy.firstHalfVersions();
 		csvEvaluate.write("Dataset;#TrainingRelease;Classifier;Precision;Recall;AUC;Kappa\n");
 		for(int i = 1 ; i < maxvers ; i++) {
