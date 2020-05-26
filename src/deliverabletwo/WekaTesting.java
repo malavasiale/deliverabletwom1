@@ -21,7 +21,7 @@ public class WekaTesting {
 	
 	private static List<String> finalData = new ArrayList<String>();
 	
-	private static final String PROJ = "tajo";
+	private static final String PROJ = "bookkeeper";
 	private static final String METRICS = PROJ+"finalMetrics.csv";
 	private static final String TRAINING_CSV = PROJ+"trainingSet.csv";
 	private static final String TESTING_CSV = PROJ+"testingSet.csv";
@@ -109,9 +109,9 @@ public class WekaTesting {
 		evalNB.evaluateModel(classifierNB, testing); 
 		evalRF.evaluateModel(classifierRF, testing); 
 		
-		finalData.add("Tajo;" + numbOfTraining + ";" + "IBk;" + evalIBk.precision(1) +";" + evalIBk.recall(1) +  ";" + evalIBk.areaUnderROC(1) + ";" + evalIBk.kappa() + "\n");
-		finalData.add("Tajo;" + numbOfTraining + ";" + "NaiveBayes;" + evalNB.precision(1) +";" + evalNB.recall(1) +  ";" + evalNB.areaUnderROC(1) + ";" + evalNB.kappa() + "\n");
-		finalData.add("Tajo;" + numbOfTraining + ";" + "RandomForest;" + evalRF.precision(1) +";" + evalRF.recall(1) +  ";" + evalRF.areaUnderROC(1) + ";" + evalRF.kappa() + "\n");
+		finalData.add(PROJ+";" + numbOfTraining + ";" + "IBk;" + evalIBk.precision(1) +";" + evalIBk.recall(1) +  ";" + evalIBk.areaUnderROC(1) + ";" + evalIBk.kappa() + "\n");
+		finalData.add(PROJ+";" + numbOfTraining + ";" + "NaiveBayes;" + evalNB.precision(1) +";" + evalNB.recall(1) +  ";" + evalNB.areaUnderROC(1) + ";" + evalNB.kappa() + "\n");
+		finalData.add(PROJ+";" + numbOfTraining + ";" + "RandomForest;" + evalRF.precision(1) +";" + evalRF.recall(1) +  ";" + evalRF.areaUnderROC(1) + ";" + evalRF.kappa() + "\n");
 	}
 	
 	public static void main(String args[]) throws Exception{

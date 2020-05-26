@@ -1,0 +1,1133 @@
+Version;Filename;LOC_Added;LOC_deleted;Set_size;Author
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/FileInfo.java;5;1;3;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/IndexPersistenceMgrTest.java;125;0;3;Ivan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/IOUtils.java;42;0;20;Ivan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/LocalBookKeeper.java;48;9;20;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieInitializationTest.java;48;76;20;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieJournalTest.java;44;68;20;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/CompactionTest.java;2;6;20;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/CookieTest.java;49;46;20;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/EntryLogTest.java;23;19;20;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/LedgerCacheTest.java;20;16;20;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/TestLedgerDirsManager.java;23;3;20;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/UpgradeTest.java;39;48;20;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorBookieTest.java;0;2;20;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookKeeperClusterTestCase.java;13;4;20;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieClientTest.java;2;4;20;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieZKExpireTest.java;2;3;20;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ConcurrentLedgerTest.java;12;3;20;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ReadOnlyBookieTest.java;2;3;20;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/TestBackwardCompat.java;28;30;20;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ZooKeeperUtil.java;2;3;20;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/util/TestDiskChecker.java;25;9;20;Ivan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/BookieShell.java;18;1;2;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/AbstractZkLedgerManager.java;0;1;4;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/CleanupLedgerManager.java;1;0;4;Sijie Guo
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookKeeperCloseTest.java;58;0;4;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;7;0;2;Ivan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/RoundRobinDistributionSchedule.java;16;18;3;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/RoundRobinDistributionScheduleTest.java;84;15;3;Ivan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;44;10;5;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/LedgerCloseTest.java;37;0;5;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorRollingRestartTest.java;1;1;5;Ivan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/TestCallbacks.java;18;0;5;Ivan Kelly
+7;bookkeeper-stats-providers/codahale-metrics-provider/src/main/java/org/apache/bookkeeper/stats/CodahaleMetricsProvider.java;1;1;2;Flavio Paiva Junqueira
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;1;1;5;Sijie Guo
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerMetadata.java;6;6;5;Sijie Guo
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ClientConfiguration.java;1;1;5;Sijie Guo
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ServerConfiguration.java;17;17;5;Sijie Guo
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookKeeperCloseTest.java;2;128;2;Sijie Guo
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/MultipleThreadReadTest.java;12;38;2;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/WriteEntryProcessorV3.java;0;1;2;Flavio Paiva Junqueira
+7;bookkeeper-stats-providers/codahale-metrics-provider/src/main/java/org/apache/bookkeeper/stats/CodahaleMetricsProvider.java;16;0;2;Sijie Guo
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestTryReadLastConfirmed.java;2;3;2;Sijie Guo
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/LedgerCloseTest.java;1;0;2;Sijie Guo
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/EntryLogger.java;7;1;2;Sijie Guo
+7;bookkeeper-benchmark/src/main/java/org/apache/bookkeeper/benchmark/BenchThroughputLatency.java;1;1;2;Sijie Guo
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieInitializationTest.java;3;3;9;Flavio Paiva Junqueira
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/CompactionTest.java;3;2;9;Flavio Paiva Junqueira
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/CookieTest.java;3;3;9;Flavio Paiva Junqueira
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/TestSyncThread.java;5;4;9;Flavio Paiva Junqueira
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/conf/TestBKConfiguration.java;1;0;9;Flavio Paiva Junqueira
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorPeriodicBookieCheckTest.java;2;3;9;Flavio Paiva Junqueira
+1;hedwig-server/src/test/java/org/apache/hedwig/server/TestBackwardCompat.java;2;0;9;Flavio Paiva Junqueira
+1;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/BookKeeperTestBase.java;1;0;9;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ServerConfiguration.java;2;2;3;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;60;23;2;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/BookieShell.java;442;41;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/LedgerUnderreplicationManager.java;10;0;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/ZkLedgerUnderreplicationManager.java;56;1;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/ZkLedgerUnderreplicationManager.java;10;0;8;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/Auditor.java;58;28;8;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/AuditorElector.java;29;1;8;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorLedgerCheckerTest.java;34;55;8;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorPeriodicBookieCheckTest.java;2;1;8;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorRollingRestartTest.java;73;0;8;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/TestCallbacks.java;14;0;8;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorPeriodicBookieCheckTest.java;124;0;2;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/TestCallbacks.java;43;0;2;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/Auditor.java;1;1;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorPeriodicCheckTest.java;7;7;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeperAdmin.java;7;0;9;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/Auditor.java;40;36;9;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/AuditorElector.java;5;0;9;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/AutoRecoveryMain.java;7;0;9;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/ReplicationException.java;4;0;9;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/ReplicationWorker.java;48;1;9;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/BookieAutoRecoveryTest.java;54;9;9;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookKeeperClusterTestCase.java;11;0;9;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/AutoRecoveryMain.java;6;2;2;Sijie Guo
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieShutdownTest.java;3;1;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/CompactionTest.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/EntryLogTest.java;3;3;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/IndexCorruptionTest.java;2;2;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/LedgerCacheTest.java;3;7;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/TestLedgerDirsManager.java;3;3;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookKeeperCloseTest.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookKeeperTest.java;3;1;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookieRecoveryTest.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookieWriteLedgerTest.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/LedgerCloseTest.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/LedgerRecoveryTest.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/RoundRobinDistributionScheduleTest.java;0;1;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/SlowBookieTest.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestFencing.java;23;21;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestLedgerChecker.java;20;18;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestLedgerFragmentReplication.java;22;20;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestRackawareEnsemblePlacementPolicy.java;9;9;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestSpeculativeRead.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestTryReadLastConfirmed.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestWatchEnsembleChange.java;12;10;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/GcLedgersTest.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/LedgerLayoutTest.java;4;2;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/LedgerManagerIteratorTest.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/TestLedgerManager.java;25;27;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/metastore/TestMetaStore.java;3;5;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/proto/TestDeathwatcher.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/proto/TestPerChannelBookieClient.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorBookieTest.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorLedgerCheckerTest.java;3;1;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorPeriodicCheckTest.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorRollingRestartTest.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AutoRecoveryMainTest.java;2;1;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/BookieAutoRecoveryTest.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/BookieLedgerIndexTest.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/TestAutoRecoveryAlongWithBookieServers.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/TestReplicationWorker.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/AsyncLedgerOpsTest.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookKeeperClusterTestCase.java;5;11;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieClientTest.java;7;5;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieFailureTest.java;3;2;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieJournalRollingTest.java;4;2;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieReadWriteTest.java;2;6;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieZKExpireTest.java;0;1;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ConcurrentLedgerTest.java;3;5;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ConditionalSetTest.java;4;3;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ConfigurationTest.java;3;3;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/LedgerDeleteTest.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/MultipleThreadReadTest.java;2;0;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ReadOnlyBookieTest.java;2;0;77;Flavio Paiva Junqueira
+7;hedwig-client/src/test/java/org/apache/hedwig/client/AppTest.java;0;51;77;Flavio Paiva Junqueira
+7;hedwig-client/src/test/java/org/apache/hedwig/util/TestFileUtils.java;2;2;77;Flavio Paiva Junqueira
+7;hedwig-client/src/test/java/org/apache/hedwig/util/TestHedwigSocketAddress.java;3;3;77;Flavio Paiva Junqueira
+7;hedwig-client/src/test/java/org/apache/hedwig/util/TestPathUtils.java;3;3;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/client/TestPubSubClient.java;4;3;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/client/TestSubAfterCloseSub.java;2;0;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/client/netty/TestMultiplexing.java;2;1;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/HedwigHubTestBase.java;2;6;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/HedwigRegionTestBase.java;3;8;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/PubSubServerStandAloneTestBase.java;3;8;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/TestBackwardCompat.java;1;5;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/delivery/TestThrottlingDelivery.java;2;0;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/handlers/TestBaseHandler.java;3;3;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/handlers/TestSubUnsubHandler.java;6;6;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/integration/TestHedwigHub.java;2;3;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/integration/TestHedwigRegion.java;4;3;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/netty/TestPubSubServer.java;2;0;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestBookKeeperPersistenceManager.java;4;8;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestBookKeeperPersistenceManagerBlackBox.java;5;8;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestBookkeeperPersistenceManagerWhiteBox.java;5;9;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestDeadlock.java;0;1;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestLocalDBPersistenceManagerBlackBox.java;10;7;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestPersistenceManagerBlackBox.java;7;10;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestReadAheadCacheBlackBox.java;10;7;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestReadAheadCacheWhiteBox.java;0;5;77;Flavio Paiva Junqueira
+7;hedwig-server/src/test/java/org/apache/hedwig/server/subscriptions/TestUpdateSubscriptionState.java;2;2;77;Flavio Paiva Junqueira
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;7;5;2;Sijie Guo
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeper.java;5;5;2;Sijie Guo
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieRequestProcessor.java;2;2;2;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;3;2;2;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/AutoRecoveryMain.java;1;1;2;Sijie Guo
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/CheckpointSource.java;1;1;2;Sijie Guo
+7;bookkeeper-stats-providers/codahale-metrics-provider/src/main/java/org/apache/bookkeeper/stats/CodahaleMetricsProvider.java;8;4;2;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;18;12;2;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;10;0;12;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerOpenOp.java;1;1;12;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/ReadOnlyLedgerHandle.java;72;11;12;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/AbstractZkLedgerManager.java;176;2;12;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/HierarchicalLedgerManager.java;1;22;12;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/LedgerManager.java;21;0;12;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/MSLedgerManagerFactory.java;11;0;12;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookkeeperInternalCallbacks.java;16;0;12;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/BookieLedgerIndexer.java;1;1;12;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/CompactionTest.java;11;0;12;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestWatchEnsembleChange.java;71;0;12;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServer.java;2;0;4;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/SlowBookieTest.java;8;8;4;Flavio Paiva Junqueira
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookKeeperClusterTestCase.java;1;1;4;Flavio Paiva Junqueira
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/GarbageCollectorThread.java;7;1;3;Ivan Brendan Kelly
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/CompactionTest.java;92;50;3;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieClient.java;14;5;2;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/EntryLogger.java;8;8;3;Sijie Guo
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/EntryLogTest.java;1;5;3;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;23;6;2;Sijie Guo
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;8;2;4;Sijie Guo
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerDirsManager.java;26;0;4;Sijie Guo
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieInitializationTest.java;48;0;4;Sijie Guo
+1;hedwig-server/src/test/java/org/apache/hedwig/client/TestSubAfterCloseSub.java;2;0;2;Ivan Brendan Kelly
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieShutdownTest.java;72;1;3;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerRecoveryOp.java;51;28;2;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;5;3;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingAddOp.java;3;1;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/LedgerCloseTest.java;28;0;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;16;9;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/proto/TestPerChannelBookieClient.java;75;0;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;42;20;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerMetadata.java;34;5;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookieRecoveryTest.java;39;0;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;1;34;8;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/EntryLogger.java;18;4;8;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/GarbageCollectorThread.java;108;78;8;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/InterleavedLedgerStorage.java;4;3;8;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ServerConfiguration.java;76;10;8;Sijie Guo
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/CompactionTest.java;169;1;8;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/AbstractZkLedgerManager.java;10;12;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/HierarchicalLedgerManager.java;12;8;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/GcLedgersTest.java;46;6;4;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BKException.java;12;0;17;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeper.java;106;45;17;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeperAdmin.java;2;2;17;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookieWatcher.java;6;1;17;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerChecker.java;4;1;17;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerFragmentReplicator.java;3;3;17;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;19;7;17;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerOpenOp.java;2;2;17;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingAddOp.java;4;0;17;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingReadOp.java;26;19;17;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/ReadLastConfirmedOp.java;7;1;17;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/CleanupLedgerManager.java;226;0;17;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieClient.java;126;74;17;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;42;10;17;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/OrderedSafeExecutor.java;53;13;17;Ivan Brendan Kelly
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookKeeperCloseTest.java;676;0;17;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCacheImpl.java;1;1;2;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/FlatLedgerManager.java;1;1;6;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/HierarchicalLedgerManager.java;2;2;6;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/MSLedgerManagerFactory.java;1;1;6;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/ZkLedgerUnderreplicationManager.java;4;6;6;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/ZkUtils.java;53;39;6;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/BookieShell.java;6;0;2;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;9;1;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServer.java;5;0;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieInitializationTest.java;32;0;4;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServer.java;4;2;2;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieNettyServer.java;25;13;2;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Journal.java;6;2;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/JournalChannel.java;6;0;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/MathUtils.java;5;2;4;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/RackawareEnsemblePlacementPolicy.java;5;4;3;Sijie Guo
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestRackawareEnsemblePlacementPolicy.java;25;0;3;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeperAdmin.java;23;3;13;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookieWatcher.java;35;4;13;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookiesListener.java;27;0;13;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/Auditor.java;33;16;13;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/AuditorElector.java;1;2;13;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/AutoRecoveryMain.java;1;1;13;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/ReplicationWorker.java;3;0;13;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorBookieTest.java;0;19;13;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorLedgerCheckerTest.java;23;0;13;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AutoRecoveryMainTest.java;39;0;13;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/TestReplicationWorker.java;41;0;13;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ZooKeeperUtil.java;10;0;13;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/ReplicationWorker.java;4;7;2;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerChecker.java;1;3;3;Sijie Guo
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/LedgerCloseTest.java;42;2;3;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;41;25;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/proto/TestPerChannelBookieClient.java;97;1;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;6;0;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeperAdmin.java;3;1;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieInitializationTest.java;37;0;4;Ivan Brendan Kelly
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/SyncThread.java;78;79;3;Sijie Guo
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/TestSyncThread.java;340;0;3;Sijie Guo
+1;hedwig-server/src/main/java/org/apache/hedwig/server/delivery/FIFODeliveryManager.java;28;5;3;Ivan Brendan Kelly
+1;hedwig-server/src/test/java/org/apache/hedwig/server/delivery/TestThrottlingDelivery.java;150;20;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCacheImpl.java;15;14;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/LedgerCacheTest.java;76;0;3;Ivan Brendan Kelly
+1;bookkeeper-benchmark/src/main/java/org/apache/bookkeeper/benchmark/BenchReadThroughputLatency.java;1;0;12;Sijie Guo
+1;bookkeeper-benchmark/src/main/java/org/apache/bookkeeper/benchmark/BenchThroughputLatency.java;1;0;12;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ClientConfiguration.java;80;1;12;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieClient.java;20;14;12;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;69;28;12;Sijie Guo
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/LedgerCloseTest.java;1;0;12;Sijie Guo
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/SlowBookieTest.java;1;0;12;Sijie Guo
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestReadTimeout.java;1;0;12;Sijie Guo
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestSpeculativeRead.java;1;0;12;Sijie Guo
+1;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestBookKeeperPersistenceManager.java;1;0;12;Sijie Guo
+1;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestDeadlock.java;1;0;12;Sijie Guo
+1;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/ReadAheadCache.java;35;19;2;Flavio Paiva Junqueira
+1;hedwig-client/src/main/java/org/apache/hedwig/client/netty/impl/ActiveSubscriber.java;9;10;2;Flavio Paiva Junqueira
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;2;2;2;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/ScanAndCompareGarbageCollector.java;14;14;10;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/AbstractZkLedgerManager.java;4;3;10;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/FlatLedgerManager.java;27;14;10;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/HierarchicalLedgerManager.java;40;19;10;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/LedgerManager.java;8;17;10;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/MSLedgerManagerFactory.java;5;4;10;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/metastore/InMemoryMetastoreCursor.java;6;3;10;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/GcLedgersTest.java;55;1;10;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/LedgerManagerTestCase.java;2;1;10;Ivan Brendan Kelly
+7;hedwig-server/src/main/java/org/apache/hedwig/server/delivery/FIFODeliveryManager.java;1;2;2;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/Auditor.java;6;1;4;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/ReplicationWorker.java;2;0;4;Sijie Guo
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorPeriodicCheckTest.java;48;0;4;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;46;26;6;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerMetadata.java;25;19;6;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingAddOp.java;7;2;6;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookieWriteLedgerTest.java;4;4;6;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/LedgerCloseTest.java;157;0;6;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCacheImpl.java;0;3;3;Sijie Guo
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ReadOnlyBookieTest.java;36;0;3;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerMetadata.java;33;7;5;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerRecoveryOp.java;36;22;5;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingReadOp.java;20;17;5;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/LedgerRecoveryTest.java;65;4;5;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;6;2;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestFencing.java;2;13;3;Ivan Brendan Kelly
+1;hedwig-server/src/test/java/org/apache/hedwig/client/TestSubAfterCloseSub.java;5;9;2;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/InterleavedLedgerStorage.java;1;1;2;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/HierarchicalLedgerManager.java;1;1;3;Sijie Guo
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/LedgerManagerIteratorTest.java;43;0;3;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;1;0;2;Ivan Brendan Kelly
+7;bookkeeper-benchmark/src/main/java/org/apache/bookkeeper/benchmark/BenchReadThroughputLatency.java;4;2;45;Uma Maheswara Rao G
+7;bookkeeper-benchmark/src/main/java/org/apache/bookkeeper/benchmark/BenchThroughputLatency.java;5;3;45;Uma Maheswara Rao G
+7;bookkeeper-benchmark/src/main/java/org/apache/bookkeeper/benchmark/MySqlClient.java;5;4;45;Uma Maheswara Rao G
+7;bookkeeper-benchmark/src/main/java/org/apache/bookkeeper/benchmark/TestClient.java;2;1;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;8;3;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/BookieException.java;4;1;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Cookie.java;8;6;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/EntryLogger.java;5;3;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/FileInfo.java;3;1;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/FileSystemUpgrade.java;3;1;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/JournalChannel.java;3;1;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCacheImpl.java;4;13;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeperAdmin.java;5;3;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;5;4;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerMetadata.java;5;3;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/MacDigestManager.java;3;1;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ClientConfiguration.java;3;2;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ServerConfiguration.java;1;3;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/ZkLedgerUnderreplicationManager.java;1;1;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/metastore/Value.java;3;1;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieClient.java;3;1;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServer.java;5;0;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;1;1;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/HardLink.java;9;7;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/LocalBookKeeper.java;4;2;45;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/zookeeper/ZooKeeperWatcherBase.java;3;0;45;Uma Maheswara Rao G
+7;hedwig-client-jms/src/main/java/org/apache/hedwig/jms/SessionImpl.java;12;12;45;Uma Maheswara Rao G
+7;hedwig-client-jms/src/main/java/org/apache/hedwig/jms/spi/TopicPublisherImpl.java;1;1;45;Uma Maheswara Rao G
+7;hedwig-client/src/main/java/org/apache/hedwig/client/netty/NetUtils.java;2;0;45;Uma Maheswara Rao G
+7;hedwig-server/src/main/java/org/apache/hedwig/admin/HedwigAdmin.java;3;2;45;Uma Maheswara Rao G
+7;hedwig-server/src/main/java/org/apache/hedwig/admin/console/HedwigConsole.java;2;1;45;Uma Maheswara Rao G
+7;hedwig-server/src/main/java/org/apache/hedwig/admin/console/ReadTopic.java;2;1;45;Uma Maheswara Rao G
+7;hedwig-server/src/main/java/org/apache/hedwig/server/benchmark/BookkeeperBenchmark.java;2;1;45;Uma Maheswara Rao G
+7;hedwig-server/src/main/java/org/apache/hedwig/server/meta/FactoryLayout.java;3;2;45;Uma Maheswara Rao G
+7;hedwig-server/src/main/java/org/apache/hedwig/server/meta/MsMetadataManagerFactory.java;6;5;45;Uma Maheswara Rao G
+7;hedwig-server/src/main/java/org/apache/hedwig/server/meta/ZkMetadataManagerFactory.java;4;3;45;Uma Maheswara Rao G
+7;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/BookkeeperPersistenceManager.java;2;1;45;Uma Maheswara Rao G
+7;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/LocalDBPersistenceManager.java;3;1;45;Uma Maheswara Rao G
+7;hedwig-server/src/main/java/org/apache/hedwig/server/subscriptions/AbstractSubscriptionManager.java;8;2;45;Uma Maheswara Rao G
+7;hedwig-server/src/main/java/org/apache/hedwig/server/topics/ZkHubServerManager.java;5;3;45;Uma Maheswara Rao G
+7;hedwig-server/src/main/java/org/apache/hedwig/server/topics/ZkTopicManager.java;6;4;45;Uma Maheswara Rao G
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/AuditorElector.java;3;0;2;Uma Maheswara Rao G
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookieWatcher.java;1;1;41;Sijie Guo
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ClientConfiguration.java;1;1;41;Sijie Guo
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ServerConfiguration.java;1;1;41;Sijie Guo
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/AbstractZkLedgerManager.java;1;1;41;Sijie Guo
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/LedgerManagerFactory.java;6;4;41;Sijie Guo
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;0;3;41;Sijie Guo
+7;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/Auditor.java;2;0;41;Sijie Guo
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestSpeculativeRead.java;4;4;41;Sijie Guo
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/LedgerLayoutTest.java;2;2;41;Sijie Guo
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/TestLedgerManager.java;1;0;41;Sijie Guo
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieZKExpireTest.java;1;0;41;Sijie Guo
+7;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ZooKeeperUtil.java;1;0;41;Sijie Guo
+7;hedwig-client-jms/src/main/java/org/apache/hedwig/jms/spi/HedwigMessagingSessionFacade.java;5;2;41;Sijie Guo
+7;hedwig-client-jms/src/test/java/org/apache/activemq/perf/ConnectionChurnTest.java;1;1;41;Sijie Guo
+7;hedwig-client-jms/src/test/java/org/apache/activemq/usecases/CompositePublishTest.java;2;0;41;Sijie Guo
+7;hedwig-client/src/main/java/org/apache/hedwig/client/benchmark/BenchmarkPublisher.java;4;1;41;Sijie Guo
+7;hedwig-client/src/main/java/org/apache/hedwig/client/benchmark/BenchmarkSubscriber.java;8;2;41;Sijie Guo
+7;hedwig-client/src/main/java/org/apache/hedwig/client/netty/HedwigSubscriber.java;1;0;41;Sijie Guo
+7;hedwig-client/src/main/java/org/apache/hedwig/client/netty/impl/HChannelHandler.java;1;3;41;Sijie Guo
+7;hedwig-server/src/main/java/org/apache/hedwig/admin/console/HedwigConsole.java;6;2;41;Sijie Guo
+7;hedwig-server/src/main/java/org/apache/hedwig/admin/console/JLineHedwigCompletor.java;9;6;41;Sijie Guo
+7;hedwig-server/src/main/java/org/apache/hedwig/server/benchmark/FakeBookie.java;2;2;41;Sijie Guo
+7;hedwig-server/src/main/java/org/apache/hedwig/server/common/ServerConfiguration.java;2;1;41;Sijie Guo
+7;hedwig-server/src/main/java/org/apache/hedwig/server/meta/ZkMetadataManagerFactory.java;6;6;41;Sijie Guo
+7;hedwig-server/src/main/java/org/apache/hedwig/server/netty/UmbrellaHandler.java;3;3;41;Sijie Guo
+7;hedwig-server/src/main/java/org/apache/hedwig/server/proxy/ProxySubscribeHandler.java;5;2;41;Sijie Guo
+7;hedwig-server/src/main/java/org/apache/hedwig/zookeeper/ZkUtils.java;1;1;41;Sijie Guo
+7;hedwig-server/src/test/java/org/apache/hedwig/client/TestPubSubClient.java;30;11;41;Sijie Guo
+7;hedwig-server/src/test/java/org/apache/hedwig/client/TestSubAfterCloseSub.java;15;4;41;Sijie Guo
+7;hedwig-server/src/test/java/org/apache/hedwig/client/netty/TestMultiplexing.java;20;12;41;Sijie Guo
+7;hedwig-server/src/test/java/org/apache/hedwig/server/TestBackwardCompat.java;11;2;41;Sijie Guo
+7;hedwig-server/src/test/java/org/apache/hedwig/server/delivery/TestThrottlingDelivery.java;6;2;41;Sijie Guo
+7;hedwig-server/src/test/java/org/apache/hedwig/server/filter/TestMessageFilter.java;24;8;41;Sijie Guo
+7;hedwig-server/src/test/java/org/apache/hedwig/server/integration/TestHedwigHub.java;61;23;41;Sijie Guo
+7;hedwig-server/src/test/java/org/apache/hedwig/server/integration/TestHedwigRegion.java;21;12;41;Sijie Guo
+7;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/MessageBoundedPersistenceTest.java;12;4;41;Sijie Guo
+7;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestDeadlock.java;10;3;41;Sijie Guo
+7;hedwig-server/src/test/java/org/apache/hedwig/server/subscriptions/TestUpdateSubscriptionState.java;9;4;41;Sijie Guo
+7;hedwig-server/src/test/java/org/apache/hedwig/server/topics/TestConcurrentTopicAcquisition.java;7;3;41;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServerBean.java;0;5;4;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServerMXBean.java;0;5;4;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/ServerStats.java;0;49;4;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/FileInfo.java;6;0;4;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCacheImpl.java;11;4;4;Sijie Guo
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/LedgerCacheTest.java;2;0;4;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ServerConfiguration.java;5;3;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ServerConfiguration.java;4;3;4;Ivan Brendan Kelly
+1;hedwig-server/src/main/java/org/apache/hedwig/server/common/ServerConfiguration.java;6;1;2;Sijie Guo
+4;hedwig-server/src/main/java/org/apache/hedwig/server/delivery/ChannelEndPoint.java;5;0;4;Sijie Guo
+4;hedwig-server/src/main/java/org/apache/hedwig/server/delivery/FIFODeliveryManager.java;27;37;4;Sijie Guo
+4;hedwig-server/src/test/java/org/apache/hedwig/server/delivery/TestFIFODeliveryManager.java;197;0;4;Sijie Guo
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeper.java;11;2;7;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieClient.java;41;7;7;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;43;13;7;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/OrderedSafeExecutor.java;9;0;7;Flavio Paiva Junqueira
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookKeeperTest.java;41;0;7;Flavio Paiva Junqueira
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorPeriodicCheckTest.java;19;22;7;Flavio Paiva Junqueira
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorBookieTest.java;2;3;2;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;30;1;13;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerDirsManager.java;2;1;13;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServer.java;19;1;13;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/NIOServerFactory.java;31;0;13;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/DiskChecker.java;5;3;13;Flavio Paiva Junqueira
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/IndexCorruptionTest.java;10;23;13;Flavio Paiva Junqueira
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookKeeperClusterTestCase.java;21;27;13;Flavio Paiva Junqueira
+4;hedwig-server/src/main/java/org/apache/hedwig/server/delivery/FIFODeliveryManager.java;31;0;13;Flavio Paiva Junqueira
+4;hedwig-server/src/main/java/org/apache/hedwig/server/netty/PubSubServer.java;6;0;13;Flavio Paiva Junqueira
+4;hedwig-server/src/test/java/org/apache/hedwig/client/TestSubAfterCloseSub.java;25;50;13;Flavio Paiva Junqueira
+4;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/BookKeeperTestBase.java;13;1;13;Flavio Paiva Junqueira
+4;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestDeadlock.java;15;24;13;Flavio Paiva Junqueira
+4;hedwig-server/src/main/java/org/apache/hedwig/server/subscriptions/AbstractSubscriptionManager.java;1;0;2;Flavio Paiva Junqueira
+4;hedwig-server/src/main/java/org/apache/hedwig/server/common/ServerConfiguration.java;12;0;7;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/ReadAheadCache.java;126;124;7;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/ReadAheadCacheBean.java;1;1;7;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestReadAheadCacheWhiteBox.java;45;13;7;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;36;1;5;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/GarbageCollectorThread.java;67;8;5;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/InterleavedLedgerStorage.java;3;21;5;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Journal.java;2;1;5;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;45;40;4;Sijie Guo
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCacheImpl.java;10;9;4;Sijie Guo
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/LedgerCacheTest.java;21;0;4;Sijie Guo
+4;hedwig-server/src/test/java/org/apache/hedwig/server/HedwigHubTestBase.java;1;1;15;Sijie Guo
+4;hedwig-server/src/test/java/org/apache/hedwig/server/HedwigRegionTestBase.java;3;1;15;Sijie Guo
+4;hedwig-server/src/test/java/org/apache/hedwig/server/LoggingExceptionHandler.java;35;0;15;Sijie Guo
+4;hedwig-server/src/test/java/org/apache/hedwig/server/PubSubServerStandAloneTestBase.java;3;1;15;Sijie Guo
+4;hedwig-server/src/test/java/org/apache/hedwig/server/TestPubSubServerStartup.java;3;1;15;Sijie Guo
+4;hedwig-server/src/test/java/org/apache/hedwig/server/integration/TestHedwigHub.java;28;43;15;Sijie Guo
+4;hedwig-server/src/test/java/org/apache/hedwig/server/integration/TestHedwigHubProxy.java;36;0;15;Sijie Guo
+4;hedwig-server/src/test/java/org/apache/hedwig/server/integration/TestHedwigHubRegular.java;36;0;15;Sijie Guo
+4;hedwig-server/src/test/java/org/apache/hedwig/server/integration/TestHedwigHubSSL.java;36;0;15;Sijie Guo
+4;hedwig-server/src/test/java/org/apache/hedwig/server/netty/TestPubSubServer.java;6;5;15;Sijie Guo
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingAddOp.java;42;8;4;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingReadOp.java;1;1;4;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieClient.java;21;7;4;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;5;22;10;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingAddOp.java;0;1;10;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingReadOp.java;1;3;10;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;0;1;10;Flavio Paiva Junqueira
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookieThrottleTest.java;0;127;10;Flavio Paiva Junqueira
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestSpeculativeRead.java;17;8;10;Flavio Paiva Junqueira
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieReadWriteTest.java;0;113;10;Flavio Paiva Junqueira
+4;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestDeadlock.java;4;1;10;Flavio Paiva Junqueira
+4;hedwig-client/src/main/java/org/apache/hedwig/client/data/PubSubData.java;1;1;7;Ivan Brendan Kelly
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/impl/AbstractSubscribeResponseHandler.java;5;3;7;Ivan Brendan Kelly
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/impl/simple/SimpleHChannelManager.java;44;2;7;Ivan Brendan Kelly
+4;hedwig-protocol/src/main/java/org/apache/hedwig/exceptions/PubSubException.java;4;0;7;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/client/TestSubAfterCloseSub.java;29;0;7;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/TestBackwardCompat.java;9;0;7;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieZKExpireTest.java;20;3;2;Sijie Guo
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingReadOp.java;15;5;4;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/BookkeeperPersistenceManager.java;9;0;4;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestBookKeeperPersistenceManager.java;19;10;4;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/delivery/DeliveryManager.java;28;1;6;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/delivery/FIFODeliveryManager.java;16;5;6;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/handlers/SubscribeHandler.java;25;16;6;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/client/TestSubAfterCloseSub.java;194;0;6;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/delivery/StubDeliveryManager.java;3;1;6;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingReadOp.java;0;1;2;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/delivery/FIFODeliveryManager.java;39;35;4;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/delivery/TestFIFODeliveryManager.java;127;27;4;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/StubPersistenceManager.java;9;2;4;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;102;2;13;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/FileInfo.java;40;0;13;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/InterleavedLedgerStorage.java;10;0;13;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/JournalChannel.java;2;2;13;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCache.java;4;0;13;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCacheImpl.java;43;0;13;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerDescriptor.java;2;2;13;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerDescriptorImpl.java;4;5;13;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerDescriptorReadOnlyImpl.java;1;1;13;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerStorage.java;19;1;13;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServer.java;49;3;13;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestFencing.java;28;0;13;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookieRecoveryTest.java;3;1;2;Flavio Paiva Junqueira
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/GcLedgersTest.java;8;8;2;Sijie Guo
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCacheImpl.java;27;7;4;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerDirsManager.java;28;1;4;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/TestLedgerDirsManager.java;80;0;4;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;10;2;3;Flavio Paiva Junqueira
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/proto/TestPerChannelBookieClient.java;81;0;3;Flavio Paiva Junqueira
+4;hedwig-server/src/main/java/org/apache/hedwig/server/subscriptions/InMemorySubscriptionManager.java;7;1;2;Sijie Guo
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeperAdmin.java;1;1;5;Sijie Guo
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerFragment.java;1;1;5;Sijie Guo
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/AbstractConfiguration.java;1;4;5;Sijie Guo
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ServerConfiguration.java;1;1;5;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/api/Publisher.java;2;1;5;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/VoidCallbackAdapter.java;17;0;3;Flavio Paiva Junqueira
+4;hedwig-server/src/test/java/org/apache/hedwig/server/netty/TestServerStats.java;17;0;3;Flavio Paiva Junqueira
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ReadOnlyBookieTest.java;4;0;2;Flavio Paiva Junqueira
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookieRecoveryTest.java;32;31;2;Flavio Paiva Junqueira
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/proto/TestPerChannelBookieClient.java;33;0;3;Flavio Paiva Junqueira
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieReadWriteTest.java;0;48;3;Flavio Paiva Junqueira
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/impl/multiplex/ResubscribeCallback.java;5;1;3;Ivan Brendan Kelly
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/impl/simple/SubscribeReconnectCallback.java;5;1;3;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/TestLedgerManager.java;5;1;2;Flavio Paiva Junqueira
+4;bookkeeper-benchmark/src/test/java/org/apache/bookkeeper/benchmark/TestBenchmark.java;19;72;31;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/CookieTest.java;17;13;31;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/UpgradeTest.java;4;2;31;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookieRecoveryTest.java;5;0;31;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/TestLedgerManager.java;9;6;31;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookKeeperClusterTestCase.java;1;3;31;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieZKExpireTest.java;1;1;31;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/NIOServerFactoryTest.java;3;2;31;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/PortManager.java;55;0;31;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/TestBackwardCompat.java;3;4;31;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ZooKeeperUtil.java;3;3;31;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/client/TestPubSubClient.java;28;1;31;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/client/netty/TestMultiplexing.java;1;2;31;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/HedwigHubTestBase.java;23;5;31;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/HedwigRegionTestBase.java;39;12;31;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/PubSubServerStandAloneTestBase.java;27;1;31;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/TestBackwardCompat.java;106;42;31;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/TestPubSubServerStartup.java;14;7;31;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/delivery/TestThrottlingDelivery.java;2;2;31;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/filter/TestMessageFilter.java;5;2;31;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/integration/TestHedwigHub.java;21;7;31;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/integration/TestHedwigRegion.java;5;0;31;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/netty/TestPubSubServer.java;4;3;31;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/BookKeeperTestBase.java;5;4;31;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/MessageBoundedPersistenceTest.java;3;3;31;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestDeadlock.java;5;2;31;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/subscriptions/TestUpdateSubscriptionState.java;2;1;31;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/topics/TestConcurrentTopicAcquisition.java;1;1;31;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/zookeeper/ZooKeeperTestBase.java;2;0;31;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ZooKeeperUtil.java;3;2;2;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/EntryLogger.java;18;16;3;Flavio Paiva Junqueira
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/CreateNewLogTest.java;102;0;3;Flavio Paiva Junqueira
+4;hedwig-server/src/main/java/org/apache/hedwig/server/common/ServerConfiguration.java;10;0;5;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/ReadAheadCache.java;120;47;5;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/ReadAheadCacheBean.java;1;1;5;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestReadAheadCacheWhiteBox.java;12;5;5;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/BookkeeperPersistenceManager.java;1;0;3;Flavio Paiva Junqueira
+4;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestBookKeeperPersistenceManager.java;30;0;3;Flavio Paiva Junqueira
+4;hedwig-server/src/main/java/org/apache/hedwig/admin/HedwigAdmin.java;26;0;9;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/admin/console/HedwigCommands.java;12;0;9;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/admin/console/HedwigConsole.java;27;1;9;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/meta/FactoryLayout.java;17;0;9;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/meta/MetadataManagerFactory.java;59;28;9;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/meta/ZkMetadataManagerFactory.java;15;1;9;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/meta/TestMetadataManagerFactory.java;4;0;9;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestBookKeeperPersistenceManager.java;5;0;9;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;6;1;4;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/EntryLogger.java;13;3;4;Sijie Guo
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/LedgerCacheTest.java;83;4;4;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BKException.java;28;2;8;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeper.java;6;3;8;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerRecoveryOp.java;2;2;8;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/FlatLedgerManager.java;2;2;8;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/HierarchicalLedgerManager.java;5;4;8;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/Auditor.java;4;14;8;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/LedgerCreateDeleteTest.java;25;0;8;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/BookkeeperPersistenceManager.java;13;0;5;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/subscriptions/AbstractSubscriptionManager.java;25;14;5;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/subscriptions/InMemorySubscriptionState.java;11;1;5;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestBookKeeperPersistenceManager.java;173;2;5;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/subscriptions/AbstractSubscriptionManager.java;3;12;3;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/subscriptions/InMemorySubscriptionManager.java;11;5;3;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeper.java;1;1;9;Ivan Brendan Kelly
+4;hedwig-protocol/src/main/java/org/apache/hedwig/protocol/PubSubProtocol.java;86;28;9;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/admin/HedwigAdmin.java;51;39;9;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/admin/console/HedwigConsole.java;8;14;9;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/admin/console/ReadTopic.java;18;42;9;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/BookkeeperPersistenceManager.java;254;76;9;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestBookKeeperPersistenceManager.java;341;7;9;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Journal.java;9;2;2;Ivan Brendan Kelly
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/impl/simple/SimpleSubscribeResponseHandler.java;4;0;2;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;16;2;12;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Cookie.java;3;2;12;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerMetadata.java;1;1;12;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServer.java;1;1;12;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServerBean.java;3;2;12;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/AutoRecoveryMain.java;4;9;12;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/replication/BookieLedgerIndexer.java;3;5;12;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/StringUtils.java;4;2;12;Flavio Paiva Junqueira
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieInitializationTest.java;6;6;12;Flavio Paiva Junqueira
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorBookieTest.java;10;15;12;Flavio Paiva Junqueira
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/replication/AuditorLedgerCheckerTest.java;8;11;12;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/zookeeper/ZooKeeperWatcherBase.java;94;0;1;Ivan Brendan Kelly
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/NetUtils.java;3;3;9;Sijie Guo
+4;hedwig-protocol/src/main/java/org/apache/hedwig/protocol/PubSubProtocol.java;122;123;9;Sijie Guo
+4;hedwig-server/src/main/java/org/apache/hedwig/server/common/ServerConfiguration.java;7;7;9;Sijie Guo
+4;hedwig-server/src/main/java/org/apache/hedwig/server/delivery/FIFODeliveryManager.java;9;9;9;Sijie Guo
+4;hedwig-server/src/main/java/org/apache/hedwig/server/subscriptions/InMemorySubscriptionState.java;5;5;9;Sijie Guo
+4;hedwig-server/src/test/java/org/apache/hedwig/server/TestBackwardCompat.java;1;1;9;Sijie Guo
+4;hedwig-server/src/test/java/org/apache/hedwig/server/delivery/TestThrottlingDelivery.java;21;19;9;Sijie Guo
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieReadWriteTest.java;52;28;2;Ivan Brendan Kelly
+4;hedwig-client/src/main/java/org/apache/hedwig/client/api/Subscriber.java;10;0;2;Sijie Guo
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerDeleteOp.java;5;4;6;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerFragmentReplicator.java;5;2;6;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;37;34;6;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerOpenOp.java;3;2;6;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/OrderedSafeExecutor.java;33;0;6;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/netty/PubSubServer.java;40;12;7;Sijie Guo
+4;hedwig-server/src/main/java/org/apache/hedwig/server/regions/HedwigHubClientFactory.java;20;6;7;Sijie Guo
+4;hedwig-server/src/test/java/org/apache/hedwig/server/netty/TestPubSubServer.java;1;1;7;Sijie Guo
+1;bookkeeper-benchmark/src/main/java/org/apache/bookkeeper/benchmark/TestClient.java;15;26;2;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/handlers/SubscribeResponseHandler.java;1;1;7;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/HedwigClientImpl.java;23;18;7;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/HedwigPublisher.java;11;10;7;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/HedwigSubscriber.java;20;20;7;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/ResponseHandler.java;11;14;7;Sijie Guo
+4;hedwig-server/src/main/java/org/apache/hedwig/server/common/ByteStringInterner.java;2;9;7;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/FileSystemUpgrade.java;7;1;3;Sijie Guo
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/UpgradeTest.java;17;0;3;Sijie Guo
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/FlatLedgerManager.java;4;0;4;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/HierarchicalLedgerManager.java;4;0;4;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieJournalTest.java;1;1;4;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/GarbageCollectorThread.java;1;1;2;Sijie Guo
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/ReadLastConfirmedOp.java;4;5;2;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/exceptions/NoResponseHandlerException.java;34;0;8;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/handlers/MessageConsumeCallback.java;31;4;8;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/handlers/SubscribeResponseHandler.java;9;2;8;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/HedwigClientImpl.java;25;4;8;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/HedwigPublisher.java;20;3;8;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/HedwigSubscriber.java;53;7;8;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/WriteCallback.java;7;1;8;Sijie Guo
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingReadOp.java;21;15;4;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/LedgerRecoveryTest.java;69;1;4;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookKeeperClusterTestCase.java;26;2;4;Ivan Brendan Kelly
+7;hedwig-server/src/main/java/org/apache/hedwig/server/common/ServerConfiguration.java;71;33;11;Ivan Brendan Kelly
+7;hedwig-server/src/main/java/org/apache/hedwig/server/topics/AbstractTopicManager.java;58;10;11;Ivan Brendan Kelly
+7;hedwig-server/src/main/java/org/apache/hedwig/server/topics/HubLoad.java;8;1;11;Ivan Brendan Kelly
+7;hedwig-server/src/main/java/org/apache/hedwig/server/topics/HubServerManager.java;16;0;11;Ivan Brendan Kelly
+7;hedwig-server/src/main/java/org/apache/hedwig/server/topics/MMTopicManager.java;7;2;11;Ivan Brendan Kelly
+7;hedwig-server/src/main/java/org/apache/hedwig/server/topics/TopicBasedLoadShedder.java;151;0;11;Ivan Brendan Kelly
+7;hedwig-server/src/main/java/org/apache/hedwig/server/topics/TopicManager.java;19;0;11;Ivan Brendan Kelly
+7;hedwig-server/src/main/java/org/apache/hedwig/server/topics/ZkHubServerManager.java;170;8;11;Ivan Brendan Kelly
+7;hedwig-server/src/main/java/org/apache/hedwig/server/topics/ZkTopicManager.java;5;1;11;Ivan Brendan Kelly
+7;hedwig-server/src/test/java/org/apache/hedwig/server/topics/TestTopicBasedLoadShedder.java;194;0;11;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;31;24;6;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerMetadata.java;16;13;6;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/ReadOnlyLedgerHandle.java;28;1;6;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/LedgerRecoveryTest.java;139;0;6;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookKeeperClusterTestCase.java;13;9;6;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/proto/TestBKStats.java;1;3;3;Flavio Paiva Junqueira
+1;hedwig-server/src/test/java/org/apache/hedwig/server/netty/TestServerStats.java;2;4;3;Flavio Paiva Junqueira
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;2;1;3;Sijie Guo
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookKeeperTest.java;30;0;3;Sijie Guo
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/EntryLogger.java;12;3;2;Sijie Guo
+4;hedwig-server/src/main/java/org/apache/hedwig/server/netty/PubSubServer.java;5;1;4;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/netty/PubSubServerBean.java;7;1;4;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/ReadAheadCache.java;1;1;4;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerMetadata.java;1;1;12;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/AbstractZkLedgerManager.java;1;1;12;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/ZkVersion.java;7;3;12;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/versioning/Version.java;31;1;12;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/TestZkVersion.java;7;1;12;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/meta/TopicOwnershipManager.java;4;4;12;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/meta/TopicPersistenceManager.java;4;4;12;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/meta/ZkMetadataManagerFactory.java;4;4;12;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/BookkeeperPersistenceManager.java;2;2;12;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/topics/MMTopicManager.java;1;1;12;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/meta/TestMetadataManager.java;8;7;12;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;154;63;3;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookieWriteLedgerTest.java;230;0;3;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeper.java;8;3;8;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookieWatcher.java;7;9;8;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;2;1;8;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingReadOp.java;139;17;8;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ClientConfiguration.java;36;0;8;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestSpeculativeRead.java;333;0;8;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookKeeperClusterTestCase.java;2;2;8;Ivan Brendan Kelly
+4;hedwig-client/src/main/java/org/apache/hedwig/client/benchmark/BenchmarkPublisher.java;4;2;18;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/benchmark/BenchmarkSubscriber.java;3;1;18;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/benchmark/BenchmarkUtils.java;5;4;18;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/HedwigClientImpl.java;3;1;18;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/HedwigPublisher.java;3;1;18;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/HedwigSubscriber.java;3;1;18;Sijie Guo
+4;hedwig-server/src/main/java/org/apache/hedwig/admin/console/HedwigConsole.java;5;4;18;Sijie Guo
+4;hedwig-server/src/main/java/org/apache/hedwig/server/benchmark/AbstractBenchmark.java;4;3;18;Sijie Guo
+4;hedwig-server/src/main/java/org/apache/hedwig/server/benchmark/BookieBenchmark.java;2;1;18;Sijie Guo
+4;hedwig-server/src/main/java/org/apache/hedwig/server/benchmark/BookkeeperBenchmark.java;2;1;18;Sijie Guo
+4;hedwig-server/src/main/java/org/apache/hedwig/server/delivery/FIFODeliveryManager.java;4;2;18;Sijie Guo
+4;hedwig-server/src/main/java/org/apache/hedwig/server/handlers/PublishHandler.java;3;2;18;Sijie Guo
+4;hedwig-server/src/main/java/org/apache/hedwig/server/handlers/SubscribeHandler.java;4;2;18;Sijie Guo
+4;hedwig-server/src/main/java/org/apache/hedwig/server/handlers/UnsubscribeHandler.java;4;2;18;Sijie Guo
+4;hedwig-server/src/main/java/org/apache/hedwig/server/netty/ServerStats.java;11;0;18;Sijie Guo
+4;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/ReadAheadCache.java;3;1;18;Sijie Guo
+4;hedwig-server/src/test/java/org/apache/hedwig/server/netty/TestServerStats.java;26;0;18;Sijie Guo
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;4;3;12;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/GarbageCollectorThread.java;11;12;12;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Journal.java;3;2;12;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeper.java;8;11;12;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BKStats.java;13;1;12;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServer.java;7;6;12;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;13;14;12;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/ServerStats.java;4;2;12;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/LocalBookKeeper.java;3;4;12;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/MathUtils.java;15;5;12;Flavio Paiva Junqueira
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/proto/TestBKStats.java;45;0;12;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;18;23;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieFailureTest.java;39;0;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;5;4;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCacheImpl.java;14;9;3;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerMetadata.java;3;1;6;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;23;16;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieShutdownTest.java;71;0;3;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/BookieShell.java;7;12;3;Sijie Guo
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Journal.java;3;3;3;Sijie Guo
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerCreateOp.java;1;1;17;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;21;14;17;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerMetadata.java;153;51;17;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerRecoveryOp.java;1;1;17;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingAddOp.java;1;1;17;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingReadOp.java;1;1;17;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/ReadLastConfirmedOp.java;1;1;17;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/DataFormats.java;1493;0;17;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookieRecoveryTest.java;1;1;17;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/TestBackwardCompat.java;85;31;17;Ivan Brendan Kelly
+4;hedwig-protocol/src/main/java/org/apache/hedwig/protocol/PubSubProtocol.java;4054;1363;17;Ivan Brendan Kelly
+4;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/BookkeeperPersistenceManager.java;7;5;3;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestBookKeeperPersistenceManager.java;243;0;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;57;12;5;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServer.java;2;3;5;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieInitializationTest.java;257;0;5;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieJournalTest.java;5;2;5;Ivan Brendan Kelly
+4;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/TestBackwardCompat.java;506;0;7;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/jmx/BKMBeanRegistry.java;3;2;2;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCacheImpl.java;30;16;3;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/LedgerCacheTest.java;35;0;3;Sijie Guo
+2;hedwig-server/src/test/java/org/apache/hedwig/server/subscriptions/TestZkSubscriptionManager.java;3;1;2;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeper.java;31;67;7;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeperAdmin.java;10;1;7;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookieWatcher.java;3;3;7;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookKeeperTest.java;88;0;7;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestReadTimeout.java;1;1;7;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ZooKeeperUtil.java;27;0;7;Sijie Guo
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;12;8;3;Ivan Brendan Kelly
+4;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/ReadOnlyLedgerHandle.java;3;3;3;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/LocalBookKeeper.java;33;14;2;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeper.java;5;1;2;Ivan Brendan Kelly
+2;bookkeeper-benchmark/src/main/java/org/apache/bookkeeper/benchmark/BenchThroughputLatency.java;2;1;8;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;3;2;8;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Cookie.java;7;6;8;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeper.java;3;3;8;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeperAdmin.java;5;4;8;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookieWatcher.java;7;3;8;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/AbstractConfiguration.java;10;1;8;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/InterleavedLedgerStorage.java;3;2;16;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerEntryPage.java;3;1;16;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/AsyncCallback.java;12;10;16;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/DigestManager.java;1;1;16;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;20;11;16;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerRecoveryOp.java;3;3;16;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingAddOp.java;1;1;16;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/ReadLastConfirmedOp.java;1;1;16;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/ReadOnlyLedgerHandle.java;2;1;16;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/AbstractConfiguration.java;0;1;16;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieProtocol.java;5;0;16;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServer.java;1;1;16;Flavio Paiva Junqueira
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieJournalTest.java;3;3;16;Flavio Paiva Junqueira
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/UpgradeTest.java;2;1;16;Flavio Paiva Junqueira
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieReadWriteTest.java;5;4;16;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookieWatcher.java;9;2;5;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieClient.java;26;0;5;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;24;4;5;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/proto/TestProtoVersions.java;1;1;5;Sijie Guo
+2;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestBookkeeperPersistenceManagerWhiteBox.java;11;1;3;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ClientConfiguration.java;9;1;4;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ServerConfiguration.java;8;1;4;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ConfigurationTest.java;12;0;4;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/InterleavedLedgerStorage.java;21;23;2;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/EntryLogger.java;6;2;3;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/EntryLogTest.java;23;3;3;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/EntryLogger.java;6;1;8;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/InterleavedLedgerStorage.java;5;0;8;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Journal.java;6;2;8;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/JournalChannel.java;3;2;8;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCache.java;2;1;8;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCacheImpl.java;11;0;8;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/IOUtils.java;55;0;8;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ZooKeeperUtil.java;3;0;2;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/GarbageCollectorThread.java;14;20;3;Flavio Paiva Junqueira
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/EntryLogTest.java;9;2;3;Flavio Paiva Junqueira
+2;hedwig-client/src/main/java/org/apache/hedwig/client/netty/HedwigSubscriber.java;22;8;2;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;1;1;2;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeper.java;0;5;8;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServer.java;6;1;8;Ivan Brendan Kelly
+2;hedwig-client/src/main/java/org/apache/hedwig/conf/AbstractConfiguration.java;9;0;8;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/BookkeeperPersistenceManager.java;15;4;8;Ivan Brendan Kelly
+2;hedwig-server/src/test/java/org/apache/hedwig/server/HedwigHubTestBase.java;2;1;8;Ivan Brendan Kelly
+2;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/BookKeeperTestBase.java;47;1;8;Ivan Brendan Kelly
+2;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/TestDeadlock.java;272;0;8;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;2;2;2;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCacheImpl.java;1;1;3;Flavio Paiva Junqueira
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/LedgerCreateDeleteTest.java;74;0;3;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;25;12;3;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/CookieTest.java;25;2;3;Sijie Guo
+2;hedwig-server/src/main/java/org/apache/hedwig/server/common/ServerConfiguration.java;4;2;2;Ivan Brendan Kelly
+2;bookkeeper-benchmark/src/main/java/org/apache/bookkeeper/benchmark/BenchBookie.java;40;8;3;Flavio Paiva Junqueira
+2;bookkeeper-benchmark/src/test/java/org/apache/bookkeeper/benchmark/TestBenchmark.java;1;1;3;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCacheImpl.java;36;13;3;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/LedgerCacheTest.java;48;0;3;Sijie Guo
+2;hedwig-server/src/main/java/org/apache/hedwig/admin/HedwigAdmin.java;3;3;3;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/HierarchicalLedgerManager.java;7;1;2;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServer.java;34;5;2;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/AbstractZkLedgerManager.java;23;0;7;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/FlatLedgerManager.java;7;28;7;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/HierarchicalLedgerManager.java;15;31;7;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/SnapshotMap.java;132;0;7;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/GcLedgersTest.java;167;0;7;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/LedgerManagerTestCase.java;77;0;7;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;1;0;9;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/FileInfo.java;9;1;9;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCacheImpl.java;47;19;9;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ServerConfiguration.java;24;0;9;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieJournalTest.java;2;2;9;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/LedgerCacheTest.java;127;0;9;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/UpgradeTest.java;2;2;9;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/LedgerCacheTest.java;0;136;9;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/AbstractZkLedgerManager.java;3;1;3;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/HierarchicalLedgerManager.java;2;2;3;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/EntryLogger.java;1;130;4;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/GarbageCollectorThread.java;126;2;4;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/EntryLogTest.java;3;2;4;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingReadOp.java;1;0;3;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookieThrottleTest.java;127;0;3;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/CompactionTest.java;14;12;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestReadTimeout.java;4;4;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/HierarchicalLedgerDeleteTest.java;0;4;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/LedgerLayoutTest.java;3;5;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/TestLedgerManager.java;4;4;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BaseTestCase.java;3;232;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookKeeperClusterTestCase.java;336;0;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieJournalRollingTest.java;3;3;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieZKExpireTest.java;3;4;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/IndexCorruptionTest.java;3;3;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/LedgerDeleteTest.java;3;3;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/EntryLogger.java;61;14;3;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/EntryLogTest.java;61;1;3;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;53;32;7;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/ExitCode.java;40;0;7;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServer.java;27;22;7;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/LedgerCacheTest.java;3;7;7;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ConcurrentLedgerTest.java;3;7;7;Ivan Brendan Kelly
+2;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/BookKeeperTestBase.java;8;24;7;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;34;23;6;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCache.java;92;71;6;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerDescriptor.java;6;0;6;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ServerConfiguration.java;14;0;6;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/IndexCorruptionTest.java;166;0;6;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeper.java;105;37;5;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;2;2;5;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/AbstractZkLedgerManager.java;1;1;5;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;25;21;3;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieJournalRollingTest.java;44;5;3;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeper.java;7;4;7;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ClientConfiguration.java;30;0;7;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ServerConfiguration.java;4;9;2;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;24;11;8;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/EntryLogger.java;3;0;8;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServer.java;2;0;8;Flavio Paiva Junqueira
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieJournalTest.java;1;10;8;Flavio Paiva Junqueira
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/EntryLogTest.java;2;0;8;Flavio Paiva Junqueira
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/LedgerCacheTest.java;1;0;8;Flavio Paiva Junqueira
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ConcurrentLedgerTest.java;1;0;8;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/FileInfo.java;30;10;3;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieJournalTest.java;174;0;3;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieClient.java;1;1;2;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieJournalTest.java;1;1;2;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;106;97;20;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/BookieException.java;58;5;20;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Cookie.java;195;0;20;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/EntryLogger.java;1;1;20;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/FileSystemUpgrade.java;227;16;20;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCache.java;1;1;20;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieJournalTest.java;37;15;20;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieLayoutVersionTest.java;0;261;20;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/CompactionTest.java;1;1;20;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/CookieTest.java;298;0;20;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/EntryLogTest.java;4;1;20;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/UpgradeTest.java;143;10;20;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookieRecoveryTest.java;1;1;20;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestFencing.java;2;2;20;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BaseTestCase.java;16;77;20;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieFailureTest.java;0;23;20;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieZKExpireTest.java;2;1;20;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ZooKeeperUtil.java;133;0;20;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;35;5;7;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerRecoveryOp.java;1;1;7;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/ReadLastConfirmedOp.java;5;2;7;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieProtocol.java;5;0;7;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;2;1;7;Flavio Paiva Junqueira
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieReadWriteTest.java;126;0;7;Flavio Paiva Junqueira
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;9;2;2;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BaseTestCase.java;21;12;2;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerCreateOp.java;25;32;6;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerMetadata.java;11;1;6;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/FlatLedgerManager.java;5;2;6;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/HierarchicalLedgerManager.java;5;2;6;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/LedgerManager.java;5;2;6;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/DigestManager.java;4;3;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/DistributionSchedule.java;13;9;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;21;2;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerRecoveryOp.java;19;65;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/ReadLastConfirmedOp.java;37;23;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/RoundRobinDistributionSchedule.java;23;20;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;0;1;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookieRecoveryTest.java;5;10;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BaseTestCase.java;16;2;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieFailureTest.java;76;0;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/LedgerRecoveryTest.java;1;2;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;6;0;6;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerMetadata.java;4;0;6;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookieRecoveryTest.java;0;29;6;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BaseTestCase.java;30;0;6;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/LedgerRecoveryTest.java;39;0;6;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestFencing.java;4;2;3;Flavio Paiva Junqueira
+2;hedwig-client/src/main/java/org/apache/hedwig/client/netty/ConnectCallback.java;7;1;6;Ivan Brendan Kelly
+2;hedwig-client/src/main/java/org/apache/hedwig/client/netty/HedwigClientImpl.java;5;11;6;Ivan Brendan Kelly
+2;hedwig-client/src/main/java/org/apache/hedwig/client/netty/HedwigPublisher.java;12;1;6;Ivan Brendan Kelly
+2;hedwig-client/src/main/java/org/apache/hedwig/client/netty/HedwigSubscriber.java;24;1;6;Ivan Brendan Kelly
+2;hedwig-client/src/main/java/org/apache/hedwig/client/netty/WriteCallback.java;5;1;6;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/EntryLogger.java;1;1;2;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/common/ServerConfiguration.java;8;0;6;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/regions/RegionManager.java;241;67;6;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/subscriptions/AbstractSubscriptionManager.java;32;6;6;Ivan Brendan Kelly
+2;hedwig-server/src/test/java/org/apache/hedwig/server/HedwigRegionTestBase.java;42;17;6;Ivan Brendan Kelly
+2;hedwig-server/src/test/java/org/apache/hedwig/server/integration/TestHedwigRegion.java;172;0;6;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;67;66;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/FileInfo.java;75;64;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/JournalChannel.java;1;1;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCache.java;8;7;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerDescriptor.java;36;6;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServer.java;2;2;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/LocalBookKeeper.java;3;2;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieJournalTest.java;3;2;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieLayoutVersionTest.java;6;6;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookieRecoveryTest.java;1;0;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BaseTestCase.java;5;4;12;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;5;10;15;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BKException.java;11;0;15;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerOpenOp.java;5;3;15;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerRecoveryOp.java;2;0;15;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingAddOp.java;4;0;15;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingReadOp.java;1;1;15;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/ReadLastConfirmedOp.java;15;8;15;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieClient.java;22;2;15;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieProtocol.java;10;2;15;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServer.java;18;5;15;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;48;5;15;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookieRecoveryTest.java;1;1;15;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestFencing.java;33;2;15;Ivan Brendan Kelly
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieClientTest.java;13;13;15;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/delivery/DeliveryManager.java;5;0;13;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/netty/PubSubServer.java;15;23;13;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/subscriptions/AbstractSubscriptionManager.java;98;6;13;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/subscriptions/InMemorySubscriptionState.java;23;2;13;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/subscriptions/SubscriptionManager.java;4;0;13;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/topics/AbstractTopicManager.java;4;0;13;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/topics/TopicManager.java;5;0;13;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/topics/TrivialOwnAllTopicManager.java;5;0;13;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/topics/ZkTopicManager.java;17;0;13;Ivan Brendan Kelly
+2;hedwig-server/src/test/java/org/apache/hedwig/server/HedwigHubTestBase.java;25;9;13;Ivan Brendan Kelly
+2;hedwig-server/src/test/java/org/apache/hedwig/server/delivery/StubDeliveryManager.java;5;0;13;Ivan Brendan Kelly
+2;hedwig-server/src/test/java/org/apache/hedwig/server/subscriptions/TestUpdateSubscriptionState.java;246;0;13;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ClientConfiguration.java;1;1;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ServerConfiguration.java;1;1;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/AbstractZkLedgerManager.java;4;2;5;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/BookieLayoutVersionTest.java;3;2;5;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestFencing.java;3;2;5;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieJournalRollingTest.java;5;2;5;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ClientConfiguration.java;1;1;5;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ServerConfiguration.java;8;8;5;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ClientConfiguration.java;6;6;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/ServerConfiguration.java;11;11;3;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;48;44;2;Ivan Brendan Kelly
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeperAdmin.java;73;11;10;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;95;30;10;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerMetadata.java;44;0;10;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerRecoveryOp.java;2;2;10;Sijie Guo
+2;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/PendingReadOp.java;15;0;10;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookieRecoveryTest.java;155;5;10;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/TestFencing.java;7;5;10;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookKeeperClusterTestCase.java;8;5;10;Sijie Guo
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/CloseTest.java;25;0;10;Sijie Guo
+1;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/BookKeeperTestBase.java;1;1;3;Ivan Brendan Kelly
+1;hedwig-server/src/test/java/org/apache/hedwig/server/topics/TestZkTopicManager.java;3;0;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/ReadLastConfirmedOp.java;8;10;2;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerCreateOp.java;1;1;5;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;13;1;5;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerOpenOp.java;28;10;5;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieReadWriteTest.java;22;2;5;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/ReadLastConfirmedOp.java;2;2;2;Ivan Brendan Kelly
+1;hedwig-client/src/main/java/org/apache/hedwig/client/benchmark/HedwigBenchmark.java;1;1;2;Ivan Brendan Kelly
+1;bookkeeper-benchmark/src/main/java/org/apache/bookkeeper/benchmark/TestClient.java;3;9;2;Benjamin Reed
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/BufferedChannel.java;8;0;3;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/EntryLogger.java;9;1;3;Flavio Paiva Junqueira
+2;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/BookkeeperPersistenceManager.java;27;0;4;Ivan Brendan Kelly
+2;hedwig-server/src/test/java/org/apache/hedwig/server/integration/TestHedwigHub.java;23;21;4;Ivan Brendan Kelly
+2;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/BookKeeperTestBase.java;46;3;4;Ivan Brendan Kelly
+2;hedwig-client/src/main/java/org/apache/hedwig/client/benchmark/BenchmarkPublisher.java;3;0;37;Ivan Brendan Kelly
+2;hedwig-client/src/main/java/org/apache/hedwig/client/benchmark/BenchmarkSubscriber.java;4;0;37;Ivan Brendan Kelly
+2;hedwig-client/src/main/java/org/apache/hedwig/client/benchmark/BenchmarkUtils.java;15;2;37;Ivan Brendan Kelly
+2;hedwig-client/src/main/java/org/apache/hedwig/client/handlers/SubscribeResponseHandler.java;42;36;37;Ivan Brendan Kelly
+2;hedwig-client/src/main/java/org/apache/hedwig/util/HedwigSocketAddress.java;5;0;37;Ivan Brendan Kelly
+2;hedwig-client/src/main/java/org/apache/hedwig/util/PathUtils.java;3;3;37;Ivan Brendan Kelly
+2;hedwig-protocol/src/main/java/org/apache/hedwig/protoextensions/PubSubResponseUtils.java;1;1;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/admin/HedwigAdmin.java;7;4;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/admin/console/HedwigCommands.java;4;3;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/admin/console/HedwigConsole.java;27;15;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/admin/console/ReadTopic.java;0;2;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/common/TerminateJVMExceptionHandler.java;1;1;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/delivery/ChannelEndPoint.java;4;0;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/delivery/DeliveryManager.java;2;0;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/delivery/FIFODeliveryManager.java;8;3;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/handlers/NettyHandlerBean.java;1;1;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/netty/PubSubServer.java;10;4;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/netty/ServerStats.java;3;2;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/LocalDBPersistenceManager.java;50;8;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/persistence/ReadAheadCache.java;2;2;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/proxy/HedwigProxy.java;10;8;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/proxy/ProxyConfiguration.java;2;2;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/regions/RegionManager.java;7;14;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/subscriptions/AbstractSubscriptionManager.java;14;6;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/subscriptions/TrueFilter.java;1;1;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/server/topics/ZkTopicManager.java;1;1;37;Ivan Brendan Kelly
+2;hedwig-server/src/main/java/org/apache/hedwig/zookeeper/SafeAsyncCallback.java;1;1;37;Ivan Brendan Kelly
+2;hedwig-server/src/test/java/org/apache/hedwig/server/HedwigHubTestBase.java;4;1;37;Ivan Brendan Kelly
+2;hedwig-server/src/test/java/org/apache/hedwig/server/HedwigRegionTestBase.java;7;3;37;Ivan Brendan Kelly
+2;hedwig-server/src/test/java/org/apache/hedwig/server/PubSubServerStandAloneTestBase.java;1;0;37;Ivan Brendan Kelly
+2;hedwig-server/src/test/java/org/apache/hedwig/server/TestPubSubServerStartup.java;1;0;37;Ivan Brendan Kelly
+2;hedwig-server/src/test/java/org/apache/hedwig/server/delivery/StubDeliveryManager.java;4;0;37;Ivan Brendan Kelly
+2;hedwig-server/src/test/java/org/apache/hedwig/server/integration/TestHedwigHub.java;1;0;37;Ivan Brendan Kelly
+2;hedwig-server/src/test/java/org/apache/hedwig/server/netty/TestPubSubServer.java;2;1;37;Ivan Brendan Kelly
+1;hedwig-server/src/test/java/org/apache/hedwig/ServerControl.java;0;237;36;Ivan Brendan Kelly
+1;hedwig-server/src/test/java/org/apache/hedwig/ServerControlDaemon.java;0;171;36;Ivan Brendan Kelly
+1;hedwig-server/src/main/java/org/apache/hedwig/server/topics/AbstractTopicManager.java;12;3;4;Ivan Brendan Kelly
+1;hedwig-server/src/test/java/org/apache/hedwig/server/persistence/BookKeeperTestBase.java;25;9;4;Ivan Brendan Kelly
+1;hedwig-server/src/test/java/org/apache/hedwig/server/topics/TestConcurrentTopicAcquisition.java;206;0;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerCreateOp.java;1;0;9;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;18;3;9;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerMetadata.java;31;3;9;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerOpenOp.java;1;1;9;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerRecoveryOp.java;17;8;9;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/tools/BookKeeperTools.java;2;0;9;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/AsyncLedgerOpsTest.java;2;1;9;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ConditionalSetTest.java;116;0;9;Ivan Brendan Kelly
+1;hedwig-server/src/main/java/org/apache/hedwig/server/netty/PubSubServer.java;15;1;3;Ivan Brendan Kelly
+1;hedwig-server/src/test/java/org/apache/hedwig/server/TestPubSubServerStartup.java;128;0;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/EntryLogger.java;32;27;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/bookie/EntryLogTest.java;90;0;3;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieClient.java;0;2;3;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;20;17;3;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;1;0;2;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/EntryLogger.java;1;1;2;Ivan Brendan Kelly
+2;hedwig-client/src/main/java/org/apache/hedwig/client/exceptions/AlreadyStartDeliveryException.java;36;0;1;Sijie Guo
+4;hedwig-client/src/main/java/org/apache/hedwig/client/data/PubSubData.java;14;1;16;Ivan Brendan Kelly
+4;hedwig-client/src/main/java/org/apache/hedwig/client/exceptions/ResubscribeException.java;34;0;16;Ivan Brendan Kelly
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/CleanupChannelMap.java;44;0;16;Ivan Brendan Kelly
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/impl/AbstractSubscribeResponseHandler.java;34;22;16;Ivan Brendan Kelly
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/impl/ActiveSubscriber.java;6;1;16;Ivan Brendan Kelly
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/impl/ResubscribeCallback.java;7;0;16;Ivan Brendan Kelly
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/impl/multiplex/MultiplexHChannelManager.java;20;0;16;Ivan Brendan Kelly
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/impl/multiplex/MultiplexSubscribeResponseHandler.java;22;3;16;Ivan Brendan Kelly
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/impl/simple/SimpleHChannelManager.java;11;4;16;Ivan Brendan Kelly
+4;hedwig-client/src/main/java/org/apache/hedwig/client/netty/impl/simple/SimpleSubscribeResponseHandler.java;29;35;16;Ivan Brendan Kelly
+4;hedwig-protocol/src/main/java/org/apache/hedwig/exceptions/PubSubException.java;8;0;16;Ivan Brendan Kelly
+4;hedwig-protocol/src/main/java/org/apache/hedwig/protocol/PubSubProtocol.java;29;25;16;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/client/TestPubSubClient.java;60;0;16;Ivan Brendan Kelly
+4;hedwig-server/src/test/java/org/apache/hedwig/server/PubSubServerStandAloneTestBase.java;3;8;16;Ivan Brendan Kelly
+1;hedwig-client/src/main/java/org/apache/hedwig/client/handlers/SubscribeResponseHandler.java;11;8;2;Benjamin Reed
+1;hedwig-client/src/main/java/org/apache/hedwig/client/handlers/SubscribeResponseHandler.java;38;35;2;Ivan Brendan Kelly
+1;hedwig-server/src/main/java/org/apache/hedwig/server/delivery/FIFODeliveryManager.java;4;0;2;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;41;10;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/FileInfo.java;76;1;4;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BaseTestCase.java;24;0;4;Ivan Brendan Kelly
+1;hedwig-server/src/main/java/org/apache/hedwig/server/subscriptions/AbstractSubscriptionManager.java;2;1;2;Benjamin Reed
+2;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieClientTest.java;2;1;2;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;39;17;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/EntryLogger.java;64;104;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCache.java;10;13;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeper.java;17;6;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookKeeperAdmin.java;43;120;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerCreateOp.java;10;22;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerDeleteOp.java;2;2;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerHandle.java;6;8;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/LedgerOpenOp.java;1;2;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/conf/AbstractConfiguration.java;45;1;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/AbstractZkLedgerManager.java;251;0;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/FlatLedgerManager.java;193;0;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/HierarchicalLedgerManager.java;514;0;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/LedgerLayout.java;204;0;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/LedgerManager.java;144;0;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/meta/LedgerManagerFactory.java;98;0;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServer.java;6;3;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookkeeperInternalCallbacks.java;75;0;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/LocalBookKeeper.java;4;2;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/Main.java;1;1;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/StringUtils.java;0;25;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/util/ZkUtils.java;94;0;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookieRecoveryTest.java;11;14;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/LedgerCacheTest.java;1;1;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/HierarchicalAsyncLedgerOpsTest.java;47;0;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/HierarchicalBookieFailureTest.java;47;0;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/HierarchicalBookieReadWriteTest.java;47;0;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/HierarchicalBookieRecoveryTest.java;46;0;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/HierarchicalLedgerDeleteTest.java;47;0;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/LedgerLayoutTest.java;136;0;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/meta/TestLedgerManager.java;261;0;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BaseTestCase.java;13;4;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/ConcurrentLedgerTest.java;1;1;36;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;77;15;3;Benjamin Reed
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieServer.java;51;2;3;Benjamin Reed
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/Bookie.java;1;1;8;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/BookieWatcher.java;1;1;8;Flavio Paiva Junqueira
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/client/BookKeeperTestClient.java;61;0;8;Flavio Paiva Junqueira
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BaseTestCase.java;3;3;8;Flavio Paiva Junqueira
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieFailureTest.java;3;5;8;Flavio Paiva Junqueira
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieReadWriteTest.java;10;22;8;Flavio Paiva Junqueira
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieRecoveryTest.java;4;38;8;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCache.java;1;1;5;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/client/MacDigestManager.java;1;1;5;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/NIOServerFactory.java;2;3;5;Flavio Paiva Junqueira
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/LedgerCacheTest.java;131;0;5;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/bookie/LedgerCache.java;2;2;2;Flavio Paiva Junqueira
+1;hedwig-protocol/src/main/java/org/apache/hedwig/protocol/PubSubProtocol.java;6095;0;6;Ivan Brendan Kelly
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/BookieClient.java;2;0;4;Flavio Paiva Junqueira
+1;bookkeeper-server/src/main/java/org/apache/bookkeeper/proto/PerChannelBookieClient.java;3;5;4;Flavio Paiva Junqueira
+1;bookkeeper-server/src/test/java/org/apache/bookkeeper/test/BookieReadWriteTest.java;52;0;4;Flavio Paiva Junqueira

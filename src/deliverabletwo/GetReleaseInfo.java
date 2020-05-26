@@ -28,7 +28,7 @@ public class GetReleaseInfo {
 
 	public static void getInfo() throws IOException, JSONException {
 		   
-		   String projName ="TAJO";
+		   String projName ="BOOKKEEPER";
 		 //Fills the arraylist with releases dates and orders them
 		   //Ignores releases with missing dates
 		   releases = new ArrayList<>();
