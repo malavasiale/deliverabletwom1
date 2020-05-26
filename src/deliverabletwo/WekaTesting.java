@@ -115,17 +115,19 @@ public class WekaTesting {
 	}
 	
 	public static void main(String args[]) throws Exception{
-		FileWriter csvEvaluate = new FileWriter(WEKA_OUTPUT);
 		Long maxvers = GetBuggy.firstHalfVersions();
-		csvEvaluate.write("Dataset;#TrainingRelease;Classifier;Precision;Recall;AUC;Kappa\n");
+		
 		for(int i = 1 ; i < maxvers ; i++) {
 			makeSets(i);
 			evaluate(i);
 		}
 		
-		for(String elem : finalData) {
-			csvEvaluate.write(elem);
-		}
-		csvEvaluate.close();			
+		try(FileWriter csvEvaluate = new FileWriter(WEKA_OUTPUT);){
+			csvEvaluate.write("Dataset;#TrainingRelease;Classifier;Precision;Recall;AUC;Kappa\n");
+			
+			for(String elem : finalData) {
+				csvEvaluate.write(elem);
+			}
+		}		
 	}
 }

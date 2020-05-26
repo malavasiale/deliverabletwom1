@@ -58,12 +58,9 @@ public class GetReleaseInfo {
 		         });
 		         if (releases.size() < 6)
 		            return;
-		         FileWriter fileWriter = null;
-			 try {
-		            fileWriter = null;
-		            String outname = projName + "VersionInfo.csv";
-						    //Name of CSV for output
-						    fileWriter = new FileWriter(outname);
+		     String outname = projName + "VersionInfo.csv";
+			 try(FileWriter fileWriter = new FileWriter(outname);) {
+
 		            fileWriter.append("Index,Version ID,Version Name,Date");
 		            fileWriter.append("\n");
 		            numVersions = releases.size();
@@ -82,14 +79,6 @@ public class GetReleaseInfo {
 		         } catch (Exception e) {
 		            System.out.println("Error in csv writer");
 		            e.printStackTrace();
-		         } finally {
-		            try {
-		               fileWriter.flush();
-		               fileWriter.close();
-		            } catch (IOException e) {
-		               System.out.println("Error while flushing/closing fileWriter !!!");
-		               e.printStackTrace();
-		            }
 		         }
 		         return;
 		   }
