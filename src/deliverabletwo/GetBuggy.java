@@ -206,7 +206,8 @@ public static List<String> retrieveTick() throws JSONException, IOException {
 				   String key = issues.getJSONObject(i%1000).get("key").toString();
 				   String created = issues.getJSONObject(i%1000).getJSONObject(fields).getString("created");
 				   JSONArray affectedVersions = issues.getJSONObject(i%1000).getJSONObject(fields).getJSONArray("versions");
-				   String av =";";
+				   StringBuilder av = new StringBuilder();
+				   av.append(";");
 				   for(int k = 0; k<affectedVersions.length();k++) {
 						String line = "";
 						String versID = "";
@@ -220,17 +221,18 @@ public static List<String> retrieveTick() throws JSONException, IOException {
 				       }
 				       ra.seek(0);
 					   if(k == 0 && !versID.equals("")) {
-						   av = av + versID;
+						   av.append(versID);
 					   }
 					   else if(!versID.equals("")) {
-						   av = av +"*"+ versID;
+						   av.append("*" + versID);
 					   }
 				   }
 				   if(affectedVersions.length() == 0 || av.equals(";")) {
-					   av = av + "none";
+					   av.append("none");
 				   }
 				   JSONArray fixedVersions = issues.getJSONObject(i%1000).getJSONObject(fields).getJSONArray("fixVersions");
-				   String fv = ";";
+				   StringBuilder fv = new StringBuilder();
+				   fv.append(";");
 				   for(int k = 0; k<fixedVersions.length();k++) {
 					   String line = "";
 					   String versID = "";
@@ -245,17 +247,17 @@ public static List<String> retrieveTick() throws JSONException, IOException {
 			           }
 					   ra.seek(0);
 					   if(k == 0 && !versID.equals("")) {
-						   fv = fv + versID;
+						   fv.append(versID);
 					   }
 					   else if (!versID.equals("") ) {
-						   fv = fv +"*"+ versID;
+						   fv.append("*"+versID);
 					   }
 				   }
 				   if(fixedVersions.length() == 0) {
-					   fv = fv + "none";
+					   fv.append("none");
 				   }
 				   ov = getOV(created);
-				   ids.add(key+av+fv + ";" + ov);
+				   ids.add(key + av.toString() + fv.toString() + ";" + ov);
 			   } 
 		   } while (i < total);
 	   }
