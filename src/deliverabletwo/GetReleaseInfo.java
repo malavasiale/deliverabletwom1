@@ -7,13 +7,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URL;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,7 +30,7 @@ public class GetReleaseInfo {
 		  }
 
 	public static void getInfo() throws IOException, JSONException {
-		   String projName ="BOOKKEEPER";
+		   String projName ="TAJO";
 		 //Fills the arraylist with releases dates and orders them
 		   //Ignores releases with missing dates
 		   releases = new ArrayList<>();
@@ -54,16 +52,11 @@ public class GetReleaseInfo {
 		                          name,id);
 		            }
 		         }
-		         // order releases by date
-		         
-		         Collections.sort(releases, new Comparator<LocalDateTime>(){
-		            //@Override
-		            public int compare(LocalDateTime o1, LocalDateTime o2) {
-		                return o1.compareTo(o2);
-		            }
-		         });
-		         if (releases.size() < 6)
+		         // order releases by date  
+		         Collections.sort(releases, (LocalDateTime o1, LocalDateTime o2) -> o1.compareTo(o2));
+		         if (releases.size() < 6) {
 		            return;
+		         }
 		     String outname = projName + "VersionInfo.csv";
 			 try(FileWriter fileWriter = new FileWriter(outname);) {
 
