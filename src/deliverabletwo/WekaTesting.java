@@ -19,7 +19,7 @@ import weka.core.converters.ConverterUtils.DataSource;
 
 public class WekaTesting {
 	
-	private static List<String> finalData = new ArrayList<String>();
+	private static List<String> finalData = new ArrayList<>();
 	
 	private static final String PROJ = "tajo";
 	private static final String METRICS = PROJ+"finalMetrics.csv";
@@ -83,38 +83,43 @@ public class WekaTesting {
 	    saver2.writeBatch();
 		}
 	
-	public static void evaluate(Integer numbOfTraining) throws Exception {
-		DataSource source1 = new DataSource(TRAINING_ARFF);
-		Instances training = source1.getDataSet();
-		DataSource source2 = new DataSource(TESTING_ARFF);
-		Instances testing = source2.getDataSet();
-
-		int numAttr = training.numAttributes();
-		training.setClassIndex(numAttr - 1);
-		testing.setClassIndex(numAttr - 1);
-
-		IBk classifierIBk = new IBk();
-		NaiveBayes classifierNB = new NaiveBayes();
-		RandomForest classifierRF = new RandomForest();
-
-		classifierIBk.buildClassifier(training);
-		classifierNB.buildClassifier(training);
-		classifierRF.buildClassifier(training);
-
-		Evaluation evalIBk = new Evaluation(testing);
-		Evaluation evalNB = new Evaluation(testing);
-		Evaluation evalRF = new Evaluation(testing);
-
-		evalIBk.evaluateModel(classifierIBk, testing); 
-		evalNB.evaluateModel(classifierNB, testing); 
-		evalRF.evaluateModel(classifierRF, testing); 
+	public static void evaluate(Integer numbOfTraining){
 		
-		finalData.add(PROJ+";" + numbOfTraining + ";" + "IBk;" + evalIBk.precision(1) +";" + evalIBk.recall(1) +  ";" + evalIBk.areaUnderROC(1) + ";" + evalIBk.kappa() + "\n");
-		finalData.add(PROJ+";" + numbOfTraining + ";" + "NaiveBayes;" + evalNB.precision(1) +";" + evalNB.recall(1) +  ";" + evalNB.areaUnderROC(1) + ";" + evalNB.kappa() + "\n");
-		finalData.add(PROJ+";" + numbOfTraining + ";" + "RandomForest;" + evalRF.precision(1) +";" + evalRF.recall(1) +  ";" + evalRF.areaUnderROC(1) + ";" + evalRF.kappa() + "\n");
+		try {
+			DataSource source1 = new DataSource(TRAINING_ARFF);
+			Instances training = source1.getDataSet();
+			DataSource source2 = new DataSource(TESTING_ARFF);
+			Instances testing = source2.getDataSet();
+
+			int numAttr = training.numAttributes();
+			training.setClassIndex(numAttr - 1);
+			testing.setClassIndex(numAttr - 1);
+
+			IBk classifierIBk = new IBk();
+			NaiveBayes classifierNB = new NaiveBayes();
+			RandomForest classifierRF = new RandomForest();
+
+			classifierIBk.buildClassifier(training);
+			classifierNB.buildClassifier(training);
+			classifierRF.buildClassifier(training);
+
+			Evaluation evalIBk = new Evaluation(testing);
+			Evaluation evalNB = new Evaluation(testing);
+			Evaluation evalRF = new Evaluation(testing);
+
+			evalIBk.evaluateModel(classifierIBk, testing); 
+			evalNB.evaluateModel(classifierNB, testing); 
+			evalRF.evaluateModel(classifierRF, testing); 
+			
+			finalData.add(PROJ+";" + numbOfTraining + ";" + "IBk;" + evalIBk.precision(1) +";" + evalIBk.recall(1) +  ";" + evalIBk.areaUnderROC(1) + ";" + evalIBk.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + "NaiveBayes;" + evalNB.precision(1) +";" + evalNB.recall(1) +  ";" + evalNB.areaUnderROC(1) + ";" + evalNB.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + "RandomForest;" + evalRF.precision(1) +";" + evalRF.recall(1) +  ";" + evalRF.areaUnderROC(1) + ";" + evalRF.kappa() + "\n");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 	
-	public static void main(String args[]) throws Exception{
+	public static void main(String[] args) throws IOException{
 		Long maxvers = GetBuggy.firstHalfVersions();
 		
 		for(int i = 1 ; i < maxvers ; i++) {
