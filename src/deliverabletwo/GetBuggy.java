@@ -227,7 +227,7 @@ public static List<String> retrieveTick() throws JSONException, IOException {
 						   av.append("*" + versID);
 					   }
 				   }
-				   if(affectedVersions.length() == 0 || av.equals(";")) {
+				   if(affectedVersions.length() == 0 || av.toString().equals(";")) {
 					   av.append("none");
 				   }
 				   JSONArray fixedVersions = issues.getJSONObject(i%1000).getJSONObject(fields).getJSONArray("fixVersions");
@@ -402,11 +402,12 @@ public static void commitsBuggyClasses() throws IOException {
 		    				l.log(Level.INFO,logStr);
 		    			}
 		    		}
-		    		String bugss = dataBugs[0] + ";" + avmin+ ";" + fvmin + ";" + dataCommits[1];
+		    		StringBuilder bugss = new StringBuilder();
+		    		bugss.append(dataBugs[0] + ";" + avmin+ ";" + fvmin + ";" + dataCommits[1]);
 		    		for(String elem : buggyfiles) {
-		    			bugss = bugss + ";" + elem;
+		    			bugss.append(";" + elem);
 		    		}
-		    		csvBuggyFilesWriter.write(bugss);
+		    		csvBuggyFilesWriter.write(bugss.toString());
 		    		csvBuggyFilesWriter.write("\n");
 		    		csvReaderCommits.seek(csvReaderCommits.length());
 		    	}	
