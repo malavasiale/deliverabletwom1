@@ -46,6 +46,7 @@ public class GetBuggy {
 	private static final String FILES_INFO = PROJ+"filesInfo.csv";
 	private static final String FINAL_METRICS = PROJ+"finalMetrics.csv";
 	private static final String OAUTH = "C:\\Users\\" + "malav\\Desktop\\isw2\\oauth.txt";
+	private static final String BASE_URL = "https://api.github.com/repos/apache/";
 	
 	
 private static String readAll(Reader rd) throws IOException {
@@ -126,7 +127,7 @@ public static JSONObject readJsonFromUrl(String url) throws IOException, JSONExc
 public static Long firstHalfVersions() throws IOException {	
 	
 	String project = PROJ.toUpperCase();
-	try(Stream<String> a = Files.lines(Paths.get(project+"VersionInfo.csv"), Charset.defaultCharset());) {
+	try(Stream<String> a = Files.lines(Paths.get(project+VERSIONS_INFO), Charset.defaultCharset());) {
 		Long versions = a.count();
 		return (versions-1)/2;
 	}
@@ -140,7 +141,7 @@ public static void retrieveGitCommits() throws IOException, InterruptedException
 	try(FileWriter csvWriter = new FileWriter(GIT_COMMITS);) {
 		csvWriter.append("message;sha\n");
 		for(;;i++) {
-			String url = "https://api.github.com/repos/apache/"+PROJ+"/commits?page="+i.toString()+"&per_page=50";
+			String url = BASE_URL+PROJ+"/commits?page="+i.toString()+"&per_page=50";
 			Thread.sleep(1000);
 			JSONArray json = readJsonArrayAuth(url);
 			Integer l = json.length();
@@ -265,7 +266,7 @@ public static List<String> retrieveTick() throws JSONException, IOException {
 }
 
 public static void retrieveFiles() throws IOException, InterruptedException {
-	String baseurl = "https://api.github.com/repos/apache/"+PROJ+"/contents";
+	String baseurl = BASE_URL+PROJ+"/contents";
 	String path = "";
 	List<String> checked = new ArrayList<>();
 	List<String> directory = new ArrayList<>();
@@ -307,7 +308,7 @@ public static void retrieveFiles() throws IOException, InterruptedException {
 
 public static List<String> retrieveBuggyFiles(String sha) throws JSONException, IOException{
 	List<String> buggyfiles = new ArrayList<>();
-	String url = "https://api.github.com/repos/apache/"+PROJ+"/commits/" + sha;
+	String url = BASE_URL+PROJ+"/commits/" + sha;
 	JSONObject commit = readJsonObjectAuth(url);
 	JSONArray filesarray = commit.getJSONArray("files");
 	for(int i = 0; i < filesarray.length(); i++) {
@@ -495,7 +496,7 @@ public static void filesInfo() throws IOException {
 		while((row = csvReaderBuggyFiles.readLine()) != null) {
 			String[] rowSplit = row.split(";");
 			if(!rowSplit[2].equals("none") && Integer.parseInt(rowSplit[2]) <= maxVersion) {
-				String url = "https://api.github.com/repos/apache/"+PROJ+"/commits/" + rowSplit[3];
+				String url = BASE_URL+PROJ+"/commits/" + rowSplit[3];
 				JSONObject commit = readJsonObjectAuth(url);
 				author = commit.getJSONObject("commit").getJSONObject("author").getString("name");
 				JSONArray files = commit.getJSONArray("files");

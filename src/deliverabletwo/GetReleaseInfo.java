@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -21,13 +22,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class GetReleaseInfo {
+	
 	   private static Map<LocalDateTime, String> releaseNames;
 	   private static Map<LocalDateTime, String> releaseID;
 	   private static ArrayList<LocalDateTime> releases;
-	   private static Integer numVersions;
+	   
+	   private GetReleaseInfo() {
+		    throw new IllegalStateException("Utility class");
+		  }
 
 	public static void getInfo() throws IOException, JSONException {
-		   
 		   String projName ="BOOKKEEPER";
 		 //Fills the arraylist with releases dates and orders them
 		   //Ignores releases with missing dates
@@ -65,7 +69,6 @@ public class GetReleaseInfo {
 
 		            fileWriter.append("Index,Version ID,Version Name,Date");
 		            fileWriter.append("\n");
-		            numVersions = releases.size();
 		            for ( i = 0; i < releases.size(); i++) {
 		               Integer index = i + 1;
 		               fileWriter.append(index.toString());
@@ -79,10 +82,8 @@ public class GetReleaseInfo {
 		            }
 
 		         } catch (Exception e) {
-		            System.out.println("Error in csv writer");
 		            e.printStackTrace();
 		         }
-		         return;
 		   }
 
 	
@@ -93,19 +94,14 @@ public class GetReleaseInfo {
 		         releases.add(dateTime);
 		      releaseNames.put(dateTime, name);
 		      releaseID.put(dateTime, id);
-		      return;
 		   }
 
 
 	   public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
 	      InputStream is = new URL(url).openStream();
-	      try {
-	         BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+	      try(BufferedReader rd = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));) {
 	         String jsonText = readAll(rd);
-	         JSONObject json = new JSONObject(jsonText);
-	         return json;
-	       } finally {
-	         is.close();
+	         return new JSONObject(jsonText);
 	       }
 	   }
 	   
