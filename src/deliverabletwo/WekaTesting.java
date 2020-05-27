@@ -21,7 +21,7 @@ public class WekaTesting {
 	
 	private static List<String> finalData = new ArrayList<String>();
 	
-	private static final String PROJ = "bookkeeper";
+	private static final String PROJ = "tajo";
 	private static final String METRICS = PROJ+"finalMetrics.csv";
 	private static final String TRAINING_CSV = PROJ+"trainingSet.csv";
 	private static final String TESTING_CSV = PROJ+"testingSet.csv";
