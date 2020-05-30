@@ -348,8 +348,6 @@ public static void commitsBuggyClasses() throws IOException {
 	Integer p = 0;
 	Integer meanP = 0;
 	Integer countP = 0;
-	List<String> avlist = new ArrayList<>();
-	List<String> fvlist = new ArrayList<>();
 	Logger l = Logger.getLogger(GetBuggy.class.getName());
 	
 	
@@ -366,28 +364,13 @@ public static void commitsBuggyClasses() throws IOException {
 		    	match2 = StringUtils.countMatches(dataCommits[0], dataBugs[0] + ":");
 		    	match3 = StringUtils.countMatches(dataCommits[0], dataBugs[0] + " ");
 		    	if(match1 >= 1 || match2 >= 1 || match3 >= 1) {
-		    		if(!dataBugs[1].contentEquals("none") && StringUtils.countMatches(dataBugs[1], "*") >= 1) {
-		    			String[] avarray = dataBugs[1].split("\\*");
-		    			Collections.addAll(avlist, avarray);
-		    			avmin = Collections.min(avlist);
-		    		}
-		    		else if(!dataBugs[1].contentEquals("none")) {
-		    			avmin = dataBugs[1];
-		    		}
-		    		else {
-		    			avmin = "none";
-		    		}
-		    		if(!dataBugs[2].contentEquals("none") && StringUtils.countMatches(dataBugs[2], "*") >= 1) {
-		    			String[] fvarray = dataBugs[2].split("\\*");
-		    			Collections.addAll(fvlist, fvarray);
-		    			fvmin = Collections.min(fvlist);
-		    		}
-		    		else if(!dataBugs[2].contentEquals("none")){
-		    			fvmin = dataBugs[2];
-		    		}
-		    		else {
-		    			fvmin = "none";
-		    		}
+		    		
+		    		//Find minimum AV from the list
+		    		avmin = findMinVersion(dataBugs[1]);
+		    		
+		    		//Find minimun FV from the list
+		    		fvmin = findMinVersion(dataBugs[2]);
+		    		
 		    		List<String> buggyfiles = retrieveBuggyFiles(dataCommits[1]);
 		    		if(!avmin.equals("none") && !fvmin.equals("none")) {
 		    			if(Integer.parseInt(fvmin) == Integer.parseInt(dataBugs[3])) {
@@ -432,6 +415,25 @@ public static void commitsBuggyClasses() throws IOException {
 	}
 
 }
+
+public static String findMinVersion(String versionsString) {
+	String minVers;
+	List<String> listVers = new ArrayList<>();
+	
+	if(!versionsString.contentEquals("none") && StringUtils.countMatches(versionsString, "*") >= 1) {
+		String[] versionsArray = versionsString.split("\\*");
+		Collections.addAll(listVers, versionsArray);
+		minVers = Collections.min(listVers);
+	}
+	else if(!versionsString.contentEquals("none")) {
+		minVers = versionsString;
+	}
+	else {
+		minVers = "none";
+	}
+	return minVers;
+}
+
 
 public static void buggyMetric() throws IOException {
 	String rowFile;
@@ -569,7 +571,7 @@ public static void makeMetricsFile() throws IOException {
 	}
 }
 
-public static List<Integer> calculateMetrics(String version,String filename,RandomAccessFile csvReaderFilesInfo) throws NumberFormatException, IOException{
+public static List<Integer> calculateMetrics(String version,String filename,RandomAccessFile csvReaderFilesInfo) throws IOException{
 	String rowInfo;
 	Integer locTouched = 0;
 	Integer locAdded = 0;
