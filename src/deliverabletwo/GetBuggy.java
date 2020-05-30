@@ -205,62 +205,78 @@ public static List<String> retrieveTick() throws JSONException, IOException {
 				   String key = issues.getJSONObject(i%1000).get("key").toString();
 				   String created = issues.getJSONObject(i%1000).getJSONObject(fields).getString("created");
 				   JSONArray affectedVersions = issues.getJSONObject(i%1000).getJSONObject(fields).getJSONArray("versions");
-				   StringBuilder av = new StringBuilder();
-				   av.append(";");
-				   for(int k = 0; k<affectedVersions.length();k++) {
-						String line = "";
-						String versID = "";
-						String name = affectedVersions.getJSONObject(k).get("name").toString();				
-				        while ((line = ra.readLine()) != null) {
-				                String[] row = line.split(",");
-				                if(row[2].equals(name)) {
-				                	versID = row[0];    	
-				                	break;
-				                }
-				       }
-				       ra.seek(0);
-					   if(k == 0 && !versID.equals("")) {
-						   av.append(versID);
-					   }
-					   else if(!versID.equals("")) {
-						   av.append("*" + versID);
-					   }
-				   }
-				   if(affectedVersions.length() == 0 || av.toString().equals(";")) {
-					   av.append("none");
-				   }
+				   //get all AV in jira if there are
+				   StringBuilder av = getAVJira(affectedVersions,ra);
+				   
 				   JSONArray fixedVersions = issues.getJSONObject(i%1000).getJSONObject(fields).getJSONArray("fixVersions");
-				   StringBuilder fv = new StringBuilder();
-				   fv.append(";");
-				   for(int k = 0; k<fixedVersions.length();k++) {
-					   String line = "";
-					   String versID = "";
-					   String name = fixedVersions.getJSONObject(k).get("name").toString();
-					   while ((line = ra.readLine()) != null) {
-
-			                String[] row = line.split(",");
-			                if(row[2].equals(name)) {
-			                	versID = row[0];
-			                	break;
-			                }
-			           }
-					   ra.seek(0);
-					   if(k == 0 && !versID.equals("")) {
-						   fv.append(versID);
-					   }
-					   else if (!versID.equals("") ) {
-						   fv.append("*"+versID);
-					   }
-				   }
-				   if(fixedVersions.length() == 0) {
-					   fv.append("none");
-				   }
+				   //get all FV in jira if there are
+				   StringBuilder fv = getFVJira(fixedVersions,ra);
+				   
+				   //get OV from Jira creation ticket date
 				   ov = getOV(created);
+				   
 				   ids.add(key + av.toString() + fv.toString() + ";" + ov);
 			   } 
 		   } while (i < total);
 	   }
 	   return ids;
+}
+
+public static StringBuilder getFVJira(JSONArray fixedVersions,RandomAccessFile ra) throws IOException {
+	StringBuilder fv = new StringBuilder();
+	   fv.append(";");
+	   for(int k = 0; k<fixedVersions.length();k++) {
+		   String line = "";
+		   String versID = "";
+		   String name = fixedVersions.getJSONObject(k).get("name").toString();
+		   while ((line = ra.readLine()) != null) {
+
+             String[] row = line.split(",");
+             if(row[2].equals(name)) {
+             	versID = row[0];
+             	break;
+             }
+        }
+		   ra.seek(0);
+		   if(k == 0 && !versID.equals("")) {
+			   fv.append(versID);
+		   }
+		   else if (!versID.equals("") ) {
+			   fv.append("*"+versID);
+		   }
+	   }
+	   if(fixedVersions.length() == 0) {
+		   fv.append("none");
+	   }
+	   return fv;
+}
+
+public static StringBuilder getAVJira(JSONArray affectedVersions,RandomAccessFile ra) throws IOException {
+	   StringBuilder av = new StringBuilder();
+	   av.append(";");
+	   for(int k = 0; k<affectedVersions.length();k++) {
+			String line = "";
+			String versID = "";
+			String name = affectedVersions.getJSONObject(k).get("name").toString();				
+	        while ((line = ra.readLine()) != null) {
+	                String[] row = line.split(",");
+	                if(row[2].equals(name)) {
+	                	versID = row[0];    	
+	                	break;
+	                }
+	       }
+	       ra.seek(0);
+		   if(k == 0 && !versID.equals("")) {
+			   av.append(versID);
+		   }
+		   else if(!versID.equals("")) {
+			   av.append("*" + versID);
+		   }
+	   }
+	   if(affectedVersions.length() == 0 || av.toString().equals(";")) {
+		   av.append("none");
+	   }
+	   return av;
 }
 
 public static void retrieveFiles() throws IOException, InterruptedException {

@@ -332,7 +332,7 @@ public class WekaTesting {
 		return percentages;
 	}
 	
-	public static void evaluateUnderSampling(Integer numbOfTraining) throws Exception {
+	public static void evaluateUnderSampling(Integer numbOfTraining) {
 		try {
 			DataSource source1 = new DataSource(TRAINING_ARFF);
 			Instances training = source1.getDataSet();
