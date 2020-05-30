@@ -45,7 +45,9 @@ public class WekaTesting {
 		
 		try(BufferedReader csvReader = new BufferedReader(new FileReader(METRICS));
 			FileWriter csvTraining = new FileWriter(TRAINING_CSV);
-			FileWriter csvTesting = new FileWriter(TESTING_CSV);){
+			FileWriter csvTesting = new FileWriter(TESTING_CSV);
+			BufferedWriter writer = new BufferedWriter(new FileWriter(TRAINING_ARFF));
+		    BufferedWriter writer1 = new BufferedWriter(new FileWriter(TESTING_ARFF));	){
 			
 			for(int i = 1; i <= version;i++) {
 				trainingVersions.add(i);
@@ -68,31 +70,29 @@ public class WekaTesting {
 				}
 			}
 			
+			// load CSV
+	        CSVLoader loader = new CSVLoader();
+	        loader.setSource(new File(TRAINING_CSV));
+	        Instances dataSet = loader.getDataSet();
+
+	        // save ARFF
+	        
+	        writer.write(dataSet.toString());
+	        writer.flush();
+	        
+	        // load CSV
+	        CSVLoader loader1 = new CSVLoader();
+	        loader1.setSource(new File(TESTING_CSV));
+	        Instances dataSet1 = loader1.getDataSet();
+
+	        // save ARFF
+
+	        writer1.write(dataSet1.toString());
+	        writer1.flush();
+			
 		}
 		
-		// load CSV
-        CSVLoader loader = new CSVLoader();
-        loader.setSource(new File(TRAINING_CSV));
-        Instances dataSet = loader.getDataSet();
-
-        // save ARFF
-        BufferedWriter writer = new BufferedWriter(new FileWriter(TRAINING_ARFF));
-        writer.write(dataSet.toString());
-        writer.flush();
-        writer.close(); 
-        
-        // load CSV
-        CSVLoader loader1 = new CSVLoader();
-        loader1.setSource(new File(TESTING_CSV));
-        Instances dataSet1 = loader1.getDataSet();
-
-        // save ARFF
-        BufferedWriter writer1 = new BufferedWriter(new FileWriter(TESTING_ARFF));
-        writer1.write(dataSet1.toString());
-        writer1.flush();
-        writer1.close();
-		
-		}
+	}
 	
 	public static List<Double> calculatePercentage(Instances training, Instances testing) throws FileNotFoundException, IOException {
 		Double trainingLines= (double) training.size();
@@ -269,7 +269,10 @@ public class WekaTesting {
 		
 		//find percentages
 		Double dataInTraining = (trainingLines/(trainingLines + testingLines));
-		Double defectInTraining = (defectiveInTraining/trainingLines);
+		Double defectInTraining = 0.0; 
+		if(trainingLines != 0.0) {
+			defectInTraining = (defectiveInTraining/trainingLines);
+		}
 		Double defectInTesting = (defectiveInTesting/testingLines);
 		percentages.add(dataInTraining);
 		percentages.add(defectInTraining);
@@ -440,7 +443,6 @@ public class WekaTesting {
 			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "IBk;"+ "UnderSampling;" + "Feature Selection;" + evalIBkFS.numTruePositives(1) + ";"+ evalIBkFS.numFalsePositives(1) + ";"+ evalIBkFS.numTrueNegatives(1)+ ";"+ evalIBkFS.numFalseNegatives(1)+ ";" + evalIBkFS.precision(1) +";" + evalIBkFS.recall(1) +  ";" + evalIBkFS.areaUnderROC(1) + ";" + evalIBkFS.kappa() + "\n");
 			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "NaiveBayes;" +"UnderSampling;" + "Feature Selection;"+ evalNBFS.numTruePositives(1) + ";"+ evalNBFS.numFalsePositives(1) + ";"+ evalNBFS.numTrueNegatives(1)+ ";"+ evalNBFS.numFalseNegatives(1)+ ";" + evalNBFS.precision(1) +";" + evalNBFS.recall(1) +  ";" + evalNBFS.areaUnderROC(1) + ";" + evalNBFS.kappa() + "\n");
 			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "RandomForest;" +"UnderSampling;" + "Feature Selection;"+ evalRFFS.numTruePositives(1) + ";"+ evalRFFS.numFalsePositives(1) + ";"+ evalRFFS.numTrueNegatives(1)+ ";"+ evalRFFS.numFalseNegatives(1)+ ";" + evalRFFS.precision(1) +";" + evalRFFS.recall(1) +  ";" + evalRFFS.areaUnderROC(1) + ";" + evalRFFS.kappa() + "\n");
-			System.out.println("finitooo");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -574,7 +576,6 @@ public class WekaTesting {
 			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "IBk;"+ "SMOTE;" + "Feature Selection;" + evalIBkFS.numTruePositives(1) + ";"+ evalIBkFS.numFalsePositives(1) + ";"+ evalIBkFS.numTrueNegatives(1)+ ";"+ evalIBkFS.numFalseNegatives(1)+ ";" + evalIBkFS.precision(1) +";" + evalIBkFS.recall(1) +  ";" + evalIBkFS.areaUnderROC(1) + ";" + evalIBkFS.kappa() + "\n");
 			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "NaiveBayes;" +"SMOTE;" + "Feature Selection;"+ evalNBFS.numTruePositives(1) + ";"+ evalNBFS.numFalsePositives(1) + ";"+ evalNBFS.numTrueNegatives(1)+ ";"+ evalNBFS.numFalseNegatives(1)+ ";" + evalNBFS.precision(1) +";" + evalNBFS.recall(1) +  ";" + evalNBFS.areaUnderROC(1) + ";" + evalNBFS.kappa() + "\n");
 			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "RandomForest;" +"SMOTE;" + "Feature Selection;"+ evalRFFS.numTruePositives(1) + ";"+ evalRFFS.numFalsePositives(1) + ";"+ evalRFFS.numTrueNegatives(1)+ ";"+ evalRFFS.numFalseNegatives(1)+ ";" + evalRFFS.precision(1) +";" + evalRFFS.recall(1) +  ";" + evalRFFS.areaUnderROC(1) + ";" + evalRFFS.kappa() + "\n");
-			System.out.println("finitooo");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -608,7 +609,6 @@ public class WekaTesting {
 			fcRF.setClassifier(classifierRF);
 			fcIBk.setClassifier(classifierIBk);
 			fcNB.setClassifier(classifierNB);
-			System.out.println("Minority doubled class = " + minorityDoubledClass);
 			
 			resample.setOptions(new String[] {"-B","1.0","-Z",minorityDoubledClass.toString()});
 			
@@ -705,7 +705,6 @@ public class WekaTesting {
 			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "IBk;"+ "OverSampling;" + "Feature Selection;" + evalIBkFS.numTruePositives(1) + ";"+ evalIBkFS.numFalsePositives(1) + ";"+ evalIBkFS.numTrueNegatives(1)+ ";"+ evalIBkFS.numFalseNegatives(1)+ ";" + evalIBkFS.precision(1) +";" + evalIBkFS.recall(1) +  ";" + evalIBkFS.areaUnderROC(1) + ";" + evalIBkFS.kappa() + "\n");
 			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "NaiveBayes;" +"OverSampling;" + "Feature Selection;"+ evalNBFS.numTruePositives(1) + ";"+ evalNBFS.numFalsePositives(1) + ";"+ evalNBFS.numTrueNegatives(1)+ ";"+ evalNBFS.numFalseNegatives(1)+ ";" + evalNBFS.precision(1) +";" + evalNBFS.recall(1) +  ";" + evalNBFS.areaUnderROC(1) + ";" + evalNBFS.kappa() + "\n");
 			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "RandomForest;" +"OverSampling;" + "Feature Selection;"+ evalRFFS.numTruePositives(1) + ";"+ evalRFFS.numFalsePositives(1) + ";"+ evalRFFS.numTrueNegatives(1)+ ";"+ evalRFFS.numFalseNegatives(1)+ ";" + evalRFFS.precision(1) +";" + evalRFFS.recall(1) +  ";" + evalRFFS.areaUnderROC(1) + ";" + evalRFFS.kappa() + "\n");
-			System.out.println("finitooo");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
