@@ -37,6 +37,8 @@ public class WekaTesting {
 	private static final String SMOTE_FS = "SMOTE;Feature Selection;";
 	private static final String OVERSAMPLING_NOFS = "OverSampling;No Feature Selection;";
 	private static final String OVERSAMPLING_FS = "OverSampling;Feature Selection;";
+	private static final String NB = "NaiveBayes";
+	private static final String RF = "RandomForest";
 	
 	private static List<String> finalData = new ArrayList<>();
 	
@@ -170,8 +172,8 @@ public class WekaTesting {
 			evalRF.evaluateModel(classifierRF, testing); 
 			
 			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";IBk" + NOSAMPL_NOFS + evalIBk.numTruePositives(1) + ";"+ evalIBk.numFalsePositives(1) + ";"+ evalIBk.numTrueNegatives(1)+ ";"+ evalIBk.numFalseNegatives(1)+ ";" + evalIBk.precision(1) +";" + evalIBk.recall(1) +  ";" + evalIBk.areaUnderROC(1) + ";" + evalIBk.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";NaiveBayes" + NOSAMPL_NOFS+ evalNB.numTruePositives(1) + ";"+ evalNB.numFalsePositives(1) + ";"+ evalNB.numTrueNegatives(1)+ ";"+ evalNB.numFalseNegatives(1)+ ";" + evalNB.precision(1) +";" + evalNB.recall(1) +  ";" + evalNB.areaUnderROC(1) + ";" + evalNB.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";RandomForest" + NOSAMPL_NOFS + evalRF.numTruePositives(1) + ";"+ evalRF.numFalsePositives(1) + ";"+ evalRF.numTrueNegatives(1)+ ";"+ evalRF.numFalseNegatives(1)+ ";" + evalRF.precision(1) +";" + evalRF.recall(1) +  ";" + evalRF.areaUnderROC(1) + ";" + evalRF.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";"+ NB + NOSAMPL_NOFS+ evalNB.numTruePositives(1) + ";"+ evalNB.numFalsePositives(1) + ";"+ evalNB.numTrueNegatives(1)+ ";"+ evalNB.numFalseNegatives(1)+ ";" + evalNB.precision(1) +";" + evalNB.recall(1) +  ";" + evalNB.areaUnderROC(1) + ";" + evalNB.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";"+ RF + NOSAMPL_NOFS + evalRF.numTruePositives(1) + ";"+ evalRF.numFalsePositives(1) + ";"+ evalRF.numTrueNegatives(1)+ ";"+ evalRF.numFalseNegatives(1)+ ";" + evalRF.precision(1) +";" + evalRF.recall(1) +  ";" + evalRF.areaUnderROC(1) + ";" + evalRF.kappa() + "\n");
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -240,8 +242,8 @@ public class WekaTesting {
 		    evalIBk.evaluateModel(classifierIBk, testingFiltered);
 		    
 			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "IBk;"+ NOSAMPL_FS + evalIBk.numTruePositives(1) + ";"+ evalIBk.numFalsePositives(1) + ";"+ evalIBk.numTrueNegatives(1)+ ";"+ evalIBk.numFalseNegatives(1)+ ";" + evalIBk.precision(1) +";" + evalIBk.recall(1) +  ";" + evalIBk.areaUnderROC(1) + ";" + evalIBk.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "NaiveBayes;" +NOSAMPL_FS + evalNB.numTruePositives(1) + ";"+ evalNB.numFalsePositives(1) + ";"+ evalNB.numTrueNegatives(1)+ ";"+ evalNB.numFalseNegatives(1)+ ";" + evalNB.precision(1) +";" + evalNB.recall(1) +  ";" + evalNB.areaUnderROC(1) + ";" + evalNB.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "RandomForest;" + NOSAMPL_FS + evalRF.numTruePositives(1) + ";"+ evalRF.numFalsePositives(1) + ";"+ evalRF.numTrueNegatives(1)+ ";"+ evalRF.numFalseNegatives(1)+ ";" + evalRF.precision(1) +";" + evalRF.recall(1) +  ";" + evalRF.areaUnderROC(1) + ";" + evalRF.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + NB + ";" +NOSAMPL_FS + evalNB.numTruePositives(1) + ";"+ evalNB.numFalsePositives(1) + ";"+ evalNB.numTrueNegatives(1)+ ";"+ evalNB.numFalseNegatives(1)+ ";" + evalNB.precision(1) +";" + evalNB.recall(1) +  ";" + evalNB.areaUnderROC(1) + ";" + evalNB.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + RF + ";" + NOSAMPL_FS + evalRF.numTruePositives(1) + ";"+ evalRF.numFalsePositives(1) + ";"+ evalRF.numTrueNegatives(1)+ ";"+ evalRF.numFalseNegatives(1)+ ";" + evalRF.precision(1) +";" + evalRF.recall(1) +  ";" + evalRF.areaUnderROC(1) + ";" + evalRF.kappa() + "\n");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -357,14 +359,6 @@ public class WekaTesting {
 			fcIBk.setClassifier(classifierIBk);
 			fcNB.setClassifier(classifierNB);
 			
-			/*fc.setFilter(resample);
-			eventual parameters setting omitted
-			*/
-			
-		   /* SMOTE smote = new SMOTE();
-			smote.setInputFormat(training);
-			fc.setFilter(smote);
-			*/
 			
 			SpreadSubsample  spreadSubsample = new SpreadSubsample();
 			String[] opts = new String[]{ "-M", "1.0"};
@@ -446,12 +440,12 @@ public class WekaTesting {
 			
 			
 			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "IBk;"+ UNDERSAMPL_NOFS + evalIBk.numTruePositives(1) + ";"+ evalIBk.numFalsePositives(1) + ";"+ evalIBk.numTrueNegatives(1)+ ";"+ evalIBk.numFalseNegatives(1)+ ";" + evalIBk.precision(1) +";" + evalIBk.recall(1) +  ";" + evalIBk.areaUnderROC(1) + ";" + evalIBk.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "NaiveBayes;" + UNDERSAMPL_NOFS + evalNB.numTruePositives(1) + ";"+ evalNB.numFalsePositives(1) + ";"+ evalNB.numTrueNegatives(1)+ ";"+ evalNB.numFalseNegatives(1)+ ";" + evalNB.precision(1) +";" + evalNB.recall(1) +  ";" + evalNB.areaUnderROC(1) + ";" + evalNB.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "RandomForest;" + UNDERSAMPL_NOFS + evalRF.numTruePositives(1) + ";"+ evalRF.numFalsePositives(1) + ";"+ evalRF.numTrueNegatives(1)+ ";"+ evalRF.numFalseNegatives(1)+ ";" + evalRF.precision(1) +";" + evalRF.recall(1) +  ";" + evalRF.areaUnderROC(1) + ";" + evalRF.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + NB +";" + UNDERSAMPL_NOFS + evalNB.numTruePositives(1) + ";"+ evalNB.numFalsePositives(1) + ";"+ evalNB.numTrueNegatives(1)+ ";"+ evalNB.numFalseNegatives(1)+ ";" + evalNB.precision(1) +";" + evalNB.recall(1) +  ";" + evalNB.areaUnderROC(1) + ";" + evalNB.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + RF +";" + UNDERSAMPL_NOFS + evalRF.numTruePositives(1) + ";"+ evalRF.numFalsePositives(1) + ";"+ evalRF.numTrueNegatives(1)+ ";"+ evalRF.numFalseNegatives(1)+ ";" + evalRF.precision(1) +";" + evalRF.recall(1) +  ";" + evalRF.areaUnderROC(1) + ";" + evalRF.kappa() + "\n");
 			
 			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "IBk;"+ UNDERSAMPL_FS + evalIBkFS.numTruePositives(1) + ";"+ evalIBkFS.numFalsePositives(1) + ";"+ evalIBkFS.numTrueNegatives(1)+ ";"+ evalIBkFS.numFalseNegatives(1)+ ";" + evalIBkFS.precision(1) +";" + evalIBkFS.recall(1) +  ";" + evalIBkFS.areaUnderROC(1) + ";" + evalIBkFS.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "NaiveBayes;" + UNDERSAMPL_FS+ evalNBFS.numTruePositives(1) + ";"+ evalNBFS.numFalsePositives(1) + ";"+ evalNBFS.numTrueNegatives(1)+ ";"+ evalNBFS.numFalseNegatives(1)+ ";" + evalNBFS.precision(1) +";" + evalNBFS.recall(1) +  ";" + evalNBFS.areaUnderROC(1) + ";" + evalNBFS.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "RandomForest;" + UNDERSAMPL_FS + evalRFFS.numTruePositives(1) + ";"+ evalRFFS.numFalsePositives(1) + ";"+ evalRFFS.numTrueNegatives(1)+ ";"+ evalRFFS.numFalseNegatives(1)+ ";" + evalRFFS.precision(1) +";" + evalRFFS.recall(1) +  ";" + evalRFFS.areaUnderROC(1) + ";" + evalRFFS.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + NB +";" + UNDERSAMPL_FS+ evalNBFS.numTruePositives(1) + ";"+ evalNBFS.numFalsePositives(1) + ";"+ evalNBFS.numTrueNegatives(1)+ ";"+ evalNBFS.numFalseNegatives(1)+ ";" + evalNBFS.precision(1) +";" + evalNBFS.recall(1) +  ";" + evalNBFS.areaUnderROC(1) + ";" + evalNBFS.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + RF +";" + UNDERSAMPL_FS + evalRFFS.numTruePositives(1) + ";"+ evalRFFS.numFalsePositives(1) + ";"+ evalRFFS.numTrueNegatives(1)+ ";"+ evalRFFS.numFalseNegatives(1)+ ";" + evalRFFS.precision(1) +";" + evalRFFS.recall(1) +  ";" + evalRFFS.areaUnderROC(1) + ";" + evalRFFS.kappa() + "\n");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -484,11 +478,7 @@ public class WekaTesting {
 			fcRF.setClassifier(classifierRF);
 			fcIBk.setClassifier(classifierIBk);
 			fcNB.setClassifier(classifierNB);
-			
-			/*fc.setFilter(resample);
-			eventual parameters setting omitted
-			*/
-			
+
 		    SMOTE smote = new SMOTE();
 			smote.setInputFormat(training);
 			fcRF.setFilter(smote);
@@ -496,14 +486,8 @@ public class WekaTesting {
 			fcNB.setFilter(smote);
 			
 			
-			//SpreadSubsample  spreadSubsample = new SpreadSubsample();
-			//String[] opts = new String[]{ "-M", "1.0"};
-			//spreadSubsample.setOptions(opts);
-			//fcRF.setFilter(spreadSubsample);
 			fcRF.buildClassifier(training);
-			//fcIBk.setFilter(spreadSubsample);
 			fcIBk.buildClassifier(training);
-			//fcNB.setFilter(spreadSubsample);
 			fcNB.buildClassifier(training);
 			
 
@@ -546,9 +530,6 @@ public class WekaTesting {
 			fcIBkFS.setClassifier(classifierIBkFS);
 			fcNBFS.setClassifier(classifierNBFS);
 				
-			//SpreadSubsample  spreadSubsampleFS = new SpreadSubsample();
-			//String[] optsFS = new String[]{ "-M", "1.0"};
-			//spreadSubsampleFS.setOptions(optsFS);
 			fcRFFS.setFilter(smoteFS);
 			fcRFFS.buildClassifier(filteredTraining);
 			fcIBkFS.setFilter(smoteFS);
@@ -579,12 +560,12 @@ public class WekaTesting {
 			
 			
 			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "IBk;"+ SMOTE_NOFS + evalIBk.numTruePositives(1) + ";"+ evalIBk.numFalsePositives(1) + ";"+ evalIBk.numTrueNegatives(1)+ ";"+ evalIBk.numFalseNegatives(1)+ ";" + evalIBk.precision(1) +";" + evalIBk.recall(1) +  ";" + evalIBk.areaUnderROC(1) + ";" + evalIBk.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "NaiveBayes;" + SMOTE_NOFS + evalNB.numTruePositives(1) + ";"+ evalNB.numFalsePositives(1) + ";"+ evalNB.numTrueNegatives(1)+ ";"+ evalNB.numFalseNegatives(1)+ ";" + evalNB.precision(1) +";" + evalNB.recall(1) +  ";" + evalNB.areaUnderROC(1) + ";" + evalNB.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "RandomForest;" + SMOTE_NOFS + evalRF.numTruePositives(1) + ";"+ evalRF.numFalsePositives(1) + ";"+ evalRF.numTrueNegatives(1)+ ";"+ evalRF.numFalseNegatives(1)+ ";" + evalRF.precision(1) +";" + evalRF.recall(1) +  ";" + evalRF.areaUnderROC(1) + ";" + evalRF.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + NB +";" + SMOTE_NOFS + evalNB.numTruePositives(1) + ";"+ evalNB.numFalsePositives(1) + ";"+ evalNB.numTrueNegatives(1)+ ";"+ evalNB.numFalseNegatives(1)+ ";" + evalNB.precision(1) +";" + evalNB.recall(1) +  ";" + evalNB.areaUnderROC(1) + ";" + evalNB.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + RF +";" + SMOTE_NOFS + evalRF.numTruePositives(1) + ";"+ evalRF.numFalsePositives(1) + ";"+ evalRF.numTrueNegatives(1)+ ";"+ evalRF.numFalseNegatives(1)+ ";" + evalRF.precision(1) +";" + evalRF.recall(1) +  ";" + evalRF.areaUnderROC(1) + ";" + evalRF.kappa() + "\n");
 			
 			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "IBk;"+ SMOTE_FS + evalIBkFS.numTruePositives(1) + ";"+ evalIBkFS.numFalsePositives(1) + ";"+ evalIBkFS.numTrueNegatives(1)+ ";"+ evalIBkFS.numFalseNegatives(1)+ ";" + evalIBkFS.precision(1) +";" + evalIBkFS.recall(1) +  ";" + evalIBkFS.areaUnderROC(1) + ";" + evalIBkFS.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "NaiveBayes;" + SMOTE_FS + evalNBFS.numTruePositives(1) + ";"+ evalNBFS.numFalsePositives(1) + ";"+ evalNBFS.numTrueNegatives(1)+ ";"+ evalNBFS.numFalseNegatives(1)+ ";" + evalNBFS.precision(1) +";" + evalNBFS.recall(1) +  ";" + evalNBFS.areaUnderROC(1) + ";" + evalNBFS.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "RandomForest;" + SMOTE_FS + evalRFFS.numTruePositives(1) + ";"+ evalRFFS.numFalsePositives(1) + ";"+ evalRFFS.numTrueNegatives(1)+ ";"+ evalRFFS.numFalseNegatives(1)+ ";" + evalRFFS.precision(1) +";" + evalRFFS.recall(1) +  ";" + evalRFFS.areaUnderROC(1) + ";" + evalRFFS.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + NB +";" + SMOTE_FS + evalNBFS.numTruePositives(1) + ";"+ evalNBFS.numFalsePositives(1) + ";"+ evalNBFS.numTrueNegatives(1)+ ";"+ evalNBFS.numFalseNegatives(1)+ ";" + evalNBFS.precision(1) +";" + evalNBFS.recall(1) +  ";" + evalNBFS.areaUnderROC(1) + ";" + evalNBFS.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + RF +";" + SMOTE_FS + evalRFFS.numTruePositives(1) + ";"+ evalRFFS.numFalsePositives(1) + ";"+ evalRFFS.numTrueNegatives(1)+ ";"+ evalRFFS.numFalseNegatives(1)+ ";" + evalRFFS.precision(1) +";" + evalRFFS.recall(1) +  ";" + evalRFFS.areaUnderROC(1) + ";" + evalRFFS.kappa() + "\n");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -625,16 +606,8 @@ public class WekaTesting {
 			fcIBk.setFilter(resample);
 			fcNB.setFilter(resample);
 			
-			
-			
-			//SpreadSubsample  spreadSubsample = new SpreadSubsample();
-			//String[] opts = new String[]{ "-M", "1.0"};
-			//spreadSubsample.setOptions(opts);
-			//fcRF.setFilter(spreadSubsample);
 			fcRF.buildClassifier(training);
-			//fcIBk.setFilter(spreadSubsample);
 			fcIBk.buildClassifier(training);
-			//fcNB.setFilter(spreadSubsample);
 			fcNB.buildClassifier(training);
 			
 
@@ -708,12 +681,12 @@ public class WekaTesting {
 			
 			
 			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "IBk;"+ OVERSAMPLING_NOFS + evalIBk.numTruePositives(1) + ";"+ evalIBk.numFalsePositives(1) + ";"+ evalIBk.numTrueNegatives(1)+ ";"+ evalIBk.numFalseNegatives(1)+ ";" + evalIBk.precision(1) +";" + evalIBk.recall(1) +  ";" + evalIBk.areaUnderROC(1) + ";" + evalIBk.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "NaiveBayes;" + OVERSAMPLING_NOFS + evalNB.numTruePositives(1) + ";"+ evalNB.numFalsePositives(1) + ";"+ evalNB.numTrueNegatives(1)+ ";"+ evalNB.numFalseNegatives(1)+ ";" + evalNB.precision(1) +";" + evalNB.recall(1) +  ";" + evalNB.areaUnderROC(1) + ";" + evalNB.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "RandomForest;" + OVERSAMPLING_NOFS + evalRF.numTruePositives(1) + ";"+ evalRF.numFalsePositives(1) + ";"+ evalRF.numTrueNegatives(1)+ ";"+ evalRF.numFalseNegatives(1)+ ";" + evalRF.precision(1) +";" + evalRF.recall(1) +  ";" + evalRF.areaUnderROC(1) + ";" + evalRF.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + NB + ";" + OVERSAMPLING_NOFS + evalNB.numTruePositives(1) + ";"+ evalNB.numFalsePositives(1) + ";"+ evalNB.numTrueNegatives(1)+ ";"+ evalNB.numFalseNegatives(1)+ ";" + evalNB.precision(1) +";" + evalNB.recall(1) +  ";" + evalNB.areaUnderROC(1) + ";" + evalNB.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + RF +";" + OVERSAMPLING_NOFS + evalRF.numTruePositives(1) + ";"+ evalRF.numFalsePositives(1) + ";"+ evalRF.numTrueNegatives(1)+ ";"+ evalRF.numFalseNegatives(1)+ ";" + evalRF.precision(1) +";" + evalRF.recall(1) +  ";" + evalRF.areaUnderROC(1) + ";" + evalRF.kappa() + "\n");
 			
 			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "IBk;"+ OVERSAMPLING_FS + evalIBkFS.numTruePositives(1) + ";"+ evalIBkFS.numFalsePositives(1) + ";"+ evalIBkFS.numTrueNegatives(1)+ ";"+ evalIBkFS.numFalseNegatives(1)+ ";" + evalIBkFS.precision(1) +";" + evalIBkFS.recall(1) +  ";" + evalIBkFS.areaUnderROC(1) + ";" + evalIBkFS.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "NaiveBayes;" + OVERSAMPLING_FS + evalNBFS.numTruePositives(1) + ";"+ evalNBFS.numFalsePositives(1) + ";"+ evalNBFS.numTrueNegatives(1)+ ";"+ evalNBFS.numFalseNegatives(1)+ ";" + evalNBFS.precision(1) +";" + evalNBFS.recall(1) +  ";" + evalNBFS.areaUnderROC(1) + ";" + evalNBFS.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "RandomForest;" + OVERSAMPLING_FS + evalRFFS.numTruePositives(1) + ";"+ evalRFFS.numFalsePositives(1) + ";"+ evalRFFS.numTrueNegatives(1)+ ";"+ evalRFFS.numFalseNegatives(1)+ ";" + evalRFFS.precision(1) +";" + evalRFFS.recall(1) +  ";" + evalRFFS.areaUnderROC(1) + ";" + evalRFFS.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + NB +";" + OVERSAMPLING_FS + evalNBFS.numTruePositives(1) + ";"+ evalNBFS.numFalsePositives(1) + ";"+ evalNBFS.numTrueNegatives(1)+ ";"+ evalNBFS.numFalseNegatives(1)+ ";" + evalNBFS.precision(1) +";" + evalNBFS.recall(1) +  ";" + evalNBFS.areaUnderROC(1) + ";" + evalNBFS.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + RF +";" + OVERSAMPLING_FS + evalRFFS.numTruePositives(1) + ";"+ evalRFFS.numFalsePositives(1) + ";"+ evalRFFS.numTrueNegatives(1)+ ";"+ evalRFFS.numFalseNegatives(1)+ ";" + evalRFFS.precision(1) +";" + evalRFFS.recall(1) +  ";" + evalRFFS.areaUnderROC(1) + ";" + evalRFFS.kappa() + "\n");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
