@@ -529,20 +529,7 @@ public static void filesInfo() throws IOException {
 }
 
 public static void makeMetricsFile() throws IOException {
-	
-	Integer locTouched = 0;
-	Integer locAdded = 0;
-	Integer maxlocAdded = 0;
-	Integer avglocAdded = 0;
-	Integer churn = 0;
-	Integer maxChurn = 0;
-	Integer avgChurn = 0;
-	Integer setsize = 0;
-	Integer maxSetsize = 0;
-	Integer avgSetsize = 0;
-	Integer count = 0;
 	String rowBuggy;
-	String rowInfo;
 	String filename;
 	String version;
 	String buggy;
@@ -560,45 +547,74 @@ public static void makeMetricsFile() throws IOException {
 			version = a[0];
 			filename = a[1];
 			buggy = a[2];
-			while((rowInfo = csvReaderFilesInfo.readLine()) != null) {
-				String[] b = rowInfo.split(";");
-				if(b[0].equals(version) && b[1].equals(filename)) {
-					locTouched = locTouched + Integer.parseInt(b[2]) + Integer.parseInt(b[3]);
-					locAdded = locAdded + Integer.parseInt(b[2]);
-					if(maxlocAdded < Integer.parseInt(b[2])) {
-						maxlocAdded = Integer.parseInt(b[2]);
-					}
-					count++;
-					churn = churn + Integer.parseInt(b[2]) - Integer.parseInt(b[3]);
-					if(maxChurn < Integer.parseInt(b[2]) - Integer.parseInt(b[3])) {
-						maxChurn = Integer.parseInt(b[2]) - Integer.parseInt(b[3]);
-					}
-					setsize = setsize + Integer.parseInt(b[4]);
-					if(maxSetsize < Integer.parseInt(b[4])) {
-						maxSetsize = Integer.parseInt(b[4]);
-					}
-				}
-			}
-			if(count != 0) {
-				avglocAdded = locAdded/count;
-				avgChurn = churn/count;
-				avgSetsize = setsize/count;
-			}
-			csvMetrics.write(version + ";" + filename + ";" + locTouched.toString() + ";" + locAdded.toString() + ";" + maxlocAdded.toString() + ";" + avglocAdded.toString() + ";" + churn.toString() + ";" + maxChurn.toString() + ";" + avgChurn.toString() + ";" + setsize.toString() + ";" + maxSetsize.toString() + ";" + avgSetsize.toString() + ";" + buggy + "\n");
-			locTouched = 0;
-			locAdded = 0;
-			maxlocAdded = 0;
-			avglocAdded = 0;
-			churn = 0;
-			maxChurn = 0;
-			avgChurn = 0;
-			setsize = 0;
-			maxSetsize = 0;
-			avgSetsize = 0;
-			count = 0;
+			
+			//Calculate metrics of every file
+			List<Integer> metrics = calculateMetrics(version,filename,csvReaderFilesInfo);
+			
+			csvMetrics.write(version + ";" + filename + ";" + metrics.get(0) + ";" + metrics.get(1) + ";" + metrics.get(2) + ";" + metrics.get(3) + ";" + metrics.get(4) + ";" + metrics.get(5) + ";" + metrics.get(6) + ";" + metrics.get(7) + ";" + metrics.get(8) + ";" + metrics.get(9) + ";" + buggy + "\n");
 			csvReaderFilesInfo.seek(0);
 		}
 	}
+}
+
+public static List<Integer> calculateMetrics(String version,String filename,RandomAccessFile csvReaderFilesInfo) throws NumberFormatException, IOException{
+	String rowInfo;
+	Integer locTouched = 0;
+	Integer locAdded = 0;
+	Integer maxlocAdded = 0;
+	Integer avglocAdded = 0;
+	Integer churn = 0;
+	Integer maxChurn = 0;
+	Integer avgChurn = 0;
+	Integer setsize = 0;
+	Integer maxSetsize = 0;
+	Integer avgSetsize = 0;
+	Integer count = 0;
+	List<Integer> metrics = new ArrayList<>();
+	
+	try {
+		while((rowInfo = csvReaderFilesInfo.readLine()) != null) {
+			String[] b = rowInfo.split(";");
+			if(b[0].equals(version) && b[1].equals(filename)) {
+				locTouched = locTouched + Integer.parseInt(b[2]) + Integer.parseInt(b[3]);
+				locAdded = locAdded + Integer.parseInt(b[2]);
+				if(maxlocAdded < Integer.parseInt(b[2])) {
+					maxlocAdded = Integer.parseInt(b[2]);
+				}
+				count++;
+				churn = churn + Integer.parseInt(b[2]) - Integer.parseInt(b[3]);
+				if(maxChurn < Integer.parseInt(b[2]) - Integer.parseInt(b[3])) {
+					maxChurn = Integer.parseInt(b[2]) - Integer.parseInt(b[3]);
+				}
+				setsize = setsize + Integer.parseInt(b[4]);
+				if(maxSetsize < Integer.parseInt(b[4])) {
+					maxSetsize = Integer.parseInt(b[4]);
+				}
+			}
+		}
+	} catch (NumberFormatException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	if(count != 0) {
+		avglocAdded = locAdded/count;
+		avgChurn = churn/count;
+		avgSetsize = setsize/count;
+	}
+	metrics.add(locTouched);
+	metrics.add(locAdded);
+	metrics.add(maxlocAdded);
+	metrics.add(avglocAdded);
+	metrics.add(churn);
+	metrics.add(avgChurn);
+	metrics.add(maxChurn);
+	metrics.add(setsize);
+	metrics.add(maxSetsize);
+	metrics.add(avgSetsize);
+	return metrics;
 }
 
 	public static void main(String[] args) throws IOException, InterruptedException {
