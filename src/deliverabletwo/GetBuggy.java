@@ -533,6 +533,9 @@ public static void makeMetricsFile() throws IOException {
 	String filename;
 	String version;
 	String buggy;
+	Integer avglocAdded=0;
+	Integer avgChurn=0;
+	Integer avgSetsize=0;
 	
 	try(RandomAccessFile csvReaderFilesInfo = new RandomAccessFile(FILES_INFO,"r");
 		RandomAccessFile csvReaderMetrics = new RandomAccessFile(BUGGY_METRIC,"r");
@@ -550,9 +553,18 @@ public static void makeMetricsFile() throws IOException {
 			
 			//Calculate metrics of every file
 			List<Integer> metrics = calculateMetrics(version,filename,csvReaderFilesInfo);
+			Integer count = metrics.get(7);
+			if(count != 0) {
+				avglocAdded = metrics.get(1)/count;
+				avgChurn = metrics.get(3)/count;
+				avgSetsize = metrics.get(5)/count;
+			}
 			
-			csvMetrics.write(version + ";" + filename + ";" + metrics.get(0) + ";" + metrics.get(1) + ";" + metrics.get(2) + ";" + metrics.get(3) + ";" + metrics.get(4) + ";" + metrics.get(5) + ";" + metrics.get(6) + ";" + metrics.get(7) + ";" + metrics.get(8) + ";" + metrics.get(9) + ";" + buggy + "\n");
+			csvMetrics.write(version + ";" + filename + ";" + metrics.get(0) + ";" + metrics.get(1) + ";" + metrics.get(2) + ";" + avglocAdded + ";" + metrics.get(3) + ";" + avgChurn + ";" + metrics.get(4) + ";" + metrics.get(5) + ";" + metrics.get(6) + ";" + avgSetsize + ";" + buggy + "\n");
 			csvReaderFilesInfo.seek(0);
+			avglocAdded = 0;
+			avgChurn = 0;
+			avgSetsize = 0;
 		}
 	}
 }
@@ -562,13 +574,11 @@ public static List<Integer> calculateMetrics(String version,String filename,Rand
 	Integer locTouched = 0;
 	Integer locAdded = 0;
 	Integer maxlocAdded = 0;
-	Integer avglocAdded = 0;
 	Integer churn = 0;
 	Integer maxChurn = 0;
-	Integer avgChurn = 0;
 	Integer setsize = 0;
 	Integer maxSetsize = 0;
-	Integer avgSetsize = 0;
+
 	Integer count = 0;
 	List<Integer> metrics = new ArrayList<>();
 	
@@ -592,28 +602,19 @@ public static List<Integer> calculateMetrics(String version,String filename,Rand
 				}
 			}
 		}
-	} catch (NumberFormatException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
+	} catch (Exception e) {
 		e.printStackTrace();
 	}
-	if(count != 0) {
-		avglocAdded = locAdded/count;
-		avgChurn = churn/count;
-		avgSetsize = setsize/count;
-	}
+
 	metrics.add(locTouched);
 	metrics.add(locAdded);
 	metrics.add(maxlocAdded);
-	metrics.add(avglocAdded);
 	metrics.add(churn);
-	metrics.add(avgChurn);
 	metrics.add(maxChurn);
 	metrics.add(setsize);
 	metrics.add(maxSetsize);
-	metrics.add(avgSetsize);
+	metrics.add(count);
+	
 	return metrics;
 }
 
