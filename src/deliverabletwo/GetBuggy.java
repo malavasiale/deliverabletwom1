@@ -340,17 +340,11 @@ public static void commitsBuggyClasses() throws IOException {
 	String rowCommits;
 	String avmin;
 	String fvmin;
-	String logStr;
-	
 	Integer match1;
 	Integer match2;
 	Integer match3;
-	Integer p = 0;
 	Integer meanP = 0;
-	Integer countP = 0;
-	Logger l = Logger.getLogger(GetBuggy.class.getName());
-	
-	
+	Integer countP = 0;	
 	
 	try(FileWriter csvBuggyFilesWriter = new FileWriter(BUGGY_FILES);
 		BufferedReader csvReaderBugs = new BufferedReader(new FileReader(BUG_AND_VERSIONS ));
@@ -373,24 +367,10 @@ public static void commitsBuggyClasses() throws IOException {
 		    		
 		    		List<String> buggyfiles = retrieveBuggyFiles(dataCommits[1]);
 		    		if(!avmin.equals("none") && !fvmin.equals("none")) {
-		    			if(Integer.parseInt(fvmin) == Integer.parseInt(dataBugs[3])) {
-		    				p = 0;
-			    			countP++;
-		    			}
-		    			else {
-		    				p = (Integer.parseInt(fvmin) - Integer.parseInt(avmin))/(Integer.parseInt(fvmin) - Integer.parseInt(dataBugs[3]));
-			    			countP++;
-		    			}
-		    			if(p < 0) {
-		    				p = 0;
-		    				countP--;
-		    				logStr ="Jumping : " +  fvmin + " " + avmin;
-		    				l.log(Level.INFO, logStr );
-		    				continue; //jump who have FV < AV
-		    			}
-		    			meanP = (meanP + p)/(countP);
-		    			logStr = dataBugs[0]+ ", P : " + p.toString()+ ", MeanP : " + meanP.toString();
-		    			l.log(Level.INFO,logStr);
+		    			//Calculate incremental proportion witch tickets that have AV and FV
+		    			List<Integer> incremental = proportionIncremental(dataBugs[0],avmin,fvmin,dataBugs[3],meanP,countP);
+		    			meanP = incremental.get(0);
+		    			countP = incremental.get(1);
 		    		}
 		    		else {
 		    			//Prediction of AV with incremental proportion
@@ -409,6 +389,38 @@ public static void commitsBuggyClasses() throws IOException {
 	    	csvReaderCommits.seek(0);
 		}
 	}
+}
+
+public static List<Integer> proportionIncremental(String tickID,String avmin,String fvmin,String ov,Integer meanP,Integer countP) {
+	Logger l = Logger.getLogger(GetBuggy.class.getName());
+	String logStr;
+	Integer p;
+	List<Integer> incremental = new ArrayList<>();
+	
+		if(Integer.parseInt(fvmin) == Integer.parseInt(ov)) {
+			p = 0;
+			countP++;
+		}
+		else {
+			p = (Integer.parseInt(fvmin) - Integer.parseInt(avmin))/(Integer.parseInt(fvmin) - Integer.parseInt(ov));
+			countP++;
+		}
+		if(p < 0) {
+			p = 0;
+			countP--;
+			logStr ="Jumping : " +  fvmin + " " + avmin;
+			l.log(Level.INFO, logStr );
+			incremental.add(meanP);
+			incremental.add(countP);
+			return incremental; //jump who have FV < AV
+		}
+		meanP = (meanP + p)/(countP);
+		logStr = tickID + ", P : " + p.toString()+ ", MeanP : " + meanP.toString();
+		l.log(Level.INFO,logStr);
+		
+		incremental.add(meanP);
+		incremental.add(countP);
+		return incremental;
 }
 
 public static String predictAV(String fvmin,Integer meanP,String ov,String tickID) {
