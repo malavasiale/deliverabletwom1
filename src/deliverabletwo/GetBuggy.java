@@ -393,12 +393,8 @@ public static void commitsBuggyClasses() throws IOException {
 		    			l.log(Level.INFO,logStr);
 		    		}
 		    		else {
-		    			if(!fvmin.equals("none")) {
-		    				Integer predicted = (Integer.parseInt(fvmin) - meanP *(Integer.parseInt(fvmin) - Integer.parseInt(dataBugs[3])));
-		    				avmin = predicted.toString();
-		    				logStr = dataBugs[0]+ ", Predicted IV :  " + avmin; 
-		    				l.log(Level.INFO,logStr);
-		    			}
+		    			//Prediction of AV with incremental proportion
+		    			avmin = predictAV(fvmin,meanP,dataBugs[3],dataBugs[0]);
 		    		}
 		    		StringBuilder bugss = new StringBuilder();
 		    		bugss.append(dataBugs[0] + ";" + avmin+ ";" + fvmin + ";" + dataCommits[1]);
@@ -413,7 +409,20 @@ public static void commitsBuggyClasses() throws IOException {
 	    	csvReaderCommits.seek(0);
 		}
 	}
+}
 
+public static String predictAV(String fvmin,Integer meanP,String ov,String tickID) {
+	String avmin = "none";
+	String logStr;
+	Logger l = Logger.getLogger(GetBuggy.class.getName());
+	
+	if(!fvmin.equals("none")) {
+		Integer predicted = (Integer.parseInt(fvmin) - meanP *(Integer.parseInt(fvmin) - Integer.parseInt(ov)));
+		avmin = predicted.toString();
+		logStr = tickID + ", Predicted IV :  " + avmin; 
+		l.log(Level.INFO,logStr);
+	}
+	return avmin;
 }
 
 public static String findMinVersion(String versionsString) {
