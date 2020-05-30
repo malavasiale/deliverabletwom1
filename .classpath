@@ -31,5 +31,6 @@
 	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/netlib-native_system-win-i686-1.1-natives.jar"/>
 	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/netlib-native_system-win-x86_64-1.1-natives.jar"/>
 	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/wekajar/jar_files/weka-stable-3.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/malav/Desktop/isw2/SMOTE.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -35,6 +35,7 @@
         <pathelement location="../../isw2/wekajar/jar_files/netlib-native_system-win-i686-1.1-natives.jar"/>
         <pathelement location="../../isw2/wekajar/jar_files/netlib-native_system-win-x86_64-1.1-natives.jar"/>
         <pathelement location="../../isw2/wekajar/jar_files/weka-stable-3.8.0.jar"/>
+        <pathelement location="../../isw2/SMOTE.jar"/>
     </path>
     <path id="run.GetBuggy.classpath">
         <path refid="deliverabletwo.classpath"/>
@@ -63,6 +64,7 @@
         <pathelement location="../../isw2/wekajar/jar_files/netlib-native_system-win-i686-1.1-natives.jar"/>
         <pathelement location="../../isw2/wekajar/jar_files/netlib-native_system-win-x86_64-1.1-natives.jar"/>
         <pathelement location="../../isw2/wekajar/jar_files/weka-stable-3.8.0.jar"/>
+        <pathelement location="../../isw2/SMOTE.jar"/>
     </path>
     <path id="run.WekaTesting.classpath">
         <path refid="deliverabletwo.classpath"/>
@@ -91,6 +93,7 @@
         <pathelement location="../../isw2/wekajar/jar_files/netlib-native_system-win-i686-1.1-natives.jar"/>
         <pathelement location="../../isw2/wekajar/jar_files/netlib-native_system-win-x86_64-1.1-natives.jar"/>
         <pathelement location="../../isw2/wekajar/jar_files/weka-stable-3.8.0.jar"/>
+        <pathelement location="../../isw2/SMOTE.jar"/>
     </path>
     <path id="run.WekaTestingFS.classpath">
         <path refid="deliverabletwo.classpath"/>
@@ -119,6 +122,7 @@
         <pathelement location="../../isw2/wekajar/jar_files/netlib-native_system-win-i686-1.1-natives.jar"/>
         <pathelement location="../../isw2/wekajar/jar_files/netlib-native_system-win-x86_64-1.1-natives.jar"/>
         <pathelement location="../../isw2/wekajar/jar_files/weka-stable-3.8.0.jar"/>
+        <pathelement location="../../isw2/SMOTE.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>

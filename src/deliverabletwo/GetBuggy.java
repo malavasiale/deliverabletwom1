@@ -29,8 +29,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-
-
 public class GetBuggy {
 	
 	// Variabili usato solo per evitare di duplicare piu volte la stessa stringa nel codice(considerato smell)
