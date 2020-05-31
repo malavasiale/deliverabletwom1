@@ -376,19 +376,25 @@ public static void commitsBuggyClasses() throws IOException {
 		    			//Prediction of AV with incremental proportion
 		    			avmin = predictAV(fvmin,meanP,dataBugs[3],dataBugs[0]);
 		    		}
-		    		StringBuilder bugss = new StringBuilder();
-		    		bugss.append(dataBugs[0] + ";" + avmin+ ";" + fvmin + ";" + dataCommits[1]);
-		    		for(String elem : buggyfiles) {
-		    			bugss.append(";" + elem);
-		    		}
-		    		csvBuggyFilesWriter.write(bugss.toString());
-		    		csvBuggyFilesWriter.write("\n");
+		    		
+		    		//Write in a file all the buggy classes of a ticket
+		    		buggyFilesRowWriter(dataBugs[0],avmin,fvmin,dataCommits[1],csvBuggyFilesWriter,buggyfiles);
+		    		
 		    		csvReaderCommits.seek(csvReaderCommits.length());
 		    	}	
 		    }
 	    	csvReaderCommits.seek(0);
 		}
 	}
+}
+
+public static void buggyFilesRowWriter(String tickID,String avmin,String fvmin,String sha,FileWriter csvBuggyFilesWriter,List<String> buggyfiles) throws IOException {
+	StringBuilder bugss = new StringBuilder();
+	bugss.append(tickID + ";" + avmin+ ";" + fvmin + ";" + sha);
+	for(String elem : buggyfiles) {
+		bugss.append(";" + elem);
+	}
+	csvBuggyFilesWriter.write(bugss.toString()+"\n");
 }
 
 public static List<Integer> proportionIncremental(String tickID,String avmin,String fvmin,String ov,Integer meanP,Integer countP) {
