@@ -274,64 +274,64 @@ public class WekaTesting {
 	
 	public static List<Double> percentageUnderSampling(Instances training,Instances testing){
 		
-		Double trainingLines;
-		Double testingLines;
-		Double defectiveInTraining;
-		Double defectiveInTesting;
-		List<Double> percentages = new ArrayList<>();
+		Double trainingLinesUS;
+		Double testingLinesUS;
+		Double defectiveInTrainingUS;
+		Double defectiveInTestingUS;
+		List<Double> percentagesUS = new ArrayList<>();
 		
 		//Counting lines in training and testing files
 		List<Double> lines = countLines(training,testing);
-		testingLines = lines.get(1);
-		defectiveInTraining = lines.get(2);
-		defectiveInTesting = lines.get(3);
+		testingLinesUS = lines.get(1);
+		defectiveInTrainingUS = lines.get(2);
+		defectiveInTestingUS = lines.get(3);
 		
 		//Training Lines will be double of defects in training with USampling
-		trainingLines = 2*defectiveInTraining;
+		trainingLinesUS = 2*defectiveInTrainingUS;
 		
 		//find percentages
-		Double dataInTraining = (trainingLines/(trainingLines + testingLines));
-		Double defectInTraining = 0.0; 
-		if(trainingLines != 0.0) {
-			defectInTraining = (defectiveInTraining/trainingLines);
+		Double dataInTrainingUS = (trainingLinesUS/(trainingLinesUS + testingLinesUS));
+		Double defectInTrainingUS = 0.0; 
+		if(trainingLinesUS != 0.0) {
+			defectInTrainingUS = (defectiveInTrainingUS/trainingLinesUS);
 		}
-		Double defectInTesting = (defectiveInTesting/testingLines);
-		percentages.add(dataInTraining);
-		percentages.add(defectInTraining);
-		percentages.add(defectInTesting);
+		Double defectInTestingUS = (defectiveInTestingUS/testingLinesUS);
+		percentagesUS.add(dataInTrainingUS);
+		percentagesUS.add(defectInTrainingUS);
+		percentagesUS.add(defectInTestingUS);
 		
-		return percentages;
+		return percentagesUS;
 	}
 	
 	public static List<Double> percentageOverSampling(Instances training,Instances testing){
 		
-		Double trainingLines;
-		Double testingLines;
-		Double defectiveInTraining;
-		Double defectiveInTesting;
-		List<Double> percentages = new ArrayList<>();
+		Double trainingLinesOS;
+		Double testingLinesOS;
+		Double defectiveInTrainingOS;
+		Double defectiveInTestingOS;
+		List<Double> percentagesOS = new ArrayList<>();
 		
 		//Counting lines in training and testing files
 		List<Double> lines = countLines(training,testing);
-		trainingLines = lines.get(0);
-		testingLines = lines.get(1);
-		defectiveInTraining = lines.get(2);
-		defectiveInTesting = lines.get(3);
+		trainingLinesOS = lines.get(0);
+		testingLinesOS = lines.get(1);
+		defectiveInTrainingOS = lines.get(2);
+		defectiveInTestingOS = lines.get(3);
 		
 		//Training Lines will be double of defects in training with USampling
-		Double notDefectiveTraining = trainingLines - defectiveInTraining;
-		trainingLines = 2*notDefectiveTraining;
-		defectiveInTraining = notDefectiveTraining;
+		Double notDefectiveTrainingOS = trainingLinesOS - defectiveInTrainingOS;
+		trainingLinesOS = 2*notDefectiveTrainingOS;
+		defectiveInTrainingOS = notDefectiveTrainingOS;
 		
 		//find percentages
-		Double dataInTraining = (trainingLines/(trainingLines + testingLines));
-		Double defectInTraining = (defectiveInTraining/trainingLines);
-		Double defectInTesting = (defectiveInTesting/testingLines);
-		percentages.add(dataInTraining);
-		percentages.add(defectInTraining);
-		percentages.add(defectInTesting);
+		Double dataInTrainingOS = (trainingLinesOS/(trainingLinesOS + testingLinesOS));
+		Double defectInTrainingOS = (defectiveInTrainingOS/trainingLinesOS);
+		Double defectInTestingOS = (defectiveInTestingOS/testingLinesOS);
+		percentagesOS.add(dataInTrainingOS);
+		percentagesOS.add(defectInTrainingOS);
+		percentagesOS.add(defectInTestingOS);
 		
-		return percentages;
+		return percentagesOS;
 	}
 	
 	public static void evaluateUnderSampling(Integer numbOfTraining) {
