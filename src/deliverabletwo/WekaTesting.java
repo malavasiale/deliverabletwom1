@@ -334,6 +334,39 @@ public class WekaTesting {
 		return percentagesOS;
 	}
 	
+	public static List<FilteredClassifier> setClassifiersResamplingNoFilter(Instances training,Instances testing){
+		List<FilteredClassifier> classifiers = new ArrayList<>();
+		
+		try {
+			int numAttr = training.numAttributes();
+			training.setClassIndex(numAttr - 1);
+			testing.setClassIndex(numAttr - 1);
+			
+			Resample resample = new Resample();
+			resample.setInputFormat(training);
+
+			RandomForest classifierRF = new RandomForest();
+			IBk classifierIBk = new IBk();
+			NaiveBayes classifierNB = new NaiveBayes();
+			FilteredClassifier fcRF = new FilteredClassifier();
+			FilteredClassifier fcIBk = new FilteredClassifier();
+			FilteredClassifier fcNB = new FilteredClassifier();
+			fcRF.setClassifier(classifierRF);
+			fcIBk.setClassifier(classifierIBk);
+			fcNB.setClassifier(classifierNB);
+			
+			classifiers.add(fcRF);
+			classifiers.add(fcIBk);
+			classifiers.add(fcNB);
+
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return classifiers;
+		
+	}
+	
 	public static void evaluateUnderSampling(Integer numbOfTraining) {
 		try {
 			DataSource source1 = new DataSource(TRAINING_ARFF);
@@ -341,26 +374,14 @@ public class WekaTesting {
 			DataSource source2 = new DataSource(TESTING_ARFF);
 			Instances testing = source2.getDataSet();
 			
+			//Count lines for underSampling
 			List<Double> perc = percentageUnderSampling(training,testing);
 			
-			
-			int numAttr = training.numAttributes();
-			training.setClassIndex(numAttr - 1);
-			testing.setClassIndex(numAttr - 1);
-			
-			Resample resample = new Resample();
-			resample.setInputFormat(training);
-			FilteredClassifier fcRF = new FilteredClassifier();
-			FilteredClassifier fcIBk = new FilteredClassifier();
-			FilteredClassifier fcNB = new FilteredClassifier();
-
-			RandomForest classifierRF = new RandomForest();
-			IBk classifierIBk = new IBk();
-			NaiveBayes classifierNB = new NaiveBayes();
-			fcRF.setClassifier(classifierRF);
-			fcIBk.setClassifier(classifierIBk);
-			fcNB.setClassifier(classifierNB);
-			
+			//Set all 3 FilteredClasifiers for sampling
+			List<FilteredClassifier> classifiers = setClassifiersResamplingNoFilter(training,testing);	
+			FilteredClassifier fcRF = classifiers.get(0);
+			FilteredClassifier fcIBk = classifiers.get(1);
+			FilteredClassifier fcNB = classifiers.get(2);
 			
 			SpreadSubsample  spreadSubsample = new SpreadSubsample();
 			String[] opts = new String[]{ "-M", "1.0"};
@@ -428,6 +449,10 @@ public class WekaTesting {
 			Instances testingFiltered = Filter.useFilter(testing, filter);
 			testingFiltered.setClassIndex(numAttrFiltered - 1);
 			
+			RandomForest classifierRF = new RandomForest();
+			IBk classifierIBk = new IBk();
+			NaiveBayes classifierNB = new NaiveBayes();
+			
 			classifierRF.buildClassifier(filteredTraining);
 			classifierIBk.buildClassifier(filteredTraining);
 			classifierNB.buildClassifier(filteredTraining);
@@ -464,22 +489,11 @@ public class WekaTesting {
 			List<Double> perc = percentageOverSampling(training,testing);
 			
 			
-			int numAttr = training.numAttributes();
-			training.setClassIndex(numAttr - 1);
-			testing.setClassIndex(numAttr - 1);
-			
-			Resample resample = new Resample();
-			resample.setInputFormat(training);
-			FilteredClassifier fcRF = new FilteredClassifier();
-			FilteredClassifier fcIBk = new FilteredClassifier();
-			FilteredClassifier fcNB = new FilteredClassifier();
-
-			RandomForest classifierRF = new RandomForest();
-			IBk classifierIBk = new IBk();
-			NaiveBayes classifierNB = new NaiveBayes();
-			fcRF.setClassifier(classifierRF);
-			fcIBk.setClassifier(classifierIBk);
-			fcNB.setClassifier(classifierNB);
+			//Set all 3 FilteredClasifiers for sampling
+			List<FilteredClassifier> classifiers = setClassifiersResamplingNoFilter(training,testing);	
+			FilteredClassifier fcRF = classifiers.get(0);
+			FilteredClassifier fcIBk = classifiers.get(1);
+			FilteredClassifier fcNB = classifiers.get(2);
 
 		    SMOTE smote = new SMOTE();
 			smote.setInputFormat(training);
@@ -547,6 +561,10 @@ public class WekaTesting {
 			filteredTraining.setClassIndex(numAttrFiltered - 1);
 			Instances testingFiltered = Filter.useFilter(testing, filter);
 			testingFiltered.setClassIndex(numAttrFiltered - 1);
+			
+			RandomForest classifierRF = new RandomForest();
+			IBk classifierIBk = new IBk();
+			NaiveBayes classifierNB = new NaiveBayes();
 			
 			classifierRF.buildClassifier(filteredTraining);
 			classifierIBk.buildClassifier(filteredTraining);
