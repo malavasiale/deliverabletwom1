@@ -516,12 +516,12 @@ public class WekaTesting {
 			fcNB.buildClassifier(training);
 			
 
-			Evaluation evalRF = new Evaluation(testing);	
-			evalRF.evaluateModel(fcRF, testing);
-			Evaluation evalIBk = new Evaluation(testing);	
-			evalIBk.evaluateModel(fcIBk, testing);
-			Evaluation evalNB = new Evaluation(testing);	
-			evalNB.evaluateModel(fcNB, testing);
+			Evaluation evalRFSM = new Evaluation(testing);	
+			evalRFSM.evaluateModel(fcRF, testing);
+			Evaluation evalIBkSM = new Evaluation(testing);	
+			evalIBkSM.evaluateModel(fcIBk, testing);
+			Evaluation evalNBSM = new Evaluation(testing);	
+			evalNBSM.evaluateModel(fcNB, testing);
 			
 			
 			//with filters
@@ -571,22 +571,22 @@ public class WekaTesting {
 			classifierIBk.buildClassifier(filteredTraining);
 			classifierNB.buildClassifier(filteredTraining);
 			
-			Evaluation evalRFFS = new Evaluation(testing);
-			Evaluation evalIBkFS = new Evaluation(testing);
-			Evaluation evalNBFS = new Evaluation(testing);
+			Evaluation evalRFFSSM = new Evaluation(testing);
+			Evaluation evalIBkFSSM = new Evaluation(testing);
+			Evaluation evalNBFSSM = new Evaluation(testing);
 			
-		    evalRFFS.evaluateModel(fcRFFS, testingFiltered);
-		    evalNBFS.evaluateModel(fcNBFS, testingFiltered);
-		    evalIBkFS.evaluateModel(fcIBkFS, testingFiltered);
+		    evalRFFSSM.evaluateModel(fcRFFS, testingFiltered);
+		    evalNBFSSM.evaluateModel(fcNBFS, testingFiltered);
+		    evalIBkFSSM.evaluateModel(fcIBkFS, testingFiltered);
 			
 			
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "IBk;"+ SMOTE_NOFS + evalIBk.numTruePositives(1) + ";"+ evalIBk.numFalsePositives(1) + ";"+ evalIBk.numTrueNegatives(1)+ ";"+ evalIBk.numFalseNegatives(1)+ ";" + evalIBk.precision(1) +";" + evalIBk.recall(1) +  ";" + evalIBk.areaUnderROC(1) + ";" + evalIBk.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + NB +";" + SMOTE_NOFS + evalNB.numTruePositives(1) + ";"+ evalNB.numFalsePositives(1) + ";"+ evalNB.numTrueNegatives(1)+ ";"+ evalNB.numFalseNegatives(1)+ ";" + evalNB.precision(1) +";" + evalNB.recall(1) +  ";" + evalNB.areaUnderROC(1) + ";" + evalNB.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + RF +";" + SMOTE_NOFS + evalRF.numTruePositives(1) + ";"+ evalRF.numFalsePositives(1) + ";"+ evalRF.numTrueNegatives(1)+ ";"+ evalRF.numFalseNegatives(1)+ ";" + evalRF.precision(1) +";" + evalRF.recall(1) +  ";" + evalRF.areaUnderROC(1) + ";" + evalRF.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "IBk;"+ SMOTE_NOFS + evalIBkSM.numTruePositives(1) + ";"+ evalIBkSM.numFalsePositives(1) + ";"+ evalIBkSM.numTrueNegatives(1)+ ";"+ evalIBkSM.numFalseNegatives(1)+ ";" + evalIBkSM.precision(1) +";" + evalIBkSM.recall(1) +  ";" + evalIBkSM.areaUnderROC(1) + ";" + evalIBkSM.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + NB +";" + SMOTE_NOFS + evalNBSM.numTruePositives(1) + ";"+ evalNBSM.numFalsePositives(1) + ";"+ evalNBSM.numTrueNegatives(1)+ ";"+ evalNBSM.numFalseNegatives(1)+ ";" + evalNBSM.precision(1) +";" + evalNBSM.recall(1) +  ";" + evalNBSM.areaUnderROC(1) + ";" + evalNBSM.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + RF +";" + SMOTE_NOFS + evalRFSM.numTruePositives(1) + ";"+ evalRFSM.numFalsePositives(1) + ";"+ evalRFSM.numTrueNegatives(1)+ ";"+ evalRFSM.numFalseNegatives(1)+ ";" + evalRFSM.precision(1) +";" + evalRFSM.recall(1) +  ";" + evalRFSM.areaUnderROC(1) + ";" + evalRFSM.kappa() + "\n");
 			
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "IBk;"+ SMOTE_FS + evalIBkFS.numTruePositives(1) + ";"+ evalIBkFS.numFalsePositives(1) + ";"+ evalIBkFS.numTrueNegatives(1)+ ";"+ evalIBkFS.numFalseNegatives(1)+ ";" + evalIBkFS.precision(1) +";" + evalIBkFS.recall(1) +  ";" + evalIBkFS.areaUnderROC(1) + ";" + evalIBkFS.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + NB +";" + SMOTE_FS + evalNBFS.numTruePositives(1) + ";"+ evalNBFS.numFalsePositives(1) + ";"+ evalNBFS.numTrueNegatives(1)+ ";"+ evalNBFS.numFalseNegatives(1)+ ";" + evalNBFS.precision(1) +";" + evalNBFS.recall(1) +  ";" + evalNBFS.areaUnderROC(1) + ";" + evalNBFS.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + RF +";" + SMOTE_FS + evalRFFS.numTruePositives(1) + ";"+ evalRFFS.numFalsePositives(1) + ";"+ evalRFFS.numTrueNegatives(1)+ ";"+ evalRFFS.numFalseNegatives(1)+ ";" + evalRFFS.precision(1) +";" + evalRFFS.recall(1) +  ";" + evalRFFS.areaUnderROC(1) + ";" + evalRFFS.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "IBk;"+ SMOTE_FS + evalIBkFSSM.numTruePositives(1) + ";"+ evalIBkFSSM.numFalsePositives(1) + ";"+ evalIBkFSSM.numTrueNegatives(1)+ ";"+ evalIBkFSSM.numFalseNegatives(1)+ ";" + evalIBkFSSM.precision(1) +";" + evalIBkFSSM.recall(1) +  ";" + evalIBkFSSM.areaUnderROC(1) + ";" + evalIBkFSSM.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + NB +";" + SMOTE_FS + evalNBFSSM.numTruePositives(1) + ";"+ evalNBFSSM.numFalsePositives(1) + ";"+ evalNBFSSM.numTrueNegatives(1)+ ";"+ evalNBFSSM.numFalseNegatives(1)+ ";" + evalNBFSSM.precision(1) +";" + evalNBFSSM.recall(1) +  ";" + evalNBFSSM.areaUnderROC(1) + ";" + evalNBFSSM.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + RF +";" + SMOTE_FS + evalRFFSSM.numTruePositives(1) + ";"+ evalRFFSSM.numFalsePositives(1) + ";"+ evalRFFSSM.numTrueNegatives(1)+ ";"+ evalRFFSSM.numFalseNegatives(1)+ ";" + evalRFFSSM.precision(1) +";" + evalRFFSSM.recall(1) +  ";" + evalRFFSSM.areaUnderROC(1) + ";" + evalRFFSSM.kappa() + "\n");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -632,12 +632,12 @@ public class WekaTesting {
 			fcNB.buildClassifier(training);
 			
 
-			Evaluation evalRF = new Evaluation(testing);	
-			evalRF.evaluateModel(fcRF, testing);
-			Evaluation evalIBk = new Evaluation(testing);	
-			evalIBk.evaluateModel(fcIBk, testing);
-			Evaluation evalNB = new Evaluation(testing);	
-			evalNB.evaluateModel(fcNB, testing);
+			Evaluation evalRFOS = new Evaluation(testing);	
+			evalRFOS.evaluateModel(fcRF, testing);
+			Evaluation evalIBkOS = new Evaluation(testing);	
+			evalIBkOS.evaluateModel(fcIBk, testing);
+			Evaluation evalNBOS = new Evaluation(testing);	
+			evalNBOS.evaluateModel(fcNB, testing);
 			
 			//with filters
 			//generate filter
@@ -682,22 +682,22 @@ public class WekaTesting {
 			classifierIBk.buildClassifier(filteredTraining);
 			classifierNB.buildClassifier(filteredTraining);
 			
-			Evaluation evalRFFS = new Evaluation(testing);
-			Evaluation evalIBkFS = new Evaluation(testing);
-			Evaluation evalNBFS = new Evaluation(testing);
+			Evaluation evalRFFSOS = new Evaluation(testing);
+			Evaluation evalIBkFSOS = new Evaluation(testing);
+			Evaluation evalNBFSOS = new Evaluation(testing);
 			
-		    evalRFFS.evaluateModel(fcRFFS, testingFiltered);
-		    evalNBFS.evaluateModel(fcNBFS, testingFiltered);
-		    evalIBkFS.evaluateModel(fcIBkFS, testingFiltered);
+		    evalRFFSOS.evaluateModel(fcRFFS, testingFiltered);
+		    evalNBFSOS.evaluateModel(fcNBFS, testingFiltered);
+		    evalIBkFSOS.evaluateModel(fcIBkFS, testingFiltered);
 			
 			
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "IBk;"+ OVERSAMPLING_NOFS + evalIBk.numTruePositives(1) + ";"+ evalIBk.numFalsePositives(1) + ";"+ evalIBk.numTrueNegatives(1)+ ";"+ evalIBk.numFalseNegatives(1)+ ";" + evalIBk.precision(1) +";" + evalIBk.recall(1) +  ";" + evalIBk.areaUnderROC(1) + ";" + evalIBk.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + NB + ";" + OVERSAMPLING_NOFS + evalNB.numTruePositives(1) + ";"+ evalNB.numFalsePositives(1) + ";"+ evalNB.numTrueNegatives(1)+ ";"+ evalNB.numFalseNegatives(1)+ ";" + evalNB.precision(1) +";" + evalNB.recall(1) +  ";" + evalNB.areaUnderROC(1) + ";" + evalNB.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + RF +";" + OVERSAMPLING_NOFS + evalRF.numTruePositives(1) + ";"+ evalRF.numFalsePositives(1) + ";"+ evalRF.numTrueNegatives(1)+ ";"+ evalRF.numFalseNegatives(1)+ ";" + evalRF.precision(1) +";" + evalRF.recall(1) +  ";" + evalRF.areaUnderROC(1) + ";" + evalRF.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "IBk;"+ OVERSAMPLING_NOFS + evalIBkOS.numTruePositives(1) + ";"+ evalIBkOS.numFalsePositives(1) + ";"+ evalIBkOS.numTrueNegatives(1)+ ";"+ evalIBkOS.numFalseNegatives(1)+ ";" + evalIBkOS.precision(1) +";" + evalIBkOS.recall(1) +  ";" + evalIBkOS.areaUnderROC(1) + ";" + evalIBkOS.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + NB + ";" + OVERSAMPLING_NOFS + evalNBOS.numTruePositives(1) + ";"+ evalNBOS.numFalsePositives(1) + ";"+ evalNBOS.numTrueNegatives(1)+ ";"+ evalNBOS.numFalseNegatives(1)+ ";" + evalNBOS.precision(1) +";" + evalNBOS.recall(1) +  ";" + evalNBOS.areaUnderROC(1) + ";" + evalNBOS.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + RF +";" + OVERSAMPLING_NOFS + evalRFOS.numTruePositives(1) + ";"+ evalRFOS.numFalsePositives(1) + ";"+ evalRFOS.numTrueNegatives(1)+ ";"+ evalRFOS.numFalseNegatives(1)+ ";" + evalRFOS.precision(1) +";" + evalRFOS.recall(1) +  ";" + evalRFOS.areaUnderROC(1) + ";" + evalRFOS.kappa() + "\n");
 			
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "IBk;"+ OVERSAMPLING_FS + evalIBkFS.numTruePositives(1) + ";"+ evalIBkFS.numFalsePositives(1) + ";"+ evalIBkFS.numTrueNegatives(1)+ ";"+ evalIBkFS.numFalseNegatives(1)+ ";" + evalIBkFS.precision(1) +";" + evalIBkFS.recall(1) +  ";" + evalIBkFS.areaUnderROC(1) + ";" + evalIBkFS.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + NB +";" + OVERSAMPLING_FS + evalNBFS.numTruePositives(1) + ";"+ evalNBFS.numFalsePositives(1) + ";"+ evalNBFS.numTrueNegatives(1)+ ";"+ evalNBFS.numFalseNegatives(1)+ ";" + evalNBFS.precision(1) +";" + evalNBFS.recall(1) +  ";" + evalNBFS.areaUnderROC(1) + ";" + evalNBFS.kappa() + "\n");
-			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + RF +";" + OVERSAMPLING_FS + evalRFFS.numTruePositives(1) + ";"+ evalRFFS.numFalsePositives(1) + ";"+ evalRFFS.numTrueNegatives(1)+ ";"+ evalRFFS.numFalseNegatives(1)+ ";" + evalRFFS.precision(1) +";" + evalRFFS.recall(1) +  ";" + evalRFFS.areaUnderROC(1) + ";" + evalRFFS.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + "IBk;"+ OVERSAMPLING_FS + evalIBkFSOS.numTruePositives(1) + ";"+ evalIBkFSOS.numFalsePositives(1) + ";"+ evalIBkFSOS.numTrueNegatives(1)+ ";"+ evalIBkFSOS.numFalseNegatives(1)+ ";" + evalIBkFSOS.precision(1) +";" + evalIBkFSOS.recall(1) +  ";" + evalIBkFSOS.areaUnderROC(1) + ";" + evalIBkFSOS.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + NB +";" + OVERSAMPLING_FS + evalNBFSOS.numTruePositives(1) + ";"+ evalNBFSOS.numFalsePositives(1) + ";"+ evalNBFSOS.numTrueNegatives(1)+ ";"+ evalNBFSOS.numFalseNegatives(1)+ ";" + evalNBFSOS.precision(1) +";" + evalNBFSOS.recall(1) +  ";" + evalNBFSOS.areaUnderROC(1) + ";" + evalNBFSOS.kappa() + "\n");
+			finalData.add(PROJ+";" + numbOfTraining + ";" + perc.get(0) + ";" + perc.get(1) + ";" + perc.get(2) + ";" + RF +";" + OVERSAMPLING_FS + evalRFFSOS.numTruePositives(1) + ";"+ evalRFFSOS.numFalsePositives(1) + ";"+ evalRFFSOS.numTrueNegatives(1)+ ";"+ evalRFFSOS.numFalseNegatives(1)+ ";" + evalRFFSOS.precision(1) +";" + evalRFFSOS.recall(1) +  ";" + evalRFFSOS.areaUnderROC(1) + ";" + evalRFFSOS.kappa() + "\n");
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
