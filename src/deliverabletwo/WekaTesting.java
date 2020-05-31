@@ -458,13 +458,13 @@ public class WekaTesting {
 			Instances testingFiltered = Filter.useFilter(testing, filter);
 			testingFiltered.setClassIndex(numAttrFiltered - 1);
 			
-			RandomForest classifierRF = new RandomForest();
-			IBk classifierIBk = new IBk();
-			NaiveBayes classifierNB = new NaiveBayes();
+			RandomForest classifierRFUS = new RandomForest();
+			IBk classifierIBkUS = new IBk();
+			NaiveBayes classifierNBUS = new NaiveBayes();
 			
-			classifierRF.buildClassifier(filteredTraining);
-			classifierIBk.buildClassifier(filteredTraining);
-			classifierNB.buildClassifier(filteredTraining);
+			classifierRFUS.buildClassifier(filteredTraining);
+			classifierIBkUS.buildClassifier(filteredTraining);
+			classifierNBUS.buildClassifier(filteredTraining);
 			
 			Evaluation evalRFFSUS = new Evaluation(testing);
 			Evaluation evalIBkFSUS = new Evaluation(testing);
@@ -540,12 +540,12 @@ public class WekaTesting {
 			SMOTE smoteFS = new SMOTE();
 			smoteFS.setInputFormat(filteredTraining);
 			
-			RandomForest classifierRFFS = new RandomForest();
-			IBk classifierIBkFS = new IBk();
-			NaiveBayes classifierNBFS = new NaiveBayes();
-			fcRFFS.setClassifier(classifierRFFS);
-			fcIBkFS.setClassifier(classifierIBkFS);
-			fcNBFS.setClassifier(classifierNBFS);
+			RandomForest classifierRFFSSM = new RandomForest();
+			IBk classifierIBkFSSM = new IBk();
+			NaiveBayes classifierNBFSSM = new NaiveBayes();
+			fcRFFS.setClassifier(classifierRFFSSM);
+			fcIBkFS.setClassifier(classifierIBkFSSM);
+			fcNBFS.setClassifier(classifierNBFSSM);
 				
 			fcRFFS.setFilter(smoteFS);
 			fcRFFS.buildClassifier(filteredTraining);
