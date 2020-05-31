@@ -105,12 +105,12 @@ public class WekaTesting {
 		
 	}
 	
-	public static List<Double> calculatePercentage(Instances training, Instances testing) throws IOException {
+	public static List<Double> countLines(Instances training, Instances testing){
 		Double trainingLines= (double) training.size();
 		Double testingLines= (double) testing.size();
 		Double defectiveInTraining=0.0;
 		Double defectiveInTesting=0.0;
-		List<Double> percentages = new ArrayList<>();
+		List<Double> lines = new ArrayList<>();
 		
 		for(int i = 0; i < trainingLines;i++) {
 			Instance trainingInstance = training.get(i);
@@ -127,6 +127,27 @@ public class WekaTesting {
 				defectiveInTesting++;
 			}
 		}
+		lines.add(trainingLines);
+		lines.add(testingLines);
+		lines.add(defectiveInTraining);
+		lines.add(defectiveInTesting);
+		
+		return lines;
+	}
+	
+	public static List<Double> calculatePercentage(Instances training, Instances testing) throws IOException {
+		Double trainingLines= (double) training.size();
+		Double testingLines= (double) testing.size();
+		Double defectiveInTraining=0.0;
+		Double defectiveInTesting=0.0;
+		List<Double> percentages = new ArrayList<>();
+		
+		//Counting lines in training and testing files
+		List<Double> lines = countLines(training,testing);
+		trainingLines = lines.get(0);
+		testingLines = lines.get(1);
+		defectiveInTraining = lines.get(2);
+		defectiveInTesting = lines.get(3);
 		
 		//find percentages
 		Double dataInTraining = (trainingLines/(trainingLines + testingLines));
@@ -259,21 +280,12 @@ public class WekaTesting {
 		Double defectiveInTesting=0.0;
 		List<Double> percentages = new ArrayList<>();
 		
-		for(int i = 0; i < trainingLines;i++) {
-			Instance trainingInstance = training.get(i);
-			String buggy = trainingInstance.stringValue(trainingInstance.numAttributes()-1);
-			if(buggy.equals("yes")) {
-				defectiveInTraining++;
-			}
-		}
-		
-		for(int i = 0; i < testingLines;i++) {
-			Instance testingInstance = testing.get(i);
-			String buggy = testingInstance.stringValue(testingInstance.numAttributes()-1);
-			if(buggy.equals("yes")) {
-				defectiveInTesting++;
-			}
-		}
+		//Counting lines in training and testing files
+		List<Double> lines = countLines(training,testing);
+		trainingLines = lines.get(0);
+		testingLines = lines.get(1);
+		defectiveInTraining = lines.get(2);
+		defectiveInTesting = lines.get(3);
 		
 		//Training Lines will be double of defects in training with USampling
 		trainingLines = 2*defectiveInTraining;
@@ -300,21 +312,12 @@ public class WekaTesting {
 		Double defectiveInTesting=0.0;
 		List<Double> percentages = new ArrayList<>();
 		
-		for(int i = 0; i < trainingLines;i++) {
-			Instance trainingInstance = training.get(i);
-			String buggy = trainingInstance.stringValue(trainingInstance.numAttributes()-1);
-			if(buggy.equals("yes")) {
-				defectiveInTraining++;
-			}
-		}
-		
-		for(int i = 0; i < testingLines;i++) {
-			Instance testingInstance = testing.get(i);
-			String buggy = testingInstance.stringValue(testingInstance.numAttributes()-1);
-			if(buggy.equals("yes")) {
-				defectiveInTesting++;
-			}
-		}
+		//Counting lines in training and testing files
+		List<Double> lines = countLines(training,testing);
+		trainingLines = lines.get(0);
+		testingLines = lines.get(1);
+		defectiveInTraining = lines.get(2);
+		defectiveInTesting = lines.get(3);
 		
 		//Training Lines will be double of defects in training with USampling
 		Double notDefectiveTraining = trainingLines - defectiveInTraining;
