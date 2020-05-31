@@ -64,8 +64,9 @@ public static String getOAUTHToken() throws IOException {
 	return token;
 }
 
-public static JSONArray readJsonArrayAuth(String url) throws IOException, JSONException {
-    URL url1 = new URL(url);
+public static InputStreamReader getAuthChannel(String url) throws IOException {
+	
+	URL url1 = new URL(url);
     URLConnection uc = url1.openConnection();
     uc.setRequestProperty("X-Requested-With", "Curl");
     String username =  "malavasiale";
@@ -75,7 +76,13 @@ public static JSONArray readJsonArrayAuth(String url) throws IOException, JSONEx
     String basicAuth = "Basic " + new String(encodedBytes);
     uc.setRequestProperty("Authorization", basicAuth);
 
-    InputStreamReader inputStreamReader = new InputStreamReader(uc.getInputStream());
+    return new InputStreamReader(uc.getInputStream());
+}
+
+public static JSONArray readJsonArrayAuth(String url) throws IOException, JSONException {
+	
+	//Get a stream reader from a auth channel with github for JSONArray
+    InputStreamReader inputStreamReader = getAuthChannel(url);
     try(BufferedReader rd = new BufferedReader(inputStreamReader);){
  	   return new JSONArray(readAll(rd));
     } finally {
@@ -84,17 +91,9 @@ public static JSONArray readJsonArrayAuth(String url) throws IOException, JSONEx
  }
 
 public static JSONObject readJsonObjectAuth(String url) throws IOException, JSONException {
-    URL url1 = new URL(url);
-    URLConnection uc = url1.openConnection();
-    uc.setRequestProperty("X-Requested-With", "Curl");
-    String username =  "malavasiale";
-    String token =  getOAUTHToken();
-    String userpass = username + ":" + token;
-    byte[] encodedBytes = Base64.getEncoder().encode(userpass.getBytes());
-    String basicAuth = "Basic " + new String(encodedBytes);
-    uc.setRequestProperty("Authorization", basicAuth);
-
-    InputStreamReader inputStreamReader = new InputStreamReader(uc.getInputStream());
+	
+	//Get a stream reader from a auth channel with github for JSONObject
+    InputStreamReader inputStreamReader = getAuthChannel(url);
     try(BufferedReader rd = new BufferedReader(inputStreamReader);){
  	   return new JSONObject(readAll(rd));
     } finally {
