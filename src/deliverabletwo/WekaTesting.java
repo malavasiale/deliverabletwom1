@@ -136,10 +136,10 @@ public class WekaTesting {
 	}
 	
 	public static List<Double> calculatePercentage(Instances training, Instances testing) throws IOException {
-		Double trainingLines= (double) training.size();
-		Double testingLines= (double) testing.size();
-		Double defectiveInTraining=0.0;
-		Double defectiveInTesting=0.0;
+		Double trainingLines;
+		Double testingLines;
+		Double defectiveInTraining;
+		Double defectiveInTesting;
 		List<Double> percentages = new ArrayList<>();
 		
 		//Counting lines in training and testing files
@@ -274,10 +274,10 @@ public class WekaTesting {
 	
 	public static List<Double> percentageUnderSampling(Instances training,Instances testing){
 		
-		Double trainingLines= (double) training.size();
-		Double testingLines= (double) testing.size();
-		Double defectiveInTraining=0.0;
-		Double defectiveInTesting=0.0;
+		Double trainingLines;
+		Double testingLines;
+		Double defectiveInTraining;
+		Double defectiveInTesting;
 		List<Double> percentages = new ArrayList<>();
 		
 		//Counting lines in training and testing files
@@ -306,10 +306,10 @@ public class WekaTesting {
 	
 	public static List<Double> percentageOverSampling(Instances training,Instances testing){
 		
-		Double trainingLines= (double) training.size();
-		Double testingLines= (double) testing.size();
-		Double defectiveInTraining=0.0;
-		Double defectiveInTesting=0.0;
+		Double trainingLines;
+		Double testingLines;
+		Double defectiveInTraining;
+		Double defectiveInTesting;
 		List<Double> percentages = new ArrayList<>();
 		
 		//Counting lines in training and testing files
