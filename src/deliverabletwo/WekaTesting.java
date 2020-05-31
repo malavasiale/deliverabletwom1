@@ -1,11 +1,9 @@
 package deliverabletwo;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +16,7 @@ import weka.classifiers.meta.FilteredClassifier;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Instance;
 import weka.core.Instances;
+import weka.core.converters.ArffSaver;
 import weka.core.converters.CSVLoader;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
@@ -42,7 +41,7 @@ public class WekaTesting {
 	
 	private static List<String> finalData = new ArrayList<>();
 	
-	private static final String PROJ = "tajo";
+	private static final String PROJ = "bookkeeper";
 	private static final String METRICS = PROJ+"finalMetrics.csv";
 	private static final String TRAINING_CSV = PROJ+"trainingSet.csv";
 	private static final String TESTING_CSV = PROJ+"testingSet.csv";
@@ -50,15 +49,13 @@ public class WekaTesting {
 	private static final String TESTING_ARFF = PROJ+"testingSet.arff";
 	private static final String WEKA_OUTPUT = PROJ + "wekaOutput.csv";
 	
-	public static void makeSets(Integer version) throws IOException {
+	public static void makeSets(Integer version) throws Exception {
 		String row;
 		List<Integer> trainingVersions = new ArrayList<>();
 		
 		try(BufferedReader csvReader = new BufferedReader(new FileReader(METRICS));
 			FileWriter csvTraining = new FileWriter(TRAINING_CSV);
-			FileWriter csvTesting = new FileWriter(TESTING_CSV);
-			BufferedWriter writer = new BufferedWriter(new FileWriter(TRAINING_ARFF));
-		    BufferedWriter writer1 = new BufferedWriter(new FileWriter(TESTING_ARFF));	){
+			FileWriter csvTesting = new FileWriter(TESTING_CSV);){
 			
 			for(int i = 1; i <= version;i++) {
 				trainingVersions.add(i);
@@ -81,27 +78,29 @@ public class WekaTesting {
 				}
 			}
 			
-			// load CSV
-	        CSVLoader loader = new CSVLoader();
-	        loader.setSource(new File(TRAINING_CSV));
-	        Instances dataSet = loader.getDataSet();
-
-	        // save ARFF
-	        
-	        writer.write(dataSet.toString());
-	        writer.flush();
-	        
-	        // load CSV
-	        CSVLoader loader1 = new CSVLoader();
-	        loader1.setSource(new File(TESTING_CSV));
-	        Instances dataSet1 = loader1.getDataSet();
-
-	        // save ARFF
-
-	        writer1.write(dataSet1.toString());
-	        writer1.flush();
-			
 		}
+		
+		 // load the CSV file (input file)
+        CSVLoader loader = new CSVLoader();
+        loader.setSource(new File(TRAINING_CSV));
+        Instances data = loader.getDataSet();
+
+        // save as an  ARFF (output file)
+        ArffSaver saver = new ArffSaver();
+        saver.setInstances(data);
+        saver.setFile(new File(TRAINING_ARFF));
+        saver.writeBatch();
+        
+        // load the CSV file (input file)
+        CSVLoader loader1 = new CSVLoader();
+        loader1.setSource(new File(TESTING_CSV));
+        Instances data1 = loader1.getDataSet();
+
+        // save as an  ARFF (output file)
+        ArffSaver saver1 = new ArffSaver();
+        saver1.setInstances(data1);
+        saver1.setFile(new File(TESTING_ARFF));
+        saver1.writeBatch();
 		
 	}
 	
@@ -161,6 +160,33 @@ public class WekaTesting {
 		
 	}
 	
+	public static AttributeSelection applyFeatureSelection(Instances noFilterTraining){
+		
+		try {
+			//create AttributeSelection object
+			AttributeSelection filter = new AttributeSelection();
+			//create evaluator and search algorithm objects
+			CfsSubsetEval eval = new CfsSubsetEval();
+			GreedyStepwise search = new GreedyStepwise();
+			//set the algorithm to search backward
+			search.setSearchBackwards(true);
+			//set the filter to use the evaluator and search algorithm
+			filter.setEvaluator(eval);
+			filter.setSearch(search);
+			//specify the dataset
+			filter.setInputFormat(noFilterTraining);
+			
+			//apply
+			return filter;
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+		
+	}
+	
 	public static void evaluate(Integer numbOfTraining){
 		
 		try {
@@ -217,20 +243,13 @@ public class WekaTesting {
 			testingNoFilter = source2.getDataSet();
 			noFilterTraining = source1.getDataSet();
 			
-			List<Double> perc = WekaTesting.calculatePercentage(noFilterTraining, testingNoFilter);
+			//Counting training and testing lines
+			List<Double> perc = calculatePercentage(noFilterTraining, testingNoFilter);
+			
 			//create AttributeSelection object
-			AttributeSelection filter = new AttributeSelection();
-			//create evaluator and search algorithm objects
-			CfsSubsetEval eval = new CfsSubsetEval();
-			GreedyStepwise search = new GreedyStepwise();
-			//set the algorithm to search backward
-			search.setSearchBackwards(true);
-			//set the filter to use the evaluator and search algorithm
-			filter.setEvaluator(eval);
-			filter.setSearch(search);
-			//specify the dataset
-			filter.setInputFormat(noFilterTraining);
-			//apply
+			AttributeSelection filter = applyFeatureSelection(noFilterTraining);
+			
+			//Apply feature selection to training instances
 			Instances filteredTraining = Filter.useFilter(noFilterTraining, filter);
 			
 			numAttrNoFilter = noFilterTraining.numAttributes();
@@ -401,19 +420,8 @@ public class WekaTesting {
 			Evaluation evalNB = new Evaluation(testing);	
 			evalNB.evaluateModel(fcNB, testing);
 			
-			//with filters
-			//create AttributeSelection object
-			AttributeSelection filter = new AttributeSelection();
-			//create evaluator and search algorithm objects
-			CfsSubsetEval eval = new CfsSubsetEval();
-			GreedyStepwise search = new GreedyStepwise();
-			//set the algorithm to search backward
-			search.setSearchBackwards(true);
-			//set the filter to use the evaluator and search algorithm
-			filter.setEvaluator(eval);
-			filter.setSearch(search);
-			//specify the dataset
-			filter.setInputFormat(training);
+			//generate filter
+			AttributeSelection filter = applyFeatureSelection(training);
 			//apply
 			Instances filteredTraining = Filter.useFilter(training, filter);
 			
@@ -514,19 +522,11 @@ public class WekaTesting {
 			Evaluation evalNB = new Evaluation(testing);	
 			evalNB.evaluateModel(fcNB, testing);
 			
+			
 			//with filters
-			//create AttributeSelection object
-			AttributeSelection filter = new AttributeSelection();
-			//create evaluator and search algorithm objects
-			CfsSubsetEval eval = new CfsSubsetEval();
-			GreedyStepwise search = new GreedyStepwise();
-			//set the algorithm to search backward
-			search.setSearchBackwards(true);
-			//set the filter to use the evaluator and search algorithm
-			filter.setEvaluator(eval);
-			filter.setSearch(search);
-			//specify the dataset
-			filter.setInputFormat(training);
+			//generate filter
+			AttributeSelection filter = applyFeatureSelection(training);
+			
 			//apply
 			Instances filteredTraining = Filter.useFilter(training, filter);
 			
@@ -639,19 +639,9 @@ public class WekaTesting {
 			evalNB.evaluateModel(fcNB, testing);
 			
 			//with filters
-			//create AttributeSelection object
-			AttributeSelection filter = new AttributeSelection();
-			//create evaluator and search algorithm objects
-			CfsSubsetEval eval = new CfsSubsetEval();
-			GreedyStepwise search = new GreedyStepwise();
-			//set the algorithm to search backward
-			search.setSearchBackwards(true);
-			//set the filter to use the evaluator and search algorithm
-			filter.setEvaluator(eval);
-			filter.setSearch(search);
-			//specify the dataset
-			filter.setInputFormat(training);
-			//apply
+			//generate filter
+			AttributeSelection filter = applyFeatureSelection(training);
+			
 			Instances filteredTraining = Filter.useFilter(training, filter);
 			
 			Resample resampleFS = new Resample();
