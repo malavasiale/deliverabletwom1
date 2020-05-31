@@ -480,7 +480,7 @@ public static void buggyMetric() throws IOException {
 			if(StringUtils.countMatches(rowFile, JAVA_FILES) >= 1) {
 				for(Integer v = 1; v <= maxVersion;v++) {
 					
-					//Search if the file in the specific version is buggy or not
+					//Search all committed files in a ticket for a specific version
 					buggy = searchIfBuggy(rowFile,csvReaderBuggyFiles,v);
 					
 					if(Boolean.TRUE.equals(buggy)) {
@@ -497,36 +497,47 @@ public static void buggyMetric() throws IOException {
 	}
 }
 
-public static Boolean searchIfBuggy(String rowFile,RandomAccessFile csvReaderBuggyFiles,Integer v) throws NumberFormatException, IOException {
+public static Boolean searchIfBuggy(String rowFile,RandomAccessFile csvReaderBuggyFiles,Integer v) throws IOException {
 	String rowBuggyFile;
-	Integer av;
-	Integer fv;
 	Boolean buggy = false;
 	
 	while((rowBuggyFile = csvReaderBuggyFiles.readLine()) != null) {
 		String[] listOfFiles = rowBuggyFile.split(";");
 		if(listOfFiles.length > 4) {
-			for(int i = 4; i < listOfFiles.length; i++) {
-				if(listOfFiles[i].equals(rowFile)) {
-					if(!listOfFiles[1].equals("none") && !listOfFiles[2].equals("none") ) {
-						av = Integer.parseInt(listOfFiles[1]);
-						fv = Integer.parseInt(listOfFiles[2]);
-						if(v >= av && v < fv) {
-							buggy = true;
-							break;
-						}
-						else {
-							buggy = false;
-						}
-					}
-					else {
-						buggy = false;
-					}
-				}
-			}
+			
+			//check in a single ticket if a file is buggy in this version
+			buggy = checkSingleFileBuggy(rowFile,listOfFiles,v);
+			
 		}
 		if(Boolean.TRUE.equals(buggy)) {
 			return buggy;
+		}
+	}
+	
+	return buggy;
+}
+
+public static Boolean checkSingleFileBuggy(String rowFile,String[] listOfFiles,Integer v) {
+	Boolean buggy = false;
+	Integer av;
+	Integer fv;
+	
+	for(int i = 4; i < listOfFiles.length; i++) {
+		if(listOfFiles[i].equals(rowFile)) {
+			if(!listOfFiles[1].equals("none") && !listOfFiles[2].equals("none") ) {
+				av = Integer.parseInt(listOfFiles[1]);
+				fv = Integer.parseInt(listOfFiles[2]);
+				if(v >= av && v < fv) {
+					buggy = true;
+					break;
+				}
+				else {
+					buggy = false;
+				}
+			}
+			else {
+				buggy = false;
+			}
 		}
 	}
 	
