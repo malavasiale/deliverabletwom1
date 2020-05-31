@@ -135,7 +135,7 @@ public class WekaTesting {
 		return lines;
 	}
 	
-	public static List<Double> calculatePercentage(Instances training, Instances testing) throws IOException {
+	public static List<Double> calculatePercentage(Instances training, Instances testing){
 		Double trainingLines;
 		Double testingLines;
 		Double defectiveInTraining;
@@ -282,7 +282,6 @@ public class WekaTesting {
 		
 		//Counting lines in training and testing files
 		List<Double> lines = countLines(training,testing);
-		trainingLines = lines.get(0);
 		testingLines = lines.get(1);
 		defectiveInTraining = lines.get(2);
 		defectiveInTesting = lines.get(3);
