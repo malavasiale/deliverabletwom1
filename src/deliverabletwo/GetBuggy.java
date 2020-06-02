@@ -34,7 +34,8 @@ public class GetBuggy {
 	// Variabili usato solo per evitare di duplicare piu volte la stessa stringa nel codice(considerato smell)
 	private static final String JAVA_FILES = ".java";
 
-	private static final String PROJ = "tajo";
+	private static final String PROJ = "bookkeeper";
+	private static final String USERNAME = "malavasiale";
 	private static final String PROJ_FILES = PROJ+"fileInProject.csv";
 	private static final String GIT_COMMITS = PROJ+"gitCommits.csv";
 	private static final String VERSIONS_INFO = "VersionInfo.csv";
@@ -69,7 +70,7 @@ public static InputStreamReader getAuthChannel(String url) throws IOException {
 	URL url1 = new URL(url);
     URLConnection uc = url1.openConnection();
     uc.setRequestProperty("X-Requested-With", "Curl");
-    String username =  "malavasiale";
+    String username =  USERNAME;
     String token =  getOAUTHToken();
     String userpass = username + ":" + token;
     byte[] encodedBytes = Base64.getEncoder().encode(userpass.getBytes());
