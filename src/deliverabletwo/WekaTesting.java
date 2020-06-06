@@ -79,26 +79,26 @@ public class WekaTesting {
 		}
 		
 		 // load the CSV file (input file)
-        CSVLoader loader = new CSVLoader();
-        loader.setSource(new File(TRAINING_CSV));
-        Instances data = loader.getDataSet();
+        CSVLoader loaderkfold = new CSVLoader();
+        loaderkfold.setSource(new File(TRAINING_CSV));
+        Instances datakfold = loaderkfold.getDataSet();
 
         // save as an  ARFF (output file)
-        ArffSaver saver = new ArffSaver();
-        saver.setInstances(data);
-        saver.setFile(new File(TRAINING_ARFF));
-        saver.writeBatch();
+        ArffSaver saverkfold = new ArffSaver();
+        saverkfold.setInstances(datakfold);
+        saverkfold.setFile(new File(TRAINING_ARFF));
+        saverkfold.writeBatch();
         
         // load the CSV file (input file)
-        CSVLoader loader1 = new CSVLoader();
-        loader1.setSource(new File(TESTING_CSV));
-        Instances data1 = loader1.getDataSet();
+        CSVLoader loaderkfold1 = new CSVLoader();
+        loaderkfold1.setSource(new File(TESTING_CSV));
+        Instances datakfold1 = loaderkfold1.getDataSet();
 
         // save as an  ARFF (output file)
-        ArffSaver saver1 = new ArffSaver();
-        saver1.setInstances(data1);
-        saver1.setFile(new File(TESTING_ARFF));
-        saver1.writeBatch();
+        ArffSaver saverkfold1 = new ArffSaver();
+        saverkfold1.setInstances(datakfold1);
+        saverkfold1.setFile(new File(TESTING_ARFF));
+        saverkfold1.writeBatch();
 		
 	}
 	
