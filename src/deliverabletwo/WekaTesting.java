@@ -41,14 +41,66 @@ public class WekaTesting {
 	private static final String RF = "RandomForest";
 	
 	private static List<String> finalData = new ArrayList<>();
+	private static final String VALIDATION = "kfold";
 	
-	private static final String PROJ = "bookkeeper";
+	private static final String PROJ = "tajo";
 	private static final String METRICS = PROJ+"finalMetrics.csv";
 	private static final String TRAINING_CSV = PROJ+"trainingSet.csv";
 	private static final String TESTING_CSV = PROJ+"testingSet.csv";
 	private static final String TRAINING_ARFF = PROJ+"trainingSet.arff";
 	private static final String TESTING_ARFF = PROJ+"testingSet.arff";
 	private static final String WEKA_OUTPUT = PROJ + "wekaOutput.csv";
+	
+	public static void makeSetsKFold(Integer version) throws IOException {
+		String row;
+		
+		try(BufferedReader csvReader = new BufferedReader(new FileReader(METRICS));
+			FileWriter csvTraining = new FileWriter(TRAINING_CSV);
+			FileWriter csvTesting = new FileWriter(TESTING_CSV);){
+			
+			
+			row = csvReader.readLine();
+			String a = row.replace(";", ",");
+			csvTraining.write(a+"\n");
+			csvTesting.write(a+"\n");
+
+			
+			while((row = csvReader.readLine()) != null) {
+				String[] array = row.split(";");
+				String replaced = row.replace(";", ",");
+				if(!version.equals(Integer.parseInt(array[0]))) {
+					csvTraining.write(replaced+"\n");
+				}
+				else {
+					csvTesting.write(replaced+"\n");
+				}
+			}
+			
+		}
+		
+		 // load the CSV file (input file)
+        CSVLoader loader = new CSVLoader();
+        loader.setSource(new File(TRAINING_CSV));
+        Instances data = loader.getDataSet();
+
+        // save as an  ARFF (output file)
+        ArffSaver saver = new ArffSaver();
+        saver.setInstances(data);
+        saver.setFile(new File(TRAINING_ARFF));
+        saver.writeBatch();
+        
+        // load the CSV file (input file)
+        CSVLoader loader1 = new CSVLoader();
+        loader1.setSource(new File(TESTING_CSV));
+        Instances data1 = loader1.getDataSet();
+
+        // save as an  ARFF (output file)
+        ArffSaver saver1 = new ArffSaver();
+        saver1.setInstances(data1);
+        saver1.setFile(new File(TESTING_ARFF));
+        saver1.writeBatch();
+		
+	}
 	
 	public static void makeSets(Integer version) throws IOException {
 		String row;
@@ -709,18 +761,34 @@ public class WekaTesting {
 		
 		
 		for(int i = 1 ; i < maxvers ; i++) {
-			makeSets(i);
-			
-		    //No FS and NO balancing
-			evaluate(i);
-			//FS no balancing
-			evaluateFilter(i);
-			//UnderSampling with/without FS
-			evaluateUnderSampling(i);
-			//SMOTE with/without FS
-			evaluateSmote(i);
-			//OverSampling with/without FS
-			evaluateOverSampling(i);
+			if(VALIDATION.equals("walkforward")) {
+				makeSets(i);
+				
+				 //No FS and NO balancing
+				evaluate(i);
+				//FS no balancing
+				evaluateFilter(i);
+				//UnderSampling with/without FS
+				evaluateUnderSampling(i);
+				//SMOTE with/without FS
+				evaluateSmote(i);
+				//OverSampling with/without FS
+				evaluateOverSampling(i);
+			}
+			else if(VALIDATION.equals("kfold")) {
+				makeSetsKFold(i);
+				
+			    //No FS and NO balancing
+				evaluate(maxvers.intValue());
+				//FS no balancing
+				evaluateFilter(maxvers.intValue());
+				//UnderSampling with/without FS
+				evaluateUnderSampling(maxvers.intValue());
+				//SMOTE with/without FS
+				evaluateSmote(maxvers.intValue());
+				//OverSampling with/without FS
+				evaluateOverSampling(maxvers.intValue());
+			}
 		}
 
 		try(FileWriter csvEvaluate = new FileWriter(WEKA_OUTPUT);){

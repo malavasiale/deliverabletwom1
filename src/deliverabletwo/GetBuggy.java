@@ -34,7 +34,7 @@ public class GetBuggy {
 	// Variabili usato solo per evitare di duplicare piu volte la stessa stringa nel codice(considerato smell)
 	private static final String JAVA_FILES = ".java";
 
-	private static final String PROJ = "bookkeeper";
+	private static final String PROJ = "tajo";
 	private static final String USERNAME = "malavasiale";
 	private static final String PROJ_FILES = PROJ+"fileInProject.csv";
 	private static final String GIT_COMMITS = PROJ+"gitCommits.csv";
