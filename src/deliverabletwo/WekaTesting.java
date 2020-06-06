@@ -41,7 +41,7 @@ public class WekaTesting {
 	private static final String RF = "RandomForest";
 	
 	private static List<String> finalData = new ArrayList<>();
-	private static final String VALIDATION = "kfold";
+	private static final String VALIDATION = "walkforward";
 	
 	private static final String PROJ = "tajo";
 	private static final String METRICS = PROJ+"finalMetrics.csv";
@@ -761,7 +761,8 @@ public class WekaTesting {
 		
 		
 		for(int i = 1 ; i < maxvers ; i++) {
-			if(VALIDATION.equals("walkforward")) {
+			switch(VALIDATION) {
+			case "walkforward":
 				makeSets(i);
 				
 				 //No FS and NO balancing
@@ -774,8 +775,8 @@ public class WekaTesting {
 				evaluateSmote(i);
 				//OverSampling with/without FS
 				evaluateOverSampling(i);
-			}
-			else if(VALIDATION.equals("kfold")) {
+				break;
+			case "kfold":
 				makeSetsKFold(i);
 				
 			    //No FS and NO balancing
@@ -788,6 +789,8 @@ public class WekaTesting {
 				evaluateSmote(maxvers.intValue());
 				//OverSampling with/without FS
 				evaluateOverSampling(maxvers.intValue());
+				break;
+				
 			}
 		}
 
