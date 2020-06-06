@@ -761,8 +761,7 @@ public class WekaTesting {
 		
 		
 		for(int i = 1 ; i < maxvers ; i++) {
-			switch(VALIDATION) {
-			case "walkforward":
+			if(VALIDATION.equals("walkforward")) {
 				makeSets(i);
 				
 				 //No FS and NO balancing
@@ -775,8 +774,8 @@ public class WekaTesting {
 				evaluateSmote(i);
 				//OverSampling with/without FS
 				evaluateOverSampling(i);
-				break;
-			case "kfold":
+			}
+			else if (VALIDATION.equals("kfold")) {
 				makeSetsKFold(i);
 				
 			    //No FS and NO balancing
@@ -789,9 +788,9 @@ public class WekaTesting {
 				evaluateSmote(maxvers.intValue());
 				//OverSampling with/without FS
 				evaluateOverSampling(maxvers.intValue());
-				break;
-				
 			}
+
+			
 		}
 
 		try(FileWriter csvEvaluate = new FileWriter(WEKA_OUTPUT);){
